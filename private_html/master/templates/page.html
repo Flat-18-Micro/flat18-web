@@ -1,0 +1,116 @@
+<?php include_once("/var/www/api.flat18.co.uk/metrics/index.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="canonical" href="https://$url/$canonical">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <!-- HTML Meta Tags -->
+<title>$title$site</title>
+<meta name="description" content="$metaDescription">
+<meta name="keywords" content="$metaKeywords">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://$url">
+<meta property="og:type" content="website">
+<meta property="og:title" content="$title$site">
+<meta property="og:description" content="$metaDescription">
+<meta property="og:image" content="$metaImage">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="$url">
+<meta property="twitter:url" content="https://$url">
+<meta name="twitter:title" content="$title$site">
+<meta name="twitter:description" content="$metaDescription">
+<meta name="twitter:image" content="$metaImage">
+
+  <link rel="shortcut icon" type="image/png" href="/src/img/favicon.png" />
+  <link rel="preconnect" href="https://include.flat18.co.uk">
+  <link rel="alternate" type="application/rss+xml"
+  href="https://$url/rss.xml" title="$site RSS Feed">
+  <style>
+  
+    $css
+
+  </style>
+
+
+
+</head>
+
+<body>
+<div id="main">
+  $header
+
+  $body
+
+  $footer
+  </div>
+</body>
+<script>
+
+  var theme;
+
+if (!theme || theme.length < 1) {
+  if (!localStorage.getItem('theme')) {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+} else {
+  localStorage.setItem('theme', theme);
+}
+theme = localStorage.getItem('theme');
+
+function setThemeDark() {
+  document.body.classList.remove("body-theme-override-light");
+  document.body.classList.add("body-theme-override-dark");
+  localStorage.setItem('theme', 'dark');
+
+}
+
+function setThemeLight() {
+  document.body.classList.remove("body-theme-override-dark");
+  document.body.classList.add("body-theme-override-light");
+  localStorage.setItem('theme', 'light');
+
+}
+
+switch (theme) {
+  case "auto":
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setThemeDark()
+    } else {
+      setThemeLight()
+    }
+    break;
+  case "dark":
+    setThemeDark()
+    break;
+  case "light":
+    setThemeLight()
+    break;
+  default:
+    setThemeLight()
+}
+
+// END THEME  
+
+
+  $js
+
+  $scriptAux
+</script>
+
+<style>
+  $fontawesome $systemFont0 $systemFont1 $emoji
+  $styleAux
+</style>
+
+
+</html>

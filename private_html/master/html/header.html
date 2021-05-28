@@ -1,0 +1,46 @@
+<div id="menuHolder">
+  <a href="/" class="logo-wrapper">
+    <img height="40" width="40" class="menu-logo light-only" src="/src/img/icon.svg">
+    <img height="40" width="40" class="menu-logo dark-only" src="/src/img/icon1.svg">
+    <span>Flat18</span>
+  </a>
+  <div></div>
+  <div id="MenuShortcuts">
+
+    <span class="a notifyDot_" style="display:none;" onclick="window.engageChat();">
+      <i class="fas fa-circle" aria-hidden="true" style="color:#F7002F;"></i>
+    </span>
+
+    <!-- <span class="a" id="closeArticle">
+      <i class="fas fa-arrow-left" aria-hidden="true"></i>
+      <span class="hideOnMobile"> back</span></span> -->
+
+      <span class="a mobile-only" id="MenuTrigger">
+        <i class="fa fas fa-bars -icon" aria-hidden="true"></i>
+        <i class="fa fas fa-times -icon -strong-anchor" aria-hidden="true"></i>
+      </span>
+
+    <div class="MenuDropdownHolder -large-screen-menu">
+      <ul class="menuDropDown" id="menuDropDown" onmouseleave="toggleMenu(`hide`)">
+        <li><a class="a" href="/#contactForm">contact us</a></li>
+        <li><a class="a" href="/pricing">pricing</a></li>
+        <li><a class="a" href="/donate">donate</a></li>
+
+        <li class="light-only"><span class="a" onclick="setThemeDark()" class="revertible-dark">
+          <span class="menu-text mobile-only">theme&nbsp;</span><i class="fas fa-moon"></i></span>
+        </li>
+
+        <li class="dark-only"><span class="a" onclick="setThemeLight()" class="revertible-light">
+          <span class="menu-text mobile-only">theme&nbsp;</span><i class="fas fa-sun"></i></span>
+        </li>
+
+        <!-- <li class="notifyDot_" onclick="window.engageChat();">
+          <a>
+            <i class="fas fa-circle" aria-hidden="true" style="color:#F7002F;"></i>
+            <span class="">&nbsp;unread messages</span>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</div>
