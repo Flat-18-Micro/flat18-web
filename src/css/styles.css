@@ -615,7 +615,7 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   top: 1px;
   left: 1px;
   opacity: 1;
-  border-radius: 8px;
+  border-radius: 9px;
 }
 
 .btn::before {
@@ -648,8 +648,8 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
 }
 
 .btn.primary:hover::after, .btn.pri:hover::after {
-  height: calc(100% - 8px);
-  width: calc(100% - 8px);
+  height: calc(100% - 9px);
+  width: calc(100% - 9px);
   top: 4px;
   left: 4px;
   opacity: 1;
@@ -678,7 +678,7 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   left: 1px;
   display: block;
   position: absolute;
-  border-radius: 8px;
+  border-radius: 9px;
   z-index: -1;
   -webkit-transition: 0.1s linear;
   transition: 0.1s linear;
