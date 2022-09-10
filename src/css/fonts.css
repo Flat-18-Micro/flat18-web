@@ -1,0 +1,153 @@
+ @font-face {
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 200;
+   src: url(/src/fonts/montserrat/montserrat-v25-latin-200.eot);
+   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-200.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-200.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-200.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-200.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-200.svg#Montserrat') format('svg')
+ }
+
+ @font-face {
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 400;
+   src: url(/src/fonts/montserrat/montserrat-v25-latin-regular.eot);
+   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-regular.svg#Montserrat') format('svg')
+ }
+
+ @font-face {
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 800;
+   src: url(/src/fonts/montserrat/montserrat-v25-latin-800.eot);
+   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-800.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-800.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-800.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-800.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-800.svg#Montserrat') format('svg')
+ }
+
+ @font-face {
+   font-family: 'icomoon';
+   src: url(/src/fonts/icomoon/icomoon.eot?az7zv7);
+   src: url('/src/fonts/icomoon/icomoon.eot?az7zv7#iefix') format('embedded-opentype'), url(/src/fonts/icomoon/icomoon.ttf?az7zv7) format('truetype'), url(/src/fonts/icomoon/icomoon.woff?az7zv7) format('woff'), url('/src/fonts/icomoon/icomoon.svg?az7zv7#icomoon') format('svg');
+   font-weight: 400;
+   font-style: normal;
+   font-display: block
+ }
+
+ .ico {
+   font-family: 'icomoon' !important;
+   speak: never;
+   font-style: normal;
+   font-weight: 400;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale
+ }
+
+ .icon-send:before {
+   content: "\e900"
+ }
+
+ .icon-arrow-right2:before {
+   content: "\e901"
+ }
+
+ .icon-arrow-down2:before {
+   content: "\e902"
+ }
+
+ .icon-bitcoin:before {
+   content: "\e903"
+ }
+
+ .icon-btc:before {
+   content: "\e903"
+ }
+
+ .icon-cc-mastercard:before {
+   content: "\e904"
+ }
+
+ .icon-cc-visa:before {
+   content: "\e905"
+ }
+
+ .icon-bitcoin1:before {
+   content: "\e906";
+   color: #f7931a
+ }
+
+ .icon-googlepay:before {
+   content: "\e907";
+   color: #5f6368
+ }
+
+ .icon-applepay:before {
+   content: "\e908"
+ }
+
+ .icon-moon:before {
+   content: "\e90c"
+ }
+
+ .icon-sun:before {
+   content: "\e909"
+ }
+
+ .icon-external-link:before {
+   content: "\e90a"
+ }
+
+ .icon-chat:before {
+   content: "\e90b"
+ }
+
+ .other-shots {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   overflow-y: visible;
+   overflow-x: scroll;
+   box-shadow: 0 0 0 2px;
+   max-width: calc(500px - 2rem)
+ }
+
+ .other-shots img {
+   max-height: 100px;
+   max-width: 100px;
+   cursor: pointer;
+   margin-right: 2px;
+   padding: .75rem;
+   margin: auto
+ }
+
+ .on-show {
+   height: 500px;
+   max-height: 100vw;
+   display: grid
+ }
+
+ .on-show img {
+   max-width: calc(500px - 2rem);
+   width: calc(50vw - 2rem);
+   padding: .75rem;
+   margin: auto;
+   animation: growIn .4s ease forwards 1
+ }
+
+ .album {
+   display: grid;
+   grid-template: 1fr auto/1fr;
+   box-shadow: 0 0 0 2px;
+   margin: auto
+ }
+
+ @media (max-width:800px) {
+   .on-show img {
+     max-width: calc(100vw - 4rem);
+     width: calc(100vw - 4rem)
+   }
+
+   .other-shots {
+     max-width: calc(100vw - 4rem)
+   }
+ }
