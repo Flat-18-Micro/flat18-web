@@ -66,9 +66,10 @@
 </div>
 
 <script>
+  let theme = localStorage?(localStorage.getItem('theme') === 'dark' ? 'auto' : 'light'):'auto'
 window.chatwootSettings = {
   position:"right",type:"expanded_bubble",launcherTitle:"Get in touch 👋",
-  darkMode: "auto",
+  darkMode: theme,
 };
 (function (d, t) {
   var BASE_URL = "https://chatwoot.flat18.co.uk";

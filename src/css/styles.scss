@@ -108,6 +108,17 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   }
 }
 
+@keyframes popInImage {
+  from {
+    opacity: 0;
+    // transform: scale(0);
+  }
+  to {
+    // transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .lightDark .ico {
   display: block;
   line-height: 1.5;
@@ -121,13 +132,6 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   }
 }
 
-@-webkit-keyframes iconFlyDown {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
 
 @keyframes iconFlyDown {
   to {
@@ -264,7 +268,14 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
     display: none;
   }
 }
+.light{
+  .hero{
+    &::before{
+    animation: 2s beforeBlurLight 0.5s ease forwards 1;
 
+    }
+  }
+}
 .hero {
   display: -ms-grid;
   display: grid;
@@ -425,15 +436,14 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   }
 }
 
-@-webkit-keyframes beforeBlur {
+@keyframes beforeBlur {
   to {
     opacity: 0.3;
   }
 }
-
-@keyframes beforeBlur {
+@keyframes beforeBlurLight {
   to {
-    opacity: 0.3;
+    opacity: 0.6;
   }
 }
 
@@ -908,21 +918,25 @@ h1, h2, h3, h4, h5 {
 }
 .light{
   .cat::before {
+    animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/cat-on-computer-light.webp);
   }
 }
 .cat::before {
-  background-image: url(/src/img/cat-on-computer.webp);
+    animation: 2s popInImage 0s ease forwards 1;
+    background-image: url(/src/img/cat-on-computer.webp);
 }
 
 @media (max-width: 756px) {
   .light{
     .cat::before {
-      background-image: url(/src/img/keyboard-light.webp);
+    animation: 2s popInImage 0s ease forwards 1;
+    background-image: url(/src/img/keyboard-light.webp);
     }
   }
   .cat::before {
     display: block;
+    animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/keyboard.webp);
     top: 0;
     position: absolute;
@@ -942,7 +956,8 @@ h1, h2, h3, h4, h5 {
 .light{
   .loudspeaker {
     &::before {
-      background-image: url(/src/img/loudspeaker-light.webp);
+    animation: 2s popInImage 0s ease forwards 1;
+    background-image: url(/src/img/loudspeaker-light.webp);
     }
   }
 }
@@ -957,6 +972,7 @@ h1, h2, h3, h4, h5 {
   min-height: 500px;
 
   &::before {
+    animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/loudspeaker.webp);
   }
 }
@@ -1554,7 +1570,8 @@ ul.flex {
 .light{
   .footer{
     &::after {
-      background-image: url(/src/img/stylus-light.webp);
+    animation: 2s popInImage 0s ease forwards 1;
+    background-image: url(/src/img/stylus-light.webp);
     }
   }
 }
@@ -1585,6 +1602,7 @@ ul.flex {
     margin-left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+    animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/stylus.webp);
     background-repeat: no-repeat;
     background-position: 100% 80%;

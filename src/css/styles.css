@@ -108,6 +108,24 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   }
 }
 
+@-webkit-keyframes popInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .lightDark .ico {
   display: block;
   line-height: 1.5;
@@ -261,6 +279,11 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   .img {
     display: none;
   }
+}
+
+.light .hero::before {
+  -webkit-animation: 2s beforeBlurLight 0.5s ease forwards 1;
+          animation: 2s beforeBlurLight 0.5s ease forwards 1;
 }
 
 .hero {
@@ -432,6 +455,18 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
 @keyframes beforeBlur {
   to {
     opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes beforeBlurLight {
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes beforeBlurLight {
+  to {
+    opacity: 0.6;
   }
 }
 
@@ -918,19 +953,27 @@ h1, h2, h3, h4, h5 {
 }
 
 .light .cat::before {
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/cat-on-computer-light.webp);
 }
 
 .cat::before {
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/cat-on-computer.webp);
 }
 
 @media (max-width: 756px) {
   .light .cat::before {
+    -webkit-animation: 2s popInImage 0s ease forwards 1;
+            animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/keyboard-light.webp);
   }
   .cat::before {
     display: block;
+    -webkit-animation: 2s popInImage 0s ease forwards 1;
+            animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/keyboard.webp);
     top: 0;
     position: absolute;
@@ -949,6 +992,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .light .loudspeaker::before {
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/loudspeaker-light.webp);
 }
 
@@ -964,6 +1009,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .loudspeaker::before {
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/loudspeaker.webp);
 }
 
@@ -1567,6 +1614,8 @@ ul.flex li::after {
 }
 
 .light .footer::after {
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/stylus-light.webp);
 }
 
@@ -1598,6 +1647,8 @@ ul.flex li::after {
   margin-left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/stylus.webp);
   background-repeat: no-repeat;
   background-position: 100% 80%;
