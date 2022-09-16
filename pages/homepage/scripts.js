@@ -1,8 +1,3 @@
-function showcaseYScrollManipulation() {
-  let e = (window.scrollY - document.querySelector(".showcase").clientTop) / window.outerHeight * .5;
-  document.querySelector(".showcase-slider > input").value = 100 * e, showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * e, document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
-}
-
 function maximiseTile(e) {
   e.stopPropagation();
   let t = e.target.parentNode.parentNode;
@@ -40,20 +35,6 @@ function positionTileInternals(e) {
       r = s - c;
   e.style.transform = `translate(${n}px,${r}px)`, e.style["margin-bottom"] = document.querySelector(".project-showcase-workspace").style.height <= e.getBoundingClientRect().height ? "0px" : `${n}px`
 }
-window.addEventListener("scroll", showcaseYScrollManipulation)
-
-document.querySelector(".showcase").addEventListener("scroll", e => {
-  let t = document.querySelector(".showcase").scrollLeft / (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * 100;
-  document.querySelector(".showcase-slider > input").value = t
-})
-
-document.querySelector(".showcase-slider > input").value = 50, document.querySelector(".showcase-slider > input").addEventListener("input", e => {
-  if ("INPUT" === e.target.nodeName) {
-      window.removeEventListener("scroll", showcaseYScrollManipulation);
-      let t = Number(e.target.value) / 100;
-      showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * t, document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
-  }
-})
 
 document.querySelectorAll(".showcase-tile").forEach(e => {
   e.addEventListener("click", maximiseTile)
@@ -70,3 +51,43 @@ document.querySelectorAll(".stop").forEach(e => {
 })
 
 document.body.addEventListener("click", minimiseTile);
+
+
+
+function showcaseYScrollManipulation() {
+  let transition = (window.scrollY - document.querySelector(".showcase").clientTop) / window.outerHeight * .5;
+  document.querySelector(".showcase-slider > input").value = 100 * transition,
+  showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * transition,
+  document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
+}
+
+function manipulateElements(transition) {
+  showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * transition,
+  document.querySelector(".showcase").scrollLeft = showcaseTranslateBy,
+  document.querySelector(".slider-ui").querySelector(".blob").style.transform="translateX(calc(" + transition*document.querySelector(".slider-ui").getBoundingClientRect().width + "px - 1rem))"
+}
+
+window.addEventListener("scroll", showcaseYScrollManipulation)
+
+document.querySelector(".showcase").addEventListener("scroll", e => {
+  let t = document.querySelector(".showcase").scrollLeft / (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width);
+  document.querySelector(".showcase-slider > input").value = t * 100
+  document.querySelector(".slider-ui").querySelector(".blob").style.transform="translateX(calc(" + t*document.querySelector(".slider-ui").getBoundingClientRect().width + "px - 1rem))"
+})
+
+document.querySelector(".showcase-slider > input").value = 50, document.querySelector(".showcase-slider > input").addEventListener("input", e => {
+  if ("INPUT" === e.target.nodeName) {
+      window.removeEventListener("scroll", showcaseYScrollManipulation);
+      let t = Number(e.target.value) / 100;
+      manipulateElements(t)
+  }
+})
+
+if (document.querySelectorAll(".showcase").length > 0 && document.querySelectorAll(".slider-ui").length > 0) {
+  let items = document.querySelector(".showcase").querySelectorAll(".item")
+  for (i = 0; i < items.length; i++){
+      let dot = document.createElement("span")
+      dot.classList.add("dot")
+      document.querySelector(".slider-ui").append(dot)
+  }
+}

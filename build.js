@@ -95,8 +95,11 @@ function consolidateAssets() {
     let asset = listFiles(dir)
     let ext = '.' + dir.replace('./src/', '').replace(/\//g, '')
     for (const ass of asset) {
-      if (ass.indexOf(ext) >= 0) {
+      if (ass.indexOf(ext) >= ass.length - ext.length) {
         data += read(dir + ass) + " "
+      }
+      else if (ass.indexOf(ext + '.map') >= 0) {
+        fs.writeFileSync(dir.replace("./", "./dist/") + ass, read(dir + ass));
       }
     }
     let newFile = dir.replace("./", "./dist/") + "file" + ext

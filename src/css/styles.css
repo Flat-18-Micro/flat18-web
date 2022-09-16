@@ -1,58 +1,63 @@
-:not(.light), .dark {
+:not(.light),
+.dark {
   --theme-near-black: rgba(0, 0, 0, 0.1);
-  --theme-true-black:#000;
-  --theme-dark:#111;
-  --theme-black:#1d1d1d;
-  --theme-white:#efefef;
-  --theme-primary-dark:#0029b1;
-  --theme-primary:#0062ff;
-  --theme-accent:#32d7d9;
-  --theme-yellow:#ffd500;
-  --theme-orange:#ff9500;
+  --theme-true-black: #000;
+  --theme-dark: #111;
+  --theme-black: #1d1d1d;
+  --theme-white: #efefef;
+  --theme-off-white: #faf7f7;
+  --theme-primary-dark: #0029b1;
+  --theme-primary: #0070ff;
+  --theme-accent: #00ffc3;
+  --theme-accent-text: #00ffc3;
+  --theme-yellow: #ffd500;
+  --theme-orange: #ff9500;
 }
 
 .light {
   --theme-near-black: rgba(255, 255, 255, 0.1);
-  --theme-true-black:#fff;
-  --theme-dark:#F7F7F7;
-  --theme-black:#efefef;
-  --theme-white:#223066;
-  --theme-primary-dark:#0029b1;
-  --theme-primary:#0062ff;
-  --theme-accent:#00b0b9;
-  --theme-yellow:#0010ff;
-  --theme-orange:#ff0060;
+  --theme-true-black: #fff;
+  --theme-dark: #f6f9fc;
+  --theme-black: #fff;
+  --theme-white: #121437;
+  --theme-off-white: #455565;
+  --theme-primary-dark: #0029b1;
+  --theme-primary: #0070ff;
+  --theme-accent: #3be8d7;
+  --theme-accent-text: #2077ff;
+  --theme-yellow: #009f89;
+  --theme-orange: #ff0060;
 }
 
 :root {
   --persistent-white: #fff;
-  --indigo:#586ada;
-  --bg-indigo:#d5daf6;
-  --light-indigo:#678ef1;
-  --cerulean:#ceedfd;
-  --bg-cerulean:#067ab8;
-  --light-cerulean:#3a97d4;
-  --moss:#09815c;
-  --bg-moss:#cffcee;
-  --light-moss:#1ba672;
-  --lime:#0d9900;
-  --bg-lime:#cffcdc;
-  --light-lime:#02d602;
-  --amber:#bb5506;
-  --bg-amber:#fde2ce;
-  --light-amber:#d97919;
-  --red:#c44c35;
-  --bg-red:#f4dcd7;
-  --light-red:#e56f49;
-  --crimson:#cd3d64;
-  --bg-crimson:#f5d6de;
-  --light-crimson:#ed5f74;
-  --purple:#a44fb5;
-  --bg-purple:#ecdbf0;
-  --light-purple:#c66bce;
-  --violet:#825fc3;
-  --bg-violet:#e2daf1;
-  --light-violet:#9c82db;
+  --indigo: #586ada;
+  --bg-indigo: #d5daf6;
+  --light-indigo: #678ef1;
+  --cerulean: #ceedfd;
+  --bg-cerulean: #067ab8;
+  --light-cerulean: #3a97d4;
+  --moss: #09815c;
+  --bg-moss: #cffcee;
+  --light-moss: #1ba672;
+  --lime: #0d9900;
+  --bg-lime: #cffcdc;
+  --light-lime: #02d602;
+  --amber: #bb5506;
+  --bg-amber: #fde2ce;
+  --light-amber: #d97919;
+  --red: #c44c35;
+  --bg-red: #f4dcd7;
+  --light-red: #e56f49;
+  --crimson: #cd3d64;
+  --bg-crimson: #f5d6de;
+  --light-crimson: #ed5f74;
+  --purple: #a44fb5;
+  --bg-purple: #ecdbf0;
+  --light-purple: #c66bce;
+  --violet: #825fc3;
+  --bg-violet: #e2daf1;
+  --light-violet: #9c82db;
 }
 
 html {
@@ -60,16 +65,18 @@ html {
 }
 
 body {
-  --near-black:var(--theme-near-black);
-  --true-black:var(--theme-true-black);
-  --dark:var(--theme-dark);
-  --black:var(--theme-black);
-  --white:var(--theme-white);
-  --primary-dark:var(--theme-primary-dark);
-  --primary:var(--theme-primary);
-  --accent:var(--theme-accent);
-  --yellow:var(--theme-yellow);
-  --orange:var(--theme-orange);
+  --near-black: var(--theme-near-black);
+  --true-black: var(--theme-true-black);
+  --dark: var(--theme-dark);
+  --black: var(--theme-black);
+  --white: var(--theme-white);
+  --off-white: var(--theme-off-white);
+  --primary-dark: var(--theme-primary-dark);
+  --primary: var(--theme-primary);
+  --accent: var(--theme-accent);
+  --accent-text: var(--theme-accent-text);
+  --yellow: var(--theme-yellow);
+  --orange: var(--theme-orange);
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
@@ -85,7 +92,20 @@ a {
   color: inherit;
 }
 
-div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
+div,
+a,
+span,
+ul,
+li,
+input,
+textarea,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -205,7 +225,7 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
 }
 
 .nav .menu a {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 100px;
   position: relative;
 }
@@ -228,7 +248,7 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
 }
 
 .link {
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 100px;
   position: relative;
   margin-left: -0.75rem;
@@ -412,8 +432,9 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
 
 .hero .cta-organiser p {
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.75;
+  color: var(--off-white);
 }
 
 @media (max-width: 1200px) {
@@ -734,7 +755,11 @@ div, a, span, ul, li, input, textarea, button, h1, h2, h3, h4, h5, p {
   background: var(--yellow);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "Montserrat";
 }
 
@@ -751,26 +776,26 @@ h1, h2, h3, h4, h5 {
   max-width: 100vw;
   margin-left: 50%;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   z-index: 2;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at top left, var(--primary) -100%, transparent 10%), radial-gradient(ellipse at top right, var(--primary) -100%, transparent 60%), -webkit-gradient(linear, left top, left bottom, from(var(--black)), color-stop(90%, var(--black)));
-  background: radial-gradient(ellipse at top left, var(--primary) -100%, transparent 10%), radial-gradient(ellipse at top right, var(--primary) -100%, transparent 60%), linear-gradient(var(--black), var(--black) 90%);
+  background: var(--black);
 }
 
 .showcase-parent .showcase {
   width: 100vw;
   overflow: scroll;
+  scroll-behavior: smooth;
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   gap: 5rem;
   margin-top: 50px;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-transition: linear;
   transition: linear;
   padding-left: 2rem;
@@ -793,7 +818,7 @@ h1, h2, h3, h4, h5 {
 
 .showcase-parent .showcase .item {
   scroll-snap-align: start;
-  width: 300px;
+  width: 250px;
   max-width: 90vw;
   display: -ms-grid;
   display: grid;
@@ -815,12 +840,513 @@ h1, h2, h3, h4, h5 {
 }
 
 .showcase-parent .showcase .item h3 {
-  font-size: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   margin: 0;
 }
 
 .showcase-parent .showcase .item p {
   margin: 0;
+  color: var(--off-white);
+  font-size: .9rem;
+}
+
+.showcase-parent .showcase .item svg {
+  width: 3rem;
+}
+
+.showcase-parent .showcase .item svg * {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.showcase-parent .showcase .item .link {
+  margin-right: auto;
+}
+
+.showcase-parent .showcase .playing-animation.data #layer0 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.data #layer1 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+.showcase-parent .showcase .playing-animation.data #layer2 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: fadeIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches #branch0 {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches #branch1 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches #branch2 {
+  stroke-dasharray: 666.66667;
+  stroke-dashoffset: 666.66667;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches #branch3 {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches #branch4 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.showcase-parent .showcase .playing-animation.data #branches #branch5 {
+  stroke-dasharray: 333.33333;
+  stroke-dashoffset: 333.33333;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #bar0 {
+  stroke-dasharray: 196;
+  stroke-dashoffset: 196;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #bar1 {
+  stroke-dasharray: 98;
+  stroke-dashoffset: 98;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #bar2 {
+  stroke-dasharray: 65.33333;
+  stroke-dashoffset: 65.33333;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #bar3 {
+  stroke-dasharray: 49;
+  stroke-dashoffset: 49;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #ring0 {
+  stroke-dasharray: 234;
+  stroke-dashoffset: 234;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #ring1 {
+  stroke-dasharray: 117;
+  stroke-dashoffset: 117;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #ring2 {
+  stroke-dasharray: 78;
+  stroke-dashoffset: 78;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.showcase-parent .showcase .playing-animation.metrics #ring3 {
+  stroke-dasharray: 58.5;
+  stroke-dashoffset: 58.5;
+  -webkit-animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 1s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle0 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle1 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle2 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle3 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.45s;
+          animation-delay: 0.45s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle4 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle5 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+.showcase-parent .showcase .playing-animation.f18pay #circle6 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid0 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid1 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid2 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid3 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid4 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid5 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.showcase-parent .showcase .playing-animation.creative #grid6 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(5deg);
+          transform: scale(0) rotate(5deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.showcase-parent .showcase .playing-animation.btcpay #btcpayb {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: fadeIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.showcase-parent .showcase .playing-animation.btcpay #tile0 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(10deg);
+          transform: scale(0) rotate(10deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.btcpay #tile1 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(10deg);
+          transform: scale(0) rotate(10deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.showcase-parent .showcase .playing-animation.btcpay #tile2 {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(10deg);
+          transform: scale(0) rotate(10deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.walletscrutiny #ws {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-animation: fadeIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: fadeIn 0.4s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+}
+
+.showcase-parent .showcase .playing-animation.walletscrutiny #w0 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.walletscrutiny #w1 {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.walletscrutiny #w2 {
+  stroke-dasharray: 133.33333;
+  stroke-dashoffset: 133.33333;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.showcase-parent .showcase .playing-animation.walletscrutiny #w3 {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.showcase-parent .showcase .playing-animation.let-s-build #line {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 100;
+  -webkit-animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: lineDraw 0.5s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.showcase-parent .showcase .playing-animation.let-s-build #pen {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(10deg);
+          transform: scale(0) rotate(10deg);
+  -webkit-animation: fadeIn 0.2s linear forwards 1;
+          animation: fadeIn 0.2s linear forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.let-s-build #circle0 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.showcase-parent .showcase .playing-animation.let-s-build #circle1 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.showcase-parent .showcase .playing-animation.let-s-build #circle2 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.showcase-parent .showcase .playing-animation.let-s-build #circle3 {
+  opacity: 0;
+  -webkit-transform: translateY(-100%) scale(0.5);
+          transform: translateY(-100%) scale(0.5);
+  -webkit-animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+          animation: dropIn 0.3s cubic-bezier(0.48, 0.33, 0.21, 1.44) forwards 1;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+@-webkit-keyframes lineDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lineDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dropIn {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes dropIn {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .showcase-parent .showcase-slider {
@@ -833,16 +1359,52 @@ h1, h2, h3, h4, h5 {
   padding-top: 40px;
 }
 
-.showcase-parent .showcase-slider input[type="range"] {
+.showcase-parent .showcase-slider .slider-ui {
+  pointer-events: none;
+  width: 150px;
+  max-width: 95vw;
+  margin: auto;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(0.25rem);
+          transform: translateY(0.25rem);
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.showcase-parent .showcase-slider .slider-ui .dot {
+  display: block;
+  height: 0.7rem;
+  width: 0.7rem;
+  background: var(--off-white);
+  border-radius: 1rem;
+}
+
+.showcase-parent .showcase-slider .slider-ui .blob {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  height: 0.7rem;
+  width: 2rem;
+  background: var(--off-white);
   border-radius: 100px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, var(--black)), color-stop(25%, var(--true-black)), color-stop(75%, var(--black)));
-  background: linear-gradient(var(--black) 25%, var(--true-black) 25% 75%, var(--black) 75%);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  position: absolute;
+}
+
+.showcase-parent .showcase-slider input[type="range"] {
   cursor: pointer;
-  width: 700px;
-  max-width: 90vw;
+  width: 150px;
+  max-width: 95vw;
+  opacity: 0;
   margin: auto;
   left: 0;
   right: 0;
@@ -851,29 +1413,6 @@ h1, h2, h3, h4, h5 {
 
 .showcase-parent .showcase-slider input[type="range"]:focus {
   outline: none;
-}
-
-.showcase-parent .showcase-slider input[type="range"]:focus::-webkit-slider-thumb, .showcase-parent .showcase-slider input[type="range"]:focus::-moz-range-thumb {
-  -webkit-appearance: none;
-  outline: 2px solid var(--yellow);
-  outline-offset: 2px;
-}
-
-.showcase-parent .showcase-slider input[type="range"]::-webkit-slider-runnable-track, .showcase-parent .showcase-slider input[type="range"]::-moz-range-track {
-  -webkit-appearance: none;
-  background-color: var(--true-black);
-  border-radius: .5rem;
-  height: 0.5rem;
-}
-
-.showcase-parent .showcase-slider input[type="range"]::-webkit-slider-thumb, .showcase-parent .showcase-slider input[type="range"]::-moz-range-thumb {
-  -webkit-appearance: none;
-  background-color: var(--yellow);
-  border: none;
-  border-radius: 100px;
-  height: 1rem;
-  width: 70px;
-  max-width: 10vw;
 }
 
 @media (max-width: 960px) {
@@ -1061,8 +1600,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .container .text-organiser p {
+  color: var(--off-white);
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.75;
 }
 
@@ -1087,7 +1627,8 @@ h1, h2, h3, h4, h5 {
   margin: 20px auto;
 }
 
-.container.master h1, .container.master h2 {
+.container.master h1,
+.container.master h2 {
   background: -webkit-linear-gradient(60deg, var(--accent), var(--yellow));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1188,10 +1729,11 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 3rem;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   font-size: 1rem;
   padding: 1rem;
-  background: var(--true-black);
+  background: var(--black);
   font-family: inherit;
   border: none;
   border-radius: 5px;
@@ -1207,22 +1749,50 @@ h1, h2, h3, h4, h5 {
   color: var(--white);
 }
 
-.contact-form input:focus ::-webkit-input-placeholder, .contact-form textarea:focus ::-webkit-input-placeholder, .contact-form input:focus :-ms-input-placeholder, .contact-form textarea:focus :-ms-input-placeholder, .contact-form input:focus ::-ms-input-placeholder, .contact-form textarea:focus ::-ms-input-placeholder, .contact-form input:focus ::-webkit-input-placeholder, .contact-form textarea:focus ::-webkit-input-placeholder {
+.contact-form input:focus ::-webkit-input-placeholder,
+.contact-form textarea:focus ::-webkit-input-placeholder,
+.contact-form input:focus :-ms-input-placeholder,
+.contact-form textarea:focus :-ms-input-placeholder,
+.contact-form input:focus ::-ms-input-placeholder,
+.contact-form textarea:focus ::-ms-input-placeholder,
+.contact-form input:focus ::-webkit-input-placeholder,
+.contact-form textarea:focus ::-webkit-input-placeholder {
   opacity: 0;
 }
 
-.contact-form input:focus ::-webkit-input-placeholder, .contact-form textarea:focus ::-webkit-input-placeholder, .contact-form input:focus :-ms-input-placeholder, .contact-form textarea:focus :-ms-input-placeholder, .contact-form input:focus ::-ms-input-placeholder, .contact-form textarea:focus ::-ms-input-placeholder, .contact-form input:focus ::placeholder, .contact-form textarea:focus ::placeholder {
+.contact-form input:focus ::-webkit-input-placeholder,
+.contact-form textarea:focus ::-webkit-input-placeholder,
+.contact-form input:focus :-ms-input-placeholder,
+.contact-form textarea:focus :-ms-input-placeholder,
+.contact-form input:focus ::-ms-input-placeholder,
+.contact-form textarea:focus ::-ms-input-placeholder,
+.contact-form input:focus ::placeholder,
+.contact-form textarea:focus ::placeholder {
   opacity: 0;
 }
 
-.contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder, .contact-form input:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder, .contact-form input::-ms-input-placeholder, .contact-form textarea::-ms-input-placeholder, .contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder {
-  opacity: .75;
+.contact-form input::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder,
+.contact-form input:-ms-input-placeholder,
+.contact-form textarea:-ms-input-placeholder,
+.contact-form input::-ms-input-placeholder,
+.contact-form textarea::-ms-input-placeholder,
+.contact-form input::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder {
+  opacity: 0.75;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
 
-.contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder, .contact-form input:-ms-input-placeholder, .contact-form textarea:-ms-input-placeholder, .contact-form input::-ms-input-placeholder, .contact-form textarea::-ms-input-placeholder, .contact-form input::placeholder, .contact-form textarea::placeholder {
-  opacity: .75;
+.contact-form input::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder,
+.contact-form input:-ms-input-placeholder,
+.contact-form textarea:-ms-input-placeholder,
+.contact-form input::-ms-input-placeholder,
+.contact-form textarea::-ms-input-placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  opacity: 0.75;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
@@ -1308,9 +1878,10 @@ h1, h2, h3, h4, h5 {
 
 .parent > .heading p {
   font-size: 1.2rem;
-  font-weight: 200;
+  font-weight: 400;
   line-height: 1.75;
   margin: 0;
+  color: var(--off-white);
 }
 
 @media (max-width: 756px) {
@@ -1415,7 +1986,7 @@ h1, h2, h3, h4, h5 {
 
 .pricing .pricing-item .heading::after {
   content: "";
-  opacity: .5;
+  opacity: 0.5;
   background: radial-gradient(ellipse at top left, var(--primary) -30%, transparent), radial-gradient(ellipse at bottom right, var(--accent), transparent), radial-gradient(ellipse at top right, var(--yellow), transparent);
   z-index: -1;
   position: absolute;
@@ -1448,7 +2019,7 @@ h1, h2, h3, h4, h5 {
 .pricing .pricing-item h3 {
   font-family: "Montserrat";
   text-transform: uppercase;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 800;
   margin-bottom: 0;
 }
@@ -1471,7 +2042,7 @@ h1, h2, h3, h4, h5 {
 
 .pricing .pricing-item ul.tick li::before {
   content: "";
-  height: .5rem;
+  height: 0.5rem;
   width: 1rem;
   display: block;
   -webkit-box-shadow: -3px 3px 0 0 var(--light-lime);
@@ -1491,7 +2062,7 @@ h1, h2, h3, h4, h5 {
 
 .pricing .pricing-item ul.dash li::before {
   content: "";
-  height: .5rem;
+  height: 0.5rem;
   width: 1rem;
   display: block;
   -webkit-box-shadow: 0 3px 0 0 var(--primary);
@@ -1568,10 +2139,10 @@ ul.flex.subtle li::after {
 
 ul.flex li {
   text-transform: capitalize;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 100px;
   position: relative;
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 ul.flex li::after {
@@ -1582,7 +2153,7 @@ ul.flex li::after {
   height: 100%;
   width: 100%;
   border-radius: 100px;
-  background: var(--accent);
+  background: var(--accent-text);
   opacity: 0.08;
 }
 
@@ -1650,6 +2221,7 @@ ul.flex li::after {
   -webkit-animation: 2s popInImage 0s ease forwards 1;
           animation: 2s popInImage 0s ease forwards 1;
   background-image: url(/src/img/stylus.webp);
+  background-size: 500px auto;
   background-repeat: no-repeat;
   background-position: 100% 80%;
 }
@@ -1691,11 +2263,11 @@ ul.flex li::after {
 
 .status::before {
   content: "";
-  height: .5rem;
-  width: .5rem;
-  border-radius: .5rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 0.5rem;
   display: inline-block;
-  margin: auto .5rem .2rem auto;
+  margin: auto 0.5rem 0.2rem auto;
   vertical-align: middle;
 }
 
@@ -1715,8 +2287,8 @@ ul.flex li::after {
   flex-direction: row;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: .5rem;
-  padding: .5rem;
+  gap: 0.5rem;
+  padding: 0.5rem;
   border-radius: 10px;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
@@ -1728,7 +2300,7 @@ ul.flex li::after {
 }
 
 .currency-options .option {
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   position: relative;
   cursor: pointer;
 }
@@ -1833,7 +2405,7 @@ ul.flex li::after {
   height: 100%;
   width: 100%;
   display: block;
-  opacity: .5;
+  opacity: 0.5;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -2045,7 +2617,8 @@ ul.flex li::after {
   justify-content: space-between;
 }
 
-.project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components .btn, .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components .flex {
+.project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components .btn,
+.project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components .flex {
   margin-right: auto;
   margin-left: 0;
   width: auto;
@@ -2094,7 +2667,7 @@ ul.flex li::after {
   -webkit-transform: translateY(-120%);
   transform: translateY(-120%);
   font-style: normal;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
 }
 
@@ -2104,13 +2677,13 @@ ul.flex li::after {
   bottom: 0;
   -webkit-transform: translateY(120%);
   transform: translateY(120%);
-  font-size: .9rem;
-  opacity: .75;
-  color: var(--accent);
+  font-size: 0.9rem;
+  opacity: 0.75;
+  color: var(--accent-text);
 }
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components .post.subtitle {
-  color: var(--accent);
+  color: var(--accent-text);
   margin-top: -1rem;
 }
 
@@ -2133,7 +2706,12 @@ ul.flex li::after {
 }
 
 @media (max-width: 756px) {
-  .project-showcase-workspace-container .project-showcase-workspace .showcase-tile .tile-internals .banner-parent .banner {
+  .project-showcase-workspace-container
+.project-showcase-workspace
+.showcase-tile
+.tile-internals
+.banner-parent
+.banner {
     width: 85vw;
   }
 }
@@ -2145,7 +2723,12 @@ ul.flex li::after {
 }
 
 @media (max-width: 960px) {
-  .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .banner-parent .banner {
+  .project-showcase-workspace-container
+.project-showcase-workspace
+.showcase-tile.open
+.tile-internals
+.banner-parent
+.banner {
     max-width: 100vw;
   }
 }
@@ -2158,13 +2741,21 @@ ul.flex li::after {
 }
 
 @media (max-width: 960px) {
-  .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components {
+  .project-showcase-workspace-container
+.project-showcase-workspace
+.showcase-tile.open
+.tile-internals
+.post-components {
     padding: 0 7rem 3rem 3rem;
   }
 }
 
 @media (max-width: 756px) {
-  .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components {
+  .project-showcase-workspace-container
+.project-showcase-workspace
+.showcase-tile.open
+.tile-internals
+.post-components {
     margin: -100px 0 2rem 0;
   }
 }
