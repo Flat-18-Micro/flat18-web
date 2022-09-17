@@ -2358,17 +2358,17 @@ ul.flex li::after {
   display: flex;
   gap: 2rem;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
   position: relative;
 }
 
@@ -2384,7 +2384,7 @@ ul.flex li::after {
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 250px;
 }
 
@@ -2396,7 +2396,7 @@ ul.flex li::after {
   width: 100vw;
   margin: 50%;
   -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   content: "";
   display: block;
   background-color: var(--black);
@@ -2412,18 +2412,18 @@ ul.flex li::after {
   -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   content: "";
-  background: radial-gradient(ellipse at top left, var(--accent) -200% 0%, var(--primary));
+  background: linear-gradient(60deg, var(--primary), var(--primary));
   z-index: 2;
   height: 100%;
   width: 100%;
   display: block;
-  opacity: 0.5;
+  opacity: 0.75;
   overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile .tile-internals .banner-parent .banner {
@@ -2431,18 +2431,18 @@ ul.flex li::after {
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   height: auto;
   width: 250px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile .tile-internals .post {
   -webkit-transition: 0.5s 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   transition: 0.5s 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   -webkit-transition-delay: 0.25s;
-  transition-delay: 0.25s;
+          transition-delay: 0.25s;
   -webkit-transform: translateY(20px) scale(0.9);
-  transform: translateY(20px) scale(0.9);
+          transform: translateY(20px) scale(0.9);
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
   opacity: 0;
 }
 
@@ -2450,7 +2450,7 @@ ul.flex li::after {
   -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   -webkit-transition-delay: 150ms;
-  transition-delay: 150ms;
+          transition-delay: 150ms;
   opacity: 0;
   content: "";
   width: 100%;
@@ -2465,7 +2465,7 @@ ul.flex li::after {
   -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   -webkit-transition-delay: 150ms;
-  transition-delay: 150ms;
+          transition-delay: 150ms;
   opacity: 0;
   content: "";
   width: 100%;
@@ -2510,11 +2510,11 @@ ul.flex li::after {
 }
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile:not(.open):hover h3 {
-  color: var(--yellow);
+  color: var(--primary);
 }
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile:not(.open):hover .banner-parent::before {
-  background: radial-gradient(ellipse at top left, var(--accent) -200% 0%, var(--yellow));
+  opacity: 0;
 }
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals {

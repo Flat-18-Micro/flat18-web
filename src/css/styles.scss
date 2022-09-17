@@ -1947,27 +1947,16 @@ ul.flex {
 }
 
 .project-showcase-workspace-container {
-  -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   width: calc(1200px - 4rem);
   max-width: calc(100vw - 4rem);
 
   .project-showcase-workspace {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     gap: 2rem;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     position: relative;
 
@@ -1978,11 +1967,10 @@ ul.flex {
       margin-bottom: 3rem;
 
       .tile-internals {
-        -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
         transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
         position: relative;
         overflow: hidden;
-        border-radius: 10px;
+        border-radius: 5px;
         width: 250px;
 
         &::after {
@@ -1992,7 +1980,6 @@ ul.flex {
           height: calc(100% + 4rem);
           width: 100vw;
           margin: 50%;
-          -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
           content: "";
           display: block;
@@ -2005,49 +1992,41 @@ ul.flex {
           position: relative;
 
           &::before {
-            -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             content: "";
-            background: radial-gradient(ellipse at top left, var(--accent) -200% 0%, var(--primary));
+            background: linear-gradient(60deg, var(--primary),var(--primary));
             z-index: 2;
             height: 100%;
             width: 100%;
             display: block;
-            opacity: 0.5;
+            opacity: 0.75;
             overflow: hidden;
             position: absolute;
             top: 0;
             left: 0;
             pointer-events: none;
-            border-radius: 15px;
+            border-radius: 5px;
           }
 
           .banner {
-            -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             height: auto;
             width: 250px;
-            border-radius: 10px;
+            border-radius: 5px;
           }
         }
 
         .post {
-          -webkit-transition: 0.5s 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
           transition: 0.5s 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
-          -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
-          -webkit-transform: translateY(20px) scale(0.9);
           transform: translateY(20px) scale(0.9);
-          -webkit-transform-origin: center;
           transform-origin: center;
           opacity: 0;
         }
 
         .post-components {
           &::after {
-            -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
-            -webkit-transition-delay: 150ms;
             transition-delay: 150ms;
             opacity: 0;
             content: "";
@@ -2060,9 +2039,7 @@ ul.flex {
           }
 
           &::before {
-            -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
-            -webkit-transition-delay: 150ms;
             transition-delay: 150ms;
             opacity: 0;
             content: "";
@@ -2079,7 +2056,6 @@ ul.flex {
           }
 
           h3 {
-            -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             font-family: "Montserrat";
             font-weight: 800;
@@ -2110,11 +2086,11 @@ ul.flex {
 
         &:hover {
           h3 {
-            color: var(--yellow);
+            color: var(--primary);
           }
 
           .banner-parent::before {
-            background: radial-gradient(ellipse at top left, var(--accent) -200% 0%, var(--yellow));
+            opacity:0;
           }
         }
       }
