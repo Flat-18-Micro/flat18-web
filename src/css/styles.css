@@ -30,6 +30,7 @@
 }
 
 :root {
+  --persistent-black: #000;
   --persistent-white: #fff;
   --indigo: #586ada;
   --bg-indigo: #d5daf6;
@@ -654,8 +655,7 @@ p {
 }
 
 .btn {
-  padding: 1rem 1.5rem;
-  border-radius: 100px;
+  padding: .5rem 1.25rem;
   font-size: 1rem;
   line-height: 1rem;
   display: inline-block;
@@ -663,87 +663,86 @@ p {
   z-index: 2;
   border-radius: 100px;
   text-align: center;
+  color: var(--primary);
+}
+
+.btn i {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.btn:hover i {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .btn:hover::after {
-  height: calc(100% - 2px);
-  width: calc(100% - 2px);
-  top: 1px;
-  left: 1px;
-  opacity: 1;
-  border-radius: 9px;
+  opacity: 0.1;
 }
 
 .btn::before {
   content: "";
-  background: linear-gradient(60deg, var(--accent), var(--yellow));
+  background: var(--black);
   height: 100%;
   width: 100%;
-  display: block;
-  position: absolute;
   top: 0;
   left: 0;
-  border-radius: 10px;
+  display: block;
+  position: absolute;
+  border-radius: 100px;
   z-index: -2;
+  opacity: 1;
 }
 
 .btn::after {
   content: "";
-  background: var(--black);
-  height: calc(100% + 2px);
-  width: calc(100% + 2px);
+  background: linear-gradient(60deg, var(--accent), var(--primary));
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
   display: block;
   position: absolute;
-  top: -1px;
-  left: -1px;
-  border-radius: 10px;
+  border-radius: 100px;
   z-index: -1;
   -webkit-transform-origin: center;
-  transform-origin: center;
-  opacity: 0.9;
+          transform-origin: center;
+  opacity: 0;
+}
+
+.btn.primary, .btn.pri {
+  color: var(--persistent-white);
 }
 
 .btn.primary:hover::after, .btn.pri:hover::after {
-  height: calc(100% - 9px);
-  width: calc(100% - 9px);
-  top: 4px;
-  left: 4px;
-  opacity: 1;
-  border-radius: 6px;
+  opacity: 0.6;
 }
 
-.btn.primary::before, .btn.pri::before {
+.btn.primary::before, .btn.primary::before, .btn.pri::before, .btn.pri::before {
   content: "";
-  background: linear-gradient(60deg, var(--primary), var(--accent));
-  height: 100%;
-  width: 100%;
+  background: var(--primary);
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 10px;
   z-index: -2;
+  opacity: 1;
 }
 
-.btn.primary::after, .btn.pri::after {
+.btn.primary::after, .btn.primary::after, .btn.pri::after, .btn.pri::after {
   content: "";
-  background: var(--black);
-  height: calc(100% - 2px);
-  width: calc(100% - 2px);
-  top: 1px;
-  left: 1px;
+  background: var(--persistent-black);
   display: block;
   position: absolute;
-  border-radius: 9px;
   z-index: -1;
   -webkit-transition: 0.1s linear;
   transition: 0.1s linear;
   -webkit-transform-origin: center;
-  transform-origin: center;
+          transform-origin: center;
+  opacity: 0;
 }
 
 .btn:active {
-  color: var(--black) !important;
   background-color: transparent;
 }
 
@@ -753,6 +752,7 @@ p {
 
 .btn:active::before {
   background: var(--yellow);
+  opacity: 1;
 }
 
 h1,
@@ -848,7 +848,7 @@ h5 {
 .showcase-parent .showcase .item p {
   margin: 0;
   color: var(--off-white);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .showcase-parent .showcase .item svg {
@@ -1715,14 +1715,24 @@ h5 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-flow: column;
-  flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
   margin: 10px;
   min-width: 180px;
-  background-color: var(--black);
   background-image: radial-gradient(ellipse at bottom right, var(--primary) -100%, transparent 100%), radial-gradient(ellipse at right, var(--accent) -100%, transparent 100%);
-  -webkit-box-shadow: 0 0 50px -20px var(--true-black);
-  box-shadow: 0 0 50px -20px var(--true-black);
+  -webkit-box-shadow: 0 20px 150px -60px var(--persistent-black);
+          box-shadow: 0 20px 150px -60px var(--persistent-black);
+  background-color: var(--accent);
+}
+
+.contact-form h2,
+.contact-form label {
+  color: var(--persistent-black);
+}
+
+.contact-form .btn {
+  color: var(--white);
+  cursor: pointer;
 }
 
 .contact-form.text-organiser h2 {
@@ -1917,8 +1927,8 @@ h5 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 45vw;
   max-width: calc(600px - 2rem);
   min-width: 300px;
@@ -1953,14 +1963,15 @@ h5 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 0 0 5px 5px;
 }
 
 .pricing .pricing-item > div.wyg .btn {
   margin-top: 2rem;
   min-width: 80%;
+  margin: auto;
 }
 
 .pricing .pricing-item > :last-child {
@@ -1982,12 +1993,13 @@ h5 {
   position: relative;
   padding: 3rem;
   z-index: 1;
+  color: var(--black);
 }
 
 .pricing .pricing-item .heading::after {
   content: "";
-  opacity: 0.5;
-  background: radial-gradient(ellipse at top left, var(--primary) -30%, transparent), radial-gradient(ellipse at bottom right, var(--accent), transparent), radial-gradient(ellipse at top right, var(--yellow), transparent);
+  background-image: radial-gradient(ellipse at top left, var(--primary) -30%, transparent), radial-gradient(ellipse at bottom right, var(--accent), transparent), radial-gradient(ellipse at top right, var(--yellow), transparent);
+  background-color: var(--accent);
   z-index: -1;
   position: absolute;
   top: 0;
