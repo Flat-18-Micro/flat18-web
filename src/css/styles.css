@@ -509,13 +509,13 @@ p {
 
 @-webkit-keyframes beforeBlurLight {
   to {
-    opacity: 0.7;
+    opacity: 0.4;
   }
 }
 
 @keyframes beforeBlurLight {
   to {
-    opacity: 0.7;
+    opacity: 0.4;
   }
 }
 
