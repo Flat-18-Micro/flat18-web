@@ -332,37 +332,34 @@ p {
     &::before {
       content: "";
     }
-
-    svg {
-      display: block;
-
-      &.large {
-        width: 50vw;
-        height: 100vw;
-        max-width: 100vw;
-        max-height: 750px;
-        position: absolute;
-        top: auto;
-        right: 0;
-
-        #threadcover1 {
-          stroke-dasharray: 510;
-          stroke-dashoffset: 0;
-          -webkit-animation: strokeDraw1 1s ease-in forwards 1;
-          animation: strokeDraw1 1s ease-in forwards 1;
-          -webkit-animation-delay: 1s;
-          animation-delay: 1s;
-        }
-
-        #threadcover2 {
-          stroke-dasharray: 460;
-          stroke-dashoffset: 0;
-          -webkit-animation: strokeDraw2 1.25s linear forwards 1;
-          animation: strokeDraw2 1.25s linear forwards 1;
-          -webkit-animation-delay: 1.9s;
-          animation-delay: 1.9s;
+    .large {
+      width: 50vw;
+      height: 100vw;
+      max-width: 100vw;
+      max-height: 750px;
+      position: absolute;
+      top: auto;
+      right: 0;
+      &.fellas {
+        &:before {
+          content:'';
+          background: url(/src/img/fellas.webp);
+          display: block;
+          animation: 2s popInImage 0s ease forwards 1;
+          top: -50px;
+          position: absolute;
+          height: 90%;
+          width: 90%;
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin: auto;
+          left: 0;
+          right: 0;
         }
       }
+    }
+    svg {
+      display: block;
 
       &.small {
         display: none;
@@ -630,7 +627,7 @@ p {
 }
 
 .btn {
-  padding: .5rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   font-size: 1rem;
   line-height: 1rem;
   display: inline-block;
@@ -1124,6 +1121,7 @@ h5 {
   .cat::before {
     animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/cat-on-computer-light.webp);
+    // background-image: url(../img/fellas.webp);
   }
 }
 .cat::before {
@@ -1351,8 +1349,8 @@ h5 {
   label {
     color: var(--persistent-black);
   }
-  .btn{
-    color:var(--white);
+  .btn {
+    color: var(--white);
     cursor: pointer;
   }
   &.text-organiser h2 {
@@ -1994,7 +1992,7 @@ ul.flex {
           &::before {
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             content: "";
-            background: linear-gradient(60deg, var(--primary),var(--primary));
+            background: linear-gradient(60deg, var(--primary), var(--primary));
             z-index: 2;
             height: 100%;
             width: 100%;
@@ -2090,7 +2088,7 @@ ul.flex {
           }
 
           .banner-parent::before {
-            opacity:0;
+            opacity: 0;
           }
         }
       }

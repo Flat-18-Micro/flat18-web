@@ -347,11 +347,7 @@ p {
   content: "";
 }
 
-.hero .image-element svg {
-  display: block;
-}
-
-.hero .image-element svg.large {
+.hero .image-element .large {
   width: 50vw;
   height: 100vw;
   max-width: 100vw;
@@ -361,22 +357,25 @@ p {
   right: 0;
 }
 
-.hero .image-element svg.large #threadcover1 {
-  stroke-dasharray: 510;
-  stroke-dashoffset: 0;
-  -webkit-animation: strokeDraw1 1s ease-in forwards 1;
-  animation: strokeDraw1 1s ease-in forwards 1;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
+.hero .image-element .large.fellas:before {
+  content: '';
+  background: url(/src/img/fellas.webp);
+  display: block;
+  -webkit-animation: 2s popInImage 0s ease forwards 1;
+          animation: 2s popInImage 0s ease forwards 1;
+  top: -50px;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
-.hero .image-element svg.large #threadcover2 {
-  stroke-dasharray: 460;
-  stroke-dashoffset: 0;
-  -webkit-animation: strokeDraw2 1.25s linear forwards 1;
-  animation: strokeDraw2 1.25s linear forwards 1;
-  -webkit-animation-delay: 1.9s;
-  animation-delay: 1.9s;
+.hero .image-element svg {
+  display: block;
 }
 
 .hero .image-element svg.small {
@@ -655,7 +654,7 @@ p {
 }
 
 .btn {
-  padding: .5rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   font-size: 1rem;
   line-height: 1rem;
   display: inline-block;
