@@ -254,7 +254,7 @@ p {
   position: relative;
   margin-left: -0.75rem;
   color: var(--primary);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .link:hover {
@@ -323,9 +323,9 @@ p {
 
 @media (max-width: 756px) {
   .hero {
-    -ms-grid-rows: calc(90vw - 10vh) 1fr;
+    -ms-grid-rows: 200px 1fr;
     -ms-grid-columns: 1fr;
-        grid-template: calc(90vw - 10vh) 1fr/1fr;
+        grid-template: 200px 1fr / 1fr;
   }
 }
 
@@ -375,11 +375,12 @@ p {
     grid-row: 1/2;
     min-width: unset;
     height: 90vw;
+    max-height: 100%;
   }
 }
 
 .hero .image-element::after {
-  content: '';
+  content: "";
   height: 100%;
   width: 100%;
   position: absolute;
@@ -391,7 +392,7 @@ p {
   z-index: -1;
   -webkit-transform: rotate(111deg) scale(1.6);
           transform: rotate(111deg) scale(1.6);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .hero .image-element:before {
@@ -436,9 +437,11 @@ p {
   .hero .image-element:before {
     min-height: unset;
     left: 50%;
-    top: 35%;
+    top: 40%;
     width: 90vw;
     height: 90vw;
+    max-width: 290px;
+    max-height: 290px;
     position: relative;
   }
 }
@@ -493,6 +496,12 @@ p {
   font-weight: 400;
   line-height: 1.75;
   color: var(--off-white);
+}
+
+@media (max-width: 756px) {
+  .hero .cta-organiser p {
+    font-size: 1.1rem;
+  }
 }
 
 @-webkit-keyframes beforeBlur {

@@ -66,48 +66,49 @@
 </div>
 
 <script>
-  let theme = localStorage?(localStorage.getItem('theme') === 'dark' ? 'auto' : 'light'):'auto'
-window.chatwootSettings = {
-  position:"right",type:"expanded_bubble",launcherTitle:"Get in touch 👋",
-  darkMode: theme,
-};
-(function (d, t) {
-  var BASE_URL = "https://chatwoot.flat18.co.uk";
-  var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-  g.src = BASE_URL + "/packs/js/sdk.js";
-  g.defer = true;
-  g.async = true;
-  s.parentNode.insertBefore(g, s);
-  g.onload = function () {
-    window.chatwootSDK.run({
-      websiteToken: 'vNQ7i7WLMxmjFDHabd7TRjpM',
-      baseUrl: BASE_URL
-    })
+  let theme = localStorage ? (localStorage.getItem('theme') === 'dark' ? 'auto' : 'light') : 'auto'
+  let size = window.width >= 756 ? "expanded_bubble" : "standard"
+  window.chatwootSettings = {
+    position: "right", type: size, launcherTitle: "Get in touch 👋",
+    darkMode: theme,
+  };
+  (function (d, t) {
+    var BASE_URL = "https://chatwoot.flat18.co.uk";
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = BASE_URL + "/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+    g.onload = function () {
+      window.chatwootSDK.run({
+        websiteToken: 'vNQ7i7WLMxmjFDHabd7TRjpM',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document, "script");
+
+
+  function makeid(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() *
+        charactersLength));
+    }
+    return result;
   }
-})(document, "script");
-
-
-function makeid(length) {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-    result += characters.charAt(Math.floor(Math.random() * 
-charactersLength));
- }
- return result;
-}
-window.addEventListener("chatwoot:ready", function () {
-// Use window.$chatwoot here
-// ...
-  let random = Date.now() + makeid(8)
-window.$chatwoot.setUser(random, {
-//email: "<email-address-of-the-user@your-domain.com>",
-//name: "<name-of-the-user>",
-avatar_url: "/src/img/avi.svg",
-//phone_number: "<phone-number-of-the-user>",
-});
-});  
+  window.addEventListener("chatwoot:ready", function () {
+    // Use window.$chatwoot here
+    // ...
+    let random = Date.now() + makeid(8)
+    window.$chatwoot.setUser(random, {
+      //email: "<email-address-of-the-user@your-domain.com>",
+      //name: "<name-of-the-user>",
+      avatar_url: "/src/img/avi.svg",
+      //phone_number: "<phone-number-of-the-user>",
+    });
+  });  
 </script>
 
 <script src="/src/js/file.js"></script>
