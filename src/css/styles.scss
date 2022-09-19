@@ -97,7 +97,7 @@ $large: 1400px;
 $content: 1200px;
 $medium: 960px;
 $small: 756px;
-$x-small: 756px;
+$x-small: 500px;
 
 div,
 a,
@@ -124,7 +124,7 @@ p {
   @media (max-width: $large) {
     overflow: hidden;
   }
-  @media (max-width: $x-small) {
+  @media (max-width: $small) {
     position: relative;
   }
 }
@@ -420,6 +420,10 @@ p {
         font-size: 3rem;
         text-shadow: unset;
       }
+      @media (max-width: $x-small) {
+        font-size: 2.5rem;
+        text-shadow: unset;
+      }
     }
 
     p {
@@ -428,6 +432,9 @@ p {
       line-height: 1.75;
       color: var(--off-white);
       @media (max-width: $small) {
+        font-size: 1.15rem;
+      }
+      @media (max-width: $x-small) {
         font-size: 1.1rem;
       }
     }
