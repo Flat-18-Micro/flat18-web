@@ -1,2 +1,4 @@
 dist
 node_modules
+src/img/*.png
+src/img/*.jpg
