@@ -1,5 +1,6 @@
 window.addEventListener("chatwoot:ready", function () {
     document.querySelectorAll(".chat-trigger").forEach((ele) => {
+        ele.removeAttribute("href")
         ele.addEventListener("click", () => {
             window.$chatwoot.toggle("open")
         })
