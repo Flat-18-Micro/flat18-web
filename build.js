@@ -46,6 +46,9 @@ function makePage(directory) {
 
   let bodyWrapper = String(fs.readFileSync('./components/body-wrapper.ejs'))
   let body = fs.readFileSync('./pages/' + directory + '/index.ejs')
+
+  body = parseBody(body)
+
   bodyWrapper = bodyWrapper.replace(/\$nav/g, nav)
   bodyWrapper = bodyWrapper.replace(/\$body/g, body)
   dist += bodyWrapper
@@ -74,6 +77,26 @@ function makePage(directory) {
   }
   fs.writeFileSync('./dist' + subDirectory + 'index.html', dist);
 
+}
+
+function parseBody(body) {
+  const fs = require('fs')
+  let parsedBody = ''
+  try {
+    body = JSON.parse(body)
+    if (Array.isArray(body)) {
+      console.log("array")
+      for(const section of body)
+      {
+        parsedBody += fs.readFileSync('./pages/' + section)
+      }
+    //loop over components and add to body
+    }
+  } catch (err) {
+    // console.log("html")
+    parsedBody = body
+  }
+  return parsedBody
 }
 
 function getDirectories(dir) {
