@@ -37,7 +37,7 @@ document.querySelectorAll(".animate-rotate").forEach((parent) => {
     let count = 0
     parent.querySelectorAll(".target").forEach((ele) => {
         ele.classList.remove("playing-animation")
-        setTimeout(() => { ele.classList.add("playing-animation") }, count*1000)    
+        setTimeout(() => { ele.classList.add("playing-animation") }, count * 1000)
         setTimeout(() => {
             setInterval(() => {
                 ele.classList.remove("playing-animation")
@@ -52,7 +52,12 @@ document.querySelectorAll(".animate-rotate").forEach((parent) => {
 
 
 var saturatedContactFormArray = {};
-
+document.querySelectorAll(".contact-form-input").forEach((ele) => {
+    ele.addEventListener("input", (element) => {
+        let type = element.target.getAttribute("data-type")
+        validateField(element.target, type)
+    })
+})
 function validateField(t, n) {
     var fieldValue = t.value;
     var thisID = t.getAttribute('id');
@@ -97,7 +102,7 @@ function validateField(t, n) {
             }
         }
         if (n === 'email') {
-            if (fieldValue.indexOf('@') > -1 && fieldValue.indexOf('.') > -1 && fieldValue.indexOf(' ') === -1) {
+            if (fieldValue.indexOf('@') > -1 && fieldValue.indexOf('.') > -1 && fieldValue.indexOf('.') != fieldValue.length - 1 && fieldValue.indexOf(' ') === -1) {
                 setCheck();
                 saturatedContactFormArray.email = fieldValue;
                 window.$chatwoot.setCustomAttributes({
@@ -111,6 +116,14 @@ function validateField(t, n) {
 }
 
 function infoTransformsToButton(t) {
+    document.querySelectorAll(".contact-form-input").forEach((ele) => {
+        let type = ele.getAttribute("data-type")
+        validateField(ele, type)
+    })
+    dataSetSendForm(t)
+}
+
+function dataSetSendForm(t) {
     if (saturatedContactFormArray.name && saturatedContactFormArray.message && saturatedContactFormArray.tel && saturatedContactFormArray.email) {
         sendThisForm("contactForm", t)
     } else {
@@ -123,7 +136,7 @@ function sendThisForm(f, t) {
     saturatedContactFormArray.token = window.psSes || "unavailable";
     t.style.display = "none";
     t.parentNode.querySelector('.errorHelpForm').innerHTML = "";
-    t.parentNode.querySelector('.workingForm').style.display = "block";
+    t.parentNode.parentNode.querySelector('.workingForm').style.display = "block";
     fetch('https://api.flat18.co.uk/contact-form-handler/v2/index.php', {
         method: 'POST',
         headers: {
@@ -134,7 +147,7 @@ function sendThisForm(f, t) {
         console.log('Success:', data);
         t.parentNode.querySelector('.errorHelpForm').innerHTML = 'Thanks, ' + saturatedContactFormArray.name + ' <i class="em em-wink"></i>';
         t.style.display = "";
-        t.parentNode.querySelector('.workingForm').style.display = ""
+        t.parentNode.parentNode.querySelector('.workingForm').style.display = ""
     }).catch((error) => {
         console.error('Error:', error);
         t.parentNode.querySelector('.errorHelpForm').innerHTML = "Oops. Something went wrong.";
