@@ -687,6 +687,29 @@ h5 {
     border-radius: 5px;
   }
 }
+
+.badges {
+  > span {
+    color: var(--accent);
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+    font-size: 90%;
+    position: relative;
+    margin: 0.5rem 0.25rem;
+    &::after {
+      content: "";
+      background: var(--accent);
+      opacity: 0.1;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      display: block;
+      border-radius: 5px;
+    }
+  }
+}
 .showcase-parent {
   &.container {
     width: 100vw;
@@ -1294,7 +1317,8 @@ h5 {
     margin: 20px auto;
     padding: 2rem 0;
   }
-  &.projects, &.time-estimates {
+  &.projects,
+  &.time-estimates {
     @media (max-width: $small) {
       padding: 2rem;
     }
@@ -1336,7 +1360,7 @@ h5 {
         line-height: 1.75;
         margin: 0;
         color: var(--off-white);
-        max-width: calc(#{$content} * .5);
+        max-width: calc(#{$content} * 0.5);
       }
       &.reading-layout {
         flex-direction: column;
@@ -2014,7 +2038,10 @@ ul {
             .post {
               transform: translateY(2px) scale(1);
               opacity: 1;
+              p{
+        max-width: calc(#{$content} * 0.5);
 
+              }
               &.icon {
                 height: 4rem;
                 max-width: 250px;
