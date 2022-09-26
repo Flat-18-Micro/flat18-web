@@ -1728,49 +1728,54 @@ h5 {
   color: var(--white);
 }
 
-.contact-form input:focus ::-webkit-input-placeholder,
-.contact-form textarea:focus ::-webkit-input-placeholder,
-.contact-form input:focus :-ms-input-placeholder,
-.contact-form textarea:focus :-ms-input-placeholder,
-.contact-form input:focus ::-ms-input-placeholder,
-.contact-form textarea:focus ::-ms-input-placeholder,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+}
+
 .contact-form input:focus ::-webkit-input-placeholder,
 .contact-form textarea:focus ::-webkit-input-placeholder {
   opacity: 0;
 }
 
-.contact-form input:focus ::-webkit-input-placeholder,
-.contact-form textarea:focus ::-webkit-input-placeholder,
 .contact-form input:focus :-ms-input-placeholder,
-.contact-form textarea:focus :-ms-input-placeholder,
+.contact-form textarea:focus :-ms-input-placeholder {
+  opacity: 0;
+}
+
 .contact-form input:focus ::-ms-input-placeholder,
-.contact-form textarea:focus ::-ms-input-placeholder,
+.contact-form textarea:focus ::-ms-input-placeholder {
+  opacity: 0;
+}
+
 .contact-form input:focus ::placeholder,
 .contact-form textarea:focus ::placeholder {
   opacity: 0;
 }
 
-.contact-form input::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder,
-.contact-form input:-ms-input-placeholder,
-.contact-form textarea:-ms-input-placeholder,
-.contact-form input::-ms-input-placeholder,
-.contact-form textarea::-ms-input-placeholder,
-.contact-form input::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder {
+.contact-form input ::-webkit-input-placeholder,
+.contact-form textarea ::-webkit-input-placeholder {
   opacity: 0.75;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
 
-.contact-form input::-webkit-input-placeholder,
-.contact-form textarea::-webkit-input-placeholder,
-.contact-form input:-ms-input-placeholder,
-.contact-form textarea:-ms-input-placeholder,
-.contact-form input::-ms-input-placeholder,
-.contact-form textarea::-ms-input-placeholder,
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+.contact-form input :-ms-input-placeholder,
+.contact-form textarea :-ms-input-placeholder {
+  opacity: 0.75;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.contact-form input ::-ms-input-placeholder,
+.contact-form textarea ::-ms-input-placeholder {
+  opacity: 0.75;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.contact-form input ::placeholder,
+.contact-form textarea ::placeholder {
   opacity: 0.75;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
@@ -1790,13 +1795,18 @@ h5 {
 }
 
 .contact-form .isValid {
-  -webkit-box-shadow: 0 0 0 2px var(--accent) !important;
-          box-shadow: 0 0 0 2px var(--accent) !important;
+  background: var(--accent);
+  color: var(--persistent-black);
 }
 
 .contact-form .isInvalid {
-  -webkit-box-shadow: 0 0 0 2px var(--crimson) !important;
-          box-shadow: 0 0 0 2px var(--crimson) !important;
+  background: var(--crimson);
+  color: var(--persistent-black);
+}
+
+.workingForm {
+  display: -ms-grid;
+  display: grid;
 }
 
 .parent {
@@ -2516,7 +2526,7 @@ ul.flex li::after {
   z-index: 2;
   overflow: unset;
   border-radius: 15px;
-  width: calc($medium - 4rem);
+  width: calc(1200px - 4rem);
   max-width: calc(100vw - 4rem);
   background-color: var(--black);
 }
@@ -2540,7 +2550,7 @@ ul.flex li::after {
 
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .banner-parent .banner {
   pointer-events: none;
-  width: calc($medium - 4rem);
+  width: calc(1200px - 4rem);
   max-width: calc(100vw - 4rem);
 }
 
