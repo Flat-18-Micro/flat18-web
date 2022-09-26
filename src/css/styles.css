@@ -721,6 +721,1078 @@ h5 {
   margin: auto 0.5rem;
 }
 
+.time-estimates {
+  max-width: 1200px !important;
+}
+
+.time-estimates .examples-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media (min-width: 756px) {
+  .time-estimates .examples-flex {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+}
+
+.time-estimates .examples-flex .item {
+  width: 250px;
+  padding: 1rem;
+  max-width: 90vw;
+}
+
+@-webkit-keyframes pop-in-day-tile {
+  from {
+    background: var(--accent);
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    background: var(--accent);
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pop-in-day-tile {
+  from {
+    background: var(--accent);
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    background: var(--accent);
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-1 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-2 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-2 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-3 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-3 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-3 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-4 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-4 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-4 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-4 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-5 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-5 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-5 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-5 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-5 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-6 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-6 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-6 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-6 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-6 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-6 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-7 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-8 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-9 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-10 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-11 i:nth-of-type(11) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(11 * 200ms);
+          animation-delay: calc(11 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(11) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(11 * 200ms);
+          animation-delay: calc(11 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-12 i:nth-of-type(12) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(12 * 200ms);
+          animation-delay: calc(12 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(11) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(11 * 200ms);
+          animation-delay: calc(11 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(12) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(12 * 200ms);
+          animation-delay: calc(12 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-13 i:nth-of-type(13) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(13 * 200ms);
+          animation-delay: calc(13 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(11) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(11 * 200ms);
+          animation-delay: calc(11 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(12) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(12 * 200ms);
+          animation-delay: calc(12 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(13) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(13 * 200ms);
+          animation-delay: calc(13 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-14 i:nth-of-type(14) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(14 * 200ms);
+          animation-delay: calc(14 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(11) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(11 * 200ms);
+          animation-delay: calc(11 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(12) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(12 * 200ms);
+          animation-delay: calc(12 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(13) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(13 * 200ms);
+          animation-delay: calc(13 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(14) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(14 * 200ms);
+          animation-delay: calc(14 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-15 i:nth-of-type(15) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(15 * 200ms);
+          animation-delay: calc(15 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(1) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(1 * 200ms);
+          animation-delay: calc(1 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(2) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(2 * 200ms);
+          animation-delay: calc(2 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(3) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(3 * 200ms);
+          animation-delay: calc(3 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(4) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(4 * 200ms);
+          animation-delay: calc(4 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(5) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(5 * 200ms);
+          animation-delay: calc(5 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(6) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(6 * 200ms);
+          animation-delay: calc(6 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(7) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(7 * 200ms);
+          animation-delay: calc(7 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(8) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(8 * 200ms);
+          animation-delay: calc(8 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(9) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(9 * 200ms);
+          animation-delay: calc(9 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(10) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(10 * 200ms);
+          animation-delay: calc(10 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(11) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(11 * 200ms);
+          animation-delay: calc(11 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(12) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(12 * 200ms);
+          animation-delay: calc(12 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(13) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(13 * 200ms);
+          animation-delay: calc(13 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(14) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(14 * 200ms);
+          animation-delay: calc(14 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(15) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(15 * 200ms);
+          animation-delay: calc(15 * 200ms);
+}
+
+.time-estimates .examples-flex .item.playing-animation .month-gauge-parent .month-gauge.days-16 i:nth-of-type(16) {
+  -webkit-animation: pop-in-day-tile 0.3s linear forwards 1;
+          animation: pop-in-day-tile 0.3s linear forwards 1;
+  -webkit-animation-delay: calc(16 * 200ms);
+          animation-delay: calc(16 * 200ms);
+}
+
+.time-estimates .examples-flex .item .month-gauge-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.time-estimates .examples-flex .item .month-gauge-parent .month-gauge {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+.time-estimates .examples-flex .item .month-gauge-parent .month-gauge i {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  background: var(--accent);
+  opacity: 0.25;
+  height: 0.75rem;
+  width: 0.75rem;
+  display: block;
+  border-radius: 3px;
+}
+
+.badge {
+  color: var(--accent);
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  font-size: 90%;
+  position: relative;
+  margin: 0.5rem 0.25rem;
+}
+
+.badge::after {
+  content: "";
+  background: var(--accent);
+  opacity: 0.1;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: block;
+  border-radius: 5px;
+}
+
 .showcase-parent.container {
   width: 100vw;
   max-width: 100vw;
@@ -1830,7 +2902,7 @@ h5 {
 }
 
 @media (max-width: 756px) {
-  .parent.projects {
+  .parent.projects, .parent.time-estimates {
     padding: 2rem;
   }
 }
@@ -1893,6 +2965,22 @@ h5 {
   line-height: 1.75;
   margin: 0;
   color: var(--off-white);
+  max-width: calc(1200px * .5);
+}
+
+.parent > .heading.reading-layout {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-right: auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  margin-bottom: 3rem;
 }
 
 .pricing .pricing-item {
