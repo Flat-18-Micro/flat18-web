@@ -721,6 +721,10 @@ h5 {
   margin: auto 0.5rem;
 }
 
+.item p {
+  line-height: 1.75;
+}
+
 .time-estimates {
   max-width: 1200px !important;
 }

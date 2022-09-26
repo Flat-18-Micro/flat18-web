@@ -597,7 +597,11 @@ h5 {
   vertical-align: middle;
   margin: auto 0.5rem;
 }
-
+.item{
+  p{
+    line-height: 1.75;
+  }
+}
 .time-estimates {
   max-width: $content !important;
 
