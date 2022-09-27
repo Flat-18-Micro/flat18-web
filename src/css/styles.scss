@@ -597,9 +597,12 @@ h5 {
   vertical-align: middle;
   margin: auto 0.5rem;
 }
-.item{
-  p{
+.item {
+  p {
     line-height: 1.75;
+  }
+  h3{
+    font-size: 1.5rem;
   }
 }
 .time-estimates {
@@ -620,12 +623,12 @@ h5 {
           .month-gauge {
             @keyframes pop-in-day-tile {
               from {
-                background: var(--accent);
+                background: var(--accent-text);
                 opacity: 0;
                 transform: scale(0);
               }
               to {
-                background: var(--accent);
+                background: var(--accent-text);
                 opacity: 1;
                 transform: scale(1);
               }
@@ -634,8 +637,8 @@ h5 {
               &.days-#{$i} {
                 @for $j from 1 through $i {
                   i:nth-of-type(#{$j}) {
-                    animation: pop-in-day-tile 0.3s linear forwards 1;
-                    animation-delay: calc(#{$j} * 200ms);
+                    animation: pop-in-day-tile 200ms linear forwards 1;
+                    animation-delay: calc(#{$j} * 100ms);
                   }
                 }
               }
@@ -643,14 +646,19 @@ h5 {
           }
         }
       }
-      width: 250px;
-      padding: 1rem;
+      width: 330px;
+      padding: 2rem;
       max-width: 90vw;
+      @media (max-width: $small) {
+        width: 500px;
+        max-width: calc(100vw - 4rem);
+      }
       .month-gauge-parent {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
+        margin-bottom: 1.75rem;
         .month-gauge {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -658,7 +666,7 @@ h5 {
           gap: 0.25rem;
           i {
             transform-origin: center;
-            background: var(--accent);
+            background: var(--accent-text);
             opacity: 0.25;
             height: 0.75rem;
             width: 0.75rem;
@@ -672,7 +680,7 @@ h5 {
 }
 
 .badge {
-  color: var(--accent);
+  color: var(--accent-text);
   padding: 0.25rem 0.5rem;
   display: inline-block;
   font-size: 90%;
@@ -680,7 +688,7 @@ h5 {
   margin: 0.5rem 0.25rem;
   &::after {
     content: "";
-    background: var(--accent);
+    background: var(--accent-text);
     opacity: 0.1;
     height: 100%;
     width: 100%;
@@ -2042,9 +2050,8 @@ ul {
             .post {
               transform: translateY(2px) scale(1);
               opacity: 1;
-              p{
-        max-width: calc(#{$content} * 0.5);
-
+              p {
+                max-width: calc(#{$content} * 0.5);
               }
               &.icon {
                 height: 4rem;

@@ -43,7 +43,7 @@ document.querySelectorAll(".animate-rotate").forEach((parent) => {
             setInterval(() => {
                 ele.classList.remove("playing-animation")
                 setTimeout(() => { ele.classList.add("playing-animation") }, 100)
-            }, count * 2500)
+            }, count * 2000)
         }, count * 2000)
         count++
     })
@@ -213,7 +213,7 @@ function updateCurrencyUI(event) {
         if (!ele.querySelector(".currency-value").classList.contains("no-strategy")) {
             newValue = currency === 'BTC' ? newValue : pricingStrategy(newValue)
         }
-        ele.querySelector(".currency-value").innerHTML = currency === 'BTC' ? newValue.toFixed(8) : Math.ceil(newValue);
+        ele.querySelector(".currency-value").innerHTML = currency === 'BTC' ? newValue.toFixed(8) : Math.ceil(newValue).toLocaleString("gb");
         ele.querySelector(".currency-symbol").innerHTML = sym[currency]
     })
 }
