@@ -42,7 +42,7 @@ function makePage(directory) {
   head = head.replace(/\$site/g, variables.site)
   head = head.replace(/\$canonical/g, variables.site + '/' + directory)
   dist += head
- let nav= String(fs.readFileSync('./components/nav.ejs'))
+  let nav = String(fs.readFileSync('./components/nav.ejs'))
 
   let bodyWrapper = String(fs.readFileSync('./components/body-wrapper.ejs'))
   let body = fs.readFileSync('./pages/' + directory + '/index.ejs')
@@ -86,11 +86,10 @@ function parseBody(body) {
     body = JSON.parse(body)
     if (Array.isArray(body)) {
       console.log("array")
-      for(const section of body)
-      {
+      for (const section of body) {
         parsedBody += fs.readFileSync('./pages/' + section)
       }
-    //loop over components and add to body
+      //loop over components and add to body
     }
   } catch (err) {
     // console.log("html")
@@ -108,9 +107,12 @@ function getDirectories(dir) {
 
   return directoriesInDIrectory
 }
-function consolidateAssets() {
+async function consolidateAssets() {
   const fs = require('fs')
   const fse = require('fs-extra');
+  const postcss = require('postcss')
+  const cssnano = require('cssnano')
+  const autoprefixer = require('autoprefixer')
 
   const directories = ['./src/css/', './src/js/']
   for (const dir of directories) {
@@ -124,6 +126,9 @@ function consolidateAssets() {
       else if (ass.indexOf(ext + '.map') >= 0) {
         fs.writeFileSync(dir.replace("./", "./dist/") + ass, read(dir + ass));
       }
+    }
+    if (ext === '.css') {
+      data = await postcss([cssnano, autoprefixer]).process(data)
     }
     let newFile = dir.replace("./", "./dist/") + "file" + ext
     fs.writeFileSync(newFile, data);
