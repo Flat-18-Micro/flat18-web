@@ -111,20 +111,25 @@ p {
   box-sizing: border-box;
 }
 
-.main {
+.main-wrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main-wrapper .main {
   width: 100vw;
   max-width: 1400px;
   margin: auto;
 }
 
 @media (max-width: 1400px) {
-  .main {
+  .main-wrapper .main {
     overflow: hidden;
   }
 }
 
 @media (max-width: 756px) {
-  .main {
+  .main-wrapper .main {
     position: relative;
   }
 }
@@ -616,22 +621,6 @@ p {
   color: var(--primary);
 }
 
-.btn i {
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
-}
-
-.btn:hover i {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.btn:hover::after {
-  opacity: 0.1;
-}
-
 .btn::before {
   content: "";
   background: var(--black);
@@ -744,9 +733,17 @@ h5 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 2rem;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.time-estimates .examples-flex::after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  max-width: 300px;
 }
 
 @media (min-width: 756px) {
@@ -2612,6 +2609,7 @@ h5 {
   height: calc(600px - 3rem);
   max-height: calc(35vw - 3rem);
   min-height: 500px;
+  opacity: 0.2;
 }
 
 .loudspeaker::before {
@@ -2664,9 +2662,6 @@ h5 {
       flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2684,6 +2679,9 @@ h5 {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -2787,8 +2785,6 @@ h5 {
   margin: 10px;
   min-width: 180px;
   background-image: radial-gradient(ellipse at bottom right, var(--primary) -100%, transparent 100%), radial-gradient(ellipse at right, var(--accent) -100%, transparent 100%);
-  -webkit-box-shadow: 0 20px 150px -60px var(--persistent-black);
-          box-shadow: 0 20px 150px -60px var(--persistent-black);
   background-color: var(--accent);
 }
 
@@ -3019,6 +3015,15 @@ h5 {
       -ms-flex-align: start;
           align-items: start;
   margin-bottom: 3rem;
+}
+
+@media (max-width: 756px) {
+  .parent > .heading.reading-layout {
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .pricing .pricing-item {
@@ -3467,6 +3472,20 @@ ul.flex li::after {
   position: relative;
 }
 
+.project-showcase-workspace-container .project-showcase-workspace::after {
+  content: "";
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  max-width: 250px;
+}
+
+@media (max-width: 960px) {
+  .project-showcase-workspace-container .project-showcase-workspace::after {
+    width: 250px;
+  }
+}
+
 .project-showcase-workspace-container .project-showcase-workspace .showcase-tile {
   position: relative;
   cursor: pointer;
@@ -3744,6 +3763,13 @@ ul.flex li::after {
   border-radius: 0 0 15px 15px;
 }
 
+@media (max-width: 1400px) {
+  .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components {
+    -webkit-box-shadow: -1px 1px 0 var(--accent), 1px 1px 0 var(--primary);
+            box-shadow: -1px 1px 0 var(--accent), 1px 1px 0 var(--primary);
+  }
+}
+
 @media (max-width: 960px) {
   .project-showcase-workspace-container .project-showcase-workspace .showcase-tile.open .tile-internals .post-components {
     padding: 0 7rem 3rem 3rem;
@@ -3854,9 +3880,882 @@ ul.flex li::after {
   margin-top: -1rem;
 }
 
+a .chevron-to-arrow,
+.btn .chevron-to-arrow {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+a .chevron-to-arrow::before,
+.btn .chevron-to-arrow::before {
+  content: "";
+  display: inline-block;
+  height: 0.6rem;
+  width: 0.6rem;
+  -webkit-box-shadow: 2px 2px;
+          box-shadow: 2px 2px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-45deg) translate(0, 0);
+          transform: rotate(-45deg) translate(0, 0);
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+a .chevron-to-arrow::after,
+.btn .chevron-to-arrow::after {
+  content: "";
+  display: inline-block;
+  height: 2px;
+  width: 0.8rem;
+  -webkit-box-shadow: inset 0 2px;
+          box-shadow: inset 0 2px;
+  -webkit-transform: translate(-0.8rem, 0px);
+          transform: translate(-0.8rem, 0px);
+  opacity: 0;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+a .chevron-to-arrow.-long::before,
+.btn .chevron-to-arrow.-long::before {
+  -webkit-transform: rotate(-45deg) translate(0.4rem, 0.4rem);
+          transform: rotate(-45deg) translate(0.4rem, 0.4rem);
+}
+
+a .chevron-to-arrow.-long::after,
+.btn .chevron-to-arrow.-long::after {
+  width: 0.8rem;
+  -webkit-transform: translate(0, 0.5px);
+          transform: translate(0, 0.5px);
+  opacity: 1;
+}
+
+a:hover .chevron-to-arrow::before,
+.btn:hover .chevron-to-arrow::before {
+  -webkit-transform: rotate(-45deg) translate(0.2rem, 0.2rem);
+          transform: rotate(-45deg) translate(0.2rem, 0.2rem);
+}
+
+a:hover .chevron-to-arrow::after,
+.btn:hover .chevron-to-arrow::after {
+  -webkit-transform: translate(-0.4rem, 0px);
+          transform: translate(-0.4rem, 0px);
+  opacity: 1;
+}
+
+a:hover .chevron-to-arrow.-long::before,
+.btn:hover .chevron-to-arrow.-long::before {
+  -webkit-transform: rotate(-45deg) translate(0.6rem, 0.6rem);
+          transform: rotate(-45deg) translate(0.6rem, 0.6rem);
+}
+
+a:hover .chevron-to-arrow.-long::after,
+.btn:hover .chevron-to-arrow.-long::after {
+  width: 1.2rem;
+  -webkit-transform: translate(0, 0.5px);
+          transform: translate(0, 0.5px);
+}
+
 .shove-across {
   -webkit-transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
   bottom: calc(4rem + 40px) !important;
+}
+
+.clickable-target:not(.clicked) {
+  cursor: pointer;
+}
+
+.clickable-target:not(.clicked) .payload {
+  display: none;
+}
+
+.clickable-target:not(.clicked) * {
+  pointer-events: none;
+}
+
+.clickable-target.clicked .icon-cheveron-down::before {
+  content: ":";
+}
+
+.vscode {
+  height: 100%;
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  min-height: 60vw;
+  max-width: calc(60vw - 3rem);
+}
+
+@media (max-width: 756px) {
+  .vscode {
+    position: relative;
+    width: 700px;
+    max-width: 90vw;
+    height: calc(90vw * 0.4);
+    min-height: unset;
+  }
+}
+
+.vscode svg {
+  width: 1200px;
+  max-width: 70vw;
+  max-height: calc(70vw * 0.742);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@media (max-width: 756px) {
+  .vscode svg {
+    max-width: 90vw;
+    width: 90vw;
+    max-height: calc(90vw * 0.742);
+    height: calc(90vw * 0.742);
+    margin: unset;
+    bottom: unset;
+  }
+}
+
+.vscode svg text {
+  font-family: "FiraCode-Regular", "Fira Code", "Courier New", monospace;
+}
+
+.vscode svg #text > g {
+  opacity: 0;
+}
+
+.vscode svg.playing-animation #text > g {
+  opacity: 0;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(1) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(1 * 40ms);
+          animation-delay: calc(1 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(2) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(2 * 40ms);
+          animation-delay: calc(2 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(3) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(3 * 40ms);
+          animation-delay: calc(3 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(4) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(4 * 40ms);
+          animation-delay: calc(4 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(5) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(5 * 40ms);
+          animation-delay: calc(5 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(6) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(6 * 40ms);
+          animation-delay: calc(6 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(7) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(7 * 40ms);
+          animation-delay: calc(7 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(8) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(8 * 40ms);
+          animation-delay: calc(8 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(9) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(9 * 40ms);
+          animation-delay: calc(9 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(10) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(10 * 40ms);
+          animation-delay: calc(10 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(11) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(11 * 40ms);
+          animation-delay: calc(11 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(12) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(12 * 40ms);
+          animation-delay: calc(12 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(13) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(13 * 40ms);
+          animation-delay: calc(13 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(14) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(14 * 40ms);
+          animation-delay: calc(14 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(15) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(15 * 40ms);
+          animation-delay: calc(15 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(16) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(16 * 40ms);
+          animation-delay: calc(16 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(17) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(17 * 40ms);
+          animation-delay: calc(17 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(18) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(18 * 40ms);
+          animation-delay: calc(18 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(19) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(19 * 40ms);
+          animation-delay: calc(19 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(20) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(20 * 40ms);
+          animation-delay: calc(20 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(21) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(21 * 40ms);
+          animation-delay: calc(21 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(22) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(22 * 40ms);
+          animation-delay: calc(22 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(23) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(23 * 40ms);
+          animation-delay: calc(23 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(24) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(24 * 40ms);
+          animation-delay: calc(24 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(25) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(25 * 40ms);
+          animation-delay: calc(25 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(26) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(26 * 40ms);
+          animation-delay: calc(26 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(27) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(27 * 40ms);
+          animation-delay: calc(27 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(28) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(28 * 40ms);
+          animation-delay: calc(28 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(29) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(29 * 40ms);
+          animation-delay: calc(29 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(30) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(30 * 40ms);
+          animation-delay: calc(30 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(31) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(31 * 40ms);
+          animation-delay: calc(31 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(32) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(32 * 40ms);
+          animation-delay: calc(32 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(33) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(33 * 40ms);
+          animation-delay: calc(33 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(34) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(34 * 40ms);
+          animation-delay: calc(34 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(35) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(35 * 40ms);
+          animation-delay: calc(35 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(36) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(36 * 40ms);
+          animation-delay: calc(36 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(37) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(37 * 40ms);
+          animation-delay: calc(37 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(38) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(38 * 40ms);
+          animation-delay: calc(38 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(39) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(39 * 40ms);
+          animation-delay: calc(39 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(40) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(40 * 40ms);
+          animation-delay: calc(40 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(41) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(41 * 40ms);
+          animation-delay: calc(41 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(42) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(42 * 40ms);
+          animation-delay: calc(42 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(43) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(43 * 40ms);
+          animation-delay: calc(43 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(44) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(44 * 40ms);
+          animation-delay: calc(44 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(45) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(45 * 40ms);
+          animation-delay: calc(45 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(46) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(46 * 40ms);
+          animation-delay: calc(46 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(47) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(47 * 40ms);
+          animation-delay: calc(47 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(48) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(48 * 40ms);
+          animation-delay: calc(48 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(49) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(49 * 40ms);
+          animation-delay: calc(49 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(50) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(50 * 40ms);
+          animation-delay: calc(50 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(51) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(51 * 40ms);
+          animation-delay: calc(51 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(52) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(52 * 40ms);
+          animation-delay: calc(52 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(53) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(53 * 40ms);
+          animation-delay: calc(53 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(54) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(54 * 40ms);
+          animation-delay: calc(54 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(55) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(55 * 40ms);
+          animation-delay: calc(55 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(56) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(56 * 40ms);
+          animation-delay: calc(56 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(57) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(57 * 40ms);
+          animation-delay: calc(57 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(58) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(58 * 40ms);
+          animation-delay: calc(58 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(59) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(59 * 40ms);
+          animation-delay: calc(59 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(60) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(60 * 40ms);
+          animation-delay: calc(60 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(61) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(61 * 40ms);
+          animation-delay: calc(61 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(62) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(62 * 40ms);
+          animation-delay: calc(62 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(63) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(63 * 40ms);
+          animation-delay: calc(63 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(64) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(64 * 40ms);
+          animation-delay: calc(64 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(65) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(65 * 40ms);
+          animation-delay: calc(65 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(66) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(66 * 40ms);
+          animation-delay: calc(66 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(67) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(67 * 40ms);
+          animation-delay: calc(67 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(68) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(68 * 40ms);
+          animation-delay: calc(68 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(69) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(69 * 40ms);
+          animation-delay: calc(69 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(70) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(70 * 40ms);
+          animation-delay: calc(70 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(71) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(71 * 40ms);
+          animation-delay: calc(71 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(72) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(72 * 40ms);
+          animation-delay: calc(72 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(73) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(73 * 40ms);
+          animation-delay: calc(73 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(74) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(74 * 40ms);
+          animation-delay: calc(74 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(75) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(75 * 40ms);
+          animation-delay: calc(75 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(76) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(76 * 40ms);
+          animation-delay: calc(76 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(77) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(77 * 40ms);
+          animation-delay: calc(77 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(78) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(78 * 40ms);
+          animation-delay: calc(78 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(79) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(79 * 40ms);
+          animation-delay: calc(79 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(80) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(80 * 40ms);
+          animation-delay: calc(80 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(81) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(81 * 40ms);
+          animation-delay: calc(81 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(82) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(82 * 40ms);
+          animation-delay: calc(82 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(83) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(83 * 40ms);
+          animation-delay: calc(83 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(84) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(84 * 40ms);
+          animation-delay: calc(84 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(85) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(85 * 40ms);
+          animation-delay: calc(85 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(86) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(86 * 40ms);
+          animation-delay: calc(86 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(87) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(87 * 40ms);
+          animation-delay: calc(87 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(88) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(88 * 40ms);
+          animation-delay: calc(88 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(89) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(89 * 40ms);
+          animation-delay: calc(89 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(90) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(90 * 40ms);
+          animation-delay: calc(90 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(91) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(91 * 40ms);
+          animation-delay: calc(91 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(92) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(92 * 40ms);
+          animation-delay: calc(92 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(93) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(93 * 40ms);
+          animation-delay: calc(93 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(94) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(94 * 40ms);
+          animation-delay: calc(94 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(95) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(95 * 40ms);
+          animation-delay: calc(95 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(96) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(96 * 40ms);
+          animation-delay: calc(96 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(97) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(97 * 40ms);
+          animation-delay: calc(97 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(98) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(98 * 40ms);
+          animation-delay: calc(98 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(99) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(99 * 40ms);
+          animation-delay: calc(99 * 40ms);
+}
+
+.vscode svg.playing-animation #text > g:nth-of-type(100) {
+  -webkit-animation: pop-in-character 150ms ease forwards 1;
+          animation: pop-in-character 150ms ease forwards 1;
+  -webkit-animation-delay: calc(100 * 40ms);
+          animation-delay: calc(100 * 40ms);
+}
+
+@-webkit-keyframes pop-in-character {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes pop-in-character {
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -37,7 +37,7 @@ document.querySelectorAll(".animate-rotate").forEach((parent) => {
     let count = 0
     parent.querySelectorAll(".target").forEach((ele) => {
         ele.classList.remove("playing-animation")
-        count = count<4?4:count
+        count = count<5?5:count
         setTimeout(() => { ele.classList.add("playing-animation") }, count * 1000)
         setTimeout(() => {
             setInterval(() => {
@@ -215,5 +215,14 @@ function updateCurrencyUI(event) {
         }
         ele.querySelector(".currency-value").innerHTML = currency === 'BTC' ? newValue.toFixed(8) : Math.ceil(newValue).toLocaleString("gb");
         ele.querySelector(".currency-symbol").innerHTML = sym[currency]
+    })
+}
+
+
+for (const ele of document.querySelectorAll(".clickable-target")) {
+    ele.addEventListener("click", (e) => {
+        if (!e.target.classList.contains('clicked')) {
+            e.target.classList.add('clicked')
+        }
     })
 }
