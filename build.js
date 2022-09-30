@@ -112,7 +112,7 @@ async function consolidateAssets() {
   const fse = require('fs-extra');
   const postcss = require('postcss')
   const cssnano = require('cssnano')
-  const autoprefixer = require('autoprefixer')
+  // const autoprefixer = require('autoprefixer')
 
   const directories = ['./src/css/', './src/js/']
   for (const dir of directories) {
@@ -128,7 +128,7 @@ async function consolidateAssets() {
       }
     }
     if (ext === '.css') {
-      data = await postcss([cssnano, autoprefixer]).process(data,{ from: false })
+      data = await postcss([cssnano]).process(data,{ from: false })
     }
     let newFile = dir.replace("./", "./dist/") + "file" + ext
     fs.writeFileSync(newFile, data);
