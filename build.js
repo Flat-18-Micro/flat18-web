@@ -128,7 +128,7 @@ async function consolidateAssets() {
       }
     }
     if (ext === '.css') {
-      data = await postcss([cssnano, autoprefixer]).process(data)
+      data = await postcss([cssnano, autoprefixer]).process(data, {from: undefined})
     }
     let newFile = dir.replace("./", "./dist/") + "file" + ext
     fs.writeFileSync(newFile, data);
