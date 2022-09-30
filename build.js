@@ -64,11 +64,11 @@ function makePage(directory) {
       dist += '<script>'
       dist += fs.readFileSync(extraScripts)
       dist += '</script>'
-      console.log('Files attached for ' + directory)
+      // console.log('Files attached for ' + directory)
 
     }
   } catch (err) {
-    console.log('No additional files attached for ' + directory)
+    // console.log('No additional files attached for ' + directory)
   }
 
   let subDirectory = directory === 'homepage' ? '/' : '/' + directory + '/'
@@ -82,18 +82,19 @@ function makePage(directory) {
 function parseBody(body) {
   const fs = require('fs')
   let parsedBody = ''
-
-  if (body.indexOf('[') === 0 && body.indexOf(']') === body.length-1) {
+  try {
     body = JSON.parse(body)
-      console.log("array")
+    if (Array.isArray(body)) {
+      // console.log("array")
       for (const section of body) {
         parsedBody += fs.readFileSync('./pages/' + section)
       }
       //loop over components and add to body
-    } else {
-      parsedBody = body
     }
-
+  } catch (err) {
+    // console.log("html")
+    parsedBody = body
+  }
   return parsedBody
 }
 
@@ -127,7 +128,7 @@ async function consolidateAssets() {
       }
     }
     if (ext === '.css') {
-      data = await postcss([cssnano, autoprefixer]).process(data, {from: undefined})
+      data = await postcss([cssnano, autoprefixer]).process(data,{ from: false })
     }
     let newFile = dir.replace("./", "./dist/") + "file" + ext
     fs.writeFileSync(newFile, data);
