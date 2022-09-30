@@ -2217,6 +2217,9 @@ a,
   overflow: hidden;
   min-height: 60vw;
   max-width: calc(60vw - 3rem);
+  @media (max-width: $large) {
+    width: 40vw;
+  }
   @media (max-width: $small) {
     position: relative;
     width: 700px;
@@ -2226,11 +2229,15 @@ a,
   }
   svg {
     width: $content;
-    max-width: 70vw;
-    max-height: calc(70vw * 0.742);
+    // max-width: 70vw;
+    // max-height: calc(70vw * 0.742);
+    max-width: calc(700px / .742);
+    max-height:700px;
     position: absolute;
     top: 0;
     bottom: 0;
+    right: auto;
+    left: 0;
     margin: auto;
     @media (max-width: $small) {
       max-width: 90vw;

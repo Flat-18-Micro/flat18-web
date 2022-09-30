@@ -3998,6 +3998,12 @@ a:hover .chevron-to-arrow.-long::after,
   max-width: calc(60vw - 3rem);
 }
 
+@media (max-width: 1400px) {
+  .vscode {
+    width: 40vw;
+  }
+}
+
 @media (max-width: 756px) {
   .vscode {
     position: relative;
@@ -4010,11 +4016,13 @@ a:hover .chevron-to-arrow.-long::after,
 
 .vscode svg {
   width: 1200px;
-  max-width: 70vw;
-  max-height: calc(70vw * 0.742);
+  max-width: calc(700px / .742);
+  max-height: 700px;
   position: absolute;
   top: 0;
   bottom: 0;
+  right: auto;
+  left: 0;
   margin: auto;
 }
 
