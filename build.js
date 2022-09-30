@@ -107,7 +107,7 @@ function getDirectories(dir) {
 
   return directoriesInDIrectory
 }
-async function consolidateAssets() {
+ function consolidateAssets() {
   const fs = require('fs')
   const fse = require('fs-extra');
   const postcss = require('postcss')
@@ -119,6 +119,7 @@ async function consolidateAssets() {
     let data = ''
     let asset = listFiles(dir)
     let ext = '.' + dir.replace('./src/', '').replace(/\//g, '')
+    let newFile = dir.replace("./", "./dist/") + "file" + ext
     for (const ass of asset) {
       if (ass.indexOf(ext) >= ass.length - ext.length) {
         data += read(dir + ass) + " "
@@ -128,11 +129,20 @@ async function consolidateAssets() {
       }
     }
     if (ext === '.css') {
-      data = await postcss([cssnano]).process(data,{ from: false })
+      // data = processCSS(data, newFile)
+      postcss([cssnano]).process(data, { from: false }).then((result) => {
+        fs.writeFileSync(newFile, result);   
+        })
+return
     }
-    let newFile = dir.replace("./", "./dist/") + "file" + ext
     fs.writeFileSync(newFile, data);
   }
+
+  // function processCSS(data, newFile) {
+  //   postcss([cssnano]).process(data, { from: false }).then((result) => {
+  //   fs.writeFileSync(newFile, result);   
+  //   })
+  // }
 
 
   const assetFolders = ['./src/img/', './src/fonts/']
