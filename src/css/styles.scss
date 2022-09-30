@@ -664,10 +664,10 @@ h5 {
             transform-origin: center;
             background: var(--accent-text);
             opacity: 0.25;
-            height: 0.75rem;
-            width: 0.75rem;
+            height: 5px;
+            width: 5px;
             display: block;
-            border-radius: 3px;
+            border-radius: 1px;
           }
         }
       }
@@ -2231,8 +2231,8 @@ a,
     width: $content;
     // max-width: 70vw;
     // max-height: calc(70vw * 0.742);
-    max-width: calc(700px / .742);
-    max-height:700px;
+    max-width: calc(700px / 0.742);
+    max-height: 700px;
     position: absolute;
     top: 0;
     bottom: 0;
