@@ -82,19 +82,18 @@ function makePage(directory) {
 function parseBody(body) {
   const fs = require('fs')
   let parsedBody = ''
-  try {
+
+  if (body.indexOf('[') === 0) {
     body = JSON.parse(body)
-    if (Array.isArray(body)) {
       console.log("array")
       for (const section of body) {
         parsedBody += fs.readFileSync('./pages/' + section)
       }
       //loop over components and add to body
+    } else {
+      parsedBody = body
     }
-  } catch (err) {
-    // console.log("html")
-    parsedBody = body
-  }
+
   return parsedBody
 }
 
