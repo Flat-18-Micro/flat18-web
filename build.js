@@ -110,8 +110,8 @@ function getDirectories(dir) {
  function consolidateAssets() {
   const fs = require('fs')
   const fse = require('fs-extra');
-  const postcss = require('postcss')
-  const cssnano = require('cssnano')
+  // const postcss = require('postcss')
+  // const cssnano = require('cssnano')
   // const autoprefixer = require('autoprefixer')
 
   const directories = ['./src/css/', './src/js/']
@@ -128,14 +128,14 @@ function getDirectories(dir) {
           fs.writeFileSync(dir.replace("./", "./dist/") + ass, read(dir + ass));
         }
       }
-    if (ext === '.css') {
-      // data = await postcss([cssnano, autoprefixer]).process(data, { from: undefined })
-      postcss([cssnano]).process(data, { from: false }).then((result) => {
-        fs.writeFileSync(newFile, result);
-      })
-    } else {
+    // if (ext === '.css') {
+    //   // data = await postcss([cssnano, autoprefixer]).process(data, { from: undefined })
+    //   postcss([cssnano]).process(data, { from: false }).then((result) => {
+    //     fs.writeFileSync(newFile, result);
+    //   })
+    // } else {
       fs.writeFileSync(newFile, data);
-    }
+    // }
   }
 
 
