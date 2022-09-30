@@ -83,7 +83,7 @@ function parseBody(body) {
   const fs = require('fs')
   let parsedBody = ''
 
-  if (body.indexOf('[') === 0) {
+  if (body.indexOf('[') === 0 && body.indexOf(']') === body.length-1) {
     body = JSON.parse(body)
       console.log("array")
       for (const section of body) {
