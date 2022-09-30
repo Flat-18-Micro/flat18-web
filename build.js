@@ -64,11 +64,11 @@ function makePage(directory) {
       dist += '<script>'
       dist += fs.readFileSync(extraScripts)
       dist += '</script>'
-      // console.log('Files attached for ' + directory)
+      console.log('Files attached for ' + directory)
 
     }
   } catch (err) {
-    // console.log('No additional files attached for ' + directory)
+    console.log('No additional files attached for ' + directory)
   }
 
   let subDirectory = directory === 'homepage' ? '/' : '/' + directory + '/'
@@ -107,7 +107,7 @@ function getDirectories(dir) {
 
   return directoriesInDIrectory
 }
- function consolidateAssets() {
+async function consolidateAssets() {
   const fs = require('fs')
   const fse = require('fs-extra');
   const postcss = require('postcss')
@@ -120,29 +120,23 @@ function getDirectories(dir) {
     let asset = listFiles(dir)
     let ext = '.' + dir.replace('./src/', '').replace(/\//g, '')
     let newFile = dir.replace("./", "./dist/") + "file" + ext
-    for (const ass of asset) {
-      if (ass.indexOf(ext) >= ass.length - ext.length) {
-        data += read(dir + ass) + " "
+      for (const ass of asset) {
+        if (ass.indexOf(ext) >= ass.length - ext.length) {
+          data += read(dir + ass) + " "
+        }
+        else if (ass.indexOf(ext + '.map') >= 0) {
+          fs.writeFileSync(dir.replace("./", "./dist/") + ass, read(dir + ass));
+        }
       }
-      else if (ass.indexOf(ext + '.map') >= 0) {
-        fs.writeFileSync(dir.replace("./", "./dist/") + ass, read(dir + ass));
-      }
-    }
     if (ext === '.css') {
-      // data = processCSS(data, newFile)
+      // data = await postcss([cssnano, autoprefixer]).process(data, { from: undefined })
       postcss([cssnano]).process(data, { from: false }).then((result) => {
-        fs.writeFileSync(newFile, result);   
-        })
-return
+        fs.writeFileSync(newFile, result);
+      })
+    } else {
+      fs.writeFileSync(newFile, data);
     }
-    fs.writeFileSync(newFile, data);
   }
-
-  // function processCSS(data, newFile) {
-  //   postcss([cssnano]).process(data, { from: false }).then((result) => {
-  //   fs.writeFileSync(newFile, result);   
-  //   })
-  // }
 
 
   const assetFolders = ['./src/img/', './src/fonts/']
