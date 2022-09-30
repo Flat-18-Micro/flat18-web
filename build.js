@@ -107,7 +107,7 @@ function getDirectories(dir) {
 
   return directoriesInDIrectory
 }
-async function consolidateAssets() {
+ function consolidateAssets() {
   const fs = require('fs')
   const fse = require('fs-extra');
   const postcss = require('postcss')
