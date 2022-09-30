@@ -4039,8 +4039,8 @@ a:hover .chevron-to-arrow.-long::after,
 
 .vscode svg.playing-animation #text > g {
   opacity: 0;
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
 }
 
 .vscode svg.playing-animation #text > g:nth-of-type(1) {

@@ -2257,7 +2257,7 @@ a,
       #text {
         > g {
           opacity: 0;
-          transform: translateX(50px);
+          transform: translateX(10px);
           @for $i from 1 through 100 {
             &:nth-of-type(#{$i}) {
               animation: pop-in-character 150ms ease forwards 1;
