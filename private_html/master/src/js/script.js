@@ -17,7 +17,7 @@ if (document.querySelectorAll("a").length > 0) {
   }
 }
 
-var lcurl = 'https://api.flat18.co.uk/f18/php/publicLiveChat.php?owner=flat18.co.uk';
+var lcurl = 'https://api.flat18.co.uk/f18/php/publicLiveChat.php?owner=flat18.co.uk&webM='+window.webM;
 
 fetch(lcurl)
   .then(function (response) {
@@ -169,8 +169,8 @@ function sendThisForm(f, t) {
 
 
     var n = new XMLHttpRequest();
-    n.open('POST', '/workers/contactFormWorker.php', false);
-    n.setRequestHeader('Content-Type', 'application/json');
+    n.open('POST', 'https://api.flat18.co.uk/contact-form-handler/index.php', false);
+    n.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     n.onload = function () {
         if (200 === n.status && n.responseText.length < 1) {
             console.log("success: " + n.responseText),

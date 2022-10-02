@@ -1,7 +1,13 @@
-var wkCur_, ivFr_, frWtr_, ckWr_, ivFr_Doc, val_, ifSD_, storeId = "I1wxWgfpeUCfsIKSx9sqvLvdGXCKUqTKGt8EXDUkdZbsgouxUInNLrxQEyK1b3R6P0cAGhT6YFjNvd1V3RMTe6RwB6SDOay1eOdgDgLVSUXljlsI83QNOcZJDRdbnqnFnLhrwL87exLP9ymIgP0HMfeT59OiVApX4BROH4xV1G61KhkViIFXzrbfTPM73YObf6kUQODIyzqod778Ya62YYZ6elWIu1lksZsdggkcRneN5VqR4dHsClu75b3hHKXoPWzTHPgKbdf1YqdvlCgio4iG6lwZ9zDB2cCf4bAVFP3BRN7hRjaoDkLbAWg37iNYxN4rjaWpCp0zDPDHJUWGTY7l49hdU7YOoS2IuvFzRkAyti2uE8eurgUU2XRIV4Hb9SfA4AirZT2PMOWbxhzftomYYbpZgnMHagkHsAX80z70lwosOoufnjmNvErZNvTwP6buMVXcHI6FCv1ZOX4LqaM4GpLwMXhfjpFMqWZiBzxmWpZL574n3DEFVNgELd9z",
-    storeURL = "money.flat18.co.uk/api/v1/invoices/";
+var wkCur_ = "GBP", ivFr_, frWtr_, ckWr_, ivFr_Doc, val_=20, ifSD_, storeId = "C7JhPnkUiyxZ7QaR2QE3TvirBCJTftUZNeXtnblXjOrmCTWmThDQAdUN1KyWqoPx0ngKHaShigKMZDR2Gs3Z95WKlwoW2UVlhap7p3vE8dgqbpNBk44pK8yhKgkwPsYvd01fMn9jv74SieyQgGDOcXm2NfX79vWFw56RgzPiBjaGDattEjhXdTQGg87p1vp0nrzDbAlHO4zi8F0dg92A3cRt2qiGxcC6QNthRb97mXZ2mWVsmtsoAODzgKcBdoqvsHwoN1e4elZMvaAIf5KzMFbV8EoHO4yPZqhAiSIFd6fl48nqoGIDM7aujelY8cf4OYpwLAIZHS3k19G0IKhLwwvgMrnQ0nOaSSSQX5vqa8pDBtaTEJRsyzDbqLZ1AeHgPKfTnTpfJZad39C6e3Dyfy5tnJGlUkENWsAa6Sfd44QuY5ZN5pLjG89wbXEWnXrwYdi1ZRaRo3fMufrcC78Vm4zak6iojINJlJdzp2FROg7UcdEM5bMOzD7F10vlTZ3s",
+    storeURL = "pay.flat18.co.uk/api/v1/invoices/";
 
+function setValue(value) {
+    val_ = isNaN(value) ? 20 : value;
+}
 
+function setCurrency(value) {
+    wkCur_ = value;
+}
 
 function makeStripeInvoice() {
 
@@ -37,14 +43,15 @@ function makeStripeInvoice() {
 }
 
 function genInvoice_(e) {
-    if (document.getElementById("jsInvoiceWorkspacePre").style.display = "none", document.getElementById("statusButton").style.display = "block", wkCur_ = wkCur_ || "EUR", !ivFr_) {
-        var t = val_ || 1;
+    if (document.getElementById("jsInvoiceWorkspacePre").style.display = "none", document.getElementById("statusButton").style.display = "block", !ivFr_) {
+        // wkCur_ = wkCur_ ? wkCur_ : "EUR"
+        var t = val_;// ? val_ : 1;
         var d_typ = window.d_typ ? window.d_typ : "donation";
         d_typ = d_typ + "<?php $origin_. '|' .$origin; ?>";
         var d_det = window.psSes ? window.psSes : "N/A";
-        var btcpay_wkCur_ = wkCur_ !== 'ttd' ? wkCur_ : 'usd';
+        var btcpay_wkCur_ = wkCur_;// !== 'ttd' ? wkCur_ : 'usd';
         var t_ = wkCur_ !== 'ttd' ? t : t / 6.8;
-        (ivFr_ = document.createElement("iframe")).style.border = "none", ivFr_.setAttribute("onLoad", "window.informOfProgress(event, this)"), ivFr_.setAttribute("srcdoc", '<!doctype html><html><body><form method="GET"  action="https://' + storeURL + '" style="width:0px;height:0px"><input type="hidden" name="store_id" value="' + storeId + '" /><input type="hidden" name="price" value="' + t_ + '" /><input type="hidden" name="browserRedirect" value="https://flat18.co.uk/thanks_for_your_support" /><input type="hidden" name="currency" value="' + btcpay_wkCur_ + '" /><input type="hidden" name="defaultLanguage" value="en" /><input type="hidden" name="orderId" value="' + d_typ + ' | ' + d_det + '" /><input type="image" src="" name="submit"></form></body></html>'), ivFr_.style.height = "0px", ivFr_.style.width = "0px", ivFr_.style.visibility = "hidden", document.getElementById("jsInvoiceWorkspace").appendChild(ivFr_)
+        (ivFr_ = document.createElement("iframe")).style.border = "none", ivFr_.setAttribute("onLoad", "window.informOfProgress(event, this)"), ivFr_.setAttribute("srcdoc", '<!doctype html><html><body><form method="GET"  action="https://' + storeURL + '" style="width:0px;height:0px"><input type="hidden" name="store_id" value="' + storeId + '" /><input type="hidden" name="price" value="' + t + '" /><input type="hidden" name="browserRedirect" value="https://flat18.co.uk/thanks_for_your_support" /><input type="hidden" name="currency" value="' + btcpay_wkCur_ + '" /><input type="hidden" name="defaultLanguage" value="en" /><input type="hidden" name="orderId" value="' + d_typ + ' | ' + d_det + '" /><input type="image" src="" name="submit"></form></body></html>'), ivFr_.style.height = "0px", ivFr_.style.width = "0px", ivFr_.style.visibility = "hidden", document.getElementById("jsInvoiceWorkspace").appendChild(ivFr_)
     }
     watchFrameChange("btcpay")
 }
@@ -63,11 +70,11 @@ function watchFrameChange(e, t) {
 }
 
 function startDonation() {
-    document.getElementById("valueSelector").querySelector("input").value = 20;
-    document.getElementById("valueSelector").querySelector(".currency_").selectedIndex = 0;
-    val_ = document.getElementById("valueSelector").querySelector("input").value;
-    wkCur_ = document.getElementById("valueSelector").querySelector(".currency_").value;
-     document.getElementById("donationModuleMaster").style.display = "grid";
+    // document.getElementById("valueSelector").querySelector("input").value = 20;
+    // document.getElementById("valueSelector").querySelector(".currency_").selectedIndex = 0;
+    // val_ = document.getElementById("valueSelector").querySelector("input").value;
+    // wkCur_ = document.getElementById("valueSelector").querySelector(".currency_").value;
+    document.getElementById("donationModuleMaster").style.display = "grid";
 }
 
 function cancelDonation(e) {
@@ -77,11 +84,11 @@ function cancelDonation(e) {
 
 ifSD_ = 0,
     window.informOfProgress = function (e, t) {
-    ifSD_++;
-    try {
-        "about:srcdoc" === t.contentWindow.location.href && ifSD_ >= 3 && (window.location = "/")
-    } catch (e) {
-        console.log(e)
+        ifSD_++;
+        try {
+            "about:srcdoc" === t.contentWindow.location.href && ifSD_ >= 3 && (window.location = "/")
+        } catch (e) {
+            console.log(e)
+        }
+        ifSD_ >= 3 && cancelDonation(), console.log("Debug: frame stage: " + ifSD_)
     }
-    ifSD_ >= 3 && cancelDonation(), console.log("Debug: frame stage: " + ifSD_)
-}

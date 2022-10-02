@@ -48,7 +48,7 @@ function cleanTitle($x = NULL)
 {
   $x = str_replace(["-"], " ", $x);
   $x = ucfirst($x);
-  $x = $x==='Homepage'?"Home":$x;
+  $x = $x==='Homepage'||$x==='homepage'?"Home":$x;
   return $x;
 }
 
