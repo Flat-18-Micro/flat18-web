@@ -3,7 +3,8 @@
    font-style: normal;
    font-weight: 200;
    src: url(/src/fonts/montserrat/montserrat-v25-latin-200.eot);
-   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-200.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-200.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-200.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-200.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-200.svg#Montserrat') format('svg')
+   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-200.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-200.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-200.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-200.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-200.svg#Montserrat') format('svg');
+   font-display: swap;
  }
 
  @font-face {
@@ -11,7 +12,8 @@
    font-style: normal;
    font-weight: 400;
    src: url(/src/fonts/montserrat/montserrat-v25-latin-regular.eot);
-   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-regular.svg#Montserrat') format('svg')
+   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-regular.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-regular.svg#Montserrat') format('svg');
+   font-display: swap;
  }
 
  @font-face {
@@ -19,7 +21,8 @@
    font-style: normal;
    font-weight: 800;
    src: url(/src/fonts/montserrat/montserrat-v25-latin-800.eot);
-   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-800.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-800.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-800.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-800.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-800.svg#Montserrat') format('svg')
+   src: local(''), url('/src/fonts/montserrat/montserrat-v25-latin-800.eot?#iefix') format('embedded-opentype'), url(/src/fonts/montserrat/montserrat-v25-latin-800.woff2) format('woff2'), url(/src/fonts/montserrat/montserrat-v25-latin-800.woff) format('woff'), url(/src/fonts/montserrat/montserrat-v25-latin-800.ttf) format('truetype'), url('/src/fonts/montserrat/montserrat-v25-latin-800.svg#Montserrat') format('svg');
+   font-display: swap;
  }
 
  @font-face {
@@ -31,7 +34,8 @@
     url('/src/fonts/icomoon/icomoon.svg?d20if7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  /* font-display: block; */
+  font-display: swap;
 }
 
 .ico {
