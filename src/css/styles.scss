@@ -166,7 +166,7 @@ p {
 
 .logo {
   &::before {
-    content: "Flat.18";
+    content: "Flat 18";
     font-family: "Montserrat";
     font-weight: 800;
     line-height: 2rem;
@@ -181,10 +181,18 @@ p {
   }
 }
 
-@media (max-width: $small) {
-  .logo::before {
+
+  .logo{
+    &::before {
+      @media (max-width: $medium) {
+        content: "Flat.18";
+      }
+      @media (max-width: $small) {
     content: "Ft.18";
   }
+  @media (max-width: $x-small) {
+    content: "F18";
+  }}
 }
 
 .nav {
@@ -991,6 +999,7 @@ h5 {
         background: var(--off-white);
         // opacity: 0.5;
         border-radius: 1rem;
+        transition: .5s linear;
       }
       .blob {
         transform: translateX(0);
