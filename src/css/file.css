@@ -341,7 +341,7 @@ p {
 }
 
 .logo::before {
-  content: "Flat.18";
+  content: "Flat 18";
   font-family: "Montserrat";
   font-weight: 800;
   line-height: 2rem;
@@ -356,9 +356,21 @@ p {
   -webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 960px) {
+  .logo::before {
+    content: "Flat.18";
+  }
+}
+
 @media (max-width: 756px) {
   .logo::before {
     content: "Ft.18";
+  }
+}
+
+@media (max-width: 500px) {
+  .logo::before {
+    content: "F18";
   }
 }
 
@@ -2043,6 +2055,8 @@ h5 {
   .showcase-parent .showcase {
     padding-left: 5vw;
     padding-right: 5vw;
+    -ms-scroll-snap-type: unset;
+        scroll-snap-type: unset;
   }
 }
 
@@ -2659,6 +2673,8 @@ h5 {
   width: 0.7rem;
   background: var(--off-white);
   border-radius: 1rem;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
 }
 
 .showcase-parent .showcase-slider .slider-ui .blob {
@@ -2864,6 +2880,7 @@ h5 {
   font-family: "Montserrat";
   font-size: 4rem;
   margin: 0;
+  line-height: 1;
 }
 
 @media (max-width: 960px) {
