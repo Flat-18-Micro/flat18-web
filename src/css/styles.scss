@@ -757,6 +757,7 @@ h5 {
     @media (max-width: $small) {
       padding-left: 5vw;
       padding-right: 5vw;
+      scroll-snap-type: unset;
     }
     &.grabbed {
       cursor: -webkit-grabbing;
