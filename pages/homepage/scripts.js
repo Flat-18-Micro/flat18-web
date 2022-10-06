@@ -63,7 +63,6 @@ function showcaseYScrollManipulation() {
   let breakPoint = 1 / dots.length
   let nearest = Math.ceil(transition / breakPoint)
   let scale = nearest - (transition / breakPoint)
-  console.log(scale)
   dots.forEach((ele) => ele.style.transform = "scale(1)")
   dots[nearest].style.transform = "scale(" + (1 + (scale)) + ")"
   // try { dots[nearest + 1].style.transform = "scale("+ (1+(1-scale)) +")" }catch(e){}
