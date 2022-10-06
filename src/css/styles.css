@@ -2514,8 +2514,8 @@ h5 {
   width: 0.7rem;
   background: var(--off-white);
   border-radius: 1rem;
-  -webkit-transition: .5s linear;
-  transition: .5s linear;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
 }
 
 .showcase-parent .showcase-slider .slider-ui .blob {
@@ -4001,8 +4001,54 @@ a:hover .chevron-to-arrow.-long::after,
   pointer-events: none;
 }
 
+.clickable-target:not(.clicked):hover .icon-cheveron-down::before {
+  -webkit-transform: rotate(45deg) translate(0.6rem, -0.25rem);
+          transform: rotate(45deg) translate(0.6rem, -0.25rem);
+}
+
+.clickable-target:not(.clicked) .icon-cheveron-down {
+  position: relative;
+}
+
+.clickable-target:not(.clicked) .icon-cheveron-down::before, .clickable-target:not(.clicked) .icon-cheveron-down::after {
+  content: "";
+  display: block;
+  height: 0.75rem;
+  width: 0.75rem;
+  -webkit-box-shadow: 2px 2px 0 0;
+          box-shadow: 2px 2px 0 0;
+  -webkit-transform: rotate(45deg) translate(0.2rem, -0.6rem);
+          transform: rotate(45deg) translate(0.2rem, -0.6rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.clickable-target.clicked .icon-cheveron-down {
+  position: relative;
+}
+
+.clickable-target.clicked .icon-cheveron-down::before, .clickable-target.clicked .icon-cheveron-down::after {
+  content: "";
+  display: block;
+  -webkit-box-shadow: inset 3px 3px 0 0;
+          box-shadow: inset 3px 3px 0 0;
+  width: 3px;
+  height: 3px;
+  left: 0.5rem;
+  position: absolute;
+}
+
 .clickable-target.clicked .icon-cheveron-down::before {
-  content: ":";
+  top: 3px;
+}
+
+.clickable-target.clicked .icon-cheveron-down::after {
+  bottom: 0;
 }
 
 .vscode {

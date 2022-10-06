@@ -181,18 +181,18 @@ p {
   }
 }
 
-
-  .logo{
-    &::before {
-      @media (max-width: $medium) {
-        content: "Flat.18";
-      }
-      @media (max-width: $small) {
-    content: "Ft.18";
+.logo {
+  &::before {
+    @media (max-width: $medium) {
+      content: "Flat.18";
+    }
+    @media (max-width: $small) {
+      content: "Ft.18";
+    }
+    @media (max-width: $x-small) {
+      content: "F18";
+    }
   }
-  @media (max-width: $x-small) {
-    content: "F18";
-  }}
 }
 
 .nav {
@@ -999,7 +999,7 @@ h5 {
         background: var(--off-white);
         // opacity: 0.5;
         border-radius: 1rem;
-        transition: .5s linear;
+        transition: 0.5s linear;
       }
       .blob {
         transform: translateX(0);
@@ -2210,11 +2210,49 @@ a,
     * {
       pointer-events: none;
     }
+    &:hover {
+      .icon-cheveron-down {
+        &::before {
+          transform: rotate(45deg) translate(0.6rem, -0.25rem);
+        }
+      }
+    }
+    .icon-cheveron-down {
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        height: 0.75rem;
+        width: 0.75rem;
+        box-shadow: 2px 2px 0 0;
+        transform: rotate(45deg) translate(0.2rem, -0.6rem);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: center;
+        transition: 0.2s linear;
+      }
+    }
   }
   &.clicked {
     .icon-cheveron-down {
-      &::before {
-        content: ":";
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        box-shadow: inset 3px 3px 0 0;
+        width: 3px;
+        height: 3px;
+        left:0.5rem;
+        position: absolute;
+      }
+      &::before{
+        top:3px;
+      }
+      &::after {
+        bottom: 0;
       }
     }
   }
