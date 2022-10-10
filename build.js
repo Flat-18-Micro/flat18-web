@@ -15,7 +15,7 @@ function read(file) {
 function reCreateFolders(folder) {
   const fs = require('fs')
   folder = folder ? folder : '/dist'
-  if (fs.existsSync(folder)) { fs.rmdirSync(folder, { recursive: true }) }
+  if (fs.existsSync(folder)) { fs.rmSync(folder, { recursive: true }) }
   fs.mkdirSync(folder)
 }
 
@@ -107,35 +107,48 @@ function getDirectories(dir) {
 
   return directoriesInDIrectory
 }
- function consolidateAssets() {
+function consolidateAssets() {
   const fs = require('fs')
   const fse = require('fs-extra');
-  // const postcss = require('postcss')
-  // const cssnano = require('cssnano')
-  // const autoprefixer = require('autoprefixer')
+  const sass = require('node-sass');
+  const path = require('path');
+  const UglifyJS = require("uglify-js")
 
   const directories = ['./src/css/', './src/js/']
   for (const dir of directories) {
     let data = ''
-    let asset = listFiles(dir)
-    let ext = '.' + dir.replace('./src/', '').replace(/\//g, '')
-    let newFile = dir.replace("./", "./dist/") + "file" + ext
-      for (const ass of asset) {
-        if (ass.indexOf(ext) >= ass.length - ext.length) {
-          data += read(dir + ass) + " "
-        }
-        else if (ass.indexOf(ext + '.map') >= 0) {
-          fs.writeFileSync(dir.replace("./", "./dist/") + ass, read(dir + ass));
-        }
+    let cssMap = ''
+    let assets = listFiles(dir)
+    let directory = '.' + dir.replace('./src/', '').replace(/\//g, '')
+    let newFile = dir.replace("./", "./dist/") + "file" + directory
+    for (const asset of assets) {
+      let assetData = read(dir + asset)
+      let ext = path.parse(asset).ext
+      if (ext === ".map") {
+        cssMap += assetData;
       }
-    // if (ext === '.css') {
-    //   // data = await postcss([cssnano, autoprefixer]).process(data, { from: undefined })
-    //   postcss([cssnano]).process(data, { from: false }).then((result) => {
-    //     fs.writeFileSync(newFile, result);
-    //   })
-    // } else {
-      fs.writeFileSync(newFile, data);
-    // }
+      if (ext === ".css") {
+        data += assetData + " "
+      }
+      if (ext === ".js") {
+        data += UglifyJS.minify(assetData).code + " "
+      }
+      if (ext === '.scss') {
+        var result = sass.renderSync({
+          file: dir + asset,
+          data: assetData,
+          outputStyle: 'compressed',
+          outFile: dir + '/file.css',
+          sourceMap: true,
+        });
+
+
+        data += result.css
+        cssMap+=result?.map
+      }
+    }
+    fs.writeFileSync(newFile, data);
+    fs.writeFileSync("./dist/src/css/file.css.map", cssMap);
   }
 
 

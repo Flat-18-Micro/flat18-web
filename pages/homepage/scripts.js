@@ -64,16 +64,18 @@ function showcaseYScrollManipulation() {
   let nearest = Math.ceil(transition / breakPoint)
   let scale = nearest - (transition / breakPoint)
   dots.forEach((ele) => ele.style.transform = "scale(1)")
-  try { dots[nearest].style.transform = "scale(" + (1 + (scale)) + ")" }catch(e){}
+  try { dots[nearest].style.transform = "scale(" + (1.1 + (scale)) + ")" }catch(e){}
   // try { dots[nearest + 1].style.transform = "scale("+ (1+(1-scale)) +")" }catch(e){}
   // try { dots[nearest - 1].style.transform = "scale("+ (1+(1-scale)) +")" }catch(e){}
-  // try { dots[nearest - 1].style.transform = "scale("+ (1+(scale*.25)) +")" }catch(e){}
-  // try { dots[nearest + 1].style.transform = "scale("+ (1+(scale*.25)) +")" }catch(e){}
+  try { dots[nearest - 1].style.transform = "scale("+ (1+(scale*.5)) +")" }catch(e){}
+  try { dots[nearest + 1].style.transform = "scale("+ (1+(scale*.5)) +")" }catch(e){}
 }
 
 function manipulateElements(transition) {
   showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * transition,
-  document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
+    document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
+    let dots = document.querySelector(".slider-ui").querySelectorAll(".dot")
+  dots.forEach((ele) => ele.style.transform = "scale(1)")
   // document.querySelector(".slider-ui").querySelector(".blob").style.transform="translateX(calc(" + transition*document.querySelector(".slider-ui").getBoundingClientRect().width + "px - 1rem))"
 }
 
