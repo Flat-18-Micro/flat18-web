@@ -45,16 +45,26 @@ function makePage(directory) {
   let nav = String(fs.readFileSync('./components/nav.ejs'))
 
   let bodyWrapper = String(fs.readFileSync('./components/body-wrapper.ejs'))
-  let body = fs.readFileSync('./pages/' + directory + '/index.ejs')
+  let body = fs.readFileSync('./pages/' + directory + '/index.ejs', { encoding: 'utf8', flag: 'r' })
 
-  body = parseBody(body)
+  let parsedBody = {}
+  let testBody = String(body).replace(/ /g, "")
+  if (testBody.indexOf('[') == 0 && testBody.indexOf(']') == testBody.length - 1) {
+    parsedBody.contents = assembleBody(JSON.parse(body))
+  } else if (testBody.indexOf('{') == 0 && testBody.indexOf('}') == testBody.length - 1) {
+    let jsonBody = JSON.parse(body)
+    parsedBody.contents = assembleBody(jsonBody.contents)
+    parsedBody.dir = jsonBody.destination
+  }
+  else {
+    parsedBody.contents = body
+  }
 
   bodyWrapper = bodyWrapper.replace(/\$nav/g, nav)
-  bodyWrapper = bodyWrapper.replace(/\$body/g, body)
+  bodyWrapper = bodyWrapper.replace(/\$body/g, parsedBody.contents)
   dist += bodyWrapper
 
   dist += fs.readFileSync('./components/foot.ejs')
-  // dist += fs.readFileSync('./components/scripts.ejs')
 
   const extraScripts = './pages/' + directory + '/scripts.js'
 
@@ -68,34 +78,24 @@ function makePage(directory) {
 
     }
   } catch (err) {
-    console.log('No additional files attached for ' + directory)
+    // console.log('No additional files attached for ' + directory)
   }
 
   let subDirectory = directory === 'homepage' ? '/' : '/' + directory + '/'
-  if (subDirectory.length > 1) {
-    reCreateFolders('./dist/' + directory)
-  }
+  subDirectory = parsedBody.dir?parsedBody.dir: subDirectory
+  console.log(subDirectory)
+  try { fs.mkdirSync("./dist" + subDirectory, { recursive: true }) } catch (e) { }
   fs.writeFileSync('./dist' + subDirectory + 'index.html', dist);
 
 }
 
-function parseBody(body) {
+function assembleBody(contents) {
   const fs = require('fs')
-  let parsedBody = ''
-  try {
-    body = JSON.parse(body)
-    if (Array.isArray(body)) {
-      // console.log("array")
-      for (const section of body) {
-        parsedBody += fs.readFileSync('./pages/' + section)
-      }
-      //loop over components and add to body
-    }
-  } catch (err) {
-    // console.log("html")
-    parsedBody = body
+  let tmp = ''
+  for (const section of contents) {
+    tmp += fs.readFileSync('./pages/' + section)
   }
-  return parsedBody
+  return tmp
 }
 
 function getDirectories(dir) {
@@ -144,7 +144,7 @@ function consolidateAssets() {
 
 
         data += result.css
-        cssMap+=result?.map
+        cssMap += result?.map
       }
     }
     fs.writeFileSync(newFile, data);
