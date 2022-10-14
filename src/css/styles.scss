@@ -2219,14 +2219,13 @@ a,
 
 .clickable-target {
     .payload {
-      transition: .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transform: translateY(-20px);
+      opacity: 0;
     }
   &:not(.clicked) {
     cursor: pointer;
     .payload {
       display: none;
-      transform: translateY(-20px);
-      opacity: 0;
     }
     * {
       pointer-events: none;
@@ -2258,8 +2257,11 @@ a,
   }
   &.clicked {
     .payload {
-      opacity: 1;
-      transform: translateY(0px);
+      animation: drop-In-001 .4s ease forwards 1;
+      @keyframes drop-In-001 {
+        to{opacity: 1;
+          transform: translateY(0px);}
+      }
     }
     .icon-cheveron-down {
       position: relative;
