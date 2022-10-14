@@ -71,7 +71,7 @@ $medium: 960px;
 $small: 756px;
 $x-small: 500px;
 
-$title: "Times", serif;
+$title: "Austin News Text Web Roman Regular", serif;
 $sans-serif: "Montserrat", Arial, Helvetica, sans-serif;
 
 body {
@@ -168,23 +168,28 @@ p {
 
 .logo {
   &::before {
-    content: "Flat 18";
+    content: "Flat Eighteen";
     font-family: $title;
     font-weight: 800;
     line-height: 2rem;
     font-size: 2rem;
     transition: 0.2s ease;
-  }
-
-  &:hover {
     background: -webkit-linear-gradient(60deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  &:hover {
+    -webkit-text-fill-color: var(--accent);
+    color: var(--accent);
   }
 }
 
 .logo {
   &::before {
+    @media (max-width: $large) {
+      content: "Flat 18";
+    }
     @media (max-width: $medium) {
       content: "Flat.18";
     }
@@ -1412,8 +1417,8 @@ h5 {
   .pricing-item {
     display: flex;
     flex-direction: column;
-    width: 45vw;
-    max-width: calc(600px - 2rem);
+    width: 100%;
+    // max-width: calc(600px - 2rem);
     min-width: 300px;
     background: var(--black);
     position: relative;
@@ -1477,6 +1482,14 @@ h5 {
       .wyg {
         background-image: linear-gradient(to right, var(--true-black) -20%, var(--dark) 40%);
       }
+      .heading {
+      &::after {
+        background: linear-gradient(to right, var(--accent), var(--yellow));
+      }
+        &::before {
+          background: linear-gradient(to right, var(--dark) -20%, var(--black) 40%);
+        }
+      }
     }
 
     .heading {
@@ -1487,10 +1500,10 @@ h5 {
       &::after {
         content: "";
         // opacity: 0.5;
-        background-image: radial-gradient(ellipse at top left, var(--primary) -30%, transparent),
-          radial-gradient(ellipse at bottom right, var(--accent), transparent),
-          radial-gradient(ellipse at top right, var(--yellow), transparent);
-        background-color: var(--accent);
+        // background-image: radial-gradient(ellipse at top left, var(--primary) -30%, transparent),
+        //   radial-gradient(ellipse at bottom right, var(--accent), transparent),
+        //   radial-gradient(ellipse at top right, var(--yellow), transparent);
+        background-color: var(--primary);
         z-index: -2;
         position: absolute;
         top: 0;
@@ -1502,14 +1515,14 @@ h5 {
       }
       &::before {
         content: '';
-        height: calc(100% - 6px);
-        width: calc(100% - 6px);
+        height: calc(100% - 2px);
+        width: 100%;
         background: var(--black);
         display: block;
         position: absolute;
-        top: 3px;
-        left: 3px;
-        border-radius: 3px;
+        top: 2px;
+        left: 0;
+        border-radius: 0;
         z-index: -1;
       }
     }

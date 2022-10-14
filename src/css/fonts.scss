@@ -16,6 +16,15 @@
    font-display: swap;
  }
 
+ @font-face {font-family: "Austin News Text Web Roman Regular";
+  src: url("/src/fonts/austin/4119f2f793f60df049502711f3076133.eot"); /* IE9*/
+  src: url("/src/fonts/austin/4119f2f793f60df049502711f3076133.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.woff2") format("woff2"), /* chrome、firefox */
+  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.woff") format("woff"), /* chrome、firefox */
+  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.svg#Austin News Text Web Roman Regular") format("svg"); /* iOS 4.1- */
+}
+
 //  @font-face {
 //    font-family: 'Montserrat';
 //    font-style: normal;
