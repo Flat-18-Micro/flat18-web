@@ -1418,7 +1418,7 @@ h5 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    // max-width: calc(600px - 2rem);
+    max-width: calc(#{$content} * .5);
     min-width: 300px;
     background: var(--black);
     position: relative;
@@ -2074,6 +2074,9 @@ flex-direction: row;
     max-height: 500px;
     height: 40vh;
     border-radius: 15px;
+  }
+  @media (max-width: $small) {
+    transform: scale(1.25, 1.25)translateY(5%);
   }
 
     &::before {
