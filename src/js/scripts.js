@@ -37,7 +37,7 @@ document.querySelectorAll(".animate-rotate").forEach((parent) => {
     let count = 0
     parent.querySelectorAll(".target").forEach((ele) => {
         ele.classList.remove("playing-animation")
-        count = count<5?5:count
+        count = count < 5 ? 5 : count
         setTimeout(() => { ele.classList.add("playing-animation") }, count * 1000)
         setTimeout(() => {
             setInterval(() => {
@@ -146,7 +146,7 @@ function sendThisForm(f, t) {
             "Content-Type": "multipart/form-data",
         },
         body: JSON.stringify(saturatedContactFormArray),
-    }).then((response) => {response.json()}).then((data) => {
+    }).then((response) => { response.json() }).then((data) => {
         console.log("Success:", data);
         t.parentNode.querySelector(".errorHelpForm").innerHTML = "Thanks, " + saturatedContactFormArray.name + ` <i class="em em-wink"></i>`;
         t.style.display = "";
@@ -228,3 +228,19 @@ for (const ele of document.querySelectorAll(".clickable-target")) {
         }
     })
 }
+
+// build-in-scroll
+// function buildInScroll() {
+//     for (const target of document.querySelectorAll(".build-in-scroll")) {
+//         let threshold = Number(((window.scrollY + (window.outerHeight*0))/(target.offsetTop+150)).toFixed(2))
+//         threshold = threshold > 1 ? 1 : (threshold < 0 ? 0 : threshold)
+//         //   console.log(threshold)
+//         // target.setAttribute("offsetTop", target.offsetTop + " // " + (window.scrollY + window.outerHeight))
+//         // target.style.opacity = threshold
+//           if (threshold >= .5) {
+//             if (!target.classList.contains("build-in")) { target.classList.add("build-in") }
+//           }
+//     }
+// }
+// buildInScroll()
+// window.addEventListener("scroll", buildInScroll)

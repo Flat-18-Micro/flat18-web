@@ -1,0 +1,62 @@
+:not(.light),
+.dark {
+  --theme-near-black: rgba(0, 0, 0, 0.1);
+  --theme-true-black: #000;
+  --theme-dark: #111;
+  --theme-black: #1d1d1d;
+  --theme-white: #dbdbdb;
+  --theme-off-white: #faf7f7;
+  --theme-primary-dark: #0029b1;
+  --theme-primary: #0070ff;
+  --theme-accent: #00ffc3;
+  --theme-accent-text: #00ffc3;
+  --theme-yellow: #ffd500;
+  --theme-orange: #ff9500;
+}
+
+.light {
+  --theme-near-black: rgba(255, 255, 255, 0.1);
+  --theme-true-black: #fff;
+  --theme-dark: #f6f9fc;
+  --theme-black: #fff;
+  --theme-white: #403e68;
+  --theme-off-white: #455565;
+  --theme-primary-dark: #0029b1;
+  --theme-primary: #0070ff;
+  --theme-accent: #06c1c1;
+  --theme-accent-text: #2077ff;
+  --theme-yellow: #009f89;
+  --theme-orange: #ff0060;
+}
+
+:root {
+  --persistent-black: #000;
+  --persistent-white: #fff;
+  --indigo: #586ada;
+  --bg-indigo: #d5daf6;
+  --light-indigo: #678ef1;
+  --cerulean: #ceedfd;
+  --bg-cerulean: #067ab8;
+  --light-cerulean: #3a97d4;
+  --moss: #09815c;
+  --bg-moss: #cffcee;
+  --light-moss: #1ba672;
+  --lime: #0d9900;
+  --bg-lime: #cffcdc;
+  --light-lime: #02d602;
+  --amber: #bb5506;
+  --bg-amber: #fde2ce;
+  --light-amber: #d97919;
+  --red: #c44c35;
+  --bg-red: #f4dcd7;
+  --light-red: #e56f49;
+  --crimson: #cd3d64;
+  --bg-crimson: #f5d6de;
+  --light-crimson: #ed5f74;
+  --purple: #a44fb5;
+  --bg-purple: #ecdbf0;
+  --light-purple: #c66bce;
+  --violet: #825fc3;
+  --bg-violet: #e2daf1;
+  --light-violet: #9c82db;
+}
