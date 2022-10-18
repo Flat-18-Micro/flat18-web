@@ -230,17 +230,17 @@ for (const ele of document.querySelectorAll(".clickable-target")) {
 }
 
 // build-in-scroll
-function buildInScroll() {
-    for (const target of document.querySelectorAll(".build-in-scroll")) {
-        let threshold = ((target.getBoundingClientRect().top))
-         //(window.scrollY - window.outerHeight)/(target.offsetTop- window.outerHeight)
-        // threshold = threshold > 1 ? 1 : (threshold < 0 ? 0 : threshold)
+// function buildInScroll() {
+//     for (const target of document.querySelectorAll(".build-in-scroll")) {
+//         let threshold = ((target.getBoundingClientRect().top))
+//          //(window.scrollY - window.outerHeight)/(target.offsetTop- window.outerHeight)
+//         // threshold = threshold > 1 ? 1 : (threshold < 0 ? 0 : threshold)
 
-        // target.style.opacity = threshold
-          if (threshold <= (window.outerHeight*.8)) {
-            if (!target.classList.contains("build-in")) { target.classList.add("build-in") }
-          }
-    }
-}
-buildInScroll()
-window.addEventListener("scroll", buildInScroll)
+//         // target.style.opacity = threshold
+//           if (threshold <= (window.outerHeight*.8)) {
+//             if (!target.classList.contains("build-in")) { target.classList.add("build-in") }
+//           }
+//     }
+// }
+// buildInScroll()
+// window.addEventListener("scroll", buildInScroll)
