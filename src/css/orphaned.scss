@@ -182,6 +182,20 @@ p {
           opacity: 0.15;
         }
       }
+      span{
+        @media (max-width:$small) {
+          display: none;
+        }
+      }
+        .mobile{
+          display: none;
+          @media (max-width:$small) {
+            display: block;
+          }
+          &.ico {
+            line-height: 1.5;
+          }
+        }
     }
   }
 }
