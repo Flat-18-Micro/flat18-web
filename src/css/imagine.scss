@@ -1,0 +1,15 @@
+.immersive {
+  height: 100vh;
+  min-height: 500px;
+  scroll-snap-align: center;
+  position: sticky;
+  top: 0;
+  background: red;
+  margin-top: 0;
+}
+
+.immersive-content{
+  min-height: 100vh;
+  max-width: 90vw;
+  margin: auto;
+}

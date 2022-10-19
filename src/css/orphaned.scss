@@ -60,17 +60,20 @@ p {
 }
 .main-wrapper {
   width: 100vw;
-  overflow: hidden;
+  contain: content;
+  // overflow: hidden;
   .main {
     width: 100vw;
     max-width: $large;
     margin: auto;
     @media (max-width: $large) {
-      overflow: hidden;
-    }
+      // overflow: hidden;
+  contain: content;
+}
     @media (max-width: $small) {
-      position: relative;
-    }
+      // position: relative;
+  contain: content;
+}
   }
 }
 

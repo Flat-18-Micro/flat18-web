@@ -110,3 +110,14 @@ TxtType.prototype.tick = function() {
   // document.body.appendChild(css);
 // };
 
+window.addEventListener("scroll", immersiveTrigger)
+function immersiveTrigger() {
+  let immersive = document.querySelector(".immersive")
+  if (immersive.getBoundingClientRect().top <= 0) {
+    window.zerothPosition = window.zerothPosition ? window.zerothPosition : window.scrollY
+    immersive.querySelector(".immersive-content").style.transform = `translateY(${-1.2*(window.scrollY-window.zerothPosition)}px)`
+  }
+  if (immersive.getBoundingClientRect().top > window.outerHeight*.1) {
+    immersive.querySelector(".immersive-content").style.transform = "translateY(0px)"
+  }
+}
