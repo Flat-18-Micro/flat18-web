@@ -15,3 +15,25 @@
 //   perspective: calc(100vw * 3);
 //   perspective-origin: center;
 // }
+
+
+.typewriter-magic{
+  position: relative;
+  line-height: inherit;
+  &::after{
+    content: "";
+    // position: absolute;
+    display: inline-block;
+    margin-left: 1rem;
+    transform: translateY(1rem);
+    height: 1em;
+    width: 4px;
+    background: var(--white);
+    animation: blink-cursor .5s linear alternate infinite;
+    // top: 0;
+    @keyframes blink-cursor {
+      from{opacity: 0;}
+      to{opacity: .5;}
+    }
+  }
+}
