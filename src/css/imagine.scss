@@ -1,10 +1,10 @@
 .immersive {
   height: 100vh;
   min-height: 500px;
-  scroll-snap-align: center;
+  scroll-snap-align: top;
   position: sticky;
   top: 0;
-  background: red;
+  background: var(--black);
   margin-top: 0;
 }
 
