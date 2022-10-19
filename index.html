@@ -56,7 +56,7 @@
   <a class="logo" title="Flat 18 - Web Development & Design" href="/"></a>
   <div></div>
   <div class="menu">
-    <a href="/#pricing"><span>pricing</span><i class="ico icon-pricetags mobile"></i></a>
+    <a href="/pricing"><span>pricing</span><i class="ico icon-pricetags mobile"></i></a>
     <a href="/#contact"><span>contact</span><i class="ico icon-send1 mobile"></i></a>
     <a class="lightDark"><i class="ico"></i></a>
   </div>
@@ -67,7 +67,7 @@
 
   </div>
   <div class="cta-organiser">
-    <h1 alt="Web Developers obsessed with Design" title="We are Web and Software Developers">Web Development & Design
+    <h1 alt="Web Development and Design" title="Web Development and Design">Web Development & <span class="typewriter-magic" data-period="2000" data-type='[ "Design🎨", "Magic🪄", "DeFi💸", "Crypto🔐", "Frontend💄", "UIs🚀", "Node.js⚡️", "Backend💾", "APIs💻", "Art✏️" ]'>Design</span>
     </h1>
     <p>We're a small team with 10+ years experience building beautiful solutions for Web and Decentralised Finance.</p>
     <ul class="flex subtle">
@@ -1032,4 +1032,67 @@ if (document.querySelectorAll(".showcase").length > 0 && document.querySelectorA
       document.querySelector(".slider-ui").append(dot)
   }
 }
+
+
+
+
+
+let TxtType = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+  let i = this.loopNum % this.toRotate.length;
+  let fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+  this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+  this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  let that = this;
+  let delta = 200 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = fullTxt.length * 700//this.period;
+    console.log(delta)
+  this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+  this.isDeleting = false;
+  this.loopNum++;
+  delta = 200;
+  }
+
+  setTimeout(function() {
+  that.tick();
+  }, delta);
+};
+
+// window.onload = function() {
+  let writers = document.querySelectorAll('.typewriter-magic');
+  for (const write of writers) {
+      let toRotate = write.getAttribute('data-type');
+      let period = write.getAttribute('data-period');
+      if (toRotate) {
+        new TxtType(write, JSON.parse(toRotate), period);
+      }
+  }
+  // INJECT CSS
+  // let css = document.createElement("style");
+  // css.type = "text/css";
+  // css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  // document.body.appendChild(css);
+// };
+
 </script>
