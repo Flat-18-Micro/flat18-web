@@ -36,11 +36,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('/src/fonts/icomoon/icomoon.eot?ppgued');
-  src:  url('/src/fonts/icomoon/icomoon.eot?ppgued#iefix') format('embedded-opentype'),
-    url('/src/fonts/icomoon/icomoon.ttf?ppgued') format('truetype'),
-    url('/src/fonts/icomoon/icomoon.woff?ppgued') format('woff'),
-    url('/src/fonts/icomoon/icomoon.svg?ppgued#icomoon') format('svg');
+  src:  url('/src/fonts/icomoon/icomoon.eot?v6ht9q');
+  src:  url('/src/fonts/icomoon/icomoon.eot?v6ht9q#iefix') format('embedded-opentype'),
+    url('/src/fonts/icomoon/icomoon.ttf?v6ht9q') format('truetype'),
+    url('/src/fonts/icomoon/icomoon.woff?v6ht9q') format('woff'),
+    url('/src/fonts/icomoon/icomoon.svg?v6ht9q#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -61,19 +61,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-pricetags:before {
+.icon-new-message:before {
   content: "\e910";
 }
-.icon-tags:before {
-  content: "\e910";
-}
-.icon-prices:before {
-  content: "\e910";
-}
-.icon-shop:before {
-  content: "\e910";
-}
-.icon-ecommerce:before {
+.icon-send1:before {
   content: "\e910";
 }
 .icon-cheveron-right:before {
@@ -90,6 +81,24 @@
 }
 .icon-arrow-down2:before {
   content: "\e902";
+}
+.icon-tags:before {
+  content: "\e912";
+}
+.icon-moon:before {
+  content: "\e90c";
+}
+.icon-sun:before {
+  content: "\e909";
+}
+.icon-external-link:before {
+  content: "\e90a";
+}
+.icon-circle:before {
+  content: "\e90f";
+}
+.icon-chat:before {
+  content: "\e90b";
 }
 .icon-bitcoin:before {
   content: "\e903";
@@ -113,24 +122,6 @@
 }
 .icon-applepay:before {
   content: "\e908";
-}
-.icon-send1:before {
-  content: "\e911";
-}
-.icon-moon:before {
-  content: "\e90c";
-}
-.icon-sun:before {
-  content: "\e909";
-}
-.icon-external-link:before {
-  content: "\e90a";
-}
-.icon-circle:before {
-  content: "\e90f";
-}
-.icon-chat:before {
-  content: "\e90b";
 }
 
 

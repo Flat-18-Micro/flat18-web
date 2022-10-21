@@ -120,6 +120,7 @@ function consolidateAssets() {
     let data = ''
     let cssMap = ''
     let assets = listFiles(dir)
+    assets = assets.filter(asset => asset.indexOf(".")>=0)
     let directory = '.' + dir.replace('./src/', '').replace(/\//g, '')
     let newFile = dir.replace("./", "./dist/") + "file" + directory
     for (const asset of assets) {
@@ -137,6 +138,7 @@ function consolidateAssets() {
       if (ext === '.scss') {
         var result = sass.renderSync({
           file: dir + asset,
+          includePaths:[dir + '/components/', dir],
           data: assetData,
           outputStyle: 'compressed',
           outFile: dir + '/file.css',

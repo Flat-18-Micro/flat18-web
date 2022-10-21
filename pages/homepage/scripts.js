@@ -110,20 +110,86 @@ TxtType.prototype.tick = function() {
   // document.body.appendChild(css);
 // };
 
-window.addEventListener("scroll", immersiveTrigger)
-function immersiveTrigger() {
-  let immersive = document.querySelector(".immersive")
-  if (immersive.getBoundingClientRect().top <= 0) {
-    window.zerothPosition = window.zerothPosition ? window.zerothPosition : window.scrollY
-    let content = immersive.querySelector(".immersive-content")
-    content.style.transform = `translateY(${-1.2 * (window.scrollY - window.zerothPosition)}px)`
-    if ((window.scrollY - window.zerothPosition) >= content.getBoundingClientRect().height) {
-      immersive.style.top="unset"
-    } else {
-      immersive.style.top="0"
+// window.addEventListener("scroll", immersiveTrigger)
+// function immersiveTrigger() {
+//   let immersive = document.querySelector(".immersive")
+//   if (immersive.getBoundingClientRect().top <= 0) {
+//     window.zerothPosition = window.zerothPosition ? window.zerothPosition : window.scrollY
+//     let content = immersive.querySelector(".immersive-content")
+//     content.style.transform = `translateY(${-1.2 * (window.scrollY - window.zerothPosition)}px)`
+//     if ((window.scrollY - window.zerothPosition) >= content.getBoundingClientRect().height) {
+//       immersive.style.top="unset"
+//     } else {
+//       immersive.style.top="0"
+//     }
+//   }
+//   if (immersive.getBoundingClientRect().top > window.outerHeight*.1) {
+//     immersive.querySelector(".immersive-content").style.transform = "translateY(0px)"
+//   }
+// }
+
+
+
+// for(const target of document.querySelectorAll(".immersive-content"))
+// enterView({
+//   selector: '.immersive-section',
+//   offset: 0.45,
+//   enter: function(el) {
+//    el.classList.add('entered');
+//   },
+//   exit: function(el) {
+//    el.classList.remove('entered');
+//   },
+// });
+ 
+enterView({
+  selector: '.zoom-in-out',
+  // offset: 1,
+  offset: 0.35,
+  enter: function(el) {
+   el.classList.add('entered');
+  },
+  exit: function(el) {
+   el.classList.remove('entered');
+  },
+  // enter: function(el) {
+  //  el.classList.add('entered');
+  // },
+  progress: function (el, progress) {
+    let prog = (Math.ceil((progress * 100) / 10) * 10) / 100
+    el.setAttribute("data-progress", progress.toFixed(2))
+    // if (progress >= .99) {
+    //   // let opa = 1 - ((1 - progress) * 30)
+    //   // opa = opa >=1?0:opa
+    //   // el.style.opacity = opa
+    //   el.classList.add("exited")
+    // }
+    // else {
+    //   el.style.opacity = "unset"
+    // }
+    // if (progress >= .75 && progress < .99) { el.querySelector(".immersive-section-content").style.transform = `translateY(${(window.outerHeight * (progress - .8)) * .2}px)` } else {
+    //   el.querySelector(".immersive-section-content").style.transform = ``
+    // }
+    if (progress < .99) { el.classList.remove("exited") }
+    if (el.classList.contains("laptop")) {
+      let rotate = (-60 + (60 * Number(progress * 1.3)))
+      rotate = rotate > 1 ? 1 : rotate
+      let scale = 1.3 - (progress * .2)
+      scale = scale <=1.142?1.142:scale
+      el.querySelector(".display").style.transform = `rotate3d(1,0,0,${rotate}deg)`
+      el.querySelector(".display").setAttribute("class", `display at-position-${prog * 100}`)
+      el.querySelector(".laptop-body").style.transform = `scale(${scale})translateY(90%)`
     }
+    if (el.classList.contains("inspired-16")) {
+      let rotate = ((Number(progress.toFixed(2)) * 360)*.1).toFixed(3)
+      el.style.setProperty("--l1-rotate", `${rotate}deg`)
+      el.style.setProperty("--l2-rotate", `${rotate * .5}deg`)
+      if (progress >= .5) {
+        // el.querySelector(".typewriter-magic").style.opacity=1
+      }
+    }
+    // el.querySelector(".immersive-section-content").style.transform = `translateY(${(window.outerHeight*Number(progress)/2)}px)`
   }
-  if (immersive.getBoundingClientRect().top > window.outerHeight*.1) {
-    immersive.querySelector(".immersive-content").style.transform = "translateY(0px)"
-  }
-}
+ });
+   
+ 
