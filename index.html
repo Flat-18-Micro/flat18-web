@@ -1189,7 +1189,8 @@ enterView({
       let rotate = (-60 + (60 * Number(progress * 1.3)))
       rotate = rotate > 1 ? 1 : rotate
       let scale = 1.3 - (progress * .2)
-      scale = scale <=1.142?1.142:scale
+      scale = scale <= 1.142 ? 1.142 : scale
+      scale = window.outerWidth<=960? scale*.9:scale
       el.querySelector(".display").style.transform = `rotate3d(1,0,0,${rotate}deg)`
       el.querySelector(".display").setAttribute("class", `display at-position-${prog * 100}`)
       el.querySelector(".laptop-body").style.transform = `scale(${scale})translateY(90%)`
