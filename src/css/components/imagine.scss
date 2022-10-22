@@ -1,31 +1,21 @@
 .immersive {
-  // height: 100vh;
   scroll-snap-align: top;
   overflow: unset !important;
   contain: content;
-
-  // background: var(--black);
   margin-top: 0;
 }
-
 .immersive-content {
-  // height: 100vh;
   min-height: 500px;
   max-width: 90vw;
   margin: auto;
-
   @media (max-width: $large) {
     max-width: 100vw;
     width: 100vw;
   }
-
   @media (max-width: $small) {
     min-height: 250px;
   }
-
   .immersive-section {
-    // position: sticky;
-    // top: 0;
     opacity: 0;
     transform: translateY(0px);
     transition: 0.2s linear;
@@ -37,12 +27,6 @@
       opacity: 0 !important;
       transform: translateY(-50px) !important;
     }
-    // &::after {
-    //   content: attr(data-progress);
-    //   position: fixed;
-    //   right: 0;
-    //   top: 0;
-    // }
     &.zoom-in-out {
       display: flex;
       flex-direction: row;
@@ -55,14 +39,11 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        // min-height: 500px;
         margin: 3rem auto;
         gap: 3rem;
         h2 {
           line-height: 1;
           font-size: 4rem;
-          // width: 80vw;
-          // max-width: 800px;
           text-align: center;
           @media (max-width: $medium) {
             font-size: 3.5rem;
@@ -76,11 +57,9 @@
           @media (max-width: $medium) {
             font-size: 1.8rem;
           }
-
           @media (max-width: $small) {
             font-size: 1.4rem;
           }
-
           @media (max-width: $x-small) {
             font-size: 1.2rem;
           }
@@ -89,7 +68,6 @@
     }
   }
 }
-
 .light {
   .laptop {
     background-image: url(/src/img/laptop-bg-light.svg);
@@ -103,12 +81,10 @@
   }
 }
 .laptop {
-  // background-image: radial-gradient(ellipse at bottom, var(--white) 10%, transparent 50%);
   background-image: url(/src/img/laptop-bg-dark.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 100%;
-
   .immersive-section-content {
     perspective: 1200px;
     .display {
@@ -130,7 +106,7 @@
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
-        // radial-gradient(ellipse at top left, var(--accent) -200%, transparent), radial-gradient(ellipse at top right, var(--primary) -400%, transparent),radial-gradient(ellipse at bottom, var(--primary) -150%, transparent 70%);
+
         @media (max-width: $small) {
           box-shadow: inset 0px 2px 0px 9px var(--persistent-black);
           border-radius: 18px 18px 0 0;
@@ -170,12 +146,10 @@
             padding: 0 4rem;
             font-size: 2.5rem;
           }
-
           @media (max-width: $small) {
             padding: 0 3.5rem;
             font-size: 2rem;
           }
-
           @media (max-width: $x-small) {
             padding: 0 3rem;
             font-size: 1.5rem;
@@ -194,12 +168,12 @@
       z-index: 1;
       border-radius: 5px 5px 30px 30px;
       @media (max-width: $medium) {
-      height: 35px;
-      border-radius: 4px 4px 25px 25px;
+        height: 35px;
+        border-radius: 4px 4px 25px 25px;
       }
       @media (max-width: $small) {
-      height: 30px;
-      border-radius: 3px 3px 18px 18px;
+        height: 30px;
+        border-radius: 3px 3px 18px 18px;
       }
       &::before {
         content: "";
@@ -217,7 +191,6 @@
     }
   }
 }
-
 .inspired-16 {
   min-height: 500px;
   height: 90vh;
@@ -248,8 +221,6 @@
     background-image: url(/src/img/emoji-l1.svg);
     z-index: -1;
     transform: translate(-50%, -50%) rotate(var(--l1-rotate));
-    // transform: translate(-50%, -50%) rotate(0deg);
-    // animation: rotate-l1 560s linear forwards infinite;
     @keyframes rotate-l1 {
       from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -262,8 +233,6 @@
   &::after {
     background-image: url(/src/img/emoji-l2.svg);
     z-index: -2;
-    // transform: translate(-50%, -50%) rotate(0deg);
-    // animation: rotate-l1 1120s linear forwards infinite;
     transform: translate(-50%, -50%) rotate(var(--l2-rotate));
   }
   .heading {
@@ -278,7 +247,6 @@
     position: relative;
     contain: content;
     max-width: 80vw;
-
     padding: 3rem 0;
     &::after {
       content: "";
@@ -301,25 +269,19 @@
     }
   }
 }
-
 .weird {
-  // background-image: radial-gradient(ellipse at bottom, var(--white) 10%, transparent 50%);
-  // background-image: url(/src/img/weird.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
 .flex-image-left {
   .soldering {
-    // &::after{
     background-image: url(../../../src/img/solder.webp);
   }
   .content-image {
     content: "";
     background-size: contain;
     background-repeat: no-repeat;
-    // background-position: 50% 50%;
     border-radius: 30px;
     height: calc(50vw - 3rem);
     display: block;
@@ -333,13 +295,10 @@
     @media (max-width: $medium) {
       max-height: 400px;
     }
-      @media (max-width: $small) {
+    @media (max-width: $small) {
       height: 90vw;
-      // max-height: unset;
     }
-    // }
   }
-
   .text {
     width: calc(50vw - 3rem);
     max-width: calc((#{$content} / 2) - 3rem);
@@ -350,8 +309,10 @@
       text-align: center;
     }
     h2,
-    p,.btn {
-      margin: 1.5rem auto;}
+    p,
+    .btn {
+      margin: 1.5rem auto;
+    }
     h2,
     p {
       text-align: left !important;
@@ -359,12 +320,5 @@
         text-align: center !important;
       }
     }
-    // h2,p{
-    //   text-align: left;
-    //   @media (max-width:$small){
-    //    text-align: center;
-
-    //     }
-    // }
   }
 }

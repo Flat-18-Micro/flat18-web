@@ -1,39 +1,33 @@
 .build-in-scroll-active {
   opacity: 0;
-  // transform-origin: center;
-  // transform: rotate3d(0.5, 0, 0, -70deg);
-  // pointer-events: none;
+
   transition: 0.5s linear;
   &.build-in {
     opacity: 1;
-    // transform: rotate3d(0, 0, 0, 0deg);
-    // pointer-events: unset;
   }
 }
 
-// .main {
-//   perspective: calc(100vw * 3);
-//   perspective-origin: center;
-// }
-
-
-.typewriter-magic{
+.typewriter-magic {
   position: relative;
   line-height: inherit;
-  &::after{
+  &::after {
     content: "";
-    // position: absolute;
+
     display: inline-block;
     margin-left: 1rem;
     transform: translateY(1rem);
     height: 1em;
     width: 4px;
     background: var(--white);
-    animation: blink-cursor .5s linear alternate infinite;
-    // top: 0;
+    animation: blink-cursor 0.5s linear alternate infinite;
+
     @keyframes blink-cursor {
-      from{opacity: 0;}
-      to{opacity: .5;}
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.5;
+      }
     }
   }
 }
