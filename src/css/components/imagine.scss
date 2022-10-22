@@ -193,6 +193,14 @@
       bottom: 0;
       z-index: 1;
       border-radius: 5px 5px 30px 30px;
+      @media (max-width: $medium) {
+      height: 35px;
+      border-radius: 4px 4px 25px 25px;
+      }
+      @media (max-width: $small) {
+      height: 30px;
+      border-radius: 3px 3px 18px 18px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -323,7 +331,7 @@
     box-shadow: 0 0 5px -3px;
     max-height: calc((#{$content} / 2) - 3rem);
     @media (max-width: $medium) {
-      max-height: 350px;
+      max-height: 400px;
     }
       @media (max-width: $small) {
       height: 90vw;
