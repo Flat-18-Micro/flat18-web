@@ -87,7 +87,7 @@ function makePage(directory) {
   console.log(subDirectory)
   try { fs.mkdirSync("./dist" + subDirectory, { recursive: true }) } catch (e) { }
   fs.writeFileSync('./dist' + subDirectory + 'index.html', dist);
-
+  appendSiteXML(subDirectory)
 }
 
 function assembleBody(contents) {
@@ -168,11 +168,23 @@ const mainFolders = ["./dist", "./dist/src", "./dist/src/css", "./dist/src/fonts
 for (const folder of mainFolders) { reCreateFolders(folder) }
 consolidateAssets()
 
-let siteMap = '<urlset>'
+let siteMap = '<urlset></urlset>'
+function appendSiteXML(dir) {
+  let date = new Date()
+  let loc = `<url>
+  <loc>${variables.site + dir}</loc>
+  <lastmod>${date}</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1</priority>
+</url>
+</urlset>`;
+  siteMap = siteMap.replace("</urlset>", loc)
+}
+
 function makeSiteMapsEtc() {
   const fs = require('fs')
-  fs.writeFileSync('./dist/site.xml', siteMap + '</urlset>');
-  fs.writeFileSync('./dist/sitemap.xml', siteMap + '</urlset>');
+  fs.writeFileSync('./dist/site.xml', siteMap);
+  fs.writeFileSync('./dist/sitemap.xml', siteMap);
   fs.writeFileSync('./dist/robots.txt', `
 User-agent: *
 Disallow: /src/
@@ -185,14 +197,6 @@ Sitemap: https://flat18.co.uk/sitemap.xml
 }
 
 for (const directory of getDirectories('./pages')) {
-  let date = new Date()
-  // console.log(date)
-  siteMap += `<url>
-  <loc>${variables.site + '/' + directory}</loc>
-  <lastmod>${date}</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>1</priority>
-</url>`;
   makePage(directory)
 }
 
