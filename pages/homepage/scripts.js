@@ -23,7 +23,8 @@ document.querySelector(".showcase").addEventListener("scroll", e => {
   let t = document.querySelector(".showcase").scrollLeft / (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width);
   document.querySelector(".showcase-slider > input").value = t * 100
 })
-document.querySelector(".showcase-slider > input").value = 50, document.querySelector(".showcase-slider > input").addEventListener("input", e => {
+document.querySelector(".showcase-slider > input").value = 50
+document.querySelector(".showcase-slider > input").addEventListener("input", e => {
   if ("INPUT" === e.target.nodeName) {
     window.removeEventListener("scroll", showcaseYScrollManipulation);
     let t = Number(e.target.value) / 100;
@@ -91,7 +92,7 @@ enterView({
   progress: function (el, progress) {
     let prog = (Math.ceil((progress * 100) / 10) * 10) / 100
     el.setAttribute("data-progress", progress.toFixed(2))
-    if (progress < .99) { el.classList.remove("exited") }
+    // if (progress < .99) { el.classList.remove("exited") }
     if (el.classList.contains("laptop")) {
       let rotate = (-60 + (60 * Number(progress * 1.3)))
       rotate = rotate > 1 ? 1 : rotate

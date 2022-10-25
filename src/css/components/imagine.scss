@@ -1,15 +1,16 @@
 .immersive {
-  scroll-snap-align: top;
+  // scroll-snap-align: top;
   overflow: unset !important;
-  contain: content;
-  margin-top: 0;
+  // contain: content;
+  // margin-top: 0;
 }
 .immersive-content {
   min-height: 500px;
-  max-width: 90vw;
-  margin: auto;
+  width: 100vw;
+  max-width: 100%;
+  // margin: auto;
   @media (max-width: $large) {
-    max-width: 100vw;
+    max-width: $content;
     width: 100vw;
   }
   @media (max-width: $small) {
@@ -39,7 +40,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        margin: 3rem auto;
+        // margin: 3rem auto;
         gap: 3rem;
         h2 {
           line-height: 1;
@@ -53,16 +54,16 @@
           }
         }
         p {
-          font-size: 2rem;
-          @media (max-width: $medium) {
-            font-size: 1.8rem;
-          }
-          @media (max-width: $small) {
-            font-size: 1.4rem;
-          }
-          @media (max-width: $x-small) {
+          // font-size: 2rem;
+          // @media (max-width: $medium) {
+          //   font-size: 1.8rem;
+          // }
+          // @media (max-width: $small) {
+          //   font-size: 1.4rem;
+          // }
+          // @media (max-width: $x-small) {
             font-size: 1.2rem;
-          }
+          // }
         }
       }
     }

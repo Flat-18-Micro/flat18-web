@@ -232,8 +232,8 @@ p {
     background-size: contain;
     background-repeat: no-repeat;
     width: 50vw;
-    max-width: 900px;
-    height: 900px;
+    max-width: calc(#{$content} * .5);
+    aspect-ratio: 1/1;
     max-height: 50vw;
   }
 }
@@ -259,6 +259,9 @@ p {
   padding: 2rem;
   margin: 100px auto;
   position: relative;
+  @media (min-width: $medium) {
+    max-width: 95vw;
+  }
   @media (max-width: $small) {
     margin: 20px auto;
 
@@ -703,7 +706,7 @@ h5 {
   .showcase {
     width: 100vw;
     overflow: scroll;
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     display: grid;
     grid-auto-flow: column;
     gap: 5rem;
@@ -738,7 +741,7 @@ h5 {
       grid-auto-flow: row;
       margin-bottom: auto;
       gap: 1rem;
-      transition: 0.2s ease;
+      // transition: 0.2s ease;
       border-radius: 4px;
       position: relative;
       @media (max-width: $small) {
@@ -1038,28 +1041,30 @@ h5 {
   transform: rotate(60deg);
   position: relative;
   width: calc(600px - 3rem);
-  max-width: calc(35vw - 3rem);
+  max-width: calc(30vw - 3rem);
   height: calc(600px - 3rem);
-  max-height: calc(35vw - 3rem);
+  max-height: calc(30vw - 3rem);
   min-height: $x-small;
   opacity: 0.4;
-
+@media (max-width: $large) {
+    transform: rotate(50deg) translate(0%, 10%);
+}
   &::before {
     animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/loudspeaker.webp);
   }
 }
 
-@media (max-width: $large) {
-  .loudspeaker {
-    transform: rotate(40deg) translate(0%, 20%);
-  }
-}
+// @media (max-width: $large) {
+//   .loudspeaker {
+//     transform: rotate(55deg) translate(0%, 20%);
+//   }
+// }
 
 .container {
   margin: 150px auto;
   width: 100vw;
-  max-width: 100%;
+  max-width: $content;
 
   @media (max-width: $large) {
     margin: 125px auto;
@@ -1091,7 +1096,7 @@ h5 {
   }
 
   .text-organiser {
-    width: calc(650px - 3rem);
+    width: calc((#{$content} * .5) - 3rem);
     max-width: calc(60vw - 3rem);
     position: relative;
     z-index: 2;
@@ -1186,6 +1191,8 @@ h5 {
   &.text-organiser {
     @media (min-width: $small) {
       max-width: calc(65vw - 3rem);
+      // margin-right: auto;
+    margin-left: auto;
     }
     h2 {
       margin-bottom: 3rem;
@@ -1783,7 +1790,7 @@ ul {
           &::before {
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             content: "";
-            background: linear-gradient(60deg, var(--primary), var(--primary));
+            // background: linear-gradient(60deg, var(--primary), var(--primary));
             z-index: 2;
             height: 100%;
             width: 100%;
