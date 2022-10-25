@@ -395,7 +395,6 @@
   <div class="showcase-slider">
     <input type="range">
     <div class="slider-ui">
-      <!-- <span class="blob"></span> -->
     </div>
   </div>
 </div><div class="container immersive build-in-scroll">
@@ -415,6 +414,7 @@
   <div class="text-organiser">
     <h2>You imagine it.<br>We create it.</h2>
     <p>Whatever you're planning to build, let's have a chat about making it a reality.</p>
+    <p>Here are some of favourite technologoes:</p>
     <ul class="flex">
       <li>DeFi</li>
       <li>Crypto</li>
@@ -422,7 +422,7 @@
       <li>Frontend design</li>
       <li>PHP development</li>
       <li>javascript</li>
-      <li>HTML</li>
+      <li>Vue</li>
       <li>Server config</li>
       <li>Virtual Machines</li>
       <li>payments processing</li>
@@ -430,6 +430,12 @@
       <li>Bitcoin</li>
       <li>finance</li>
       <li>Design</li>
+
+      <li>Node.js</li>
+      <li>HTML</li>
+      <li>Vector Graphics</li>
+      <li>CSS</li>
+      <li>MySQL</li>
     </ul>
     <a class="btn primary chat-trigger" href="#contact"><i class="ico icon-circle"></i> Get in touch</a>
     <a class="btn" href="/pricing">Check out our pricing <i class="chevron-to-arrow"></i></a>
@@ -445,7 +451,7 @@
         <div class="content-image soldering">
         </div>
         <div class="text">
-          <h2>We're Developers who do more than just code.</h2>
+          <h2>We're Developers doing more than just coding.</h2>
           <p>Talk to us about creating Illustrations and Iconography for your app or website.</p>
           <p>We're here to help 🙂</p>
           <a class="btn primary chat-trigger" href="#contact"><i class="ico icon-circle"></i> Get in touch</a>
@@ -453,30 +459,6 @@
       </div>
     </div>
   </div>
-</div><div class="container flex build-in-scroll" id="contact">
-  <div class="img loudspeaker" src="/src/img/loudspeaker.webp"></div>
-  <div class="contact-form text-organiser">
-    <h2>Say Hello 👋</h2>
-    <p>Let's start a beautiful friendship right here.</p>
-
-
-    <label for="inputFormName" class="form-help-text">Nickname</label>
-    <input type="text" class="contact-form-input" placeholder="Jessie Limonzest" data-type="name" />
-    <label class="form-help-text" for="inputFormTel">Telephone • Telegram • Signal</label>
-    <input type="text" class="contact-form-input" placeholder="+44 7456 554455" data-type="numb" />
-    <label class="form-help-text" for="inputFormAdd">Email</label>
-    <input type="text" class="contact-form-input" placeholder="jessie@example.com" data-type="email" />
-    <label class="form-help-text" for="inputFormMes">Message</label>
-    <textarea type="text" class="contact-form-input" placeholder="Here's my next big project..."
-      data-type="message"></textarea>
-
-    <div class="workingForm">
-      <label class="form-help-text errorHelpForm" for="workingForm"></label>
-      <span style="margin: auto;" onclick="infoTransformsToButton(this)" class="btn">Send message <i
-          class="ico icon-send"></i></span>
-    </div>
-  </div>
-
 </div><div class="container projects parent build-in-scroll" id="projects">
   <div class="heading reading-layout">
     <h2>Creative studies</h2>
@@ -893,6 +875,30 @@
     </div>
 
   </div>
+</div><div class="container flex build-in-scroll" id="contact">
+  <div class="img loudspeaker" src="/src/img/loudspeaker.webp"></div>
+  <div class="contact-form text-organiser">
+    <h2>Say Hello 👋</h2>
+    <p>Let's start a beautiful friendship right here.</p>
+
+
+    <label for="inputFormName" class="form-help-text">Nickname</label>
+    <input type="text" class="contact-form-input" placeholder="Jessie Limonzest" data-type="name" />
+    <label class="form-help-text" for="inputFormTel">Telephone • Telegram • Signal</label>
+    <input type="text" class="contact-form-input" placeholder="+44 7456 554455" data-type="numb" />
+    <label class="form-help-text" for="inputFormAdd">Email</label>
+    <input type="text" class="contact-form-input" placeholder="jessie@example.com" data-type="email" />
+    <label class="form-help-text" for="inputFormMes">Message</label>
+    <textarea type="text" class="contact-form-input" placeholder="Here's my next big project..."
+      data-type="message"></textarea>
+
+    <div class="workingForm">
+      <label class="form-help-text errorHelpForm" for="workingForm"></label>
+      <span style="margin: auto;" onclick="infoTransformsToButton(this)" class="btn">Send message <i
+          class="ico icon-send"></i></span>
+    </div>
+  </div>
+
 </div>
   </div>
 </div>
@@ -1054,7 +1060,8 @@ document.querySelector(".showcase").addEventListener("scroll", e => {
   let t = document.querySelector(".showcase").scrollLeft / (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width);
   document.querySelector(".showcase-slider > input").value = t * 100
 })
-document.querySelector(".showcase-slider > input").value = 50, document.querySelector(".showcase-slider > input").addEventListener("input", e => {
+document.querySelector(".showcase-slider > input").value = 50
+document.querySelector(".showcase-slider > input").addEventListener("input", e => {
   if ("INPUT" === e.target.nodeName) {
     window.removeEventListener("scroll", showcaseYScrollManipulation);
     let t = Number(e.target.value) / 100;
@@ -1122,7 +1129,7 @@ enterView({
   progress: function (el, progress) {
     let prog = (Math.ceil((progress * 100) / 10) * 10) / 100
     el.setAttribute("data-progress", progress.toFixed(2))
-    if (progress < .99) { el.classList.remove("exited") }
+    // if (progress < .99) { el.classList.remove("exited") }
     if (el.classList.contains("laptop")) {
       let rotate = (-60 + (60 * Number(progress * 1.3)))
       rotate = rotate > 1 ? 1 : rotate
