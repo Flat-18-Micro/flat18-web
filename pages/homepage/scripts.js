@@ -86,9 +86,9 @@ enterView({
   enter: function (el) {
     el.classList.add('entered');
   },
-  exit: function (el) {
-    el.classList.remove('entered');
-  },
+  // exit: function (el) {
+  //   el.classList.remove('entered');
+  // },
   progress: function (el, progress) {
     let prog = (Math.ceil((progress * 100) / 10) * 10) / 100
     el.setAttribute("data-progress", progress.toFixed(2))

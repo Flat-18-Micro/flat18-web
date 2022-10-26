@@ -62,7 +62,7 @@
           //   font-size: 1.4rem;
           // }
           // @media (max-width: $x-small) {
-            font-size: 1.2rem;
+          font-size: 1.2rem;
           // }
         }
       }
@@ -275,23 +275,80 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
+.entered {
+  .immersive-section-content {
+    .soldering {
+      &::after {
+        top: calc(100% / -6);
+        left: calc(100% / -6);
+        @media (max-width:$small) {
+          top: calc(100% / -6);
+        left: 0;
+      transform: scale(.8);
+    }
+        opacity: .5;
+      transform: scale(1);
+    }
+    }
+  }
+}
+.light{
+  .entered {
+    .immersive-section-content {
+      .soldering {
+        &::after {
+          opacity: 1;
+      }
+      }
+    }
+  }
+}
 .flex-image-left {
   .soldering {
-    background-image: url(../../../src/img/solder.webp);
-  }
-  .content-image {
-    content: "";
+    border-radius: 3px;
+    position: relative;
     background-size: contain;
     background-repeat: no-repeat;
-    border-radius: 30px;
+    background-image: url(/src/img/solder.webp);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background-color: var(--white);
+      border-radius: 3px;
+      opacity: 0.5;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: center;
+      transition: 1s linear;
+      transition-delay: .5s;
+      transform: scale(.875);
+      opacity: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 3px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(/src/img/geometric.svg);
+      z-index: -2;
+    }
+  }
+  .content-image {
     height: calc(50vw - 3rem);
     display: block;
     top: 0;
     left: 0;
     aspect-ratio: 1/1;
-    background-color: var(--dark);
     margin: 2px;
-    box-shadow: 0 0 5px -3px;
+    // box-shadow: 0 0 5px -3px;
     max-height: calc((#{$content} / 2) - 3rem);
     @media (max-width: $medium) {
       max-height: 400px;

@@ -237,7 +237,7 @@ enterView({
   enter: function(el) {
    el.classList.add('build-in');
   },
-  exit: function(el) {
-   el.classList.remove('build-in');
-  },
+//   exit: function(el) {
+//    el.classList.remove('build-in');
+//   },
  });
