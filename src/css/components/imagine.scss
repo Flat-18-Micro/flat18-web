@@ -71,7 +71,9 @@
 }
 .light {
   .laptop {
-    background-image: url(/src/img/laptop-bg-light.svg);
+    &::after {
+      background-image: url(/src/img/laptop-bg-light.svg);
+    }
     .immersive-section-content {
       .display {
         &::before {
@@ -82,10 +84,23 @@
   }
 }
 .laptop {
-  background-image: url(/src/img/laptop-bg-dark.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: url(/src/img/laptop-bg-dark.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    z-index: -1;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    max-width: $content;
+  }
   .immersive-section-content {
     perspective: 1200px;
     .display {
@@ -160,21 +175,21 @@
     }
     .laptop-body {
       position: relative;
-      height: 40px;
+      height: 35px;
       width: 120%;
       display: block;
       background: linear-gradient(var(--white) 70%, var(--persistent-black) 130%);
       position: absolute;
       bottom: 0;
       z-index: 1;
-      border-radius: 5px 5px 30px 30px;
+      border-radius: 5px 5px 20px 20px;
       @media (max-width: $medium) {
-        height: 35px;
-        border-radius: 4px 4px 25px 25px;
+        height: 30px;
+        border-radius: 4px 4px 15px 15px;
       }
       @media (max-width: $small) {
-        height: 30px;
-        border-radius: 3px 3px 18px 18px;
+        height: 25px;
+        border-radius: 3px 3px 8px 8px;
       }
       &::before {
         content: "";
@@ -281,24 +296,24 @@
       &::after {
         top: calc(100% / -6);
         left: calc(100% / -6);
-        @media (max-width:$small) {
+        @media (max-width: $small) {
           top: calc(100% / -6);
-        left: 0;
-      transform: scale(.8);
-    }
-        opacity: .5;
-      transform: scale(1);
-    }
+          left: 0;
+          transform: scale(0.8);
+        }
+        opacity: 0.5;
+        transform: scale(1);
+      }
     }
   }
 }
-.light{
+.light {
   .entered {
     .immersive-section-content {
       .soldering {
         &::after {
           opacity: 1;
-      }
+        }
       }
     }
   }
@@ -329,8 +344,8 @@
       left: 0;
       transform-origin: center;
       transition: 1s ease;
-      transition-delay: .5s;
-      transform: scale(.875);
+      transition-delay: 0.5s;
+      transform: scale(0.875);
       opacity: 0;
       height: 100%;
       width: 100%;
