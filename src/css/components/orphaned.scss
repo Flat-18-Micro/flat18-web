@@ -249,9 +249,18 @@ p {
       animation: 2s beforeBlurLight 0.5s ease forwards 1;
       background-image: url(/src/img/blur2.webp);
     }
+    .image-element {
+      &.pattern {
+        &::after {
+        opacity: 0.05;
+        background-image: url(/src/img/pattern.svg);
+        }
+      }
+    }
   }
 }
 .hero {
+  --transform-hero-scroll:1px;
   display: -ms-grid;
   display: grid;
   grid-template: 1fr / 1fr 1fr;
@@ -284,6 +293,7 @@ p {
     opacity: 0;
     z-index: -1;
     animation: 2s beforeBlur 0.5s ease forwards 1;
+    transform: translateY(calc(var(--transform-hero-scroll) * 2));
   }
 
   .image-element {
@@ -305,20 +315,41 @@ p {
       height: 90vw;
       max-height: 100%;
     }
-    &::after {
-      content: "";
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-image: linear-gradient(transparent 48%, var(--black) 48% 52%, transparent 52%);
-      background-size: 100% 40px;
-      z-index: -1;
-      transform: rotate(98deg) scale(1.6);
-      opacity: 0.5;
-      @media (max-width: $small) {
-        transform: rotate(90deg) scale(1.3);
+    &.stripes {
+      &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(transparent 48%, var(--black) 48% 52%, transparent 52%);
+        background-size: 100% 40px;
+        z-index: -1;
+        transform: rotate(98deg) scale(1.6);
+        opacity: 0.5;
+        @media (max-width: $small) {
+          transform: rotate(90deg) scale(1.3);
+        }
+      }
+    }
+    &.pattern {
+      &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(/src/img/pattern-dark.svg);
+        background-size: contain;
+        z-index: -1;
+        transform: rotate(-5deg) scale(1.4) translateX(30%) translateY(var(--transform-hero-scroll));
+        opacity: 0.1;
+        background-repeat: no-repeat;
+        @media (max-width: $small) {
+          display: none;
+        }
       }
     }
     &:before {
@@ -1395,7 +1426,7 @@ h5 {
     grid-row: 2 / 3;
     z-index: 2;
     @media (max-width: $small) {
-      grid-column: 1/3;
+      grid-column: 1/2;
       grid-row: auto;
       margin: auto;
       width: 90vw;
@@ -1449,7 +1480,8 @@ h5 {
       height: calc(100% + 6px);
       z-index: -2;
       border-radius: 8px;
-      background: linear-gradient(var(--black) -100% -10%, transparent), linear-gradient(to right, var(--primary), var(--primary));
+      background: linear-gradient(var(--black) -100% -10%, transparent),
+        linear-gradient(to right, var(--primary), var(--primary));
     }
     &::before {
       content: "";
@@ -1466,7 +1498,8 @@ h5 {
       max-height: 95%;
       margin-right: auto;
       &::after {
-        background: linear-gradient(var(--black) -100% -10%, transparent), linear-gradient(to right, var(--accent), var(--accent));
+        background: linear-gradient(var(--black) -100% -10%, transparent),
+          linear-gradient(to right, var(--accent), var(--accent));
       }
       @media (max-width: $small) {
         height: auto;
@@ -1530,10 +1563,13 @@ h5 {
           }
           &.playing-animation {
             #square {
-              animation: square-build-1 1s cubic-bezier(.68,-0.55,.27,1.55) forwards 1;
+              animation: square-build-1 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards 1;
               animation-delay: 0.1s;
               @keyframes square-build-1 {
-                from{transform: translate(0,0)scale(0);opacity:0;}
+                from {
+                  transform: translate(0, 0) scale(0);
+                  opacity: 0;
+                }
                 to {
                   transform: translate(10px, -5px) scale(1.2);
                   opacity: 0.75;
@@ -1541,56 +1577,68 @@ h5 {
               }
             }
             #triangle {
-              animation: triangle-build-1 1.2s cubic-bezier(.68,-0.55,.27,1.55) forwards 1;
+              animation: triangle-build-1 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards 1;
               animation-delay: 0.2s;
               @keyframes triangle-build-1 {
-                from{transform: translate(0,0)scale(0);opacity:0;}
+                from {
+                  transform: translate(0, 0) scale(0);
+                  opacity: 0;
+                }
                 to {
-                  transform: translate(21px, -22px)scale(1);
+                  transform: translate(21px, -22px) scale(1);
                   opacity: 0.75;
                 }
               }
             }
             #circle1 {
-              animation: circle1-build-1 1s cubic-bezier(.68,-0.55,.27,1.55) forwards 1;
+              animation: circle1-build-1 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards 1;
               animation-delay: 0.5s;
               @keyframes circle1-build-1 {
-                from{transform: translate(0,0)scale(1);}
+                from {
+                  transform: translate(0, 0) scale(1);
+                }
                 to {
                   // opacity: 0.75;
                   transform: translate(5px, -15px) scale(1.1);
-                  fill:none;stroke:var(--primary);stroke-width:3px;
+                  fill: none;
+                  stroke: var(--primary);
+                  stroke-width: 3px;
                 }
               }
             }
           }
         }
         &.grow {
-          #grow1
-           {
+          #grow1 {
             opacity: 0;
             // transform-origin: 10% 90%;
-                  fill:none;stroke:var(--primary);stroke-width:3px;
+            fill: none;
+            stroke: var(--primary);
+            stroke-width: 3px;
           }
           &.playing-animation {
             #square {
-              animation: square-build-2 .5s cubic-bezier(.68,-0.55,.27,1.55) forwards 1;
+              animation: square-build-2 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards 1;
               animation-delay: 0.5s;
               @keyframes square-build-2 {
-                from{transform: translate(0,0)scale(0);}
+                from {
+                  transform: translate(0, 0) scale(0);
+                }
                 to {
-                  transform: scale(.9)translate(1px, 5px);
+                  transform: scale(0.9) translate(1px, 5px);
                 }
               }
             }
             #grow1 {
-              animation: grow1-build-1 1.5s cubic-bezier(.68,-0.55,.27,1.25) forwards 1;
+              animation: grow1-build-1 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.25) forwards 1;
               animation-delay: 0.2s;
               @keyframes grow1-build-1 {
-                from{transform: scale(.6)translate(2px, 35px);opacity:0;
+                from {
+                  transform: scale(0.6) translate(2px, 35px);
+                  opacity: 0;
                 }
                 to {
-                  transform: scale(1)translate(1px, 0px);
+                  transform: scale(1) translate(1px, 0px);
                   opacity: 1;
                   // fill:var(--primary);stroke:none;stroke-width:3px;
                 }

@@ -112,3 +112,11 @@ enterView({
     }
   }
 });
+
+
+window.addEventListener("scroll", () => {
+  let hero = document.querySelector(".hero")
+  if (window.scrollY <= window.outerHeight) {
+    hero.style.setProperty('--transform-hero-scroll', window.scrollY * .1 + "px");
+  }
+})
