@@ -1134,7 +1134,7 @@ h5 {
   }
 
   .text-organiser {
-    width: calc((#{$content} * 0.5) - 3rem);
+    width: calc((#{$content} * 0.5) - 4rem);
     max-width: calc(60vw - 3rem);
     position: relative;
     z-index: 2;
