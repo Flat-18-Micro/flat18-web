@@ -1466,7 +1466,7 @@ h5 {
       max-height: 95%;
       margin-right: auto;
       &::after {
-        background: linear-gradient(var(--black) -100% -10%, transparent), linear-gradient(to right, var(--accent), var(--yellow));
+        background: linear-gradient(var(--black) -100% -10%, transparent), linear-gradient(to right, var(--accent), var(--accent));
       }
       @media (max-width: $small) {
         height: auto;
