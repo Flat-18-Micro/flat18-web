@@ -62,7 +62,7 @@
   </div>
 </div>
     <div class="hero">
-  <div class="image-element">
+  <div class="image-element pattern">
 
 
   </div>
@@ -1013,4 +1013,11 @@ enterView({
     }
   }
 });
-</script>
+
+
+window.addEventListener("scroll", () => {
+  let hero = document.querySelector(".hero")
+  if (window.scrollY <= window.outerHeight) {
+    hero.style.setProperty('--transform-hero-scroll', window.scrollY * .1 + "px");
+  }
+})</script>
