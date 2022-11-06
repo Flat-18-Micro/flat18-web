@@ -373,13 +373,16 @@ p {
         left: 45%;
       }
       @media (max-width: $content) {
+      background-image: url(/src/img/fella.webp);
         left: 40%;
       }
       @media (max-width: $medium) {
-        left: 35%;
+      background-image: url(/src/img/fella.webp);
+      left: 35%;
       }
       @media (max-width: $small) {
-        min-height: unset;
+      background-image: url(/src/img/fellas.webp);
+      min-height: unset;
         left: 50%;
         top: 40%;
 
@@ -388,7 +391,8 @@ p {
         max-height: 350px;
       }
       @media (max-width: $x-small) {
-        top: 45%;
+      background-image: url(/src/img/fellas.webp);
+      top: 45%;
       }
     }
   }

@@ -110,6 +110,7 @@
       transform: rotate3d(1, 0, 0, -45deg);
       transform-origin: bottom;
       position: relative;
+      transition: .1s linear;
       &::before {
         --display-ui:url(/src/img/dark-ui.svg);
         content: "";
