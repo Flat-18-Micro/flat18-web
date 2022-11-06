@@ -305,7 +305,7 @@
 .entered {
   .immersive-section-content {
     .soldering {
-      &::after {
+      svg {
         top: calc(100% / -6);
         left: calc(100% / -6);
         @media (max-width: $small) {
@@ -323,7 +323,7 @@
   .entered {
     .immersive-section-content {
       .soldering {
-        &::after {
+        svg {
           opacity: 1;
         }
       }
@@ -349,7 +349,7 @@
       border-radius: 3px;
       opacity: 0.5;
     }
-    &::after {
+    svg {
       content: "";
       position: absolute;
       top: 0;
