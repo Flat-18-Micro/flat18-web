@@ -9,7 +9,7 @@ body {
   --black: var(--theme-black);
   --white: var(--theme-white);
   --off-white: var(--theme-off-white);
-  --primary-dark: var(--theme-primary-dark);
+  --primary-text: var(--theme-primary-text);
   --primary: var(--theme-primary);
   --accent: var(--theme-accent);
   --accent-text: var(--theme-accent-text);
@@ -481,6 +481,24 @@ p {
   }
 }
 
+.woot-widget-bubble.woot-elements--right.woot-widget--expanded{
+  background: var(--primary) !important;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  border-radius: 100px;
+  color: var(--primary);
+  text-align: center;
+  height: auto !important;
+  > div{
+    font-size: 1rem !important;
+    padding: unset !important;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif, "Austin News Text Web Roman Regular", serif;
+  }
+  img{
+    display: none;
+  }
+}
 .btn {
   padding: 0.6rem 1.25rem;
   font-size: 1rem;
@@ -615,12 +633,12 @@ h5 {
           .month-gauge {
             @keyframes pop-in-day-tile {
               from {
-                background: var(--accent-text);
+                background: var(--primary);
                 opacity: 0;
                 transform: scale(0);
               }
               to {
-                background: var(--accent-text);
+                background: var(--primary);
                 opacity: 1;
                 transform: scale(1);
               }
@@ -646,33 +664,39 @@ h5 {
         max-width: calc(100vw - 4rem);
       }
       .month-gauge-parent {
-        display: flex;
+        display: inline-flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
-        margin-bottom: 1.75rem;
+        // margin-bottom: 1.75rem;
         .month-gauge {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           grid-template-rows: repeat(4, 1fr);
-          gap: 0.25rem;
+          gap: 3px;
           i {
             transform-origin: center;
-            background: var(--accent-text);
+            background: var(--primary);
             opacity: 0.25;
-            height: 5px;
-            width: 5px;
+            height: 3px;
+            width: 3px;
             display: block;
             border-radius: 1px;
           }
         }
+      }
+      .badge-time-org{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: -1rem;
       }
     }
   }
 }
 
 .badge {
-  color: var(--accent-text);
+  color: var(--primary);
   padding: 0.25rem 0.5rem;
   display: inline-block;
   font-size: 90%;
@@ -680,7 +704,7 @@ h5 {
   margin: 0.5rem 0.25rem;
   &::after {
     content: "";
-    background: var(--accent-text);
+    background: var(--primary);
     opacity: 0.1;
     height: 100%;
     width: 100%;
@@ -694,7 +718,7 @@ h5 {
 
 .badges {
   > span {
-    color: var(--accent);
+    color: var(--primary-text);
     padding: 0.25rem 0.5rem;
     display: inline-block;
     font-size: 90%;
@@ -702,7 +726,7 @@ h5 {
     margin: 0.5rem 0.25rem;
     &::after {
       content: "";
-      background: var(--accent);
+      background: var(--primary-text);
       opacity: 0.1;
       height: 100%;
       width: 100%;
