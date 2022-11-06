@@ -90,7 +90,7 @@ enterView({
   //   el.classList.remove('entered');
   // },
   progress: function (el, progress) {
-    let prog = (Math.ceil((progress * 100) / 10) * 10) / 100
+    let prog = Math.ceil(progress * 100)// / 1) * 1) / 100
     el.setAttribute("data-progress", progress.toFixed(2))
     // if (progress < .99) { el.classList.remove("exited") }
     if (el.classList.contains("laptop")) {
@@ -100,7 +100,7 @@ enterView({
       scale = scale <= 1.142 ? 1.142 : scale
       scale = window.outerWidth <= 960 ? scale * .9 : scale
       el.querySelector(".display").style.transform = `rotate3d(1,0,0,${rotate}deg)`
-      el.querySelector(".display").setAttribute("class", `display at-position-${prog * 100}`)
+      el.querySelector(".display").setAttribute("class", `display at-position-${prog}`)
       el.querySelector(".laptop-body").style.transform = `scale(${scale})translateY(90%)`
     }
     if (el.classList.contains("inspired-16")) {

@@ -77,7 +77,8 @@
     .immersive-section-content {
       .display {
         &::before {
-          background-image: url(/src/img/light-ui.svg);
+        --display-ui:url(/src/img/light-ui.svg);
+          // background-image: url(/src/img/light-ui.svg);
         }
       }
     }
@@ -104,35 +105,41 @@
   .immersive-section-content {
     perspective: 1200px;
     .display {
-      display: grid;
+        display: grid;
       aspect-ratio: 8/ 5;
       transform: rotate3d(1, 0, 0, -45deg);
       transform-origin: bottom;
       position: relative;
       &::before {
+        --display-ui:url(/src/img/dark-ui.svg);
         content: "";
         position: absolute;
         background-color: var(--dark);
         height: 100%;
         width: 100%;
         z-index: -1;
-        box-shadow: inset 0px -4px 0px 18px var(--persistent-black);
+        box-shadow: inset 0px -1px 0px 18px var(--persistent-black);
         border-radius: 30px 30px 0 0;
-        background-image: url(/src/img/dark-ui.svg);
+        background-image: linear-gradient(to top,var(--persistent-black) -100%,transparent 400% 300%),var(--display-ui);
         background-size: cover;
         background-position: 50% 50%;
         background-repeat: no-repeat;
-
+        // transition: .2s ease;
         @media (max-width: $small) {
           box-shadow: inset 0px 2px 0px 9px var(--persistent-black);
           border-radius: 18px 18px 0 0;
         }
       }
-      @for $i from 0 through 10 {
-        &.at-position-#{$i * 10} {
+      @for $i from 1 through 100 {
+        &.at-position-#{$i} {
           &::after {
             box-shadow: 3px -3px 0px -1px var(--white), -3px -3px 0px -1px var(--white),
-              0 -#{24 - $i}px 1px -12px var(--white), 0 -#{14 - $i}px 1px -4px var(--white);
+              0 -#{24 - $i/10}px .1px -12px var(--white),
+              0 -#{20 - $i/10}px .1px -7px var(--white), 
+              0 -#{10 - $i/10}px .1px -1px var(--white);
+          }
+          &::before{
+            background-image: linear-gradient(to top,var(--persistent-black) -200%,transparent #{400% - (4.0% * $i)} 300%),var(--display-ui);
           }
         }
       }
@@ -143,8 +150,13 @@
         height: 100%;
         width: 100%;
         z-index: -2;
-        box-shadow: 0px 0px 0px 3px var(--persistent-white);
+        box-shadow: 3px -3px 0px -1px var(--white),
+        -3px -3px 0px -1px var(--white),
+        0 -38px .1px -19px var(--white),
+        0 -25px 0.1px -10px var(--white),
+        0 -13px 0.1px -2px var(--white);
         border-radius: 30px 30px 0 0;
+        // transition: .2s ease;
         @media (max-width: $small) {
           border-radius: 18px 18px 0 0;
         }
