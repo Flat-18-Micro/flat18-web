@@ -20,6 +20,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--black);
+  background-image: url(/src/img/noise.webp);
   color: var(--white);
   transition: 1s ease;
 }
@@ -1138,7 +1139,7 @@ h5 {
   height: calc(600px - 3rem);
   max-height: calc(30vw - 3rem);
   min-height: $x-small;
-  opacity: 0.4;
+  // opacity: 0.4;
   @media (max-width: $large) {
     transform: rotate(50deg) translate(0%, 10%);
   }
