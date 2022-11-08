@@ -367,24 +367,24 @@ p {
       transform: translate(-50%, -50%);
       height: 100%;
       aspect-ratio: 1/1;
-      top: 50%;
+      top: 40%;
       min-height: 600px;
       @media (max-width: $large) {
         left: 45%;
       }
       @media (max-width: $content) {
       background-image: url(/src/img/fella.webp);
-        left: 40%;
+        left: 35%;
       }
       @media (max-width: $medium) {
       background-image: url(/src/img/fella.webp);
-      left: 35%;
+      left: 30%;
       }
       @media (max-width: $small) {
       background-image: url(/src/img/fellas.webp);
       min-height: unset;
         left: 50%;
-        top: 40%;
+        top: 32%;
 
         height: 90vw;
 
@@ -392,7 +392,7 @@ p {
       }
       @media (max-width: $x-small) {
       background-image: url(/src/img/fellas.webp);
-      top: 45%;
+      top: 36%;
       }
     }
   }
