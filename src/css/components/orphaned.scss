@@ -1993,7 +1993,7 @@ ul {
     .showcase-tile {
       position: relative;
       cursor: pointer;
-      width: 250px;
+      // width: 250px;
       margin-bottom: 3rem;
       @media (max-width: $small) {
         width: 85vw;
@@ -2004,7 +2004,7 @@ ul {
         position: relative;
         overflow: hidden;
         border-radius: 5px;
-        width: 250px;
+        width: 350px;
         @media (max-width: $small) {
           width: 85vw;
         }
@@ -2052,7 +2052,7 @@ ul {
           .banner {
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
             height: auto;
-            width: 250px;
+            width: 100%;
             border-radius: 5px;
             @media (max-width: $small) {
               width: 85vw;
