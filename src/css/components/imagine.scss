@@ -338,18 +338,18 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(/src/img/solder.webp);
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      z-index: -1;
-      background-color: var(--white);
-      border-radius: 3px;
-      opacity: 0.5;
-    }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   height: 100%;
+    //   width: 100%;
+    //   z-index: -1;
+    //   background-color: var(--white);
+    //   border-radius: 3px;
+    //   opacity: 0.5;
+    // }
     svg {
       content: "";
       position: absolute;
