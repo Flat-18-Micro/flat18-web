@@ -307,6 +307,9 @@
   .immersive-section-content {
     .soldering {
       svg {
+        .rect{
+          fill:var(--yellow);
+        }
         top: calc(100% / -6);
         left: calc(100% / -6);
         @media (max-width: $small) {
@@ -314,7 +317,7 @@
           left: 0;
           transform: scale(0.8);
         }
-        opacity: 0.5;
+        opacity: 1;
         transform: scale(1);
       }
     }
@@ -325,6 +328,9 @@
     .immersive-section-content {
       .soldering {
         svg {
+          .rect{
+            fill:var(--accent);
+          }
           opacity: 1;
         }
       }

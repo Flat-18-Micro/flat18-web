@@ -345,8 +345,8 @@ p {
         background-image: url(/src/img/pattern-dark.svg);
         background-size: contain;
         z-index: -1;
-        transform: rotate(-5deg) scale(1.4) translateX(30%) translateY(var(--transform-hero-scroll));
-        opacity: 0.1;
+        transform: rotate(-15deg) scale(1.4) translateX(30%) translateY(var(--transform-hero-scroll));
+        opacity: 0.2;
         background-repeat: no-repeat;
         @media (max-width: $small) {
           display: none;
@@ -357,7 +357,7 @@ p {
       content: "";
       background-image: url(/src/img/fellas.webp);
       display: block;
-      animation: 2s popInImage 0s ease forwards 1;
+      // animation: 2s popInImage 0s ease forwards 1;
       position: absolute;
       background-size: contain;
       background-repeat: no-repeat;
