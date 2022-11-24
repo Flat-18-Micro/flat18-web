@@ -1983,9 +1983,9 @@ ul {
 
   .project-showcase-workspace {
     display: flex;
-    gap: 2rem;
+    gap: 50px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
@@ -2004,7 +2004,7 @@ ul {
         position: relative;
         overflow: hidden;
         border-radius: 5px;
-        width: 350px;
+        width: 400px;
         @media (max-width: $small) {
           width: 85vw;
         }
