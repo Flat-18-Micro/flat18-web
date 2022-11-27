@@ -338,7 +338,7 @@ p {
       &::after {
         content: "";
         height: 100%;
-        width: 100%;
+        // width: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -348,6 +348,9 @@ p {
         transform: rotate(-15deg) scale(1.4) translateX(30%) translateY(var(--transform-hero-scroll));
         opacity: 0.2;
         background-repeat: no-repeat;
+        background-color: var(--primary);
+        border-radius: 100%;
+        aspect-ratio: 1/1;
         @media (max-width: $small) {
           display: none;
         }
@@ -417,7 +420,8 @@ p {
       }
       @media (max-width: $medium) {
         font-size: 5rem;
-        text-shadow: 0 0 20px var(--black);
+        // text-shadow: 0 0 20px var(--black);
+        text-shadow: unset;
       }
       @media (max-width: $small) {
         font-size: 4rem;
@@ -451,7 +455,7 @@ p {
 }
 @keyframes beforeBlurLight {
   to {
-    opacity: 0.6;
+    opacity: 0.4;
   }
 }
 
@@ -1150,6 +1154,17 @@ h5 {
   &::before {
     animation: 2s popInImage 0s ease forwards 1;
     background-image: url(/src/img/loudspeaker.webp);
+  }
+  &::after {
+    content: "";
+    background: linear-gradient(var(--primary) -100%, transparent);
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    height: 130%;
+    z-index: -1;
+    position: absolute;
+    top: -75%;
+    left: -30%;
   }
 }
 

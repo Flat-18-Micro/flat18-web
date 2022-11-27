@@ -25,6 +25,22 @@
   url("/src/fonts/austin/4119f2f793f60df049502711f3076133.svg#Austin News Text Web Roman Regular") format("svg"); /* iOS 4.1- */
 }
 
+/* merriweather-900 - latin */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/src/fonts/merriweather/merriweather-v30-latin-900.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/src/fonts/merriweather/merriweather-v30-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/src/fonts/merriweather/merriweather-v30-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/src/fonts/merriweather/merriweather-v30-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('/src/fonts/merriweather/merriweather-v30-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/src/fonts/merriweather/merriweather-v30-latin-900.svg#Merriweather') format('svg'); /* Legacy iOS */
+}
+
+
+
 @font-face {
   font-family: 'icomoon';
   src:  url('/src/fonts/icomoon/icomoon.eot?v6ht9q');
