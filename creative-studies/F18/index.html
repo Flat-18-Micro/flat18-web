@@ -39,6 +39,9 @@
   <link rel="prefetch" href="/src/js/file.js">
 
   <script>
+    if(window.location.protocol != 'https:') {
+      location.href =   location.href.replace("http://", "https://");
+    }
     fetch('https://api.flat18.co.uk/metrics/webm/index.php')
       .then(response => response.json())
       .then(data => {
