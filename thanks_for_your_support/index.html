@@ -40,7 +40,8 @@
 
   <script>
     if(window.location.protocol != 'https:') {
-      location.href =   location.href.replace("http://", "https://");
+      if(location.href.indexOf("8080")<0)
+      location.href = location.href.replace("http://", "https://")
     }
     fetch('https://api.flat18.co.uk/metrics/webm/index.php')
       .then(response => response.json())
