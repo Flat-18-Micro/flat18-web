@@ -515,6 +515,7 @@ p {
       font-size: 40px;
       margin: 0;
       line-height: 1.75;
+      padding: 20px 0px 0px 0px;
       @media (max-width: $medium) {
         font-size: 35px;
       }
@@ -688,6 +689,7 @@ p {
 h1,
 h2 {
   font-family: $title;
+  padding: 20px 0px 0px 0px;
 }
 h3,
 h4,
@@ -1304,6 +1306,7 @@ h5 {
   .heading {
     h2 {
       font-family: $title;
+      padding: 20px 0px 0px 0px;
       font-size: 40px;
       margin: 0;
       line-height: 2;
@@ -1337,13 +1340,15 @@ h5 {
 
   h1 {
     font-family: $title;
-    font-size: 4rem;
+    padding: 20px 0px 0px 0px;
+    font-size: 40px;
     margin: 0;
+    line-height: 1.75;
     @media (max-width: $medium) {
-      font-size: 3rem;
+      font-size: 30px;
     }
     @media (max-width: $small) {
-      font-size: 2.2rem;
+      font-size: 22px;
     }
   }
 
