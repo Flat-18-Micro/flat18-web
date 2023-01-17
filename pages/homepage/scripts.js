@@ -1,85 +1,71 @@
-// function showcaseYScrollManipulation() {
-//   let transition = (window.scrollY - document.querySelector(".showcase").clientTop) / window.outerHeight * .5
-//   document.querySelector(".showcase-slider > input").value = 100 * transition
-//   let showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * transition
-//   document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
-//   let dots = document.querySelector(".slider-ui").querySelectorAll(".dot")
-//   let breakPoint = 1 / dots.length
-//   let nearest = Math.ceil(transition / breakPoint)
-//   let scale = nearest - (transition / breakPoint)
-//   dots.forEach((ele) => ele.style.transform = "scale(1)")
-//   try { dots[nearest].style.transform = "scale(" + (1.1 + (scale)) + ")" } catch (e) { }
-//   try { dots[nearest - 1].style.transform = "scale(" + (1 + (scale * .5)) + ")" } catch (e) { }
-//   try { dots[nearest + 1].style.transform = "scale(" + (1 + (scale * .5)) + ")" } catch (e) { }
-// }
-// function manipulateElements(transition) {
-//   showcaseTranslateBy = (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width) * transition,
-//     document.querySelector(".showcase").scrollLeft = showcaseTranslateBy
-//   let dots = document.querySelector(".slider-ui").querySelectorAll(".dot")
-//   dots.forEach((ele) => ele.style.transform = "scale(1)")
-// }
-// window.addEventListener("scroll", showcaseYScrollManipulation)
-// document.querySelector(".showcase").addEventListener("scroll", e => {
-//   let t = document.querySelector(".showcase").scrollLeft / (document.querySelector(".showcase").scrollWidth - document.querySelector(".showcase-parent").getBoundingClientRect().width);
-//   document.querySelector(".showcase-slider > input").value = t * 100
-// })
-// document.querySelector(".showcase-slider > input").value = 50
-// document.querySelector(".showcase-slider > input").addEventListener("input", e => {
-//   if ("INPUT" === e.target.nodeName) {
-//     window.removeEventListener("scroll", showcaseYScrollManipulation);
-//     let t = Number(e.target.value) / 100;
-//     manipulateElements(t)
+// let TxtType = function (el, toRotate, period) {
+//   this.toRotate = toRotate;
+//   this.el = el;
+//   this.loopNum = 0;
+//   this.period = parseInt(period, 10) || 2000;
+//   this.txt = '';
+//   this.tick();
+//   this.isDeleting = false;
+// };
+// TxtType.prototype.tick = function () {
+//   let i = this.loopNum % this.toRotate.length;
+//   let fullTxt = this.toRotate[i];
+//   if (this.isDeleting) {
+//     this.txt = fullTxt.substring(0, this.txt.length - 1);
+//   } else {
+//     this.txt = fullTxt.substring(0, this.txt.length + 1);
 //   }
-// })
-// if (document.querySelectorAll(".showcase").length > 0 && document.querySelectorAll(".slider-ui").length > 0) {
-//   let items = document.querySelector(".showcase").querySelectorAll(".item")
-//   for (i = 0; i < items.length; i++) {
-//     let dot = document.createElement("span")
-//     dot.classList.add("dot")
-//     document.querySelector(".slider-ui").append(dot)
+//   this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+//   let that = this;
+//   let delta = 200 - Math.random() * 100;
+//   if (this.isDeleting) { delta /= 2; }
+//   if (!this.isDeleting && this.txt === fullTxt) {
+//     delta = fullTxt.length * 700
+//     this.isDeleting = true;
+//   } else if (this.isDeleting && this.txt === '') {
+//     this.isDeleting = false;
+//     this.loopNum++;
+//     delta = 200;
+//   }
+//   setTimeout(function () {
+//     that.tick();
+//   }, delta);
+// };
+// let writers = document.querySelectorAll('.typewriter-magic');
+// for (const write of writers) {
+//   let toRotate = write.getAttribute('data-type');
+//   let period = write.getAttribute('data-period');
+//   if (toRotate) {
+//     new TxtType(write, JSON.parse(toRotate), period);
 //   }
 // }
-let TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-TxtType.prototype.tick = function () {
-  let i = this.loopNum % this.toRotate.length;
-  let fullTxt = this.toRotate[i];
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-  let that = this;
-  let delta = 200 - Math.random() * 100;
-  if (this.isDeleting) { delta /= 2; }
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = fullTxt.length * 700
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 200;
-  }
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
-let writers = document.querySelectorAll('.typewriter-magic');
-for (const write of writers) {
-  let toRotate = write.getAttribute('data-type');
-  let period = write.getAttribute('data-period');
-  if (toRotate) {
-    new TxtType(write, JSON.parse(toRotate), period);
-  }
+function getTranslateInitial() {
+  const width = window.outerWidth >= 1200 ? (1200) : window.outerWidth
+  return width * .08
 }
+setTimeout(() => {
+  if (document.querySelector(".image-ddd")) {
+    document.querySelector(".image-ddd").style.setProperty("--translate-y", `${getTranslateInitial()}px`)
+    document.querySelector(".image-ddd").classList.add("initialised")
+  }
+}, 200)
+setTimeout(() => { document.querySelector(".initialised").classList.add("sped-up") }, 1000)
+
+// enterView({
+//   selector: '.image-ddd',
+//   offset: 0.4,
+//   enter: function (el) {
+//     el.classList.remove("exited")
+//     setTimeout(() => { el.classList.add("sped-up") }, 1000)
+//   },
+//   exit: function (el) {
+//     el.classList.add("exited")
+//   },
+//   progress: function (el, progress) {
+//     el.style.setProperty("--translate-y", `${getTranslateInitial() * (progress * 1.6)}px`)
+//   }
+// });
+
 enterView({
   selector: '.zoom-in-out',
   offset: 0.35,
@@ -113,10 +99,23 @@ enterView({
   }
 });
 
-
 window.addEventListener("scroll", () => {
-  let hero = document.querySelector(".hero")
+  const hero = document.querySelector(".hero")
   if (window.scrollY <= window.outerHeight) {
-    hero.style.setProperty('--transform-hero-scroll', window.scrollY * .1 + "px");
+    const scrollCalc = Math.round(window.scrollY * .1)
+    hero.style.setProperty('--transform-hero-scroll', scrollCalc + "px");
+    hero.style.setProperty('--transform-hero-scroll-x2', scrollCalc * 2 + "px");
+    dddUIPlacement()
   }
 })
+
+window.addEventListener("resize",()=>{dddUIPlacement()})
+
+function dddUIPlacement() {
+  const scrollCalc = Math.round(window.scrollY * .1)
+  const ddd = document.querySelector(".image-ddd")
+  ddd.style.setProperty("--translate-y", `${getTranslateInitial() + (scrollCalc * 2)}px`)
+  const halfHeight = window.outerHeight * .35
+  const opacity = window.scrollY >= (halfHeight) ? (1 - (window.scrollY - halfHeight) / halfHeight) : 1
+  ddd.style.setProperty("--opacity", `${opacity}`)
+}

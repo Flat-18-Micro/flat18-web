@@ -43,15 +43,7 @@
         // margin: 3rem auto;
         gap: 3rem;
         h2 {
-          line-height: 1;
-          font-size: 4rem;
           text-align: center;
-          @media (max-width: $medium) {
-            font-size: 3.5rem;
-          }
-          @media (max-width: $small) {
-            font-size: 3rem;
-          }
         }
         p {
           // font-size: 2rem;
@@ -89,9 +81,9 @@
   &::after {
     content: "";
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    height: 100%;
+    height: 42vw;
     background-image: url(/src/img/laptop-bg-dark.svg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -100,7 +92,8 @@
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
-    max-width: $content;
+    max-width: calc(#{$content} + 200px);
+    max-height: calc((#{$content} + 200px) * .422);
   }
   .immersive-section-content {
     perspective: 1200px;

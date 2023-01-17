@@ -78,9 +78,11 @@ p {
   display: block;
   line-height: 1.5;
   opacity: 0;
-
   transform: translateY(-1rem);
-
+  @media (max-width: $small) {
+    line-height: 1.5;
+    font-size: 1.75rem;
+  }
   &.drop-in {
     animation: iconFlyDown 0.2s linear forwards 1;
   }
@@ -97,10 +99,11 @@ p {
 .logo {
   &::before {
     content: "Flat Eighteen";
-    font-family: $title;
+    font-family: $sans-serif;
     font-weight: 800;
     line-height: 2rem;
     font-size: 2rem;
+    padding: 10px;
     transition: 0.2s ease;
     background: -webkit-linear-gradient(60deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
@@ -150,14 +153,22 @@ p {
 
     flex-wrap: wrap;
 
-    a, .nav-link {
+    a,
+    .nav-link {
       padding: 0.5rem 1rem;
       border-radius: 100px;
       position: relative;
-
+      @media (max-width: $small) {
+        padding: 0 1rem;
+        &:hover {
+          color: var(--yellow);
+          &::after {
+            content: unset !important;
+          }
+        }
+      }
       &:hover {
         color: var(--yellow);
-
         &::after {
           content: "";
           background: var(--yellow);
@@ -183,6 +194,7 @@ p {
         }
         &.ico {
           line-height: 1.5;
+          font-size: 1.75rem;
         }
       }
     }
@@ -253,31 +265,26 @@ p {
     .image-element {
       &.pattern {
         &::after {
-        opacity: 0.05;
-        background-image: url(/src/img/pattern.svg);
+          opacity: 0.05;
+          background-image: url(/src/img/pattern.svg);
         }
       }
     }
   }
 }
 .hero {
-  --transform-hero-scroll:1px;
+  --transform-hero-scroll: 1px;
+  --transform-hero-scroll-x2: 2px;
   display: -ms-grid;
   display: grid;
-  grid-template: 1fr / 1fr 1fr;
-  gap: 2rem;
+  grid-template: auto 1fr / 1fr;
+  gap: 40px;
   padding: 2rem;
-  margin: 100px auto;
+  margin: 0 auto 100px auto;
   position: relative;
   @media (min-width: $medium) {
     max-width: 95vw;
   }
-  @media (max-width: $small) {
-    margin: 20px auto;
-
-    grid-template: 200px 1fr / 1fr;
-  }
-
   &::before {
     content: "";
     position: absolute;
@@ -294,7 +301,7 @@ p {
     opacity: 0;
     z-index: -1;
     animation: 2s beforeBlur 0.5s ease forwards 1;
-    transform: translateY(calc(var(--transform-hero-scroll) * 2));
+    transform: translateY(var(--transform-hero-scroll-x2));
   }
 
   .image-element {
@@ -336,7 +343,7 @@ p {
     }
     &.pattern {
       &::after {
-        content: "";
+        // content: "";
         height: 100%;
         // width: 100%;
         position: absolute;
@@ -357,10 +364,9 @@ p {
       }
     }
     &:before {
-      content: "";
+      // content: "";
       background-image: url(/src/img/fellas.webp);
       display: block;
-      // animation: 2s popInImage 0s ease forwards 1;
       position: absolute;
       background-size: contain;
       background-repeat: no-repeat;
@@ -376,16 +382,16 @@ p {
         left: 45%;
       }
       @media (max-width: $content) {
-      background-image: url(/src/img/fella.webp);
+        background-image: url(/src/img/fella.webp);
         left: 35%;
       }
       @media (max-width: $medium) {
-      background-image: url(/src/img/fella.webp);
-      left: 30%;
+        background-image: url(/src/img/fella.webp);
+        left: 30%;
       }
       @media (max-width: $small) {
-      background-image: url(/src/img/fellas.webp);
-      min-height: unset;
+        background-image: url(/src/img/fellas.webp);
+        min-height: unset;
         left: 50%;
         top: 32%;
 
@@ -394,8 +400,91 @@ p {
         max-height: 350px;
       }
       @media (max-width: $x-small) {
-      background-image: url(/src/img/fellas.webp);
-      top: 36%;
+        background-image: url(/src/img/fellas.webp);
+        top: 36%;
+      }
+    }
+  }
+
+  .image-ddd {
+    width: 90vw;
+    max-width: calc(1200px * 0.83);
+    aspect-ratio: 11/5;
+    position: relative;
+    --opacity: 1;
+    --translate-y: 0px;
+    --translate-y-neg: calc(var(--translate-y) * -1);
+    margin: 0 auto auto;
+    @media (max-width: $medium) {
+      width: 80vw;
+    }
+    @media (max-width: $small) {
+      .design,
+      .deploy {
+        g{
+          stroke-width:.5;
+        }
+      }
+    }
+    &:hover{
+      .develop,
+      .design,
+      .deploy {
+        transition: 200ms ease;
+      }
+      .develop{
+        g{
+          fill:var(--accent);
+        }
+      }
+      .design,
+      .deploy {
+        g{
+          stroke-width:.5;
+          stroke:var(--accent);
+        }
+      }
+    }
+    .develop,
+    .design,
+    .deploy {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .design,
+    .deploy {
+      transform: translateY(0px);
+      transition-delay: 100ms;
+      transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      transition-duration: 800ms;
+      opacity: 0;
+      z-index: -1;
+    }
+    &.initialised {
+      &.sped-up {
+        &.exited {
+          transition-duration: 200ms;
+          opacity: 0.5;
+        }
+        .design,
+        .deploy {
+          transition-delay: 0ms;
+          transition-duration: 20ms;
+        }
+      }
+      .design {
+        transform: translateY(var(--translate-y-neg));
+        opacity: 1;
+      }
+      .deploy {
+        transform: translateY(var(--translate-y));
+        opacity: var(--opacity);
       }
     }
   }
@@ -404,6 +493,10 @@ p {
     position: relative;
     z-index: 2;
     grid-column: 1 / 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @media (max-width: $small) {
       width: calc(100vw - 4rem);
       max-width: $x-small;
@@ -412,24 +505,14 @@ p {
     }
     h1 {
       font-family: $title;
-      font-size: 6rem;
+      font-size: 40px;
       margin: 0;
-      line-height: 1;
-      @media (max-width: $large) {
-        font-size: 5.5rem;
-      }
+      line-height: 1.75;
       @media (max-width: $medium) {
-        font-size: 5rem;
-        // text-shadow: 0 0 20px var(--black);
-        text-shadow: unset;
+        font-size: 35px;
       }
       @media (max-width: $small) {
-        font-size: 4rem;
-        text-shadow: unset;
-      }
-      @media (max-width: $x-small) {
-        font-size: 3rem;
-        text-shadow: unset;
+        font-size: 30px;
       }
     }
 
@@ -437,6 +520,7 @@ p {
       font-size: 1.2rem;
       font-weight: 400;
       line-height: 1.75;
+      max-width: calc(#{$content} * 0.5);
       color: var(--off-white);
       @media (max-width: $small) {
         font-size: 1.15rem;
@@ -490,7 +574,7 @@ p {
   }
 }
 
-.woot-widget-bubble.woot-elements--right.woot-widget--expanded{
+.woot-widget-bubble.woot-elements--right.woot-widget--expanded {
   background: var(--primary) !important;
   padding: 0.6rem 1.25rem;
   font-size: 1rem;
@@ -499,12 +583,12 @@ p {
   color: var(--primary);
   text-align: center;
   height: auto !important;
-  > div{
+  > div {
     font-size: 1rem !important;
     padding: unset !important;
-    font-family: "Montserrat", Arial, Helvetica, sans-serif, "Austin News Text Web Roman Regular", serif;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
   }
-  img{
+  img {
     display: none;
   }
 }
@@ -694,7 +778,7 @@ h5 {
           }
         }
       }
-      .badge-time-org{
+      .badge-time-org {
         display: flex;
         gap: 1rem;
         align-items: center;
@@ -1208,6 +1292,23 @@ h5 {
     }
   }
 
+  .text-organiser,
+  .text,
+  .heading {
+    h2 {
+      font-family: $title;
+      font-size: 40px;
+      margin: 0;
+      line-height: 2;
+      @media (max-width: $medium) {
+        font-size: 35px;
+      }
+      @media (max-width: $small) {
+        font-size: 30px;
+      }
+    }
+  }
+
   .text-organiser {
     width: calc((#{$content} * 0.5) - 4rem);
     max-width: calc(60vw - 3rem);
@@ -1219,19 +1320,6 @@ h5 {
       margin: auto;
       text-align: center;
     }
-    h2 {
-      font-family: $title;
-      font-size: 4rem;
-      margin: 0;
-      line-height: 1;
-      @media (max-width: $medium) {
-        font-size: 3.5rem;
-      }
-      @media (max-width: $small) {
-        font-size: 3rem;
-      }
-    }
-
     p {
       color: var(--off-white);
       font-size: 1.2rem;
@@ -1361,6 +1449,7 @@ h5 {
     font-weight: 800;
     font-size: 12px;
     margin-top: 1rem;
+    text-align: left;
   }
 
   .errorHelpForm {
@@ -1420,16 +1509,6 @@ h5 {
         gap: 1.5rem;
         grid-column: 1/2;
         justify-content: center;
-      }
-      h2 {
-        font-size: 4rem;
-        margin: 0;
-        @media (max-width: $medium) {
-          font-size: 3.5rem;
-        }
-        @media (max-width: $small) {
-          font-size: 3rem;
-        }
       }
 
       p {
@@ -2119,7 +2198,7 @@ ul {
 
           h3 {
             transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
-            font-family: $title;
+            font-family: $sans-serif;
             font-weight: 800;
             font-size: 1.1rem;
             margin-bottom: 0;
@@ -2318,7 +2397,7 @@ ul {
   .post-components {
     h3 {
       transition: 0.5s cubic-bezier(0.48, 0, 0.29, 1.18);
-      font-family: $title;
+      font-family: $sans-serif;
       font-weight: 800;
       font-size: 3rem;
       margin-bottom: 1.5rem;
