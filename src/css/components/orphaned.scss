@@ -287,10 +287,10 @@ p {
   }
   @media (min-width: $small) {
     &::before {
-    top: -10vh;
+      top: -10vh;
+    }
   }
-  }
-    &::before {
+  &::before {
     content: "";
     position: absolute;
     top: -20vh;
@@ -428,33 +428,32 @@ p {
     @media (max-width: $small) {
       .design,
       .deploy {
-        g{
-          stroke-width:.5;
+        g {
+          stroke-width: 0.5;
         }
       }
     }
-    &:hover{
-      .develop,
-      .design,
-      .deploy {
-        transition: 200ms ease;
-      }
-      .develop{
-        g{
-          fill:var(--accent);
+    &:hover {
+      .develop {
+        g {
+          opacity: 0;
         }
       }
       .design,
       .deploy {
-        g{
-          stroke-width:.5;
-          stroke:var(--accent);
+        g {
+          stroke-width: 0.5;
+          stroke: var(--accent);
         }
       }
     }
+    .develop-g,
     .develop,
     .design,
     .deploy {
+      g {
+        transition: 500ms ease;
+      }
       position: absolute;
       height: 100%;
       width: 100%;
@@ -482,7 +481,7 @@ p {
         .design,
         .deploy {
           transition-delay: 0ms;
-          transition-duration: 20ms;
+          transition-duration: 400ms;
         }
       }
       .design {
