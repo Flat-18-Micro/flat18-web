@@ -285,23 +285,30 @@ p {
   @media (min-width: $medium) {
     max-width: 95vw;
   }
-  &::before {
+  @media (min-width: $small) {
+    &::before {
+    top: -10vh;
+  }
+  }
+    &::before {
     content: "";
     position: absolute;
-    top: -30vh;
+    top: -20vh;
     margin: auto;
     background-image: url(/src/img/blur.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50% 50%;
-    height: 100vw;
-    width: 100vw;
-    max-width: 100vw;
+    height: 120vw;
+    width: 120vw;
+    max-width: 120vw;
     max-height: 100vh;
+    min-width: 500px;
+    left: 50%;
     opacity: 0;
     z-index: -1;
     animation: 2s beforeBlur 0.5s ease forwards 1;
-    transform: translateY(var(--transform-hero-scroll-x2));
+    transform: translate(-50%, var(--transform-hero-scroll-x2));
   }
 
   .image-element {
