@@ -32,6 +32,12 @@ function setTheme(theme) {
         themeButtonIcon.classList.add("drop-in")
     }, 10)
     localStorage.setItem("theme", theme)
+    reloadCW()
+}
+
+function reloadCW() {
+    //NOT CURRENTLY POSSIBLE
+    return false
 }
 document.querySelectorAll(".animate-rotate").forEach((parent) => {
     let count = 0
