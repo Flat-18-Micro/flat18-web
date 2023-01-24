@@ -167,12 +167,13 @@
     position: "right", type: size, launcherTitle: "Say hi 👋",
     darkMode: theme,
   };
-  (function (d, t) {
+  function initCW(d, t) {
     var BASE_URL = "https://chatwoot.flat18.co.uk";
     var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
     g.src = BASE_URL + "/packs/js/sdk.js";
     g.defer = true;
     g.async = true;
+    g.classList.add("chatwoot-script-element")
     s.parentNode.insertBefore(g, s);
     g.onload = function () {
       window.chatwootSDK.run({
@@ -180,7 +181,9 @@
         baseUrl: BASE_URL
       })
     }
-  })(document, "script");
+  }
+  
+  initCW(document, "script")
 
 
   function makeid(length) {
