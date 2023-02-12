@@ -42,13 +42,18 @@
 
   <script>
     if(window.location.protocol != 'https:') {
-      if(location.href.indexOf("8080")<0)
+      if(location.href.indexOf("808")<0)
       location.href = location.href.replace("http://", "https://")
     }
-    fetch('https://api.flat18.co.uk/metrics/webm/index.php')
+
+    const q = localStorage && localStorage.getItem("webM")? `&webM=${localStorage.getItem("webM")}` : ""
+    fetch('https://api.flat18.co.uk/metrics/webm/index.php?geo=1' + q)
       .then(response => response.json())
       .then(data => {
         window.webM = data.webM
+        window.geoCityCountry = data.geo
+        let persist = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+        localStorage.setItem("webM", persist)
       });
   </script>
 </head><body>
@@ -147,7 +152,7 @@
 
       <p><a class="logo" title="Flat 18" href="/"></a> <span style="display: inline-block;">© 2012-2023 FLAT 18</span>
       </p>
-      <p>This website only uses cookies for our private, self-hosted live chat.</p>
+      <p>This website uses a necessary cookie for our private live-chat functions.</p>
     </div>
   </div>
 </div>
@@ -198,6 +203,9 @@
     //   avatar_url: "/src/img/avi.svg",
     //   //phone_number: "<phone-number-of-the-user>",
     // });
+    let webMLocal = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+
+    window.$chatwoot.setUser(webMLocal, {name:`${window.geoCityCountry} - ${webMLocal}`});
   });  
 </script>
 
@@ -216,7 +224,6 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '745776286716427');
   fbq('track', 'PageView');
-  fbq("track", {test_event_code:'TEST47730'});
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1"
