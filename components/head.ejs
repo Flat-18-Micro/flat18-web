@@ -42,13 +42,18 @@
 
   <script>
     if(window.location.protocol != 'https:') {
-      if(location.href.indexOf("8080")<0)
+      if(location.href.indexOf("808")<0)
       location.href = location.href.replace("http://", "https://")
     }
-    fetch('https://api.flat18.co.uk/metrics/webm/index.php')
+
+    const q = localStorage && localStorage.getItem("webM")? `&webM=${localStorage.getItem("webM")}` : ""
+    fetch('https://api.flat18.co.uk/metrics/webm/index.php?geo=1' + q)
       .then(response => response.json())
       .then(data => {
         window.webM = data.webM
+        window.geoCityCountry = data.geo
+        let persist = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+        localStorage.setItem("webM", persist)
       });
   </script>
 </head>
