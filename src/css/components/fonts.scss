@@ -31,22 +31,19 @@
        font-display: swap;
       }
 
- @font-face {font-family: "Austin News Text Web Roman Regular";
-  src: url("/src/fonts/austin/4119f2f793f60df049502711f3076133.eot"); /* IE9*/
-  src: url("/src/fonts/austin/4119f2f793f60df049502711f3076133.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.woff2") format("woff2"), /* chrome、firefox */
-  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.woff") format("woff"), /* chrome、firefox */
-  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("/src/fonts/austin/4119f2f793f60df049502711f3076133.svg#Austin News Text Web Roman Regular") format("svg"); /* iOS 4.1- */
-  font-display: swap;
-}
-
+/* cousine-700 - latin */
 @font-face {
-  font-family: "Stanley";
-  src: url("/src/fonts/title/Stanley.otf") format("opentype");
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Cousine';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/src/fonts/cousine/cousine-v25-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('/src/fonts/cousine/cousine-v25-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/src/fonts/cousine/cousine-v25-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/src/fonts/cousine/cousine-v25-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('/src/fonts/cousine/cousine-v25-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/src/fonts/cousine/cousine-v25-latin-700.svg#Cousine') format('svg'); /* Legacy iOS */
 }
-
 
 @font-face {
   font-family: 'icomoon';

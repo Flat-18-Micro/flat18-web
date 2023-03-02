@@ -511,15 +511,15 @@ p {
     }
     h1 {
       font-family: $title;
-      font-size: 40px;
       margin: 0;
-      line-height: 1.75;
+      line-height: $title-line-height;
       padding: 20px 0px 0px 0px;
+      font-size: $font-large;
       @media (max-width: $medium) {
-        font-size: 35px;
+        font-size: $font-medium;
       }
       @media (max-width: $small) {
-        font-size: 30px;
+        font-size: $font-small;
       }
     }
 
@@ -1306,14 +1306,14 @@ h5 {
     h2 {
       font-family: $title;
       padding: 20px 0px 0px 0px;
-      font-size: 40px;
       margin: 0;
-      line-height: 2;
+      line-height: $title-line-height;
+      font-size: $font-large;
       @media (max-width: $medium) {
-        font-size: 35px;
+        font-size: $font-medium;
       }
       @media (max-width: $small) {
-        font-size: 30px;
+        font-size: $font-small;
       }
     }
   }
@@ -1340,14 +1340,14 @@ h5 {
   h1 {
     font-family: $title;
     padding: 20px 0px 0px 0px;
-    font-size: 40px;
     margin: 0;
-    line-height: 1.75;
+    line-height: $title-line-height;
+    font-size: $font-large;
     @media (max-width: $medium) {
-      font-size: 30px;
+      font-size: $font-medium;
     }
     @media (max-width: $small) {
-      font-size: 22px;
+      font-size: $font-small;
     }
   }
 
