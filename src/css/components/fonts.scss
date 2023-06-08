@@ -47,11 +47,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('/src/fonts/icomoon/icomoon.eot?v6ht9q');
-  src:  url('/src/fonts/icomoon/icomoon.eot?v6ht9q#iefix') format('embedded-opentype'),
-    url('/src/fonts/icomoon/icomoon.ttf?v6ht9q') format('truetype'),
-    url('/src/fonts/icomoon/icomoon.woff?v6ht9q') format('woff'),
-    url('/src/fonts/icomoon/icomoon.svg?v6ht9q#icomoon') format('svg');
+  src:  url('/src/fonts/icomoon/icomoon.eot?rnbeyy');
+  src:  url('/src/fonts/icomoon/icomoon.eot?rnbeyy#iefix') format('embedded-opentype'),
+    url('/src/fonts/icomoon/icomoon.ttf?rnbeyy') format('truetype'),
+    url('/src/fonts/icomoon/icomoon.woff?rnbeyy') format('woff'),
+    url('/src/fonts/icomoon/icomoon.svg?rnbeyy#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -96,6 +96,9 @@
 .icon-tags:before {
   content: "\e912";
 }
+.icon-heart:before {
+  content: "\e913";
+}
 .icon-moon:before {
   content: "\e90c";
 }
@@ -104,6 +107,9 @@
 }
 .icon-external-link:before {
   content: "\e90a";
+}
+.icon-more_time:before {
+  content: "\e911";
 }
 .icon-circle:before {
   content: "\e90f";
@@ -134,6 +140,7 @@
 .icon-applepay:before {
   content: "\e908";
 }
+
 
 
  .other-shots {

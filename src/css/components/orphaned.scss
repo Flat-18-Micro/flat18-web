@@ -158,8 +158,10 @@ p {
       padding: 0.5rem 1rem;
       border-radius: 100px;
       position: relative;
+      display: flex;
+      align-items: center;
       @media (max-width: $small) {
-        padding: 0 1rem;
+        padding: 0 15px;
         &:hover {
           color: var(--yellow);
           &::after {
@@ -295,7 +297,7 @@ p {
     position: absolute;
     top: -20vh;
     margin: auto;
-    background-image: url(/src/img/blur.webp);
+    background-image: url(/src/img/blur2.webp);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50% 50%;
