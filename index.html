@@ -65,38 +65,55 @@
     <div class="nav">
   <a class="logo" title="Flat 18 - Web Development & Design" href="/"></a>
   <div></div>
-  <div class="menu">
-    <a href="/#projects" aria-label="Check out what we've been working on"><span>Work</span><i class="ico icon-heart mobile"></i></a>
-    <a href="/pricing" aria-label="See our simplified pricing options"><span>Pricing</span><i class="ico icon-tags mobile"></i></a>
-    <a href="/#contact" aria-label="Send us a message online"><span>Say hi 👋</span><i class="ico icon-send1 mobile"></i></a>
-    <div class="nav-link lightDark"><i class="ico"></i></div>
+  <div class="menu greedy">
+    <a class="toggleMenu">
+      <svg width="100%" height="100%" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <rect id="Artboard2" x="0" y="0" width="77.641" height="77.641" style="fill:none;" />
+        <path id="x2" d="M7.22,38.821l63.201,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />
+        <path id="x1" d="M7.22,38.821l63.201,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />                                
+        <path id="top" d="M18.504,16.89l40.633,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />
+        <path id="bottom" d="M18.504,60.752l40.633,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />
+      </svg>
+    </a>
+    <a href="/#projects" aria-label="Check out what we've been working on"><i class="ico icon-heart"></i>&nbsp;Work</a>
+    <a href="/pricing" aria-label="See our simplified pricing options"><i class="ico icon-tags"></i>&nbsp;Pricing</a>
+    <a href="/#contact" aria-label="Send us a message online"><i class="ico icon-send1"></i>&nbsp;Contact us</a>
+    <div class="nav-link lightDark"><i class="ico"></i><span class="mobile">&nbsp;Theme</span></div>
   </div>
 </div>
+
+
+<script>
+  document.querySelector('.toggleMenu').addEventListener('click', (event)=>{
+    event.preventDefault()
+    event.stopPropagation()
+    if(document.querySelector('.menu.greedy').classList.contains('open')){
+      document.querySelector('.menu.greedy').classList.remove('open')
+    }else{
+      document.querySelector('.menu.greedy').classList.add('open')
+    }
+  })
+  window.addEventListener('click', ()=>{
+    if(document.querySelector('.menu.greedy').classList.contains('open')){
+      document.querySelector('.menu.greedy').classList.remove('open')
+    }
+  })
+</script>
     <div class="hero">
-  <div class="image-ddd">
-    <svg class="design" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 412 77" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="var(--white)" stroke-width=".18"><path d="m.09 1.749h35.78c8.089 0 15.228 1.47 21.416 4.408 6.188 2.939 10.994 7.139 14.416 12.601s5.134 11.892 5.134 19.29-1.712 13.828-5.134 19.29-8.228 9.662-14.416 12.601c-6.188 2.938-13.327 4.408-21.416 4.408h-35.78v-72.598zm34.743 53.515c5.255 0 9.455-1.504 12.601-4.512 3.146-3.007 4.719-7.242 4.719-12.704s-1.573-9.697-4.719-12.705c-3.146-3.007-7.346-4.511-12.601-4.511h-10.267v34.432z"/><path d="m146.114 55.886v18.461h-60.359v-72.598h59.011v18.461h-34.95v8.504h30.698v17.631h-30.698v9.541z"/><path d="m182.62 76.006c-6.015 0-11.875-.674-17.579-2.022-5.704-1.349-10.388-3.164-14.052-5.445l7.881-17.838c3.458 2.005 7.329 3.612 11.616 4.822s8.401 1.815 12.342 1.815c3.387 0 5.807-.328 7.259-.985s2.178-1.642 2.178-2.956c0-1.521-.95-2.662-2.852-3.422-1.901-.761-5.03-1.591-9.386-2.489-5.6-1.176-10.267-2.438-14-3.786-3.734-1.348-6.984-3.561-9.749-6.637-2.766-3.077-4.149-7.243-4.149-12.497 0-4.564 1.279-8.712 3.838-12.446 2.558-3.733 6.378-6.672 11.46-8.815 5.081-2.143 11.252-3.215 18.512-3.215 4.978 0 9.87.536 14.675 1.608 4.805 1.071 9.04 2.644 12.704 4.718l-7.363 17.735c-7.121-3.595-13.863-5.393-20.224-5.393-6.291 0-9.437 1.521-9.437 4.563 0 1.452.933 2.541 2.8 3.267s4.944 1.504 9.23 2.333c5.531 1.038 10.198 2.23 14.001 3.578 3.803 1.349 7.104 3.544 9.904 6.586 2.801 3.042 4.201 7.191 4.201 12.445 0 4.564-1.279 8.695-3.838 12.394-2.558 3.699-6.378 6.637-11.46 8.815-5.081 2.178-11.252 3.267-18.512 3.267z"/><path d="m223.689 1.749h24.476v72.597h-24.476z"/><path d="m308.006 36.077h21.261v30.699c-4.287 2.973-9.265 5.254-14.935 6.845-5.669 1.59-11.235 2.385-16.697 2.385-7.744 0-14.692-1.608-20.846-4.823-6.153-3.215-10.976-7.709-14.467-13.482-3.492-5.773-5.238-12.324-5.238-19.653s1.746-13.88 5.238-19.653c3.491-5.773 8.365-10.267 14.623-13.482 6.257-3.215 13.326-4.823 21.208-4.823 7.122 0 13.5 1.193 19.135 3.578s10.319 5.86 14.053 10.423l-15.661 13.793c-4.563-5.323-9.99-7.985-16.282-7.985-5.393 0-9.68 1.624-12.86 4.874-3.181 3.25-4.771 7.675-4.771 13.275 0 5.462 1.573 9.852 4.719 13.171s7.346 4.978 12.601 4.978c3.111 0 6.084-.587 8.919-1.763z"/><path d="m411.301 1.749v72.598h-20.119l-27.587-32.98v32.98h-23.854v-72.598h20.12l27.587 32.98v-32.98h23.853z"/></g></svg>
-    <svg class="deploy" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 450 77" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="var(--white)" stroke-width=".18"><path d="m.09 1.749h35.78c8.089 0 15.228 1.47 21.416 4.408 6.188 2.939 10.994 7.139 14.416 12.601s5.134 11.892 5.134 19.29-1.712 13.828-5.134 19.29-8.228 9.662-14.416 12.601c-6.188 2.938-13.327 4.408-21.416 4.408h-35.78v-72.598zm34.743 53.515c5.255 0 9.455-1.504 12.601-4.512 3.146-3.007 4.719-7.242 4.719-12.704s-1.573-9.697-4.719-12.705c-3.146-3.007-7.346-4.511-12.601-4.511h-10.267v34.432z"/><path d="m146.114 55.886v18.461h-60.359v-72.598h59.011v18.461h-34.95v8.504h30.698v17.631h-30.698v9.541z"/><path d="m190.502 1.749c6.707 0 12.549 1.107 17.527 3.319 4.978 2.213 8.816 5.393 11.512 9.541 2.696 4.149 4.045 8.989 4.045 14.52s-1.349 10.371-4.045 14.519c-2.696 4.149-6.534 7.329-11.512 9.542-4.978 2.212-10.82 3.318-17.527 3.318h-10.475v17.839h-24.475v-72.598h34.95zm-1.556 35.884c3.319 0 5.808-.743 7.468-2.23 1.659-1.486 2.489-3.578 2.489-6.274 0-2.697-.83-4.788-2.489-6.275-1.66-1.486-4.149-2.229-7.468-2.229h-8.919v17.008z"/><path d="m231.571 1.749h24.476v53.619h32.773v18.979h-57.249v-72.598z"/><path d="m332.585 76.006c-7.813 0-14.83-1.625-21.053-4.874-6.223-3.25-11.097-7.761-14.623-13.535-3.526-5.773-5.289-12.289-5.289-19.549s1.763-13.776 5.289-19.549c3.526-5.774 8.4-10.285 14.623-13.535 6.223-3.249 13.24-4.874 21.053-4.874s14.831 1.625 21.053 4.874c6.223 3.25 11.097 7.761 14.624 13.535 3.526 5.773 5.289 12.289 5.289 19.549s-1.763 13.776-5.289 19.549c-3.527 5.774-8.401 10.285-14.624 13.535-6.222 3.249-13.24 4.874-21.053 4.874zm0-19.809c3.042 0 5.791-.743 8.245-2.229 2.455-1.487 4.408-3.596 5.86-6.327s2.178-5.929 2.178-9.593-.726-6.862-2.178-9.593-3.405-4.84-5.86-6.327c-2.454-1.486-5.203-2.229-8.245-2.229s-5.79.743-8.245 2.229c-2.454 1.487-4.407 3.596-5.859 6.327s-2.178 5.929-2.178 9.593.726 6.862 2.178 9.593 3.405 4.84 5.859 6.327c2.455 1.486 5.203 2.229 8.245 2.229z"/><path d="m422.502 48.004v26.343h-24.476v-26.654l-27.379-45.944h25.824l14.83 25.098 14.935-25.098h23.646z"/></g></svg>
-    <svg class="develop-g" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 524 76" xmlns="http://www.w3.org/2000/svg">
-      <linearGradient id="develop" gradientTransform="rotate(65)">
-        <stop offset="5%" stop-color="var(--accent)" />
-        <stop offset="95%" stop-color="var(--primary)" />
-      </linearGradient>
-      <g fill="url(#develop)" fill-rule="nonzero"><path d="m0 1.659h35.78c8.089 0 15.228 1.47 21.416 4.408 6.188 2.939 10.994 7.139 14.416 12.601s5.134 11.892 5.134 19.29-1.712 13.828-5.134 19.29-8.228 9.662-14.416 12.601c-6.188 2.938-13.327 4.408-21.416 4.408h-35.78v-72.598zm34.743 53.515c5.255 0 9.455-1.504 12.601-4.512 3.146-3.007 4.719-7.242 4.719-12.704s-1.573-9.697-4.719-12.705c-3.146-3.007-7.346-4.511-12.601-4.511h-10.267v34.432z"/><path d="m146.024 55.796v18.461h-60.359v-72.598h59.011v18.461h-34.95v8.504h30.698v17.631h-30.698v9.541z"/><path d="m232 1.659-30.698 72.598h-24.061l-30.698-72.598h26.342l17.32 42.418 17.734-42.418h24.061z"/><path d="m294.745 55.796v18.461h-60.36v-72.598h59.011v18.461h-34.95v8.504h30.698v17.631h-30.698v9.541z"/><path d="m304.182 1.659h24.476v53.619h32.772v18.979h-57.248v-72.598z"/><path d="m405.196 75.916c-7.813 0-14.83-1.625-21.053-4.874-6.223-3.25-11.097-7.761-14.623-13.535-3.526-5.773-5.289-12.289-5.289-19.549s1.763-13.776 5.289-19.549c3.526-5.774 8.4-10.285 14.623-13.535 6.223-3.249 13.24-4.874 21.053-4.874s14.831 1.625 21.053 4.874c6.223 3.25 11.097 7.761 14.624 13.535 3.526 5.773 5.289 12.289 5.289 19.549s-1.763 13.776-5.289 19.549c-3.527 5.774-8.401 10.285-14.624 13.535-6.222 3.249-13.24 4.874-21.053 4.874zm0-19.809c3.042 0 5.791-.743 8.245-2.229 2.455-1.487 4.408-3.596 5.86-6.327s2.178-5.929 2.178-9.593-.726-6.862-2.178-9.593-3.405-4.84-5.86-6.327c-2.454-1.486-5.203-2.229-8.245-2.229s-5.79.743-8.245 2.229c-2.454 1.487-4.407 3.596-5.859 6.327s-2.178 5.929-2.178 9.593.726 6.862 2.178 9.593 3.405 4.84 5.859 6.327c2.455 1.486 5.203 2.229 8.245 2.229z"/><path d="m490.031 1.659c6.707 0 12.549 1.107 17.527 3.319 4.978 2.213 8.816 5.393 11.512 9.541 2.697 4.149 4.045 8.989 4.045 14.52s-1.348 10.371-4.045 14.519c-2.696 4.149-6.534 7.329-11.512 9.542-4.978 2.212-10.82 3.318-17.527 3.318h-10.475v17.839h-24.475v-72.598h34.95zm-1.555 35.884c3.318 0 5.807-.743 7.467-2.23 1.659-1.486 2.489-3.578 2.489-6.274 0-2.697-.83-4.788-2.489-6.275-1.66-1.486-4.149-2.229-7.467-2.229h-8.92v17.008z"/></g></svg>
 
-      <svg class="develop" clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 524 76" xmlns="http://www.w3.org/2000/svg">
-        <g fill="var(--white)" fill-rule="nonzero"><path d="m0 1.659h35.78c8.089 0 15.228 1.47 21.416 4.408 6.188 2.939 10.994 7.139 14.416 12.601s5.134 11.892 5.134 19.29-1.712 13.828-5.134 19.29-8.228 9.662-14.416 12.601c-6.188 2.938-13.327 4.408-21.416 4.408h-35.78v-72.598zm34.743 53.515c5.255 0 9.455-1.504 12.601-4.512 3.146-3.007 4.719-7.242 4.719-12.704s-1.573-9.697-4.719-12.705c-3.146-3.007-7.346-4.511-12.601-4.511h-10.267v34.432z"/><path d="m146.024 55.796v18.461h-60.359v-72.598h59.011v18.461h-34.95v8.504h30.698v17.631h-30.698v9.541z"/><path d="m232 1.659-30.698 72.598h-24.061l-30.698-72.598h26.342l17.32 42.418 17.734-42.418h24.061z"/><path d="m294.745 55.796v18.461h-60.36v-72.598h59.011v18.461h-34.95v8.504h30.698v17.631h-30.698v9.541z"/><path d="m304.182 1.659h24.476v53.619h32.772v18.979h-57.248v-72.598z"/><path d="m405.196 75.916c-7.813 0-14.83-1.625-21.053-4.874-6.223-3.25-11.097-7.761-14.623-13.535-3.526-5.773-5.289-12.289-5.289-19.549s1.763-13.776 5.289-19.549c3.526-5.774 8.4-10.285 14.623-13.535 6.223-3.249 13.24-4.874 21.053-4.874s14.831 1.625 21.053 4.874c6.223 3.25 11.097 7.761 14.624 13.535 3.526 5.773 5.289 12.289 5.289 19.549s-1.763 13.776-5.289 19.549c-3.527 5.774-8.401 10.285-14.624 13.535-6.222 3.249-13.24 4.874-21.053 4.874zm0-19.809c3.042 0 5.791-.743 8.245-2.229 2.455-1.487 4.408-3.596 5.86-6.327s2.178-5.929 2.178-9.593-.726-6.862-2.178-9.593-3.405-4.84-5.86-6.327c-2.454-1.486-5.203-2.229-8.245-2.229s-5.79.743-8.245 2.229c-2.454 1.487-4.407 3.596-5.859 6.327s-2.178 5.929-2.178 9.593.726 6.862 2.178 9.593 3.405 4.84 5.859 6.327c2.455 1.486 5.203 2.229 8.245 2.229z"/><path d="m490.031 1.659c6.707 0 12.549 1.107 17.527 3.319 4.978 2.213 8.816 5.393 11.512 9.541 2.697 4.149 4.045 8.989 4.045 14.52s-1.348 10.371-4.045 14.519c-2.696 4.149-6.534 7.329-11.512 9.542-4.978 2.212-10.82 3.318-17.527 3.318h-10.475v17.839h-24.475v-72.598h34.95zm-1.555 35.884c3.318 0 5.807-.743 7.467-2.23 1.659-1.486 2.489-3.578 2.489-6.274 0-2.697-.83-4.788-2.489-6.275-1.66-1.486-4.149-2.229-7.467-2.229h-8.92v17.008z"/></g></svg>
-
-  </div>
   <div class="cta-organiser">
-    <h1 alt="Web Development and Design Plus Loads More" title="Web Development and Design Plus Loads More">Full-Service Web Development
+    <h1 alt="Web Development and Design Plus Loads More" title="Web Development and Design Plus Loads More"><strike>Web</strike> <b>Everything</b>⚡️ Development
     </h1>
-    <p>We have 10+ years experience building clever solutions for Small Businesses who care about robust code and beautiful design.</p>
+    <p>We have 10+ years experience building clever solutions for Everyone who cares about robust, maintainable code and beautiful design.</p>
     <ul class="flex subtle">
       <li>#FullStackDeveloper</li>
       <li>#DesignAndCode</li>
     </ul>
     <a class="btn primary chat-trigger" href="#contact">Chat with us about your project  🚀</a>
   </div>
+  <img class="hero-img" src="/src/img/hero.webp">
 </div><div class="container showcase-parent -disabled-build-in-scroll">
   <div class="showcase-stationary animate-rotate">
 
@@ -512,20 +529,6 @@
       <h2>Contact</h2>
 
       <ul>
-        <li><a href="mailto:eighteen@flat18.co.uk?subject=General enquiry">eighteen@flat18.co.uk</a></li>
-        <li><a href="mailto:finance@flat18.co.uk?subject=Finance enquiry">finance@flat18.co.uk</a></li>
-        <li><a href="tel:+447480569779">(44) 7480 569779</a></li>
-        <li><a href="tel:+44120212552">(44) 1202 125522</a></li>
-      </ul>
-    </div>
-    <div class="item">
-      <h2>Socials</h2>
-
-      <ul>
-        <li>
-          <strike><a title="We've closed our Flat18 Twitter Account because 'you know who' is a 'you know what'" target="_blank" rel="noreferrer"
-            href="https://www.twitter.com/f18micro">Twitter</a></strike>
-        </li>
         <li>
           <a title="Contact Flat18 on Telegram" target="_blank" rel="noreferrer"
             href="https://t.me/flat18_bot">Telegram</a>
@@ -534,12 +537,14 @@
           <a title="Contact Flat18 on WhatsApp for Business" target="_blank" rel="noreferrer"
             href="https://wa.me/message/KUXVLOYX457EB1">WhatsApp</a>
         </li>
+        <li><a href="mailto:eighteen@flat18.co.uk?subject=General enquiry">hello@flat18.co.uk</a></li>
+        <li><a href="tel:+447480569779">+44 7480 569779</a></li>
+        <li><a href="tel:+44120212552">+44 1202 125522</a></li>
       </ul>
     </div>
     <div class="item wide">
 
-      <p><a class="logo" title="Flat 18" href="/"></a> <span style="display: inline-block;">© 2012-2023 FLAT 18</span>
-      </p>
+      <p>© 2012-2023 FLAT 18</p>
       <p>This website uses a necessary cookie for our private live-chat functions.</p>
     </div>
   </div>
@@ -567,7 +572,7 @@
       })
     }
   }
-  
+
   initCW(document, "script")
 
 
@@ -591,9 +596,9 @@
     //   avatar_url: "/src/img/avi.svg",
     //   //phone_number: "<phone-number-of-the-user>",
     // });
-    let webMLocal = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+    let webMLocal = localStorage && localStorage.getItem("webM") ? localStorage.getItem("webM") : data.webM
 
-    window.$chatwoot.setUser(webMLocal, {name:`${window.geoCityCountry} - ${webMLocal}`});
+    window.$chatwoot.setUser(webMLocal, { name: `${window.geoCityCountry} - ${webMLocal}` });
   });  
 </script>
 
@@ -602,21 +607,24 @@
 
 <!-- Meta Pixel Code -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () {
+      n.callMethod ?
+      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+    n.queue = []; t = b.createElement(e); t.async = !0;
+    t.src = v; s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '745776286716427');
   fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code --><script>// let TxtType = function (el, toRotate, period) {
+</script>
+<noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
+<script>// let TxtType = function (el, toRotate, period) {
 //   this.toRotate = toRotate;
 //   this.el = el;
 //   this.loopNum = 0;
@@ -661,13 +669,13 @@ function getTranslateInitial() {
   const width = window.outerWidth >= 1200 ? (1200) : window.outerWidth
   return width * .08
 }
-setTimeout(() => {
-  if (document.querySelector(".image-ddd")) {
-    document.querySelector(".image-ddd").style.setProperty("--translate-y", `${getTranslateInitial()}px`)
-    document.querySelector(".image-ddd").classList.add("initialised")
-  }
-}, 200)
-setTimeout(() => { document.querySelector(".initialised").classList.add("sped-up") }, 1000)
+// setTimeout(() => {
+//   if (document.querySelector(".image-ddd")) {
+//     document.querySelector(".image-ddd").style.setProperty("--translate-y", `${getTranslateInitial()}px`)
+//     document.querySelector(".image-ddd").classList.add("initialised")
+//   }
+// }, 200)
+// setTimeout(() => { document.querySelector(".initialised").classList.add("sped-up") }, 1000)
 
 // enterView({
 //   selector: '.image-ddd',
@@ -723,17 +731,17 @@ window.addEventListener("scroll", () => {
     const scrollCalc = Math.round(window.scrollY * .1)
     hero.style.setProperty('--transform-hero-scroll', scrollCalc + "px");
     hero.style.setProperty('--transform-hero-scroll-x2', scrollCalc * 2 + "px");
-    dddUIPlacement()
+    // dddUIPlacement()
   }
 })
 
-window.addEventListener("resize",()=>{dddUIPlacement()})
+// window.addEventListener("resize",()=>{dddUIPlacement()})
 
-function dddUIPlacement() {
-  const scrollCalc = Math.round(window.scrollY * .1)
-  const ddd = document.querySelector(".image-ddd")
-  ddd.style.setProperty("--translate-y", `${getTranslateInitial() + (scrollCalc * 2)}px`)
-  const halfHeight = window.outerHeight * .35
-  const opacity = window.scrollY >= (halfHeight) ? (1 - (window.scrollY - halfHeight) / halfHeight) : 1
-  ddd.style.setProperty("--opacity", `${opacity}`)
-}</script>
+// function dddUIPlacement() {
+//   const scrollCalc = Math.round(window.scrollY * .1)
+//   const ddd = document.querySelector(".image-ddd")
+//   ddd.style.setProperty("--translate-y", `${getTranslateInitial() + (scrollCalc * 2)}px`)
+//   const halfHeight = window.outerHeight * .35
+//   const opacity = window.scrollY >= (halfHeight) ? (1 - (window.scrollY - halfHeight) / halfHeight) : 1
+//   ddd.style.setProperty("--opacity", `${opacity}`)
+// }</script>

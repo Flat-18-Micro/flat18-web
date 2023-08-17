@@ -65,13 +65,42 @@
     <div class="nav">
   <a class="logo" title="Flat 18 - Web Development & Design" href="/"></a>
   <div></div>
-  <div class="menu">
-    <a href="/#projects" aria-label="Check out what we've been working on"><span>Work</span><i class="ico icon-heart mobile"></i></a>
-    <a href="/pricing" aria-label="See our simplified pricing options"><span>Pricing</span><i class="ico icon-tags mobile"></i></a>
-    <a href="/#contact" aria-label="Send us a message online"><span>Say hi 👋</span><i class="ico icon-send1 mobile"></i></a>
-    <div class="nav-link lightDark"><i class="ico"></i></div>
+  <div class="menu greedy">
+    <a class="toggleMenu">
+      <svg width="100%" height="100%" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <rect id="Artboard2" x="0" y="0" width="77.641" height="77.641" style="fill:none;" />
+        <path id="x2" d="M7.22,38.821l63.201,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />
+        <path id="x1" d="M7.22,38.821l63.201,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />                                
+        <path id="top" d="M18.504,16.89l40.633,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />
+        <path id="bottom" d="M18.504,60.752l40.633,-0" style="fill:none;stroke:var(--white);stroke-width:10px;" />
+      </svg>
+    </a>
+    <a href="/#projects" aria-label="Check out what we've been working on"><i class="ico icon-heart"></i>&nbsp;Work</a>
+    <a href="/pricing" aria-label="See our simplified pricing options"><i class="ico icon-tags"></i>&nbsp;Pricing</a>
+    <a href="/#contact" aria-label="Send us a message online"><i class="ico icon-send1"></i>&nbsp;Contact us</a>
+    <div class="nav-link lightDark"><i class="ico"></i><span class="mobile">&nbsp;Theme</span></div>
   </div>
 </div>
+
+
+<script>
+  document.querySelector('.toggleMenu').addEventListener('click', (event)=>{
+    event.preventDefault()
+    event.stopPropagation()
+    if(document.querySelector('.menu.greedy').classList.contains('open')){
+      document.querySelector('.menu.greedy').classList.remove('open')
+    }else{
+      document.querySelector('.menu.greedy').classList.add('open')
+    }
+  })
+  window.addEventListener('click', ()=>{
+    if(document.querySelector('.menu.greedy').classList.contains('open')){
+      document.querySelector('.menu.greedy').classList.remove('open')
+    }
+  })
+</script>
     
     <div class="container master">
   <h1>FLAT18 Terms of Service and General Procedural Guidelines</h1>
@@ -427,20 +456,6 @@
       <h2>Contact</h2>
 
       <ul>
-        <li><a href="mailto:eighteen@flat18.co.uk?subject=General enquiry">eighteen@flat18.co.uk</a></li>
-        <li><a href="mailto:finance@flat18.co.uk?subject=Finance enquiry">finance@flat18.co.uk</a></li>
-        <li><a href="tel:+447480569779">(44) 7480 569779</a></li>
-        <li><a href="tel:+44120212552">(44) 1202 125522</a></li>
-      </ul>
-    </div>
-    <div class="item">
-      <h2>Socials</h2>
-
-      <ul>
-        <li>
-          <strike><a title="We've closed our Flat18 Twitter Account because 'you know who' is a 'you know what'" target="_blank" rel="noreferrer"
-            href="https://www.twitter.com/f18micro">Twitter</a></strike>
-        </li>
         <li>
           <a title="Contact Flat18 on Telegram" target="_blank" rel="noreferrer"
             href="https://t.me/flat18_bot">Telegram</a>
@@ -449,12 +464,14 @@
           <a title="Contact Flat18 on WhatsApp for Business" target="_blank" rel="noreferrer"
             href="https://wa.me/message/KUXVLOYX457EB1">WhatsApp</a>
         </li>
+        <li><a href="mailto:eighteen@flat18.co.uk?subject=General enquiry">hello@flat18.co.uk</a></li>
+        <li><a href="tel:+447480569779">+44 7480 569779</a></li>
+        <li><a href="tel:+44120212552">+44 1202 125522</a></li>
       </ul>
     </div>
     <div class="item wide">
 
-      <p><a class="logo" title="Flat 18" href="/"></a> <span style="display: inline-block;">© 2012-2023 FLAT 18</span>
-      </p>
+      <p>© 2012-2023 FLAT 18</p>
       <p>This website uses a necessary cookie for our private live-chat functions.</p>
     </div>
   </div>
@@ -482,7 +499,7 @@
       })
     }
   }
-  
+
   initCW(document, "script")
 
 
@@ -506,9 +523,9 @@
     //   avatar_url: "/src/img/avi.svg",
     //   //phone_number: "<phone-number-of-the-user>",
     // });
-    let webMLocal = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+    let webMLocal = localStorage && localStorage.getItem("webM") ? localStorage.getItem("webM") : data.webM
 
-    window.$chatwoot.setUser(webMLocal, {name:`${window.geoCityCountry} - ${webMLocal}`});
+    window.$chatwoot.setUser(webMLocal, { name: `${window.geoCityCountry} - ${webMLocal}` });
   });  
 </script>
 
@@ -517,18 +534,20 @@
 
 <!-- Meta Pixel Code -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () {
+      n.callMethod ?
+      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+    n.queue = []; t = b.createElement(e); t.async = !0;
+    t.src = v; s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '745776286716427');
   fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+</script>
+<noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
