@@ -1,0 +1,193 @@
+.nav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: auto 1fr auto;
+  grid-template: 1fr / auto 1fr auto;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  @media (max-width: $small) {
+    position: sticky;
+    top:0;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+  .menu {
+    display: flex;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    &.greedy {
+      rect,
+      path {
+        transition: 0.5s ease;
+        transform-origin: center;
+      }
+      @media (max-width: $small) {
+        display: grid;
+        grid-template: 1fr repeat(5, auto) / repeat(6, auto);
+        justify-items: end;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      }
+      &.open {
+        #top,
+        #bottom {
+          opacity: 0;
+          transform: scale(0);
+        }
+        #x1 {
+          transform: rotate(-45deg);
+        }
+        #x2 {
+          transform: rotate(45deg);
+        }
+        > {
+          @media (max-width: $small) {
+            :nth-child(5) {
+              display: inline-flex;
+              grid-row: 5/6;
+              grid-column: 1/7;
+              background: var(--black);
+              padding: 1rem 2.5rem;
+              margin-top: .5rem;
+              box-shadow: 0px 5px 10px -8px;
+            }
+          }
+          @media (max-width: calc(#{$small} - 120px)) {
+            :nth-child(4) {
+              display: inline-flex;
+              grid-row: 4/5;
+              grid-column: 1/7;
+              background: var(--black);
+              padding: 1rem 2.5rem;
+              margin-top: .5rem;
+              box-shadow: 0px 5px 10px -8px;
+            }
+          }
+          @media (max-width: calc(#{$small} - 180px)) {
+            :nth-child(3) {
+              display: inline-flex;
+              grid-row: 3/4;
+              grid-column: 1/7;
+              background: var(--black);
+              padding: 1rem 2.5rem;
+              margin-top: .5rem;
+              box-shadow: 0px 5px 10px -8px;
+            }
+          }
+          @media (max-width: calc(#{$small} - 240px)) {
+            :nth-child(2) {
+              display: inline-flex;
+              grid-row: 2/3;
+              grid-column: 1/7;
+              background: var(--black);
+              padding: 1rem 2.5rem;
+              margin-top: .5rem;
+              box-shadow: 0px 5px 10px -8px;
+            }
+          }
+        }
+      }
+      > {
+        @media (max-width: $small) {
+          :nth-child(5) {
+            grid-row: 1/2;
+            grid-column: 4/5;
+          }
+          :nth-child(4) {
+            display: inline-flex;
+            grid-row: 1/2;
+            grid-column: 3/4;
+          }
+          :nth-child(3) {
+            display: inline-flex;
+            grid-row: 1/2;
+            grid-column: 2/3;
+          }
+          :nth-child(2) {
+            display: inline-flex;
+            grid-row: 1/2;
+            grid-column: 1/2;
+          }
+        }
+        @media (max-width: $small) {
+          :nth-child(5) {
+            display: none;
+          }
+        }
+        @media (max-width: calc(#{$small} - 120px)) {
+          :nth-child(4) {
+            display: none;
+          }
+        }
+        @media (max-width: calc(#{$small} - 180px)) {
+          :nth-child(3) {
+            display: none;
+          }
+        }
+        @media (max-width: calc(#{$small} - 240px)) {
+          :nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+    .toggleMenu {
+      grid-column: 6/7;
+      grid-row: 1/2;
+      display: none;
+      @media (max-width: $small) {
+        display: block;
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+    .mobile {
+      display: none;
+      @media (max-width: $small) {
+        display: block;
+      }
+    }
+    a,
+    .nav-link {
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      @media (max-width: $small) {
+        padding: 0 15px;
+        &:hover {
+          color: var(--yellow);
+          &::after {
+            content: unset !important;
+          }
+        }
+      }
+      &:hover {
+        color: var(--yellow);
+        &::after {
+          content: "";
+          background: var(--yellow);
+          height: 100%;
+          width: 110%;
+          z-index: -1;
+          position: absolute;
+          left: -5%;
+          top: 0;
+          border-radius: 1000px;
+          opacity: 0.15;
+        }
+      }
+    }
+  }
+}

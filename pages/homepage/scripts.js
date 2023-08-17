@@ -43,13 +43,13 @@ function getTranslateInitial() {
   const width = window.outerWidth >= 1200 ? (1200) : window.outerWidth
   return width * .08
 }
-setTimeout(() => {
-  if (document.querySelector(".image-ddd")) {
-    document.querySelector(".image-ddd").style.setProperty("--translate-y", `${getTranslateInitial()}px`)
-    document.querySelector(".image-ddd").classList.add("initialised")
-  }
-}, 200)
-setTimeout(() => { document.querySelector(".initialised").classList.add("sped-up") }, 1000)
+// setTimeout(() => {
+//   if (document.querySelector(".image-ddd")) {
+//     document.querySelector(".image-ddd").style.setProperty("--translate-y", `${getTranslateInitial()}px`)
+//     document.querySelector(".image-ddd").classList.add("initialised")
+//   }
+// }, 200)
+// setTimeout(() => { document.querySelector(".initialised").classList.add("sped-up") }, 1000)
 
 // enterView({
 //   selector: '.image-ddd',
@@ -105,17 +105,17 @@ window.addEventListener("scroll", () => {
     const scrollCalc = Math.round(window.scrollY * .1)
     hero.style.setProperty('--transform-hero-scroll', scrollCalc + "px");
     hero.style.setProperty('--transform-hero-scroll-x2', scrollCalc * 2 + "px");
-    dddUIPlacement()
+    // dddUIPlacement()
   }
 })
 
-window.addEventListener("resize",()=>{dddUIPlacement()})
+// window.addEventListener("resize",()=>{dddUIPlacement()})
 
-function dddUIPlacement() {
-  const scrollCalc = Math.round(window.scrollY * .1)
-  const ddd = document.querySelector(".image-ddd")
-  ddd.style.setProperty("--translate-y", `${getTranslateInitial() + (scrollCalc * 2)}px`)
-  const halfHeight = window.outerHeight * .35
-  const opacity = window.scrollY >= (halfHeight) ? (1 - (window.scrollY - halfHeight) / halfHeight) : 1
-  ddd.style.setProperty("--opacity", `${opacity}`)
-}
+// function dddUIPlacement() {
+//   const scrollCalc = Math.round(window.scrollY * .1)
+//   const ddd = document.querySelector(".image-ddd")
+//   ddd.style.setProperty("--translate-y", `${getTranslateInitial() + (scrollCalc * 2)}px`)
+//   const halfHeight = window.outerHeight * .35
+//   const opacity = window.scrollY >= (halfHeight) ? (1 - (window.scrollY - halfHeight) / halfHeight) : 1
+//   ddd.style.setProperty("--opacity", `${opacity}`)
+// }

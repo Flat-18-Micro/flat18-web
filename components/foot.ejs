@@ -37,20 +37,6 @@
       <h2>Contact</h2>
 
       <ul>
-        <li><a href="mailto:eighteen@flat18.co.uk?subject=General enquiry">eighteen@flat18.co.uk</a></li>
-        <li><a href="mailto:finance@flat18.co.uk?subject=Finance enquiry">finance@flat18.co.uk</a></li>
-        <li><a href="tel:+447480569779">(44) 7480 569779</a></li>
-        <li><a href="tel:+44120212552">(44) 1202 125522</a></li>
-      </ul>
-    </div>
-    <div class="item">
-      <h2>Socials</h2>
-
-      <ul>
-        <li>
-          <strike><a title="We've closed our Flat18 Twitter Account because 'you know who' is a 'you know what'" target="_blank" rel="noreferrer"
-            href="https://www.twitter.com/f18micro">Twitter</a></strike>
-        </li>
         <li>
           <a title="Contact Flat18 on Telegram" target="_blank" rel="noreferrer"
             href="https://t.me/flat18_bot">Telegram</a>
@@ -59,12 +45,14 @@
           <a title="Contact Flat18 on WhatsApp for Business" target="_blank" rel="noreferrer"
             href="https://wa.me/message/KUXVLOYX457EB1">WhatsApp</a>
         </li>
+        <li><a href="mailto:eighteen@flat18.co.uk?subject=General enquiry">hello@flat18.co.uk</a></li>
+        <li><a href="tel:+447480569779">+44 7480 569779</a></li>
+        <li><a href="tel:+44120212552">+44 1202 125522</a></li>
       </ul>
     </div>
     <div class="item wide">
 
-      <p><a class="logo" title="Flat 18" href="/"></a> <span style="display: inline-block;">© 2012-2023 FLAT 18</span>
-      </p>
+      <p>© 2012-2023 FLAT 18</p>
       <p>This website uses a necessary cookie for our private live-chat functions.</p>
     </div>
   </div>
@@ -92,7 +80,7 @@
       })
     }
   }
-  
+
   initCW(document, "script")
 
 
@@ -116,9 +104,9 @@
     //   avatar_url: "/src/img/avi.svg",
     //   //phone_number: "<phone-number-of-the-user>",
     // });
-    let webMLocal = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+    let webMLocal = localStorage && localStorage.getItem("webM") ? localStorage.getItem("webM") : data.webM
 
-    window.$chatwoot.setUser(webMLocal, {name:`${window.geoCityCountry} - ${webMLocal}`});
+    window.$chatwoot.setUser(webMLocal, { name: `${window.geoCityCountry} - ${webMLocal}` });
   });  
 </script>
 
@@ -127,18 +115,20 @@
 
 <!-- Meta Pixel Code -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () {
+      n.callMethod ?
+      n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+    n.queue = []; t = b.createElement(e); t.async = !0;
+    t.src = v; s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '745776286716427');
   fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+</script>
+<noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=745776286716427&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
