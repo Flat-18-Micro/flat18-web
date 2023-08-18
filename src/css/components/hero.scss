@@ -43,6 +43,10 @@
       margin-right: auto;
     }
   }
+  @media (max-width: $x-small) {
+    width: 100vw !important;
+    padding:1rem;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -93,6 +97,9 @@
         margin-left: auto !important;
         margin-right: auto !important;
       }
+    }
+    @media (max-width: $x-small) {
+      width: calc(100vw - 2rem);
     }
     h1 {
       font-family: $title;
