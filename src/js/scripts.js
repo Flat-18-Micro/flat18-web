@@ -44,17 +44,15 @@ document.querySelectorAll(".animate-rotate").forEach((parent) => {
     parent.querySelectorAll(".target").forEach((ele) => {
         ele.classList.remove("playing-animation")
         count = count < 5 ? 5 : count
-        setTimeout(() => { ele.classList.add("playing-animation") }, count * 1000)
+        setTimeout(() => { ele.classList.add("playing-animation") }, count * 500)
         setTimeout(() => {
             setInterval(() => {
                 ele.classList.remove("playing-animation")
                 setTimeout(() => { ele.classList.add("playing-animation") }, 100)
-            }, count * 2000)
-        }, count * 2000)
+            }, count * 1000)
+        }, count * 1000)
         count++
     })
-
-
 })
 
 
