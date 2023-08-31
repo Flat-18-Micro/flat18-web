@@ -108,7 +108,8 @@
       padding: 20px 0px 0px 0px;
       font-size: $font-large;
       strike {
-        opacity: 0.6;
+        opacity: 0.16;
+        font-size: 80%;
       }
       @media (max-width: $medium) {
         font-size: $font-medium;
