@@ -11,7 +11,7 @@
   z-index: 10;
   @media (max-width: $small) {
     position: sticky;
-    top:0;
+    top: 0;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
   }
@@ -22,6 +22,7 @@
 
     flex-wrap: wrap;
 
+    $max: 4;
     &.greedy {
       rect,
       path {
@@ -48,99 +49,57 @@
         #x2 {
           transform: rotate(45deg);
         }
+        @keyframes slide-in {
+          from {
+            transform: translateX(20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0px);
+            opacity: 1;
+          }
+        }
         > {
-          @media (max-width: $small) {
-            :nth-child(5) {
-              display: inline-flex;
-              grid-row: 5/6;
-              grid-column: 1/7;
-              background: var(--black);
-              padding: 1rem 2.5rem;
-              margin-top: .5rem;
-              box-shadow: 0px 5px 10px -8px;
-            }
-          }
-          @media (max-width: calc(#{$small} - 120px)) {
-            :nth-child(4) {
-              display: inline-flex;
-              grid-row: 4/5;
-              grid-column: 1/7;
-              background: var(--black);
-              padding: 1rem 2.5rem;
-              margin-top: .5rem;
-              box-shadow: 0px 5px 10px -8px;
-            }
-          }
-          @media (max-width: calc(#{$small} - 180px)) {
-            :nth-child(3) {
-              display: inline-flex;
-              grid-row: 3/4;
-              grid-column: 1/7;
-              background: var(--black);
-              padding: 1rem 2.5rem;
-              margin-top: .5rem;
-              box-shadow: 0px 5px 10px -8px;
-            }
-          }
-          @media (max-width: calc(#{$small} - 240px)) {
-            :nth-child(2) {
-              display: inline-flex;
-              grid-row: 2/3;
-              grid-column: 1/7;
-              background: var(--black);
-              padding: 1rem 2.5rem;
-              margin-top: .5rem;
-              box-shadow: 0px 5px 10px -8px;
+          @for $i from 0 through $max {
+            @media (max-width: calc(#{$small} - #{$i * 60}px)) {
+              :nth-child(#{$i + 2}) {
+                display: inline-flex;
+                grid-row: #{($i + 2)}/#{($i + 3)};
+                grid-column: 1/7;
+                background: var(--black);
+                padding: 1rem 2.5rem;
+                margin-top: 0.5rem;
+                box-shadow: 0px 5px 10px -8px;
+                transform: translateX(20px);
+                opacity: 0;
+                animation: slide-in 0.4s ease forwards 1;
+                animation-delay: #{$i * 100}ms;
+              }
             }
           }
         }
       }
       > {
         @media (max-width: $small) {
-          :nth-child(5) {
-            grid-row: 1/2;
-            grid-column: 4/5;
-          }
-          :nth-child(4) {
-            display: inline-flex;
-            grid-row: 1/2;
-            grid-column: 3/4;
-          }
-          :nth-child(3) {
-            display: inline-flex;
-            grid-row: 1/2;
-            grid-column: 2/3;
-          }
-          :nth-child(2) {
-            display: inline-flex;
-            grid-row: 1/2;
-            grid-column: 1/2;
+          @for $i from 0 through $max {
+            :nth-child(#{$i + 2}) {
+              display: inline-flex;
+              grid-row: 1/2;
+              grid-column: #{($i + 2)}/#{($i + 3)};
+            }
           }
         }
-        @media (max-width: $small) {
-          :nth-child(5) {
-            display: none;
-          }
-        }
-        @media (max-width: calc(#{$small} - 120px)) {
-          :nth-child(4) {
-            display: none;
-          }
-        }
-        @media (max-width: calc(#{$small} - 180px)) {
-          :nth-child(3) {
-            display: none;
-          }
-        }
-        @media (max-width: calc(#{$small} - 240px)) {
-          :nth-child(2) {
-            display: none;
+        @for $i from 0 through $max {
+          @media (max-width: calc(#{$small} - #{$i * 60}px)) {
+            :nth-child(#{$max - $i + 2}) {
+              display: none;
+            }
           }
         }
       }
     }
     .toggleMenu {
-      grid-column: 6/7;
+      grid-column: #{$max + 2} / #{$max + 3};
       grid-row: 1/2;
       display: none;
       @media (max-width: $small) {
