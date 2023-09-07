@@ -231,13 +231,16 @@ p {
 
 .woot-widget-bubble.woot-elements--right.woot-widget--expanded {
   background: var(--primary) !important;
-  padding: 0.6rem 1.25rem;
+  padding: 10px 15px;
   font-size: 1rem;
   line-height: 1rem;
   border-radius: 100px;
   color: var(--primary);
   text-align: center;
   height: auto !important;
+  svg{
+    margin: 0 10px 0 0;
+  }
   > div {
     font-size: 1rem !important;
     padding: unset !important;
@@ -248,7 +251,7 @@ p {
   }
 }
 .btn {
-  padding: 0.6rem 1.25rem;
+  padding: 10px 15px;
   font-size: 1rem;
   line-height: 1rem;
   display: inline-block;
@@ -940,7 +943,6 @@ h5 {
   margin: 120px auto;
   width: 100vw;
   max-width: $content;
-
   @media (max-width: $large) {
     margin: 100px auto;
     // overflow: hidden;
@@ -1156,9 +1158,8 @@ h5 {
   display: grid;
   grid-auto-flow: row;
   max-width: $content;
-  margin: 150px auto;
+  margin: 100px auto;
   gap: 2rem;
-
   align-items: center;
   padding: 2rem;
   @media (max-width: $small) {
