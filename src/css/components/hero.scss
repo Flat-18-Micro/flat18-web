@@ -45,7 +45,7 @@
   }
   @media (max-width: $x-small) {
     width: 100vw !important;
-    padding:1rem;
+    padding: 1rem;
   }
   &::before {
     content: "";
@@ -110,6 +110,22 @@
       strike {
         opacity: 0.16;
         font-size: 80%;
+      }
+      .hilight {
+        position: relative;
+        z-index:1;
+        &::after{
+content: '';
+display:block;
+position: absolute;
+height: 100%;
+width: 110%;
+background: var(--primary);
+opacity:.25;
+top:0%;
+left:-5%;
+z-index:-1;
+        }
       }
       @media (max-width: $medium) {
         font-size: $font-medium;
