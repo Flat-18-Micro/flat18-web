@@ -905,7 +905,7 @@ h5 {
   }
 }
 .loudspeaker {
-  transform: rotate(60deg);
+  transform: rotate(80deg);
   position: relative;
   width: calc(600px - 3rem);
   max-width: calc(30vw - 3rem);
@@ -914,7 +914,7 @@ h5 {
   min-height: $x-small;
   // opacity: 0.4;
   @media (max-width: $large) {
-    transform: rotate(50deg) translate(0%, 10%);
+    transform: rotate(70deg) translate(0%, 10%);
   }
   &::before {
     animation: 2s popInImage 0s ease forwards 1;
