@@ -358,7 +358,14 @@
   justify-content: center;
   align-items: center;
   height: 600px;
-  margin-top: 20vh;
+}
+
+.content.works-and-experiments-label-and-content {
+  justify-content: center;
+  align-items: flex-start;
+  height: -webkit-max-content;
+  height: max-content;
+  min-height: calc(100vh - 70px);
 }
 
 .hero-heading {
@@ -564,10 +571,8 @@
   flex: 0 auto;
   justify-content: flex-start;
   align-items: center;
-  width: -webkit-max-content;
-  width: max-content;
+  width: 360px;
   min-width: auto;
-  max-width: 360px;
   padding: 30px;
 }
 
@@ -591,9 +596,13 @@
 
 .work-showcase-wrapper {
   width: 100vw;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   position: relative;
   overflow: hidden;
+}
+
+.work-showcase-wrapper.works-and-exp {
+  position: relative;
 }
 
 .work-list {
@@ -1364,6 +1373,38 @@
   max-height: 35px;
 }
 
+.work-wrapper-parent {
+  height: 100vh;
+  min-height: 2000px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.work-wrapper-free-container {
+  height: -webkit-max-content;
+  height: max-content;
+  position: relative;
+}
+
+.scroll-work-wrapper {
+  pointer-events: none;
+  height: 100vh;
+  min-height: 2000px;
+  position: absolute;
+}
+
+.worker-scroll-container {
+  position: relative;
+  top: 0;
+}
+
+.works-and-exp-scroll-trigger {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
 @media screen and (max-width: 991px) {
   .nav-menu-wrapper {
     background-color: rgba(0, 0, 0, 0);
@@ -1701,12 +1742,25 @@
     width: auto;
   }
 
+  .content.sliding-work-showcase {
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .content.spread.compact.reverse-on-mobile {
     flex-flow: column-reverse;
   }
 
   .content.lets-build {
     height: auto;
+  }
+
+  .content.works-and-experiments-label-and-content {
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .hero-heading {
@@ -1723,6 +1777,10 @@
 
   .hero-h2 {
     font-size: 19px;
+  }
+
+  .work-tile.compact {
+    width: 90vw;
   }
 
   .work-tile-image.compact {
