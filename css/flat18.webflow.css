@@ -425,6 +425,7 @@
 .hero-h2 {
   color: var(--azure-blue);
   mix-blend-mode: screen;
+  max-width: 500px;
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 23px;
