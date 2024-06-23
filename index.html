@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Sat Jun 01 2024 23:45:17 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sun Jun 23 2024 21:48:45 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -54,11 +54,87 @@
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-no-shadow-container w-nav">
         <div class="container-regular">
           <div class="navbar-wrapper">
-            <a href="index.html" aria-current="page" class="navbar-brand w-nav-brand w--current"><img src="images/logo-24-gradient.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo"></a>
+            <a href="index.html" aria-current="page" class="navbar-brand w-nav-brand w--current">
+              <div class="homepage-loader"><img src="images/1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/flat-eighteen.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
+              <div class="code w-embed w-script">
+                <style>
+.ready-to-load-in .homepage-loader{
+	position: fixed !important;
+  top: 50%;
+  left: 50%;
+  width: 150vw;
+  height: 100vh;
+  min-height: 150vw;
+  aspect-ratio: 1/1;
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+ 	transition: 1000ms cubic-bezier(0.58, -0.49, 0.46, 1.22);
+  background-color: var(--blue-1);
+}
+.ready-to-load-in.remove-curtain .homepage-loader{
+  top: 0%;
+  left: 0%;
+  width: 35px;
+  height: 35px;
+  min-height: 35px;
+  aspect-ratio: 1/1;
+  transform: translate(0%, 0%);
+  border-radius: 25%;
+  background-color: var(--process-blue);
+}
+.ready-to-load-in.make-curtain-absolute .homepage-loader{
+	position: absolute !important;
+}
+.ready-to-load-in .homepage-loader .loader-image-backgdrop{
+  opacity:0;
+  mix-blend-mode: soft-light;
+  filter: saturate(5);
+  transition-delay: 400ms;
+  transition: 400ms ease;
+}
+.ready-to-load-in.make-curtain-absolute .homepage-loader .loader-image-backgdrop{
+  opacity:1;
+  mix-blend-mode: unset;
+  filter: saturate(1);
+}
+.loader-image-backgdrop:nth-of-type(1){
+  opacity:0;
+	animation: fade-in-curtain-sections 500ms ease forwards 1;
+  animation-delay: 100ms;
+}
+.loader-image-backgdrop:nth-of-type(2){
+  opacity:0;
+	animation: fade-in-curtain-sections 500ms ease forwards 1;
+  animation-delay: 500ms;
+}
+@keyframes fade-in-curtain-sections{
+  from{
+    opacity:0;
+    margin-right: -50%;
+  }
+  to{
+    opacity:1;
+    margin-right: 0%;
+  }
+}
+</style>
+                <script>
+  document.body.classList.add("ready-to-load-in");
+  window.addEventListener("load", ()=>{
+		setTimeout(()=>{
+      document.body.classList.add("remove-curtain");	
+    },1200)
+    setTimeout(()=>{
+      document.body.classList.add("make-curtain-absolute");	
+    },1800)
+  });
+</script>
+              </div>
+            </a>
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
               <ul role="list" class="nav-menu w-list-unstyled">
                 <li>
-                  <a href="about.html" class="nav-link">About</a>
+                  <a href="about.html" class="nav-link">About us</a>
                 </li>
                 <li>
                   <a href="/#pricing" class="nav-link">Pricing</a>
@@ -91,311 +167,299 @@
         </div>
       </div>
     </div>
-    <div class="content hero">
-      <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
-        <h1 class="hero-heading gradient-text">Web3 Design &amp; Development Services</h1>
-        <div class="hero-heading"> ⚡️⚡️⚡️</div>
-        <h2 class="hero-h2">We&#x27;re a Creative Duo, crafting<br><span>Beautiful Apps and Services within the Crypto and DeFi spaces.</span></h2>
-        <aside link="#chat" class="btn hero">
-          <div class="button-background"></div>
-          <div class="button-text">Let&#x27;s talk design</div>
-          <div class="icon right w-embed">&#xF135;</div>
-        </aside>
-      </div>
-      <div class="hero-image-wrapper">
-        <div data-w-id="cb3df593-4b01-7f44-5bb1-486a652a7609" class="hero-img wrapper">
-          <div data-w-id="c35f70be-7144-2151-390a-e3d79f3780df" class="hero-img skew-container">
-            <div class="gradient-overlay-wrapper"></div><img src="images/8.svg" loading="lazy" alt="" class="image-skew _8"><img src="images/1.svg" loading="lazy" alt="" class="image-skew _1"><img src="images/f18-base.svg" loading="lazy" alt="" class="image-skew base">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="body-wrapper">
-    <div data-w-id="e91e998f-cdba-b753-f2bd-0322ea2d24a8" style="opacity:0" class="content stats">
-      <div class="statistic-organiser">
-        <h3 class="animated-counter _2 gradient-text">30</h3>
-        <div class="stat-description">
-          <h4 class="heading">Websites &amp; Apps</h4>
-          <div class="stat-text">Developed and deployed globally</div>
-        </div>
-      </div>
-      <div class="statistic-organiser not-first">
-        <h3 class="animated-counter _3 gradient-text">200</h3>
-        <div class="stat-description">
-          <h4 class="heading">Unique Designs</h4>
-          <div class="stat-text">Supplied to delighted customers</div>
-        </div>
-      </div>
-      <div class="statistic-organiser not-first">
-        <h3 class="animated-counter _3 gradient-text">80</h3>
-        <div class="stat-description">
-          <h4 class="heading">Thousand Commits</h4>
-          <div class="stat-text">Git wizardry at its finest</div>
-        </div>
-      </div>
-      <div class="statistic-organiser last not-first">
-        <h3 class="animated-counter _2 gradient-text">20</h3>
-        <div class="stat-description">
-          <h4 class="heading">Open Source</h4>
-          <div class="stat-text">Projects mastered</div>
-        </div>
-      </div>
-    </div>
-    <div data-w-id="8d3ecd20-fd44-386a-ae6c-942ad38dcfa4" class="work-showcase-wrapper wide-work-showcase-wrapper">
-      <div class="content sliding-work-showcase">
-        <div class="work-tile wide-work-tile"><img src="images/wallet-scrut.webp" loading="lazy" sizes="210px" srcset="images/wallet-scrut-p-500.webp 500w, images/wallet-scrut.webp 660w" alt="btcpayserver website graphic" class="work-tile-image">
-          <div class="w-layout-hflex work-tile-text">
-            <h3 class="work-ile-title">WalletScrutiny</h3>
-            <div class="work-tile-text">WalletScrutiny helps everyday bitcoin users verify the legitimacy and security of their wallet by ensuring it is truly open-source.</div>
-            <div class="technology-wrapper">
-              <div class="technologies-used">
-                <div class="technology js-key-colour"></div>
-                <div class="technology html5-tech-used ws"></div>
-                <div class="technology scss-key-colour ws"></div>
-              </div>
-              <ul role="list" class="work-list w-list-unstyled">
-                <li class="list-item">
-                  <div class="technology-colour-key js-colour-key"></div>
-                  <div class="technology-name">JavaScript</div>
-                  <div class="technology-pc">90%</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key htmol5-colour-key"></div>
-                  <div class="technology-name">HTML5</div>
-                  <div class="technology-pc">5%</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key scss-colour-key"></div>
-                  <div class="technology-name">SCSS</div>
-                  <div class="technology-pc">5%</div>
-                </li>
-              </ul>
+    <div data-w-id="e537a06f-a5c4-ba96-b3da-b1361e0dd041" style="opacity:0" class="below-the-fold-wrapper">
+      <div class="content hero">
+        <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
+          <a href="#faq" class="limited-availability-prompt w-inline-block">
+            <div class="badge inline-badge">
+              <div class="status"></div>
+              <div>Limited Slots Available</div>
+              <div class="icon right in-badge w-embed">&#xF431;</div>
             </div>
-          </div>
-        </div>
-        <div class="work-tile wide-work-tile"><img src="images/btcpay.webp" loading="lazy" sizes="210px" srcset="images/btcpay-p-500.webp 500w, images/btcpay.webp 660w" alt="btcpayserver website graphic" class="work-tile-image">
-          <div class="w-layout-hflex work-tile-text">
-            <h3 class="work-ile-title">BTCPay Server</h3>
-            <div class="work-tile-text">BTCPay Server is a self-hosted, open-source cryptocurrency payment processor that prioritises security, privacy, censorship resistance, and cost-effectiveness.</div>
-            <div class="technology-wrapper">
-              <div class="technologies-used">
-                <div class="technology html5-tech-used"></div>
-                <div class="technology css-key-colour btc"></div>
-                <div class="technology js-key-colour btc"></div>
-              </div>
-              <ul role="list" class="work-list w-list-unstyled">
-                <li class="list-item">
-                  <div class="technology-colour-key htmol5-colour-key"></div>
-                  <div class="technology-name">HTML5</div>
-                  <div class="technology-pc">30%</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key css-colour-key"></div>
-                  <div class="technology-name">CSS3</div>
-                  <div class="technology-pc">60%</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key js-colour-key"></div>
-                  <div class="technology-name">JavaScript</div>
-                  <div class="technology-pc">10%</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="work-tile wide-work-tile"><img src="images/creative-studies2.webp" loading="lazy" sizes="210px" srcset="images/creative-studies2-p-500.webp 500w, images/creative-studies2-p-800.webp 800w, images/creative-studies2.webp 801w" alt="custom icons graphic" class="work-tile-image">
-          <div class="w-layout-hflex work-tile-text">
-            <h3 class="work-ile-title">Everything Else</h3>
-            <div class="work-tile-text">We have developed numerous applications and services using open-source frameworks. <br>We&#x27;re problem-solvers delivering exceptional results for our clients.</div>
-            <div class="technology-wrapper">
-              <div class="technologies-used">
-                <div class="technology html5-tech-used ee"></div>
-                <div class="technology scss-key-colour ee"></div>
-                <div class="technology js-key-colour ee"></div>
-                <div class="technology vue-key-colour ee"></div>
-                <div class="technology ns-key-colour ee"></div>
-                <div class="technology php-key-colour ee"></div>
-                <div class="technology node-key-colour ee"></div>
-                <div class="technology sql-key-colour ee"></div>
-                <div class="technology btc-key-colour ee"></div>
-                <div class="technology webflow-key-colour ee"></div>
-              </div>
-              <ul role="list" class="work-list w-list-unstyled">
-                <li class="list-item">
-                  <div class="technology-colour-key htmol5-colour-key"></div>
-                  <div class="technology-name">HTML5</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key scss-colour-key"></div>
-                  <div class="technology-name">SCSS</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key js-colour-key"></div>
-                  <div class="technology-name">JavaScript</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key vue-colour-key"></div>
-                  <div class="technology-name">Vue3</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key ns-colour-key"></div>
-                  <div class="technology-name">NativeScript</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key php-colour-key"></div>
-                  <div class="technology-name">PHP</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key node-key-colour"></div>
-                  <div class="technology-name">Node.js</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key sql-key-colour"></div>
-                  <div class="technology-name">SQL</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key btc-key-colour"></div>
-                  <div class="technology-name">Bitcoin Core</div>
-                </li>
-                <li class="list-item">
-                  <div class="technology-colour-key _wf-key-colour"></div>
-                  <div class="technology-name">Webflow</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="work-wrapper-overlay"></div>
-      <div class="code w-embed w-script">
-        <script>
-getWorktileWidth = function(){
-	if(document.querySelectorAll(`[class*="wide-work-tile"]`).length>0){
-    const tile = document.querySelectorAll(`[class*="wide-work-tile"]`)[0]
-    const width = tile.getBoundingClientRect().width
-    document.documentElement.style.setProperty("--scroll-1-horiz-total", `${width}px`);
-  }
-}
-getWorktileWidth()
-window.addEventListener("resize", getWorktileWidth)
-window.addEventListener("scroll",()=>{
-  const container = document.querySelectorAll(`[class*="sliding-work-showcase"]`)[0]
-  const containerWidth = container.getBoundingClientRect().width
-  const containerScrollWidth = container.scrollWidth
-  const wrapper = document.querySelectorAll(`[class*="wide-work-showcase-wrapper"]`)[0]
-  const wrapperTop = wrapper.getBoundingClientRect().top
-  const wrapperBottom = wrapper.getBoundingClientRect().bottom
-  const wrapperHeight = wrapper.getBoundingClientRect().height
-  const tile = document.querySelectorAll(`[class*="wide-work-tile"]`)[0]
-  const tileWidth = tile.getBoundingClientRect().width
-  const tileHeight = tile.getBoundingClientRect().height
-	const pcScroll = tileHeight/window.outerHeight>.6? ((wrapperBottom - 40) / (window.outerHeight)) : ((wrapperBottom + 40) / (window.outerHeight))
-	const horiz = (1-(pcScroll>0?pcScroll:(pcScroll<0?0:pcScroll))) * (containerScrollWidth)
-  const scrollLimit = containerScrollWidth - (tileWidth)
-  document.documentElement.style.setProperty("--scroll-1-horiz-js", `${-1 * (horiz <0?0:(horiz >= scrollLimit?scrollLimit:horiz))}px`);
-})
-</script>
-        <style>
-[class*="sliding-work-showcase"]{
-	transform: translateX(var(--scroll-1-horiz-js));
-}
-</style>
-      </div>
-    </div>
-    <div data-w-id="b09eabcc-9792-5f1b-f17d-e171f6eba84d" style="opacity:0" class="content spread centre-vert">
-      <div class="w-layout-vflex text-org">
-        <h2 class="gradient-text ready">Feeling inspired to get going?</h2>
-        <div class="text-block-reading">At Flat 18, we&#x27;re all about making development fun and easy.<br></div>
-        <div class="text-block-reading">Let&#x27;s chat about your ideas and help you kick off your project with a smile 😊</div>
-        <div class="text-block-reading">If you&#x27;re excited to start bringing your plans to life,<br>check out our pricing details below.</div>
-        <div class="w-layout-hflex btn-flex">
-          <aside link="#chat" class="btn">
+          </a>
+          <h1 class="hero-heading gradient-text">Web3 Design &amp; Development Services</h1>
+          <h2 class="hero-h2">We&#x27;re a Creative Duo, crafting<br><span>Beautiful Apps and Services within the Crypto and DeFi spaces ⚡️</span></h2>
+          <aside link="#chat" class="btn hero">
             <div class="button-background"></div>
-            <div class="button-text">Chat with us</div>
-            <div class="icon btn-icon w-embed">&#xF715;</div>
+            <div class="button-text">Get in touch</div>
+            <div class="icon right w-embed">&#xF135;</div>
           </aside>
-          <a href="#pricing" class="btn sec w-inline-block">
-            <div class="button-background sec"></div>
-            <div class="button-text">Pricing</div>
-            <div class="icon btn-icon w-embed">&#xF128;</div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div data-w-id="cb3df593-4b01-7f44-5bb1-486a652a7609" class="hero-img wrapper">
+            <div data-w-id="c35f70be-7144-2151-390a-e3d79f3780df" class="hero-img skew-container">
+              <div class="gradient-overlay-wrapper"></div><img src="images/8_1.svg" loading="lazy" alt="" class="image-skew _8"><img src="images/1.svg" loading="lazy" alt="" class="image-skew _1"><img src="images/f18-base.svg" loading="lazy" alt="" class="image-skew base">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-w-id="cf400a3b-6722-5e01-776a-32c523a2c6c9" style="opacity:0" class="w-layout-vflex content primere-btf-content">
+        <div class="content sliding-work-showcase highlight-subtle-block">
+          <div class="badge subtle left">Projects we ♥️</div>
+          <div class="work-tile wide-work-tile">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img src="images/wallet-scrutiny-logo.webp" loading="lazy" alt="walletscrutiny logo" class="work-tile-icon">
+                <h3 class="work-ile-title">WalletScrutiny</h3>
+              </div>
+              <div class="work-tile-text">WalletScrutiny helps everyday bitcoin users verify the legitimacy and security of their wallet by ensuring it is truly open-source.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology js-key-colour"></div>
+                  <div class="technology html5-tech-used ws"></div>
+                  <div class="technology scss-key-colour ws"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">90%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">5%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">5%</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="work-tile wide-work-tile">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img src="images/btcpayserver-logo.webp" loading="lazy" alt="btcpayserver logo
+" class="work-tile-icon">
+                <h3 class="work-ile-title">BTCPay Server</h3>
+              </div>
+              <div class="work-tile-text">BTCPay Server is a self-hosted, open-source cryptocurrency payment processor that prioritises security, privacy, censorship resistance, and cost-effectiveness.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used"></div>
+                  <div class="technology css-key-colour btc"></div>
+                  <div class="technology js-key-colour btc"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key css-colour-key"></div>
+                    <div class="technology-name">CSS3</div>
+                    <div class="technology-pc">60%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="work-tile wide-work-tile">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img src="images/flat18-logo.webp" loading="lazy" alt="flat18 logo blue round" class="work-tile-icon">
+                <h3 class="work-ile-title">Everything Else</h3>
+              </div>
+              <div class="work-tile-text">Mastering a multitude of libraries, frameworks, and use cases, we’re your project’s perfect match.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used ee"></div>
+                  <div class="technology scss-key-colour ee"></div>
+                  <div class="technology js-key-colour ee"></div>
+                  <div class="technology vue-key-colour ee"></div>
+                  <div class="technology ns-key-colour ee"></div>
+                  <div class="technology php-key-colour ee"></div>
+                  <div class="technology node-key-colour ee"></div>
+                  <div class="technology sql-key-colour ee"></div>
+                  <div class="technology btc-key-colour ee"></div>
+                  <div class="technology webflow-key-colour ee"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key vue-colour-key"></div>
+                    <div class="technology-name">Vue3</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key ns-colour-key"></div>
+                    <div class="technology-name">NativeScript</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key php-colour-key"></div>
+                    <div class="technology-name">PHP</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key node-key-colour"></div>
+                    <div class="technology-name">Node.js</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key sql-key-colour"></div>
+                    <div class="technology-name">SQL</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key btc-key-colour"></div>
+                    <div class="technology-name">Bitcoin Core</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key _wf-key-colour"></div>
+                    <div class="technology-name">Webflow</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="image-6">
+      </div>
+      <div data-w-id="5b9bd0a0-d342-6c3b-b7d1-33de66b2671f" style="opacity:0" class="content spread centre-vert reverse-orientation">
+        <div class="w-layout-vflex text-org">
+          <h2 class="gradient-text ready">Ready to dive in?</h2>
+          <div class="text-block-reading">At Flat 18, we&#x27;re all about making development fun and easy.<br>Let&#x27;s chat about your ideas and help you kick off your project with a smile 😊<br></div>
+          <div class="text-block-reading">Check out our pricing details below.</div>
+          <div class="w-layout-hflex btn-flex">
+            <aside link="#chat" class="btn">
+              <div class="button-background"></div>
+              <div class="button-text">Chat with us</div>
+              <div class="icon btn-icon w-embed">&#xF715;</div>
+            </aside>
+            <a href="#pricing" class="btn sec w-inline-block">
+              <div class="button-background sec"></div>
+              <div class="button-text">Pricing</div>
+              <div class="icon btn-icon w-embed">&#xF128;</div>
+            </a>
+          </div>
+        </div><img src="images/2023-HERO-CANDIDATE.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 36vw" srcset="images/2023-HERO-CANDIDATE-p-500.webp 500w, images/2023-HERO-CANDIDATE.webp 800w" alt="" class="hero-img content-img">
+      </div>
+      <div data-w-id="e91e998f-cdba-b753-f2bd-0322ea2d24a8" style="opacity:0" class="content stats">
+        <div class="badge subtle left">Current Stats</div>
+        <div class="statistic-organiser">
+          <h3 class="animated-counter _2 gradient-text">30</h3>
+          <div class="stat-description">
+            <h4 class="heading">Websites &amp; Apps</h4>
+            <div class="stat-text">Developed and deployed globally</div>
+          </div>
+        </div>
+        <div class="statistic-organiser not-first">
+          <h3 class="animated-counter _3 gradient-text">200</h3>
+          <div class="stat-description">
+            <h4 class="heading">Unique Designs</h4>
+            <div class="stat-text">Supplied to delighted customers</div>
+          </div>
+        </div>
+        <div class="statistic-organiser not-first">
+          <h3 class="animated-counter _3 gradient-text">80</h3>
+          <div class="stat-description">
+            <h4 class="heading">Thousand Commits</h4>
+            <div class="stat-text">Git wizardry at its finest</div>
+          </div>
+        </div>
+        <div class="statistic-organiser last not-first">
+          <h3 class="animated-counter _2 gradient-text">20</h3>
+          <div class="stat-description">
+            <h4 class="heading">Open Source</h4>
+            <div class="stat-text">Projects mastered</div>
+          </div>
+        </div>
+      </div>
+      <div data-w-id="b09eabcc-9792-5f1b-f17d-e171f6eba84d" style="opacity:0" class="content spread centre-vert">
+        <div id="faq" class="w-layout-vflex text-org">
+          <h2 class="gradient-text ready">Commonly Asked</h2>
+          <div data-current="Tab 5" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+            <div id="w-node-da75addd-2dae-d3f4-b26a-23cfbaca2616-74e8849f" class="tabs-menu w-tab-menu">
+              <a data-w-tab="Why are slots limited?" class="tab w-inline-block w-tab-link">
+                <div>Why are slots limited?</div>
+                <div class="icon btn-icon w-embed">&#xF285;</div>
+              </a>
+              <a data-w-tab="Tab 2" class="tab w-inline-block w-tab-link">
+                <div>What if I need a different timeframe?</div>
+                <div class="icon btn-icon w-embed">&#xF285;</div>
+              </a>
+              <a data-w-tab="Tab 3" class="tab w-inline-block w-tab-link">
+                <div>How long will myproject take to complete?</div>
+              </a>
+              <a data-w-tab="Tab 4" class="tab w-inline-block w-tab-link">
+                <div>Do you work with teams?</div>
+              </a>
+              <a data-w-tab="Tab 5" class="tab w-inline-block w-tab-link w--current">
+                <div>Who are the developers?</div>
+              </a>
+            </div>
+            <div id="w-node-da75addd-2dae-d3f4-b26a-23cfbaca2620-74e8849f" class="tabs-content w-tab-content">
+              <div data-w-tab="Why are slots limited?" class="w-tab-pane">
+                <div>
+                  <div class="text-block-reading left-align">Our subscription service is designed to allow us to deliver revisions and progress achievements within 48-hours.<br><br>Development is a dynamic process that can easily exceed expected timelines.<br>We limit the number of active clients to prevent any slow-downs.<br></div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 2" class="w-tab-pane">
+                <div>
+                  <div class="text-block-reading left-align">Get in touch with us. <br>We&#x27;ll always try to accommodate your needs.<br></div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 3" class="w-tab-pane">
+                <div>
+                  <div class="text-block-reading left-align">We can provide an estimate once we learn the scope of your project.<br><br>We hate overspending as much as you, so we&#x27;re upfront and realistic in our estimations to ensure you always feel in-control of your spending.<br><br>Plus, you can pause and keep any unused time to use later.<br></div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 4" class="w-tab-pane">
+                <div>
+                  <div class="text-block-reading left-align">We&#x27;re happy to join your team.<br><br>Keep in mind that our availability and responsiveness may not always align with your team <br></div>
+                </div>
+              </div>
+              <div data-w-tab="Tab 5" class="w-tab-pane w--tab-active">
+                <div>
+                  <div class="text-block-reading left-align">Our team consists two permanent members; a Developer and a Designer. <br><br>Once you&#x27;re ready to meet, start a chat with us below.<br></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-layout-hflex btn-flex">
+            <aside link="#chat" class="btn">
+              <div class="button-background"></div>
+              <div class="button-text">Chat with us</div>
+              <div class="icon btn-icon w-embed">&#xF715;</div>
+            </aside>
+            <a href="#pricing" class="btn link w-inline-block">
+              <div class="button-text">Terms of Service</div>
+              <div class="icon btn-icon w-embed">&#xF194;</div>
+            </a>
+          </div>
+        </div><img src="images/man-with-lightbulb.webp" loading="lazy" sizes="(max-width: 991px) 100vw, 36vw" srcset="images/man-with-lightbulb.webp 500w, images/man-with-lightbulb.webp 600w" alt="man with lightbulb
+" class="hero-img content-img no-outline">
+      </div>
+      <section id="pricing" data-w-id="ccc7714e-4111-33db-545c-124e3954058f" class="content vert">
+        <div class="w-layout-vflex text-org subscriptions">
+          <h2 class="gradient-text ready">Pricing</h2>
+          <div class="text-block-reading">Supercharge your development on a monthly or quarterly schedule depending on the size of your project.</div>
+          <a href="/pricing#more-info" class="link text-block-reading w-inline-block">
+            <div>Learn more</div>
+            <div class="icon small w-embed">&#xF135;</div>
           </a>
         </div>
-      </div><img src="images/2023-HERO-CANDIDATE.webp" loading="lazy" sizes="(max-width: 479px) 70vw, (max-width: 767px) 50vw, (max-width: 991px) 32vw, 400px" srcset="images/2023-HERO-CANDIDATE-p-500.webp 500w, images/2023-HERO-CANDIDATE.webp 800w" alt="" class="hero-img content-img">
-    </div>
-    <div class="content tools-wrapper">
-      <div class="tile-flex-animated-container">
-        <div class="w-layout-hflex provider-flex">
-          <a href="#" class="provider-tile w-inline-block"><img src="images/btcpay.png" loading="eager" alt="btcpay logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/infura.png" loading="eager" alt="infura logo
-" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/node.png" loading="eager" alt="node logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/stacks.png" loading="eager" alt="stacks logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/63120558b661e15cdf54ded9.png" loading="eager" alt="affinity logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/webflow.png" loading="eager" alt="webflow logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/neon.png" loading="eager" alt="neon logo
-" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/github.png" loading="eager" alt="github logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/walletconnect.png" loading="eager" alt="walletconnect logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/Vercel_logo_black.png" loading="eager" alt="vercel logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/vue.png" loading="eager" alt="vue logo" class="provider-tile-img"></a>
-          <a href="#" class="provider-tile w-inline-block"><img src="images/Cloudflare_Logo.png" loading="eager" alt="cloudflare logo" class="provider-tile-img"></a>
-        </div>
-        <div class="providers-overlay right"></div>
-        <div class="providers-overlay"></div>
-      </div>
-      <div class="html-embed-2 w-embed w-script">
-        <script>
-if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
-  let providerMainContainer = document.querySelector(`[class*="tile-flex-animated-container"]`)
-  for (const parent of document.querySelectorAll(`.provider-flex`)) {
-    for(let i=0; i<2; i++){
-      for (const tile of parent.querySelectorAll(`.provider-tile`)) {
-        let cloneClass = tile.getAttribute("class")
-        let newTile = document.createElement("a")
-        newTile.setAttribute("class", `${cloneClass} -ite-${i}`)
-        newTile.innerHTML = tile.innerHTML
-        parent.append(newTile)
-      }
-    }
-      parent.style.setProperty("--parent-max-width", `${providerMainContainer.offsetWidth}px`)
-      parent.style.setProperty("--parent-max-overflow", `${parent.offsetWidth}px`)
-  }
-}
-</script>
-        <style>
-[class*="provider-flex"]{
-  animation: loopProviderFlex 60s linear forwards infinite
-}
-@keyframes loopProviderFlex {
-  0% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(-75%);
-  }
-}
-</style>
-      </div>
-    </div>
-    <section id="pricing" data-w-id="ccc7714e-4111-33db-545c-124e3954058f" class="content vert">
-      <div class="w-layout-vflex text-org subscriptions">
-        <h2 class="gradient-text ready">Pricing</h2>
-        <div class="text-block-reading">Supercharge your development on a monthly or quarterly schedule depending on the size of your project.</div>
-        <a href="/pricing#more-info" class="link text-block-reading w-inline-block">
-          <div>Learn more</div>
-          <div class="icon small w-embed">&#xF135;</div>
-        </a>
-      </div>
-      <div class="container">
-        <div class="pricing-wrapper">
-          <div id="w-node-ccc7714e-4111-33db-545c-124e39540595-3954058f" class="pricing-card">
-            <div class="pricing-head">
-              <div id="w-node-ccc7714e-4111-33db-545c-124e39540597-3954058f" class="pricing-image w-embed"><svg class="target grow-icon playing-animation" width="100%" height="100%" viewbox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <rect id="grow1" x="3.763" y="3.763" width="49.166" height="49.166" style="stroke:var(--primary);fill: none;stroke-width: 2.5px;"></rect>
-                  <rect id="square" x="3.763" y="22.607" width="30.322" height="30.322" style="fill:var(--secondary);"></rect>
-                </svg>
-                <style>
+        <div class="container">
+          <div class="pricing-wrapper">
+            <div id="w-node-ccc7714e-4111-33db-545c-124e39540595-3954058f" data-w-id="ccc7714e-4111-33db-545c-124e39540595" class="pricing-card delayed-animation">
+              <div class="pricing-head">
+                <div id="w-node-ccc7714e-4111-33db-545c-124e39540597-3954058f" class="pricing-image w-embed"><svg class="target grow-icon playing-animation" width="100%" height="100%" viewbox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <rect id="grow1" x="3.763" y="3.763" width="49.166" height="49.166" style="stroke:var(--primary);fill: none;stroke-width: 2.5px;"></rect>
+                    <rect id="square" x="3.763" y="22.607" width="30.322" height="30.322" style="fill:var(--secondary);"></rect>
+                  </svg>
+                  <style>
 .grow-icon #grow1 {
 mix-blend-mode: color-dodge;
     animation: grow1-build-1 3s cubic-bezier(0.68, -0.55, 0.27, 1.25) alternate infinite;
@@ -430,38 +494,38 @@ transform-origin: bottom left;
 }
 }
  </style>
+                </div>
+                <div class="w-layout-vflex">
+                  <h2 class="pricing-title gradient-text">Flexible<br>Monthly</h2>
+                  <div class="pricing-subtitle">Start small. Build big.</div>
+                </div>
               </div>
-              <div class="w-layout-vflex">
-                <h2 class="pricing-title gradient-text">Flexible<br>Monthly</h2>
-                <div class="pricing-subtitle">Start small. Build big.</div>
-              </div>
+              <div class="pricing-price">£2,995 <span class="text-span-2">/month</span></div>
+              <aside link="#chat" class="btn sec">
+                <div class="button-background sec"></div>
+                <div class="button-text">Talk to a developer</div>
+                <div class="icon w-embed">&#xF70E;</div>
+              </aside>
+              <div class="pricing-divider for-light-block"></div>
+              <ul role="list" class="pricing-feature-list w-list-unstyled">
+                <li class="list-item-2">
+                  <div class="icon small w-embed">&#xF117;</div>
+                  <div class="pricing-feature">Pre-pay monthly</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small w-embed">&#xF26A;</div>
+                  <div class="pricing-feature">Everything in<strong> Quarterly</strong> except savings.</div>
+                </li>
+              </ul>
             </div>
-            <div class="pricing-price">£2,995 <span class="text-span-2">/month</span></div>
-            <aside link="#chat" class="btn sec">
-              <div class="button-background sec"></div>
-              <div class="button-text">Chat with a developer</div>
-              <div class="icon w-embed">&#xF70E;</div>
-            </aside>
-            <div class="pricing-divider for-light-block"></div>
-            <ul role="list" class="pricing-feature-list w-list-unstyled">
-              <li class="list-item-2">
-                <div class="icon small w-embed">&#xF117;</div>
-                <div class="pricing-feature">Pre-pay monthly</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small w-embed">&#xF26A;</div>
-                <div class="pricing-feature">Everything in<strong> Quarterly</strong> except savings.</div>
-              </li>
-            </ul>
-          </div>
-          <div id="w-node-ccc7714e-4111-33db-545c-124e395405b5-3954058f" class="pricing-card featured-pricing">
-            <div class="pricing-head">
-              <div class="pricing-image main w-embed"><svg class="target shapes circle-animation playing-animation" width="100%" height="100%" viewbox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                  <circle id="circle1" cx="18.772" cy="38.353" r="8"></circle>
-                  <rect id="square" x="5.061" y="23.834" width="27.421" height="27.87" style="fill:var(--secondary);"></rect>
-                  <path id="triangle" d="M18.772,23.142l16.192,28.561l-32.385,0l16.193,-28.561Z" style="fill:var(--primary);"></path>
-                </svg>
-                <style>
+            <div id="w-node-ccc7714e-4111-33db-545c-124e395405b5-3954058f" data-w-id="ccc7714e-4111-33db-545c-124e395405b5" class="pricing-card featured-pricing">
+              <div class="pricing-head">
+                <div class="pricing-image main w-embed"><svg class="target shapes circle-animation playing-animation" width="100%" height="100%" viewbox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <circle id="circle1" cx="18.772" cy="38.353" r="8"></circle>
+                    <rect id="square" x="5.061" y="23.834" width="27.421" height="27.87" style="fill:var(--secondary);"></rect>
+                    <path id="triangle" d="M18.772,23.142l16.192,28.561l-32.385,0l16.193,-28.561Z" style="fill:var(--primary);"></path>
+                  </svg>
+                  <style>
     .circle-animation #circle1{
     stroke: var(--primary);
     fill:var(--primary);
@@ -513,75 +577,426 @@ animation: triangle-build-1 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate i
 }
     }
     </style>
+                </div>
+                <div class="w-layout-vflex">
+                  <h2 class="pricing-title gradient-text">Essentials<br>Quarterly</h2>
+                  <div class="pricing-subtitle">Best value for longer-term projects.</div>
+                </div>
               </div>
-              <div class="w-layout-vflex">
-                <h2 class="pricing-title gradient-text">Essentials<br>Quarterly</h2>
-                <div class="pricing-subtitle">Best value for longer-term projects.</div>
-              </div>
+              <div class="pricing-price">£2,795<span class="text-span-2"> /month</span></div>
+              <aside link="#chat" class="btn">
+                <div class="button-background"></div>
+                <div class="button-text">Talk to a developer</div>
+                <div class="icon w-embed">&#xF2C6;</div>
+              </aside>
+              <div class="pricing-divider"></div>
+              <div class="badge">BEST VALUE — SAVE 15%</div>
+              <ul role="list" class="pricing-feature-list w-list-unstyled">
+                <li class="list-item-2">
+                  <div class="icon small w-embed">&#xF64A;</div>
+                  <div class="pricing-feature">Quarterly billing</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small w-embed">&#xF117;</div>
+                  <div class="pricing-feature">Pre-pay £8,385 every 3 months</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small w-embed">&#xF4C2;</div>
+                  <div class="pricing-feature">Pause or cancel anytime</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small w-embed">&#xF292;</div>
+                  <div class="pricing-feature">Queued Tasks delivered in as little as 48hrs</div>
+                </li>
+                <li class="list-item-2 things-change-after-this">
+                  <div class="icon small w-embed">&#xF2C7;</div>
+                  <div class="pricing-feature">Unlimited Development Scopes</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small green w-embed">&#xF247;</div>
+                  <div class="pricing-feature things-are-different">Save £600 v <strong>Monthly</strong></div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small green w-embed">&#xF7D4;</div>
+                  <div class="pricing-feature things-are-different">Free Webflow staging</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small green w-embed">&#xF544;</div>
+                  <div class="pricing-feature things-are-different">Unlimited Revisions</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small green w-embed">&#xF4AF;</div>
+                  <div class="pricing-feature things-are-different">Free &amp; Custom Graphics</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small green w-embed">&#xF44D;</div>
+                  <div class="pricing-feature things-are-different">Complete Service Management</div>
+                </li>
+                <li class="list-item-2">
+                  <div class="icon small green w-embed">&#xF4BE;</div>
+                  <div class="pricing-feature things-are-different">Support directly from your developer</div>
+                </li>
+              </ul>
             </div>
-            <div class="pricing-price">£2,795<span class="text-span-2"> /month</span></div>
-            <aside link="#chat" class="btn">
-              <div class="button-background"></div>
-              <div class="button-text">Talk to a developer</div>
-              <div class="icon w-embed">&#xF2C6;</div>
-            </aside>
-            <div class="pricing-divider"></div>
-            <div class="badge">BEST VALUE — SAVE 15%</div>
-            <ul role="list" class="pricing-feature-list w-list-unstyled">
-              <li class="list-item-2">
-                <div class="icon small w-embed">&#xF64A;</div>
-                <div class="pricing-feature">Quarterly billing</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small w-embed">&#xF117;</div>
-                <div class="pricing-feature">Pre-pay £8,385 every 3 months</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small w-embed">&#xF4C2;</div>
-                <div class="pricing-feature">Pause or cancel anytime</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small w-embed">&#xF292;</div>
-                <div class="pricing-feature">Queued Tasks delivered in as little as 48hrs</div>
-              </li>
-              <li class="list-item-2 things-change-after-this">
-                <div class="icon small w-embed">&#xF2C7;</div>
-                <div class="pricing-feature">Unlimited Development Scopes</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small green w-embed">&#xF247;</div>
-                <div class="pricing-feature things-are-different">Save £600 v <strong>Monthly</strong></div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small green w-embed">&#xF7D4;</div>
-                <div class="pricing-feature things-are-different">Free Webflow staging</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small green w-embed">&#xF544;</div>
-                <div class="pricing-feature things-are-different">Unlimited Revisions</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small green w-embed">&#xF4AF;</div>
-                <div class="pricing-feature things-are-different">Free &amp; Custom Graphics</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small green w-embed">&#xF44D;</div>
-                <div class="pricing-feature things-are-different">Complete Service Management</div>
-              </li>
-              <li class="list-item-2">
-                <div class="icon small green w-embed">&#xF4BE;</div>
-                <div class="pricing-feature things-are-different">Support directly from your developer</div>
-              </li>
-            </ul>
           </div>
         </div>
+      </section>
+      <div data-w-id="824565b5-3d16-06aa-e0b5-9e6e64fc907d" style="opacity:0" class="content tools-wrapper">
+        <div class="tile-flex-animated-container">
+          <div class="w-layout-hflex provider-flex">
+            <a href="#" class="provider-tile w-inline-block"><img src="images/btcpay.png" loading="eager" alt="btcpay logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/infura.png" loading="eager" alt="infura logo
+" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/node.png" loading="eager" alt="node logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/stacks.png" loading="eager" alt="stacks logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/63120558b661e15cdf54ded9.png" loading="eager" alt="affinity logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/webflow.png" loading="eager" alt="webflow logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/neon.png" loading="eager" alt="neon logo
+" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/github.png" loading="eager" alt="github logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/walletconnect.png" loading="eager" alt="walletconnect logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/Vercel_logo_black.png" loading="eager" alt="vercel logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/vue.png" loading="eager" alt="vue logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/Cloudflare_Logo.png" loading="eager" alt="cloudflare logo" class="provider-tile-img"></a>
+          </div>
+          <div class="providers-overlay right"></div>
+          <div class="providers-overlay"></div>
+        </div>
+        <div class="html-embed-2 w-embed w-script">
+          <script>
+if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
+  let providerMainContainer = document.querySelector(`[class*="tile-flex-animated-container"]`)
+  for (const parent of document.querySelectorAll(`.provider-flex`)) {
+    for(let i=0; i<2; i++){
+      for (const tile of parent.querySelectorAll(`.provider-tile`)) {
+        let cloneClass = tile.getAttribute("class")
+        let newTile = document.createElement("a")
+        newTile.setAttribute("class", `${cloneClass} -ite-${i}`)
+        newTile.innerHTML = tile.innerHTML
+        parent.append(newTile)
+      }
+    }
+      parent.style.setProperty("--parent-max-width", `${providerMainContainer.offsetWidth}px`)
+      parent.style.setProperty("--parent-max-overflow", `${parent.offsetWidth}px`)
+  }
+}
+</script>
+          <style>
+[class*="provider-flex"]{
+  animation: loopProviderFlex 60s linear forwards infinite
+}
+@keyframes loopProviderFlex {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+</style>
+        </div>
       </div>
-    </section>
-    <div id="worksExperimentsShowcase" class="work-showcase-wrapper works-and-exp">
-      <div id="wordsExperimentsSliderContainerWrapper" class="w-layout-vflex content works-and-experiments-label-and-content">
+      <div id="wordsExperimentsSliderContainerWrapper" data-w-id="20e720cc-5f7a-7052-b56e-d0059634027a" class="w-layout-vflex content">
         <h2 class="gradient-text ready">Works &amp; Experiments</h2>
-        <div id="wordsExperimentsSliderContainer" class="content sliding-work-showcase">
-          <div class="work-tile compact"><img src="images/walletscrutiny-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 300px" srcset="images/walletscrutiny-tile-p-500.webp 500w, images/walletscrutiny-tile.webp 800w" alt="walletscrutiny website graphic" class="work-tile-image compact">
+        <div class="text-block-reading">Check out a few projects we&#x27;ve worked on.</div>
+        <div id="wordsExperimentsSliderContainer" class="content works-and-exp-show-static">
+          <div class="work-tile compact"><img src="images/wallet-scrut.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/wallet-scrut-p-500.webp 500w, images/wallet-scrut.webp 660w" alt="walletscrutiny website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">WalletScrutiny</h3>
+              <div class="work-tile-text">Collaborative project with the Bitcoin Design Community to redesign the WalletScrutiny brand and website.<br></div>
+              <a href="https://walletscrutiy.com" target="_blank" class="link w-inline-block">
+                <div>Visit Website</div>
+                <div class="icon small w-embed">&#xF1C5;</div>
+              </a>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology js-key-colour ws"></div>
+                  <div class="technology html5-tech-used ws"></div>
+                  <div class="technology scss-key-colour ws"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">90%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">5%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">5%</div>
+                  </li>
+                </ul>
+                <div class="framework-credit-wrapper"><img src="images/Jekyll_software_Logo.png" loading="lazy" alt="jekyll logo" height="40" class="framework-logo"></div>
+              </div>
+            </div>
+            <div class="badge subtle">Current version</div>
+          </div>
+          <div class="work-tile compact"><img src="images/btcpay.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/btcpay-p-500.webp 500w, images/btcpay.webp 660w" alt="keevo website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">BTCPay Server</h3>
+              <div class="work-tile-text">Clean, modern design for the BTCPay Server Main Landing page and Foundation Website.</div>
+              <a href="https://btcpayserver.org" target="_blank" class="link w-inline-block">
+                <div>Visit Website</div>
+                <div class="icon small w-embed">&#xF1C5;</div>
+              </a>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used btcpay-server"></div>
+                  <div class="technology css-key-colour btc"></div>
+                  <div class="technology js-key-colour btc"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key css-colour-key"></div>
+                    <div class="technology-name">CSS</div>
+                    <div class="technology-pc">60%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="badge subtle">Current version</div>
+          </div>
+          <div class="work-tile compact"><img src="images/f18-pay-224.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/f18-pay-224.webp 500w, images/f18-pay-224.webp 660w" alt="keevo website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">F18 Pay</h3>
+              <div class="work-tile-text">Bitcoin, ETH and ERC-20 token payments processor built to run in serverless environments.<br></div>
+              <a href="https://pay.flat18.co.uk" target="_blank" class="link w-inline-block">
+                <div>Visit Website</div>
+                <div class="icon small w-embed">&#xF1C5;</div>
+              </a>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology vue-key-colour f18"></div>
+                  <div class="technology css-key-colour f18pay"></div>
+                  <div class="technology js-key-colour f18-pay"></div>
+                  <div class="technology html5-tech-used f18-pay"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key vue-colour-key"></div>
+                    <div class="technology-name">Vue</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key css-colour-key"></div>
+                    <div class="technology-name">CSS</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">50%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+              </div>
+            </div>
+            <div class="badge subtle">PUBLIC BETA</div>
+          </div>
+          <div class="work-tile compact"><img src="images/zettahash-2024.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/zettahash-2024.webp 500w, images/zettahash-2024.webp 660w" alt="keevo website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">Zettahash DAO</h3>
+              <div class="work-tile-text">Zettahash website built in Webflow and designed to be processed in Node within a GitHub Pages environment.<br></div>
+              <a href="https://zettahash-static.webflow.io" target="_blank" class="link w-inline-block">
+                <div>Visit Website</div>
+                <div class="icon small w-embed">&#xF1C5;</div>
+              </a>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology webflow-key-colour _100"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key webflow-key-colour"></div>
+                    <div class="technology-name">Webflow</div>
+                    <div class="technology-pc">100%</div>
+                  </li>
+                </ul>
+                <div class="framework-credit-wrapper"><img src="images/webflow-icon-4095338614.png" loading="lazy" alt="webflow logo
+" height="Auto" class="framework-logo"></div>
+              </div>
+            </div>
+            <div class="badge subtle">Live</div>
+          </div>
+          <div class="work-tile compact"><img src="images/keevo-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/keevo-tile-p-500.webp 500w, images/keevo-tile.webp 800w" alt="keevo website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">Keevo Wallet</h3>
+              <div class="work-tile-text">Redesign of Keevo Wallet website to achieve a look which can be described as &quot;glossy&quot;, &quot;high-quality&quot; but also clean, modern and balancing &quot;sophisticated&quot; with &quot;trendy&quot;.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used keevo"></div>
+                  <div class="technology scss-key-colour keevo"></div>
+                  <div class="technology js-key-colour btc"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">60%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="badge subtle">demo</div>
+          </div>
+          <div class="work-tile compact"><img src="images/incognetio-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/incognetio-tile-p-500.webp 500w, images/incognetio-tile.webp 800w" alt="incognet website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">Incognet</h3>
+              <div class="work-tile-text">Refreshing the Incognet website with improved UX and a cleaner, more-appealing UI and graphics.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology php-key-colour incognet"></div>
+                  <div class="technology scss-key-colour incognet"></div>
+                  <div class="technology js-key-colour btc"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key php-colour-key"></div>
+                    <div class="technology-name">PHP</div>
+                    <div class="technology-pc">80%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="64.78125px" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+              </div>
+            </div>
+            <div class="badge subtle">demo</div>
+          </div>
+          <div class="work-tile compact"><img src="images/zismo-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/zismo-tile-p-500.webp 500w, images/zismo-tile.webp 800w" alt="zismo.io website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">Zismo.io</h3>
+              <div class="work-tile-text">A Peer-to-Peer bitcoin trading platform which also encourages face-to-face trading</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology php-key-colour zismo"></div>
+                  <div class="technology scss-key-colour zismo"></div>
+                  <div class="technology js-key-colour zismo"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key php-colour-key"></div>
+                    <div class="technology-name">PHP</div>
+                    <div class="technology-pc">65%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">15%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">20%</div>
+                  </li>
+                </ul>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="64.78125px" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+              </div>
+            </div>
+            <div class="badge subtle">alpha</div>
+          </div>
+          <div class="work-tile compact"><img src="images/nairaex-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/nairaex-tile-p-500.webp 500w, images/nairaex-tile.webp 800w" alt="naira website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">Naira Ex</h3>
+              <div class="work-tile-text">Landing-page for a crypto debit card aimed at the Canadian and Nigerian market.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used"></div>
+                  <div class="technology css-key-colour naira"></div>
+                  <div class="technology js-key-colour naira"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key css-colour-key"></div>
+                    <div class="technology-name">CSS3</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">40%</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="badge subtle">released</div>
+          </div>
+          <div class="work-tile compact"><img src="images/p2pnft-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/p2pnft-tile-p-500.webp 500w, images/p2pnft-tile.webp 800w" alt="p2pnft website graphic" class="work-tile-image compact">
+            <div class="w-layout-hflex work-tile-text">
+              <h3 class="work-ile-title compact">P2P NFT</h3>
+              <div class="work-tile-text">Peer-to-peer NFT trading platform</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology vue-key-colour p2p"></div>
+                  <div class="technology scss-key-colour p2p"></div>
+                  <div class="technology js-key-colour btc"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key vue-colour-key"></div>
+                    <div class="technology-name">Vue</div>
+                    <div class="technology-pc">80%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+              </div>
+            </div>
+            <div class="badge subtle">released</div>
+          </div>
+          <div class="work-tile compact"><img src="images/walletscrutiny-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 280px" srcset="images/walletscrutiny-tile-p-500.webp 500w, images/walletscrutiny-tile.webp 800w" alt="walletscrutiny website graphic" class="work-tile-image compact">
             <div class="w-layout-hflex work-tile-text">
               <h3 class="work-ile-title compact">WalletScrutiny</h3>
               <div class="work-tile-text">Earlier iterations of WalletScrutiny and experimental layouts, graphics, UX.</div>
@@ -613,263 +1028,102 @@ animation: triangle-build-1 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate i
             </div>
             <div class="badge subtle">earlier version</div>
           </div>
-          <div class="work-tile compact"><img src="images/keevo-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 300px" srcset="images/keevo-tile-p-500.webp 500w, images/keevo-tile.webp 800w" alt="keevo website graphic" class="work-tile-image compact">
-            <div class="w-layout-hflex work-tile-text">
-              <h3 class="work-ile-title compact">Keevo Wallet</h3>
-              <div class="work-tile-text">Redesign of Keevo Wallet website to achieve a look which can be described as &quot;glossy&quot;, &quot;high-quality&quot; but also clean, modern and balancing &quot;sophisticated&quot; with &quot;trendy&quot;.</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology html5-tech-used keevo"></div>
-                  <div class="technology scss-key-colour keevo"></div>
-                  <div class="technology js-key-colour btc"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key htmol5-colour-key"></div>
-                    <div class="technology-name">HTML5</div>
-                    <div class="technology-pc">30%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key scss-colour-key"></div>
-                    <div class="technology-name">SCSS</div>
-                    <div class="technology-pc">60%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">10%</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="badge subtle">demo</div>
-          </div>
-          <div class="work-tile compact"><img src="images/incognetio-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 300px" srcset="images/incognetio-tile-p-500.webp 500w, images/incognetio-tile.webp 800w" alt="incognet website graphic" class="work-tile-image compact">
-            <div class="w-layout-hflex work-tile-text">
-              <h3 class="work-ile-title compact">Incognet</h3>
-              <div class="work-tile-text">Refreshing the Incognet website with improved UX and a cleaner, more-appealing UI and graphics.</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology php-key-colour incognet"></div>
-                  <div class="technology scss-key-colour incognet"></div>
-                  <div class="technology js-key-colour btc"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key php-colour-key"></div>
-                    <div class="technology-name">PHP</div>
-                    <div class="technology-pc">80%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key scss-colour-key"></div>
-                    <div class="technology-name">SCSS</div>
-                    <div class="technology-pc">10%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">10%</div>
-                  </li>
-                </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
-              </div>
-            </div>
-            <div class="badge subtle">demo</div>
-          </div>
-          <div class="work-tile compact"><img src="images/zismo-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 300px" srcset="images/zismo-tile-p-500.webp 500w, images/zismo-tile.webp 800w" alt="zismo.io website graphic" class="work-tile-image compact">
-            <div class="w-layout-hflex work-tile-text">
-              <h3 class="work-ile-title compact">Zismo.io</h3>
-              <div class="work-tile-text">A Peer-to-Peer bitcoin trading platform which also encourages face-to-face trading</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology php-key-colour zismo"></div>
-                  <div class="technology scss-key-colour zismo"></div>
-                  <div class="technology js-key-colour zismo"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key php-colour-key"></div>
-                    <div class="technology-name">PHP</div>
-                    <div class="technology-pc">65%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key scss-colour-key"></div>
-                    <div class="technology-name">SCSS</div>
-                    <div class="technology-pc">15%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">20%</div>
-                  </li>
-                </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
-              </div>
-            </div>
-            <div class="badge subtle">alpha</div>
-          </div>
-          <div class="work-tile compact"><img src="images/nairaex-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 300px" srcset="images/nairaex-tile-p-500.webp 500w, images/nairaex-tile.webp 800w" alt="naira website graphic" class="work-tile-image compact">
-            <div class="w-layout-hflex work-tile-text">
-              <h3 class="work-ile-title compact">Naira Ex</h3>
-              <div class="work-tile-text">Landing-page for a crypto debit card aimed at the Canadian and Nigerian market.</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology html5-tech-used"></div>
-                  <div class="technology css-key-colour naira"></div>
-                  <div class="technology js-key-colour naira"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key htmol5-colour-key"></div>
-                    <div class="technology-name">HTML5</div>
-                    <div class="technology-pc">30%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key css-colour-key"></div>
-                    <div class="technology-name">CSS3</div>
-                    <div class="technology-pc">30%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">40%</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="badge subtle">released</div>
-          </div>
-          <div class="work-tile compact"><img src="images/p2pnft-tile.webp" loading="lazy" sizes="(max-width: 479px) 60vw, 300px" srcset="images/p2pnft-tile-p-500.webp 500w, images/p2pnft-tile.webp 800w" alt="p2pnft website graphic" class="work-tile-image compact">
-            <div class="w-layout-hflex work-tile-text">
-              <h3 class="work-ile-title compact">P2P NFT</h3>
-              <div class="work-tile-text">Peer-to-peer NFT trading platform</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology vue-key-colour p2p"></div>
-                  <div class="technology scss-key-colour p2p"></div>
-                  <div class="technology js-key-colour btc"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key vue-colour-key"></div>
-                    <div class="technology-name">Vue</div>
-                    <div class="technology-pc">80%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key scss-colour-key"></div>
-                    <div class="technology-name">SCSS</div>
-                    <div class="technology-pc">10%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">10%</div>
-                  </li>
-                </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
-              </div>
-            </div>
-            <div class="badge subtle">released</div>
-          </div>
         </div>
-      </div>
-      <div class="work-wrapper-overlay"></div>
-    </div>
-    <div class="works-and-exp-scroll-trigger w-embed w-script">
-      <script>
-let wrapper = document.querySelector(`#worksExperimentsShowcase`)
-let content = document.querySelector(`#wordsExperimentsSliderContainer`)
-let contentParent = document.querySelector(`#wordsExperimentsSliderContainerWrapper`)
-let workTileCompact = contentParent.querySelectorAll(`.work-tile`)[0]
-const attr = {
-	overflowScroll:0,
-  scroll:0, 
-  top:wrapper.offsetTop, 
-  bottom: (wrapper.offsetTop+wrapper.getBoundingClientRect().height), 
-  slideWidth: content.scrollWidth,
-  height: content.getBoundingClientRect().height,
-  width: content.getBoundingClientRect().width,
-  tileWidth: workTileCompact.getBoundingClientRect().width,
-  }
-wrapper.style.height=`${attr.slideWidth - (attr.height * .5)}px`
-wrapper.style.position=`sticky`
-wrapper.style.top=`0`
-document.addEventListener("scroll", ()=>{
-	wordsExperimentsSliderContainerWrapperScroll()
-})
-window.addEventListener("resize", ()=>{
-	wordsExperimentsSliderContainerWrapperScroll()
-})
-function wordsExperimentsSliderContainerWrapperScroll(){
-	attr.scroll=window.scrollY
-  attr.overflowScroll=attr.top/window.outerHeight
-  if(window.outerWidth>478){
-    if(attr.scroll<attr.top){
-      content.style.transform=`translate(0px, 0px)`
-      contentParent.removeAttribute("style")
-    }
-    if(attr.scroll>=(attr.top + attr.height)){
-      contentParent.setAttribute("style", "transform: unset;")
-    }
-    if(attr.scroll>=(attr.top)){
-      content.style.transform=`translate(-${attr.scroll - (attr.top)}px, 0px)`
-    }
-    if(attr.scroll>=attr.bottom + attr.height){
-    }
-    if(attr.scroll>=attr.bottom + attr.width){
-     contentParent.setAttribute("style", `transform: translateY(-${attr.scroll-(attr.bottom + attr.width)}px)`)
-    }
-  }
+        <div class="code w-embed">
+          <style>
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile{
+	opacity: 0;
+  transform: translateY(40px);
+  animation: build-in-tile 500ms ease forwards 1;
 }
-</script>
-    </div>
-    <div class="content lets-build">
-      <div class="major-exit-text gradient-text">Let&#x27;s Build<br>Something Amazing<br>Together ♥️ </div>
-    </div>
-    <section class="footer-dark">
-      <div class="content">
-        <div class="footer-wrapper">
-          <a href="#" class="footer-brand w-inline-block"><img src="images/logo-24-blue.svg" loading="lazy" alt="" height="30" class="image-4"></a>
-          <div class="footer-content">
-            <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346fa7-41346f98" class="footer-block">
-              <div class="title-small">Contact</div>
-              <a href="https://t.me/flat18_bot" class="footer-link w-inline-block">
-                <div class="icon small w-embed">&#xF5B3;</div>
-                <div>Telegram</div>
-              </a>
-              <a href="mailto:hello@flat18.co.uk" class="footer-link w-inline-block">
-                <div class="icon small w-embed">&#xF73B;</div>
-                <div>hello@flat18.co.uk</div>
-              </a>
-              <a href="tel:+447480569779" class="footer-link w-inline-block">
-                <div class="icon small w-embed">&#xF4E2;</div>
-                <div>+44 7480 569779</div>
-              </a>
-            </div>
-            <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346f9e-41346f98" class="footer-block">
-              <div class="title-small">Shortcuts</div>
-              <a href="https://stats.uptimerobot.com/RKBX3irMJl" class="footer-link w-inline-block">
-                <div class="status good"></div>
-                <div>Service status<br></div>
-              </a>
-              <a href="/#pricing" class="footer-link">Pricing</a>
-              <a href="about.html" class="footer-link">About us</a>
-              <a href="terms.html" class="footer-link">Terms</a>
-              <a href="privacy.html" class="footer-link">Privacy</a>
-              <a href="pricing.html" class="footer-link">Pricing</a>
-              <a href="https://accounts.flat18.co.uk/client/login" class="footer-link">Login</a>
+@keyframes build-in-tile{
+to{opacity: 1; transform: translateY(0px);}
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(1){
+  animation-delay: 0ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(2){
+  animation-delay: 200ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(3){
+  animation-delay: 400ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(4){
+  animation-delay: 600ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(5){
+  animation-delay: 800ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(6){
+  animation-delay: 1000ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(7){
+  animation-delay: 1200ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(8){
+  animation-delay: 1400ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(9){
+  animation-delay: 1600ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(10){
+  animation-delay: 1800ms;
+}
+</style>
+        </div>
+      </div>
+      <div data-w-id="8fe21e79-00fd-6d0b-c602-015a0ea161f0" style="opacity:0" class="content lets-build">
+        <div class="major-exit-text gradient-text">Let&#x27;s Build<br>Something Amazing<br>Together ♥️ </div>
+      </div>
+      <section class="footer-dark">
+        <div class="content">
+          <div class="footer-wrapper">
+            <a href="#" class="footer-brand w-inline-block"><img src="images/logo-24-blue.svg" loading="lazy" alt="" height="30" class="image-4"></a>
+            <div class="footer-content">
+              <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346fa7-41346f98" class="footer-block">
+                <div class="title-small">Contact</div>
+                <a href="https://t.me/flat18_bot" class="footer-link w-inline-block">
+                  <div class="icon small w-embed">&#xF5B3;</div>
+                  <div>Telegram</div>
+                </a>
+                <a href="mailto:hello@flat18.co.uk" class="footer-link w-inline-block">
+                  <div class="icon small w-embed">&#xF73B;</div>
+                  <div>hello@flat18.co.uk</div>
+                </a>
+                <a href="tel:+447480569779" class="footer-link w-inline-block">
+                  <div class="icon small w-embed">&#xF4E2;</div>
+                  <div>+44 7480 569779</div>
+                </a>
+              </div>
+              <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346f9e-41346f98" class="footer-block">
+                <div class="title-small">Resources</div>
+                <a href="https://stats.uptimerobot.com/RKBX3irMJl" class="footer-link w-inline-block">
+                  <div class="status good"></div>
+                  <div>Service status<br></div>
+                </a>
+                <a href="about.html" class="footer-link">About us</a>
+                <a href="ease-of-communication-standard.html" class="footer-link">Standards</a>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="donate-to-flat18.html" class="footer-link">Donations</a>
+                <a href="free-services.html" class="footer-link">Free Services</a>
+              </div>
+              <div id="w-node-_26beecda-c968-eb58-1bc5-790c38ae2b87-41346f98" class="footer-block">
+                <div class="title-small">Shortcuts</div>
+                <a href="pricing.html" class="footer-link">Pricing</a>
+                <a href="terms.html" class="footer-link">Terms of Service</a>
+                <a href="https://accounts.flat18.co.uk/client/login" class="footer-link">Login</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer-copyright-center">© 2012-<span current-year="true">20</span> FLAT 18</div>
-      <div class="code w-embed w-script">
-        <script>
+        <div class="footer-copyright-center">© 2012-<span current-year="true">20</span> FLAT 18</div>
+        <div class="code w-embed w-script">
+          <script>
 for(const year of document.querySelectorAll(`[current-year="true"]`)){
 year.innerHTML = new Date().getFullYear()
 }
 </script>
-        <style>
+          <style>
 .status.good{
  animation: pulseRing 3s linear forwards infinite;
 }
@@ -882,8 +1136,9 @@ year.innerHTML = new Date().getFullYear()
 }
 }
 </style>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=663245c7d597883474e88492" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>

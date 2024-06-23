@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Sat Jun 01 2024 23:45:17 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sun Jun 23 2024 21:48:45 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663979de688f1df75e0de222" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -54,11 +54,87 @@
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-no-shadow-container w-nav">
         <div class="container-regular">
           <div class="navbar-wrapper">
-            <a href="index.html" class="navbar-brand w-nav-brand"><img src="images/logo-24-gradient.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo"></a>
+            <a href="index.html" class="navbar-brand w-nav-brand">
+              <div class="homepage-loader"><img src="images/1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/flat-eighteen.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
+              <div class="code w-embed w-script">
+                <style>
+.ready-to-load-in .homepage-loader{
+	position: fixed !important;
+  top: 50%;
+  left: 50%;
+  width: 150vw;
+  height: 100vh;
+  min-height: 150vw;
+  aspect-ratio: 1/1;
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+ 	transition: 1000ms cubic-bezier(0.58, -0.49, 0.46, 1.22);
+  background-color: var(--blue-1);
+}
+.ready-to-load-in.remove-curtain .homepage-loader{
+  top: 0%;
+  left: 0%;
+  width: 35px;
+  height: 35px;
+  min-height: 35px;
+  aspect-ratio: 1/1;
+  transform: translate(0%, 0%);
+  border-radius: 25%;
+  background-color: var(--process-blue);
+}
+.ready-to-load-in.make-curtain-absolute .homepage-loader{
+	position: absolute !important;
+}
+.ready-to-load-in .homepage-loader .loader-image-backgdrop{
+  opacity:0;
+  mix-blend-mode: soft-light;
+  filter: saturate(5);
+  transition-delay: 400ms;
+  transition: 400ms ease;
+}
+.ready-to-load-in.make-curtain-absolute .homepage-loader .loader-image-backgdrop{
+  opacity:1;
+  mix-blend-mode: unset;
+  filter: saturate(1);
+}
+.loader-image-backgdrop:nth-of-type(1){
+  opacity:0;
+	animation: fade-in-curtain-sections 500ms ease forwards 1;
+  animation-delay: 100ms;
+}
+.loader-image-backgdrop:nth-of-type(2){
+  opacity:0;
+	animation: fade-in-curtain-sections 500ms ease forwards 1;
+  animation-delay: 500ms;
+}
+@keyframes fade-in-curtain-sections{
+  from{
+    opacity:0;
+    margin-right: -50%;
+  }
+  to{
+    opacity:1;
+    margin-right: 0%;
+  }
+}
+</style>
+                <script>
+  document.body.classList.add("ready-to-load-in");
+  window.addEventListener("load", ()=>{
+		setTimeout(()=>{
+      document.body.classList.add("remove-curtain");	
+    },1200)
+    setTimeout(()=>{
+      document.body.classList.add("make-curtain-absolute");	
+    },1800)
+  });
+</script>
+              </div>
+            </a>
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
               <ul role="list" class="nav-menu w-list-unstyled">
                 <li>
-                  <a href="about.html" aria-current="page" class="nav-link w--current">About</a>
+                  <a href="about.html" aria-current="page" class="nav-link w--current">About us</a>
                 </li>
                 <li>
                   <a href="/#pricing" class="nav-link">Pricing</a>
@@ -91,7 +167,7 @@
         </div>
       </div>
     </div>
-    <div class="content doc-page">
+    <div data-w-id="8fe21e79-00fd-6d0b-c602-015a0ea161f0" class="content doc-page">
       <h1 class="gradient-text doc-heading">About Flat 18</h1>
       <p class="paragraph">Welcome to Flat 18, where we craft cutting-edge products in the exciting realms of bitcoin and crypto.<br><br>We&#x27;ve been developing for over 10 years and established the Flat 18 LLC in 2017, <br>focusing on mobile apps, websites, and networks.<br><br>At our core, we are a team driven by creativity and innovation, deeply passionate about open-source software and crypto technologies.<br><br>Our dynamic duo comprises two talented individuals specialising in frontend systems and backend services, ready to bring your vision to life.<br><br>The future is brimming with possibilities. <br>Let&#x27;s collaborate and create something extraordinary together ♥️☘️</p>
     </div>
@@ -116,16 +192,21 @@
               </a>
             </div>
             <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346f9e-41346f98" class="footer-block">
-              <div class="title-small">Shortcuts</div>
+              <div class="title-small">Resources</div>
               <a href="https://stats.uptimerobot.com/RKBX3irMJl" class="footer-link w-inline-block">
                 <div class="status good"></div>
                 <div>Service status<br></div>
               </a>
-              <a href="/#pricing" class="footer-link">Pricing</a>
               <a href="about.html" aria-current="page" class="footer-link w--current">About us</a>
-              <a href="terms.html" class="footer-link">Terms</a>
-              <a href="privacy.html" class="footer-link">Privacy</a>
+              <a href="ease-of-communication-standard.html" class="footer-link">Standards</a>
+              <a href="privacy.html" class="footer-link">Privacy Policy</a>
+              <a href="donate-to-flat18.html" class="footer-link">Donations</a>
+              <a href="free-services.html" class="footer-link">Free Services</a>
+            </div>
+            <div id="w-node-_26beecda-c968-eb58-1bc5-790c38ae2b87-41346f98" class="footer-block">
+              <div class="title-small">Shortcuts</div>
               <a href="pricing.html" class="footer-link">Pricing</a>
+              <a href="terms.html" class="footer-link">Terms of Service</a>
               <a href="https://accounts.flat18.co.uk/client/login" class="footer-link">Login</a>
             </div>
           </div>

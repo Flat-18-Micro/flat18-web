@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Sat Jun 01 2024 23:45:17 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sun Jun 23 2024 21:48:45 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66397cb0ba382bb7d3e2491f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -54,11 +54,87 @@
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-no-shadow-container w-nav">
         <div class="container-regular">
           <div class="navbar-wrapper">
-            <a href="index.html" class="navbar-brand w-nav-brand"><img src="images/logo-24-gradient.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo"></a>
+            <a href="index.html" class="navbar-brand w-nav-brand">
+              <div class="homepage-loader"><img src="images/1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/flat-eighteen.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
+              <div class="code w-embed w-script">
+                <style>
+.ready-to-load-in .homepage-loader{
+	position: fixed !important;
+  top: 50%;
+  left: 50%;
+  width: 150vw;
+  height: 100vh;
+  min-height: 150vw;
+  aspect-ratio: 1/1;
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+ 	transition: 1000ms cubic-bezier(0.58, -0.49, 0.46, 1.22);
+  background-color: var(--blue-1);
+}
+.ready-to-load-in.remove-curtain .homepage-loader{
+  top: 0%;
+  left: 0%;
+  width: 35px;
+  height: 35px;
+  min-height: 35px;
+  aspect-ratio: 1/1;
+  transform: translate(0%, 0%);
+  border-radius: 25%;
+  background-color: var(--process-blue);
+}
+.ready-to-load-in.make-curtain-absolute .homepage-loader{
+	position: absolute !important;
+}
+.ready-to-load-in .homepage-loader .loader-image-backgdrop{
+  opacity:0;
+  mix-blend-mode: soft-light;
+  filter: saturate(5);
+  transition-delay: 400ms;
+  transition: 400ms ease;
+}
+.ready-to-load-in.make-curtain-absolute .homepage-loader .loader-image-backgdrop{
+  opacity:1;
+  mix-blend-mode: unset;
+  filter: saturate(1);
+}
+.loader-image-backgdrop:nth-of-type(1){
+  opacity:0;
+	animation: fade-in-curtain-sections 500ms ease forwards 1;
+  animation-delay: 100ms;
+}
+.loader-image-backgdrop:nth-of-type(2){
+  opacity:0;
+	animation: fade-in-curtain-sections 500ms ease forwards 1;
+  animation-delay: 500ms;
+}
+@keyframes fade-in-curtain-sections{
+  from{
+    opacity:0;
+    margin-right: -50%;
+  }
+  to{
+    opacity:1;
+    margin-right: 0%;
+  }
+}
+</style>
+                <script>
+  document.body.classList.add("ready-to-load-in");
+  window.addEventListener("load", ()=>{
+		setTimeout(()=>{
+      document.body.classList.add("remove-curtain");	
+    },1200)
+    setTimeout(()=>{
+      document.body.classList.add("make-curtain-absolute");	
+    },1800)
+  });
+</script>
+              </div>
+            </a>
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
               <ul role="list" class="nav-menu w-list-unstyled">
                 <li>
-                  <a href="about.html" class="nav-link">About</a>
+                  <a href="about.html" class="nav-link">About us</a>
                 </li>
                 <li>
                   <a href="/#pricing" class="nav-link">Pricing</a>
@@ -91,38 +167,145 @@
         </div>
       </div>
     </div>
-    <div class="content doc-page">
+    <div data-w-id="8fe21e79-00fd-6d0b-c602-015a0ea161f0" class="content doc-page">
       <h1 class="gradient-text doc-heading">FLAT18 Terms of Service and General Procedural Guidelines</h1>
-      <div class="badge">Partially Updated: MAY 2024</div>
-      <p class="paragraph doc-para">This document is not compatible with Flat18 Ease of Communication Standard (F18 EoCS) as of January 2024.</p>
+      <div class="badge">Partially Updated: JUNE 2024</div>
+      <p class="paragraph doc-para">This document is compatible with Flat18 Ease of Communication Standard (F18 EoCS) as of January 2024.</p>
       <div class="rich-text-block w-richtext">
+        <p>Our limited liability company, FLAT 18 MICROSYSTEMS DEVELOPMENT LLC, is sometimes called: @f18micro, F18, Flat 18, FLAT18.CO.UK on different social and internet platforms. Flat 18 and any project under a flat18.co.uk subdomain are also covered by this document. We’ll call you, the customer, “you” or “your”. Flat 18, the service provider, will be referred to as “us”, “we”, or “our”.</p>
+        <p>Our interactions with you and the work we do for you are governed by the terms and guidelines below.</p>
         <ol role="list" class="terms-list">
-          <li><strong>Our limited liability company, FLAT 18 MICROSYSTEMS DEVELOPMENT LLC, is sometimes referred to as: <em>@f18micro</em>, <em>F18</em>, <em>Flat 18</em>, <em>FLAT18.CO.UK</em> on different social and internet platforms.<br>Flat 18 and any project staged as a subdomain of <em>flat18.co.uk</em> are also governed by this document. The customer party will be referred to as <em>you</em>, <em>your</em>. Flat 18, the service-provider party, may be referred to as <em>us</em>, <em>we</em>, <em>our</em>.<br>‍</strong></li>
-          <li>Our interactions with you and our work undertaken for you are governed by the terms and guidelines set out below.<br>‍</li>
-          <li class="list-item-3">Hours of Operation<br>Work at Flat 18 is conducted on highly-flexible schedules across multiple time-zones. Our availability to answer your questions and deal with queries, requests and other correspondences, is limited to our operating hours of 09.00 - 17.00 &quot;UTC&quot; <em>Coordinated Universal Time (UTC), UTC +0</em> or &quot;GMT&quot;, Monday to Friday.<br><br>You will always be able to get a message to us, even outside of those hours and on weekends, but we will likely respond less promptly.</li>
-          <li class="list-item-3">Engaging Flat 18 for work<br>You may contact us about developing your project via any of our primary channels: Telegram (@f18micro), website live-chat (https://flat18.co.uk), email (hello@flat18.co.uk).<br><br>During our chats we help you decide if Flat 18 is the right development company for your project.<br><br>You will be asked to provide as much detail on your project, as is practical. We samples, technical outlines and data on planned approach, schedule, methodologies and strategies to be employed (depending on your project).<br><br>We would be delighted if you should choose us to develop your project and at that point, we shall create an account for you identified by a name, nickname, pseudonym or contact detail. <br><br>The scope of your project will be recorded in a Mattermost Focalboard or other solution such as a Trello board.</li>
-          <li class="list-item-3">Scheduling and Queueing<br>Invoices for our subscriptions are due immediately.<br><br>We queue activities, reviews, jobs, changes and updates according to developer schedules and flow of work activities. This may mean that your development hours are likely to be distributed sporadically throughout a calendar month. You can always contact us for a more in-depth update.</li>
-          <li class="list-item-3">Payment<br>We accept fiat payments in USD, GBP, EUR.<br>We also accept Bitcoin, Ethereum and several ERC-20 tokens.<br><br>If you change your mind about developing a project after you have paid, you shall be eligible for a refund of up to 50% of the total paid.</li>
-          <li class="list-item-3">Discounts and Promotions Validity<br>Unless otherwise agreed upon, prices which are discounted or marked down in an invoice are only valid before or on the invoice due date. If an invoice does not display a due date, the date of issue of the invoice is the due date. Invoice numbering scheme always denotes the invoice date of issue <em>(E.g.: INV-20230113-XXX which represents 13<sup>th</sup> January, 2023).</em> <br>Invoices paid after the due date shall be billed at full-price with no discount.</li>
-          <li class="list-item-3">Supply of Materials<br>You must supply all materials and information as we specify, when required. Such materials may include, but are not limited to: photographs, written copy, logos and other printed material, source-codes, log-in details, SSL certificates, API keys. Delays in providing these materials may cause undesired wasting of development hours since it may not be possible to use them within the calendar month, and they will not be allowed to roll over.<br><br>Should a delay on your part cause a project to cease development before completion by the end of a calendar month, your project will be automatically paused and you will not be invoiced for additional hours until we are able to review your project with you.</li>
-          <li class="list-item-3">Communication<br>During development of your project, we encourage the creating of <em>Issues</em> on your git repository to track feedback and implementation.<br><br>We will suggest at least one day of every week during which we should meet via text chat on your website live-circle, telegram or a voice call for at 10-30 minutes to discuss progress updates and voice any concerns. Due to time-constraints, we may schedule a further meeting/call to cover additional topics.</li>
-          <li class="list-item-3">Support<br>In any case where a period of support or review period has not been defined, we will honour reasonable requests for technical support or revision of work delivered for up to one month after a project has been completed. For the purpose of efficiency, we limit support requests to 2 requests no less than 2 weeks apart. The period of support ends after 1 month (or the specified time) even if no request for revision or support has been made. We reserve the right to withhold support for any service for which payment is outstanding.</li>
-          <li class="list-item-3">Variations<br>You may request as many reviews or changes to your project scope as you would like. Changes may be implemented in as little as 48 hours. More complicated updates or changes may require additional time.<br><br>If we consider a change or variation to be complicated and require additional dialogue and materials, we will inform you and temporarily cease development until we have reviewed your project with you.</li>
-          <li class="list-item-3">Project Delays and Client Liability<br>Should a delay on your part cause a project to cease development before completion by the end of a calendar month, your project will be automatically paused.<br><br>You will not be eligible to receive any refund of unused hours.</li>
-          <li class="list-item-3">Termination of Service<br>You may terminate a project at any time by contacting us via our website live-circle, telegram or a voice-call. You will be required to answer questions about your project to prove your identity and approve the termination.<br><br>You will generally be ineligible for refund. We may choose to apply credit to your account for unused time, however these decisions are made on individual cases.</li>
-          <li class="list-item-3">Warranty by You as to Ownership of Intellectual Property Rights<br>You must obtain all necessary permissions and authorities in respect of the use of all copy, graphic images, registered company logos, names and trade marks, code, frameworks, applications, programmes or any other material that you supply to us to include in your project.<br><br>You agree to indemnify us and hold us harmless from any claims or legal actions related to the content of your project.</li>
-          <li class="list-item-3">Licensing<br>Once you have paid us in full for our work we grant to you a license to use the product and its related software and contents for the life of the project excepting such software or content that is hosted by us and may be governed by a separate licensing policy.</li>
-          <li class="list-item-3">Search Engines<br>We do not guarantee any specific position in search engine results for your website. We perform basic search engine optimisation according to current best practice.</li>
-          <li class="list-item-3">Consequential Loss<br>We shall not be liable for any loss or damage which you may suffer which is in any way attributable to any delay in performance or completion of our contract, however that delay arises.</li>
-          <li class="list-item-3">Disclaimer<br>To the full extent permitted by law, all terms, conditions, warranties, undertakings, inducements or representations whether express, implied, statutory or otherwise (other than the express provisions of these terms of service) relating in any way to the services we provide to you are excluded. Without limiting the above, to the extent permitted by law, any liability of FLAT18 under any term, condition, warranty or representation that by law cannot be excluded is, where permitted by law, limited at our option to the replacement, re-repair or re-supply of the services or the payment of the cost of the services that we were contracted to perform.</li>
-          <li class="list-item-3">Subcontracting<br>We reserve the right to subcontract any services that we have agreed to perform for you as we see fit.</li>
-          <li class="list-item-3">Privacy &amp; Non-Disclosure<br>We (and any subcontractors we engage) agree that we will not at any time disclose any of your confidential information to any third party. Additionally, all data collected regarding you, your business and your project is protected under our <a href="https://flat18.co.uk/privacy">privacy policy</a>.<br><br>It is standard procedure for Flat18 to inform you that you should change passwords or revoke any keys or security details provided to us for a project, once the project is completed or the authentication articles have become surplus to our requirements.</li>
-          <li class="list-item-3">Additional Expenses<br>You agree to reimburse us for any requested expenses which do not form part of our proposal including but not limited to the purchase of templates, third party software, stock photographs, fonts, domain name registration, project hosting or comparable expenses.</li>
-          <li class="list-item-3">Backups<br>You are responsible for maintaining your own backups with respect to your project and we will not be liable for restoring any client data or client websites and software except to the extent that such data loss arises out of a negligent act or omission by us.<br><br>Flat18-hosted or GutHub-hosted gits are not regarded and should not be treated like project backups.</li>
-          <li class="list-item-3">Ownership of Domain Names and Hosting<br>We will supply to you account credentials for domain name registration and/or project hosting that we purchased on your behalf when you reimburse us for any expenses that we have incurred.</li>
-          <li class="list-item-3">Governing Law<br>The agreement constituted by these terms of service and any proposal will be construed according to and is governed by the laws of The Republic of Trinidad and Tobago. You and FLAT18 submit to the non-exclusive jurisdiction of the courts in and of The Republic of Trinidad and Tobago in relation to any dispute arising under these terms of service or in relation to any services we perform for you.</li>
-          <li class="list-item-3">Best-Practice &amp; Compatibility<br>We endeavour to ensure that the projects we create are compatible with all current, modern technologies while maintaining reasonable backwards-compatibility which may vary. We are not able to guarantee perfect compatibility with any single platform or technology but will adhere to industry-standard, established best-practice measures throughout your project.</li>
-          <li class="list-item-3">E-Commerce<br>You are responsible for complying with all relevant laws relating to e-commerce, and to the full extent permitted by law will hold harmless, protect, and defend and indemnify FLAT18.CO.UK and its subcontractors from any claim, penalty, tax, tariff loss or damage arising from your or your clients’ use of Internet electronic commerce.</li>
+          <li><strong>Hours of Operation</strong>
+            <ul role="list">
+              <li>We work on flexible schedules across multiple time zones. Our availability to answer your questions and handle queries, requests, and other correspondences is limited to 09:00 - 17:00 UTC (or GMT), Monday to Friday.</li>
+              <li>You can always message us outside of those hours and on weekends, but we might respond a bit slower.</li>
+            </ul>
+          </li>
+          <li><strong>Engaging Flat 18 for Work</strong>
+            <ul role="list">
+              <li>You can reach out to us about your project via Telegram (@f18micro), website live-chat (<a href="https://flat18.co.uk/">https://flat18.co.uk</a>), or email (<a href="mailto:hello@flat18.co.uk">hello@flat18.co.uk</a>).</li>
+              <li>In our chats, we help you decide if Flat 18 is the right fit for your project. We’ll ask for details like the type of project (website, branding, app development, or a mix), the problems you’re facing, and practical info like brand colours, imagery, and style preferences.</li>
+              <li>If you choose us for your project, we’ll create an account for you, identified by a name, nickname, pseudonym, or contact detail. The scope of your project will be tracked in a Mattermost Focalboard or similar tools like Trello.</li>
+            </ul>
+          </li>
+          <li><strong>Scheduling and Queueing</strong>
+            <ul role="list">
+              <li>Invoices for our subscriptions are due immediately. We queue tasks, reviews, jobs, changes, and updates based on developer schedules and workflow. This might mean your development hours are spread out over a calendar month. You can always ask us for a more detailed update.</li>
+            </ul>
+          </li>
+          <li><strong>Payment</strong>
+            <ul role="list">
+              <li>We accept payments in USD, GBP, EUR, Bitcoin, Ethereum, and several ERC-20 tokens.</li>
+              <li>If you change your mind about a project after payment, you can get a refund of up to 50% if we haven’t started the project within one month of receiving instructions/initial consultation, provided there are no outstanding tasks on your side.</li>
+            </ul>
+          </li>
+          <li><strong>Discounts and Promotions Validity</strong>
+            <ul role="list">
+              <li>Discounted prices on invoices are valid only until the due date. If no due date is shown, the issue date is the due date. Invoice numbers always show the issue date (e.g., INV-20230113-XXX for 13th January, 2023). Invoices paid late will be at full price with no discount.</li>
+            </ul>
+          </li>
+          <li><strong>Supply of Materials</strong>
+            <ul role="list">
+              <li>You need to provide all materials and info we specify, such as photos, written content, logos, source codes, log-in details, SSL certificates, and API keys. Delays in providing these can waste development hours, and unused hours won’t roll over.</li>
+              <li>If your delay causes a project to pause before completion by the end of the month, your project will be automatically paused, and we won’t invoice for extra hours until we review the project with you.</li>
+            </ul>
+          </li>
+          <li><strong>Communication</strong>
+            <ul role="list">
+              <li>We encourage using Issues on your git repository to track feedback and implementation. You can choose your preferred method and frequency for progress updates.</li>
+              <li>We’ll suggest at least one day each week for a 10-30 minute text chat on your website live-circle, Telegram, or a voice call to discuss progress and any concerns. Additional meetings may be scheduled if needed.</li>
+            </ul>
+          </li>
+          <li><strong>Support</strong>
+            <ul role="list">
+              <li>We’ll honour reasonable requests for technical support or revision for up to one month after project completion. We limit support requests to 2 requests no less than 2 weeks apart. A reasonable request includes instances where our delivered code contains detrimental bugs. Support ends after 1 month (or the specified period) even if no requests have been made. We reserve the right to withhold support if payment is outstanding.</li>
+            </ul>
+          </li>
+          <li><strong>Variations</strong>
+            <ul role="list">
+              <li>You can request as many reviews or changes to your project scope as you like. Changes might be made in as little as 48 hours. More complex updates may need more time.</li>
+              <li>If a change or variation is complex, we’ll inform you and pause development until we review it with you.</li>
+            </ul>
+          </li>
+          <li><strong>Project Delays and Client Liability</strong>
+            <ul role="list">
+              <li>If your delay causes a project to pause before completion by the end of the month, it will be automatically paused. We’ll notify you of the delay and lower your project’s priority, placing it at the end of our queue. When it reaches the front of the queue again, we’ll contact you.</li>
+              <li>You won’t be eligible for a refund of unused hours.</li>
+            </ul>
+          </li>
+          <li><strong>Termination of Service</strong>
+            <ul role="list">
+              <li>You can terminate a project anytime via our website live-circle, Telegram, or a voice call. You’ll need to verify your identity and approve the termination.</li>
+              <li>Refunds are generally not available. We may apply credit to your account for unused time on a case-by-case basis.</li>
+            </ul>
+          </li>
+          <li><strong>Warranty by You as to Ownership of Intellectual Property Rights</strong>
+            <ul role="list">
+              <li>You must have all necessary permissions for all materials you supply to us, such as copy, graphic images, registered logos, names, trademarks, code, frameworks, applications, and programs.</li>
+              <li>You agree to indemnify us and hold us harmless from any claims or legal actions related to your project content.</li>
+            </ul>
+          </li>
+          <li><strong>Licensing</strong>
+            <ul role="list">
+              <li>Once you’ve paid us in full, we grant you a licence to use the product and its related software and contents for the life of the project, except for software or content hosted by us, which may have separate licensing policies.</li>
+            </ul>
+          </li>
+          <li><strong>Search Engines</strong>
+            <ul role="list">
+              <li>We don’t guarantee any specific search engine ranking for your website. We perform basic SEO according to best practices.</li>
+            </ul>
+          </li>
+          <li><strong>Consequential Loss</strong>
+            <ul role="list">
+              <li>We aren’t liable for any loss or damage you may suffer due to delays in our contract performance or completion, however that delay arises. This includes situations where you lose sales or leads due to expected downtimes or interruptions caused by our work.</li>
+            </ul>
+          </li>
+          <li><strong>Disclaimer</strong>
+            <ul role="list">
+              <li>To the full extent permitted by law, all terms, conditions, warranties, undertakings, inducements, or representations (other than those expressly stated in these terms of service) related to our services are excluded. Any liability of FLAT18 that can’t be excluded by law is limited, at our option, to the replacement, re-repair, or re-supply of services, or the cost of the services we were contracted to perform.</li>
+            </ul>
+          </li>
+          <li><strong>Subcontracting</strong>
+            <ul role="list">
+              <li>We reserve the right to subcontract any services we’ve agreed to perform for you.</li>
+            </ul>
+          </li>
+          <li><strong>Privacy &amp; Non-Disclosure</strong>
+            <ul role="list">
+              <li>We (and any subcontractors we engage) won’t disclose any of your confidential information to third parties. All data collected about you, your business, and your project is protected under our privacy policy. We handle user data in a manner similar to the Data Protection Act (DPA).</li>
+              <li>We’ll inform you to change passwords or revoke keys or security details provided to us for a project once it’s completed or no longer needed.</li>
+            </ul>
+          </li>
+          <li><strong>Additional Expenses</strong>
+            <ul role="list">
+              <li>You agree to reimburse us for any requested expenses not included in our proposal, like templates, third-party software, stock photos, fonts, domain registration, project hosting, or similar expenses, meaning any development or creative monetary expense incurred but not listed.</li>
+            </ul>
+          </li>
+          <li><strong>Backups</strong>
+            <ul role="list">
+              <li>You’re responsible for maintaining your own backups. We’re not liable for restoring any client data, websites, or software unless data loss results from our negligence. We rely on backup solutions from third parties like Webflow and Figma.</li>
+            </ul>
+          </li>
+          <li><strong>Ownership of Domain Names and Hosting</strong>
+            <ul role="list">
+              <li>We’ll give you account credentials for domain registration and project hosting that we purchased on your behalf once you reimburse us for incurred expenses.</li>
+            </ul>
+          </li>
+          <li><strong>Governing Law</strong>
+            <ul role="list">
+              <li>These terms of service and any proposals are governed by the laws of the Republic of Trinidad and Tobago. You and FLAT18 submit to the non-exclusive jurisdiction of its courts for any disputes.</li>
+            </ul>
+          </li>
+          <li><strong>Best Practice &amp; Compatibility</strong>
+            <ul role="list">
+              <li>We aim to ensure projects are compatible with current technologies while maintaining reasonable backwards compatibility. Perfect compatibility with any single platform or technology isn’t guaranteed, but we adhere to industry-standard best practices.</li>
+            </ul>
+          </li>
+          <li><strong>E-Commerce</strong>
+            <ul role="list">
+              <li>You’re responsible for complying with all relevant e-commerce laws and will hold harmless, protect, and indemnify FLAT18.CO.UK and its subcontractors from any claim, penalty, tax, tariff, loss, or damage arising from your or your clients’ use of Internet e-commerce.</li>
+            </ul>
+          </li>
         </ol>
         <p>‍</p>
       </div>
@@ -148,16 +331,21 @@
               </a>
             </div>
             <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346f9e-41346f98" class="footer-block">
-              <div class="title-small">Shortcuts</div>
+              <div class="title-small">Resources</div>
               <a href="https://stats.uptimerobot.com/RKBX3irMJl" class="footer-link w-inline-block">
                 <div class="status good"></div>
                 <div>Service status<br></div>
               </a>
-              <a href="/#pricing" class="footer-link">Pricing</a>
               <a href="about.html" class="footer-link">About us</a>
-              <a href="terms.html" aria-current="page" class="footer-link w--current">Terms</a>
-              <a href="privacy.html" class="footer-link">Privacy</a>
+              <a href="ease-of-communication-standard.html" class="footer-link">Standards</a>
+              <a href="privacy.html" class="footer-link">Privacy Policy</a>
+              <a href="donate-to-flat18.html" class="footer-link">Donations</a>
+              <a href="free-services.html" class="footer-link">Free Services</a>
+            </div>
+            <div id="w-node-_26beecda-c968-eb58-1bc5-790c38ae2b87-41346f98" class="footer-block">
+              <div class="title-small">Shortcuts</div>
               <a href="pricing.html" class="footer-link">Pricing</a>
+              <a href="terms.html" aria-current="page" class="footer-link w--current">Terms of Service</a>
               <a href="https://accounts.flat18.co.uk/client/login" class="footer-link">Login</a>
             </div>
           </div>
