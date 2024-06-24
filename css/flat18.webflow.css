@@ -43,6 +43,7 @@
   --logo-curtain-top: 0vh;
   --trigger-for-tiles-build-in-change: #ddd;
   --azure-blue-bg: rgba(68, 163, 219, .15);
+  --orange-2: #c36f01;
 }
 
 .w-layout-vflex {
@@ -55,6 +56,13 @@
   flex-direction: row;
   align-items: flex-start;
   display: flex;
+}
+
+body {
+  color: #333;
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 h3 {
@@ -319,6 +327,7 @@ p {
 
 .icon.btn-icon {
   font-size: 1rem;
+  transform: rotate(0);
 }
 
 .text-block {
@@ -1546,9 +1555,11 @@ p {
 
 .major-exit-text.gradient-text {
   z-index: 2;
-  background-image: radial-gradient(circle farthest-side at 0% 0%, var(--azure-blue), transparent 54%), radial-gradient(circle farthest-side at 100% 0%, var(--purple), transparent 44%), linear-gradient(180deg, var(--primary), var(--blue-0));
+  background-image: radial-gradient(circle farthest-side at 0% 0%, var(--accent), transparent 54%), radial-gradient(circle farthest-side at 100% 0%, var(--secondary), transparent 44%), linear-gradient(180deg, var(--primary), var(--azure-blue));
+  filter: saturate(200%);
   text-align: center;
-  margin-top: 40px;
+  margin-top: 0;
+  padding: 20px;
   font-size: 80px;
   font-weight: 900;
   line-height: 1.2em;
@@ -1762,13 +1773,29 @@ p {
   transform: skew(66deg);
 }
 
-.image-6 {
+.blur {
   z-index: -1;
   opacity: .12;
   pointer-events: none;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.blur.right {
+  opacity: .2;
+  transform: translate(66%, -50%);
+}
+
+.blur.left-large {
+  opacity: .27;
+  transform: skew(8deg, -35deg)translate(-50%, -50%);
+}
+
+.blur.centre-alternate-colour {
+  opacity: .4;
+  width: 100vw;
+  transform: scale(2)translate(0, -15%);
 }
 
 .homepage-loader {
@@ -1801,9 +1828,12 @@ p {
 }
 
 .tabs {
+  z-index: 2;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   box-shadow: 0 0 0 1px var(--blue-2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 8px;
   flex: 1 0 auto;
   grid-template-rows: auto;
@@ -1860,6 +1890,15 @@ p {
 
 .tabs-content {
   padding: 20px 40px;
+}
+
+.flex-for-span-syle-diff {
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  text-align: center;
+  flex-flow: column;
+  display: flex;
+  position: relative;
 }
 
 @media screen and (max-width: 991px) {
@@ -2337,6 +2376,11 @@ p {
   .navbar-no-shadow {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+
+  .navbar-brand.w--current {
+    width: 35px;
+    height: 35px;
   }
 
   .nav-menu {

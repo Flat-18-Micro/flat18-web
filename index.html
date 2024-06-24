@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Mon Jun 24 2024 02:44:16 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Jun 24 2024 15:42:38 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -55,7 +55,7 @@
         <div class="container-regular">
           <div class="navbar-wrapper">
             <a href="index.html" aria-current="page" class="navbar-brand w-nav-brand w--current">
-              <div class="homepage-loader"><img src="images/1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
+              <div class="homepage-loader"><img src="images/f18-1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
               <div class="code w-embed w-script">
                 <style>
 .ready-to-load-in .homepage-loader{
@@ -70,6 +70,14 @@
   transform: translate(-50%, -50%);
  	transition: 1000ms cubic-bezier(0.58, -0.49, 0.46, 1.22);
   background-color: var(--blue-1);
+}
+.ready-to-load-in .body-contents-wrapper{
+	opacity: 0;
+  transition: 1000ms;
+  transition-delay: 800ms;
+}
+.ready-to-load-in.remove-curtain .body-contents-wrapper{
+	opacity: 1;
 }
 .ready-to-load-in.remove-curtain .homepage-loader{
   top: 0%;
@@ -167,7 +175,7 @@
         </div>
       </div>
     </div>
-    <div data-w-id="e537a06f-a5c4-ba96-b3da-b1361e0dd041" style="opacity:0" class="below-the-fold-wrapper">
+    <div class="body-contents-wrapper">
       <div class="content hero">
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
           <a href="#faq" class="limited-availability-prompt w-inline-block">
@@ -325,7 +333,7 @@
               </div>
             </div>
           </div>
-        </div><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="image-6">
+        </div><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur">
       </div>
       <div data-w-id="5b9bd0a0-d342-6c3b-b7d1-33de66b2671f" style="opacity:0" class="content spread centre-vert reverse-orientation">
         <div class="w-layout-vflex text-org">
@@ -380,9 +388,9 @@
       <div data-w-id="b09eabcc-9792-5f1b-f17d-e171f6eba84d" style="opacity:0" class="content spread centre-vert">
         <div id="faq" class="w-layout-vflex text-org">
           <h2 class="gradient-text ready">Commonly Asked</h2>
-          <div data-current="Tab 5" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+          <div data-current="Why are slots limited?" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
             <div id="w-node-da75addd-2dae-d3f4-b26a-23cfbaca2616-74e8849f" class="tabs-menu w-tab-menu">
-              <a data-w-tab="Why are slots limited?" class="tab w-inline-block w-tab-link">
+              <a data-w-tab="Why are slots limited?" class="tab w-inline-block w-tab-link w--current">
                 <div>Why are slots limited?</div>
                 <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
@@ -392,38 +400,41 @@
               </a>
               <a data-w-tab="Tab 3" class="tab w-inline-block w-tab-link">
                 <div>How long will myproject take to complete?</div>
+                <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
               <a data-w-tab="Tab 4" class="tab w-inline-block w-tab-link">
                 <div>Do you work with teams?</div>
+                <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
-              <a data-w-tab="Tab 5" class="tab w-inline-block w-tab-link w--current">
+              <a data-w-tab="Tab 5" class="tab w-inline-block w-tab-link">
                 <div>Who are the developers?</div>
+                <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
             </div>
             <div id="w-node-da75addd-2dae-d3f4-b26a-23cfbaca2620-74e8849f" class="tabs-content w-tab-content">
-              <div data-w-tab="Why are slots limited?" class="w-tab-pane">
+              <div data-w-tab="Why are slots limited?" class="w-tab-pane w--tab-active">
                 <div>
-                  <div class="text-block-reading left-align">Our subscription service is designed to allow us to deliver revisions and progress achievements within 48-hours.<br><br>Development is a dynamic process that can easily exceed expected timelines.<br>We limit the number of active clients to prevent any slow-downs.<br></div>
+                  <div class="text-block-reading left-align">We keep our slots limited so we can deliver revisions and progress updates within 48 hours. <br><br>Development is a dynamic process, and things can take longer than expected. <br><br>By limiting the number of active clients, we can prevent slow-downs and ensure everyone gets the attention they need.<br></div>
                 </div>
               </div>
               <div data-w-tab="Tab 2" class="w-tab-pane">
                 <div>
-                  <div class="text-block-reading left-align">Get in touch with us. <br>We&#x27;ll always try to accommodate your needs.<br></div>
+                  <div class="text-block-reading left-align">Absolutely! <br><br>If you need alternative timeframes for your development project, just let us know. <br><br>We understand that schedules can be tight or change unexpectedly, so we’ll do our best to accommodate your needs. <br>Whether you need to speed things up or take a bit more time, we’re flexible and can adjust our timelines to fit your situation. <br><br>Just reach out and we’ll figure it out together.<br></div>
                 </div>
               </div>
               <div data-w-tab="Tab 3" class="w-tab-pane">
                 <div>
-                  <div class="text-block-reading left-align">We can provide an estimate once we learn the scope of your project.<br><br>We hate overspending as much as you, so we&#x27;re upfront and realistic in our estimations to ensure you always feel in-control of your spending.<br><br>Plus, you can pause and keep any unused time to use later.<br></div>
+                  <div class="text-block-reading left-align">We can give you an estimate once we get the details of your project. <br><br>We dislike overspending just as much as you do, so we keep our estimates upfront and realistic to make sure you always feel in control of your budget. <br><br>Plus, you can pause anytime and save any unused time for later.<br></div>
                 </div>
               </div>
               <div data-w-tab="Tab 4" class="w-tab-pane">
                 <div>
-                  <div class="text-block-reading left-align">We&#x27;re happy to join your team.<br><br>Keep in mind that our availability and responsiveness may not always align with your team <br></div>
+                  <div class="text-block-reading left-align">We&#x27;re happy to join your team.<br><br>Just keep in mind that our availability and responsiveness might not always match up perfectly with your team’s schedule. <br><br>We’ll do our best to stay in sync and support your project.<br></div>
                 </div>
               </div>
-              <div data-w-tab="Tab 5" class="w-tab-pane w--tab-active">
+              <div data-w-tab="Tab 5" class="w-tab-pane">
                 <div>
-                  <div class="text-block-reading left-align">Our team consists two permanent members; a Developer and a Designer. <br><br>Once you&#x27;re ready to meet, start a chat with us below.<br></div>
+                  <div class="text-block-reading left-align">Our team consists two permanent members; a Developer and a Designer. <br><br>Our Developer handles all the technical aspects, while our Designer focuses on making everything look great. <br><br>We’re a small but dedicated duo, dedicated to delivering high-quality work. <br><br>When you’re ready to meet us and discuss your project, just start a chat with us below. <br>We’re excited to collaborate with you!<br></div>
                 </div>
               </div>
             </div>
@@ -440,7 +451,7 @@
             </a>
           </div>
         </div><img src="images/man-with-lightbulb.webp" loading="lazy" sizes="(max-width: 991px) 100vw, 36vw" srcset="images/man-with-lightbulb.webp 500w, images/man-with-lightbulb.webp 600w" alt="man with lightbulb
-" class="hero-img content-img no-outline">
+" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
       </div>
       <section id="pricing" data-w-id="ccc7714e-4111-33db-545c-124e3954058f" class="content vert">
         <div class="w-layout-vflex text-org subscriptions">
@@ -641,7 +652,7 @@ animation: triangle-build-1 4s cubic-bezier(0.68, -0.55, 0.27, 1.55) alternate i
           </div>
         </div>
       </section>
-      <div data-w-id="824565b5-3d16-06aa-e0b5-9e6e64fc907d" style="opacity:0" class="content tools-wrapper">
+      <div class="content tools-wrapper">
         <div class="tile-flex-animated-container">
           <div class="w-layout-hflex provider-flex">
             <a href="#" class="provider-tile w-inline-block"><img src="images/btcpay.png" loading="eager" alt="btcpay logo" class="provider-tile-img"></a>
@@ -1031,7 +1042,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
         </div>
         <div class="code w-embed">
           <style>
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile{
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile{
 	opacity: 0;
   transform: translateY(40px);
   animation: build-in-tile 500ms ease forwards 1;
@@ -1039,41 +1050,50 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
 @keyframes build-in-tile{
 to{opacity: 1; transform: translateY(0px);}
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(1){
-  animation-delay: 0ms;
-}
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(2){
-  animation-delay: 200ms;
-}
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(3){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(1){
   animation-delay: 400ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(4){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(2){
   animation-delay: 600ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(5){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(3){
   animation-delay: 800ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(6){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(4){
   animation-delay: 1000ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(7){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(5){
   animation-delay: 1200ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(8){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(6){
   animation-delay: 1400ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(9){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(7){
   animation-delay: 1600ms;
 }
-:not([style*="--trigger-for-tiles-build-in-change: #ddd;"]) .works-and-exp-show-static .work-tile:nth-of-type(10){
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(8){
   animation-delay: 1800ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(9){
+  animation-delay: 2000ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(10){
+  animation-delay: 2200ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(11){
+  animation-delay: 2400ms;
+}
+:not([style*="--trigger-for-tiles-build-in-change: rgba(221, 221, 221, 1);"]) .remove-curtain .works-and-exp-show-static .work-tile:nth-of-type(12){
+  animation-delay: 2600ms;
 }
 </style>
         </div>
       </div>
       <div data-w-id="8fe21e79-00fd-6d0b-c602-015a0ea161f0" style="opacity:0" class="content lets-build">
-        <div class="major-exit-text gradient-text">Let&#x27;s Build<br>Something Amazing<br>Together ♥️ </div>
+        <div class="flex-for-span-syle-diff">
+          <div class="major-exit-text gradient-text">Let’s make something<br>incredible together.</div>
+          <div class="major-exit-text">⚡️⚡️⚡️ </div>
+        </div><img src="images/blur2.webp" loading="lazy" sizes="100vw" srcset="images/blur2-p-500.webp 500w, images/blur2-p-800.webp 800w, images/blur2.webp 1000w" alt="" class="blur centre-alternate-colour">
       </div>
       <section class="footer-dark">
         <div class="content">

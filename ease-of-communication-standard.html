@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Mon Jun 24 2024 02:44:16 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Jun 24 2024 15:42:38 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6676fb8a781277b70418636b" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -55,7 +55,7 @@
         <div class="container-regular">
           <div class="navbar-wrapper">
             <a href="index.html" class="navbar-brand w-nav-brand">
-              <div class="homepage-loader"><img src="images/1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
+              <div class="homepage-loader"><img src="images/f18-1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
               <div class="code w-embed w-script">
                 <style>
 .ready-to-load-in .homepage-loader{
@@ -70,6 +70,14 @@
   transform: translate(-50%, -50%);
  	transition: 1000ms cubic-bezier(0.58, -0.49, 0.46, 1.22);
   background-color: var(--blue-1);
+}
+.ready-to-load-in .body-contents-wrapper{
+	opacity: 0;
+  transition: 1000ms;
+  transition-delay: 800ms;
+}
+.ready-to-load-in.remove-curtain .body-contents-wrapper{
+	opacity: 1;
 }
 .ready-to-load-in.remove-curtain .homepage-loader{
   top: 0%;
