@@ -31,6 +31,7 @@
   --white: white;
   --black: black;
   --secondary-bg: rgba(111, 227, 185, .15);
+  --cw-1-5: #3658a1;
   --blue-2-bg: rgba(13, 50, 127, .33);
   --cw-4: #dccdc0;
   --cw-3: #cfc6c4;
@@ -271,6 +272,12 @@ p {
 
 .btn.sec:hover {
   color: var(--cw-1);
+}
+
+.btn.before-footer-final-chat-cta {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-background {
@@ -1300,6 +1307,10 @@ p {
   margin-top: 20px;
 }
 
+.btn-flex.orientate-right {
+  margin-left: auto;
+}
+
 .pricing-comparison {
   padding: 80px 30px;
   position: relative;
@@ -1857,7 +1868,7 @@ p {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   box-shadow: 0 1px 0 0 var(--blue-2);
-  color: var(--cw-1);
+  color: var(--cw-1-5);
   text-align: left;
   background-color: rgba(0, 0, 0, 0);
   justify-content: flex-start;
@@ -1866,6 +1877,10 @@ p {
   font-size: 18px;
   line-height: 1.8em;
   display: flex;
+}
+
+.tab:hover {
+  color: var(--cw-1);
 }
 
 .tab.w--current {
@@ -1879,6 +1894,10 @@ p {
   text-decoration: none;
 }
 
+.tab.w--current:hover {
+  color: var(--cw-0);
+}
+
 .unselected-tab {
   background-color: var(--bg);
   color: var(--cw-4);
@@ -1889,6 +1908,8 @@ p {
 }
 
 .tabs-content {
+  border-left: 1px solid var(--blue-2);
+  border-radius: 1px;
   padding: 20px 40px;
 }
 
@@ -2326,6 +2347,12 @@ p {
     margin-bottom: 0;
   }
 
+  .btn-flex.orientate-right {
+    flex-flow: row-reverse;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .pricing-comparison {
     padding: 60px 15px;
   }
@@ -2369,6 +2396,10 @@ p {
     justify-content: space-between;
     align-items: center;
     display: flex;
+  }
+
+  .tabs-content {
+    border-left-width: 0;
   }
 }
 
