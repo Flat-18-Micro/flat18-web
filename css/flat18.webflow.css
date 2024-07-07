@@ -516,8 +516,8 @@ p {
 .hero-heading.gradient-text {
   background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--primary) 27%, var(--secondary));
   mix-blend-mode: screen;
-  margin-bottom: -10px;
-  font-size: 85px;
+  font-size: 71px;
+  font-weight: 800;
   line-height: 1.3em;
   transition: all .1s;
 }
@@ -558,6 +558,8 @@ p {
 .hero-img.wrapper {
   perspective: 2000px;
   transform-style: preserve-3d;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .hero-h2 {
@@ -2077,8 +2079,8 @@ p {
   }
 
   .hero-heading.gradient-text {
-    font-size: 50px;
-    line-height: 1.2em;
+    font-size: 45px;
+    line-height: 1.4em;
   }
 
   .hero-img {
@@ -2283,6 +2285,7 @@ p {
 
   .hero-heading.gradient-text {
     font-size: 55px;
+    line-height: 1.4em;
   }
 
   .hero-img.content-img {
