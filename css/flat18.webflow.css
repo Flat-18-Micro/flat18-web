@@ -519,6 +519,7 @@ p {
   margin-bottom: -10px;
   font-size: 85px;
   line-height: 1.3em;
+  transition: all .1s;
 }
 
 .hero-text-cta {
@@ -629,6 +630,7 @@ p {
 
 .hero-image-wrapper {
   perspective: 2000px;
+  margin-left: auto;
   position: relative;
 }
 

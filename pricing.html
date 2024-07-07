@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Jul 02 2024 15:14:59 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sun Jul 07 2024 18:36:59 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663a1aaff0e4426bba7f7258" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -58,6 +58,42 @@
               <div class="homepage-loader"><img src="images/f18-1.svg" loading="lazy" alt="" class="loader-image-backgdrop"><img src="images/8.svg" loading="lazy" alt="" class="loader-image-backgdrop"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
               <div class="code w-embed w-script">
                 <style>
+.ready-to-load-in.make-curtain-absolute{
+	background-color: var(--blue-1);
+  position:relative;
+}
+.ready-to-load-in.make-curtain-absolute::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--blue-0);
+  z-index: -1;
+  margin: auto;
+  transform: scale(.85, .99);
+  animation: curtain-grow 1000ms ease-in forwards 1;
+}
+@keyframes curtain-grow{
+  to{
+      transform: scale(1, 1);
+  }
+}
+.ready-to-load-in.make-curtain-absolute .sliding-work-showcase{
+  animation: pop-in-content 1000ms ease forwards 1;
+	transform-origin: center;
+}
+@keyframes pop-in-content{
+	from{
+    transform: scale(.85);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .ready-to-load-in .homepage-loader{
 	position: fixed !important;
   top: 50%;
@@ -131,7 +167,7 @@
   window.addEventListener("load", ()=>{
 		setTimeout(()=>{
       document.body.classList.add("remove-curtain");	
-    },1200)
+    },1000)
     setTimeout(()=>{
       document.body.classList.add("make-curtain-absolute");	
     },1800)
