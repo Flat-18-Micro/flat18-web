@@ -248,6 +248,8 @@ p {
   color: var(--cw-6);
   cursor: pointer;
   border-radius: 8px;
+  justify-content: flex-start;
+  align-items: center;
   padding: 15px 25px;
   font-weight: 600;
   text-decoration: none;
@@ -283,6 +285,7 @@ p {
 .button-background {
   z-index: 1;
   background-image: linear-gradient(296deg, var(--primary), var(--azure-blue) 52%, var(--secondary));
+  pointer-events: none;
   width: 200%;
   height: 100%;
   transition: all .2s;
@@ -305,7 +308,7 @@ p {
 .icon {
   z-index: 2;
   font-family: Bootstrap Icons, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   position: relative;
 }
 
@@ -333,7 +336,8 @@ p {
 }
 
 .icon.btn-icon {
-  font-size: 1rem;
+  margin-left: 5px;
+  font-size: 1.5rem;
   transform: rotate(0);
 }
 
@@ -1968,6 +1972,23 @@ p {
   right: auto;
 }
 
+.utility-page-wrap {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100%;
+  display: flex;
+}
+
+.utility-page-content {
+  text-align: center;
+  flex-direction: column;
+  width: 260px;
+  display: flex;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-no-shadow {
     -webkit-backdrop-filter: blur(50px);
@@ -2467,6 +2488,10 @@ p {
 
   .nav-button-wrapper {
     width: auto;
+  }
+
+  .content.hero {
+    margin-top: 10px;
   }
 
   .content.stats {
