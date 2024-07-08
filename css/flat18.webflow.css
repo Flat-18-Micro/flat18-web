@@ -2457,6 +2457,13 @@ p {
     mix-blend-mode: lighten;
   }
 
+  .loader-image-backgdrop {
+    width: auto;
+    min-width: 105vw;
+    min-height: 105vh;
+    right: -20%;
+  }
+
   .tabs {
     grid-column-gap: 27px;
     grid-row-gap: 27px;
