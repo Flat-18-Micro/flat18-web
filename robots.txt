@@ -1,8 +1,4 @@
-
 User-agent: *
-Disallow: /src/
-
-User-agent: Googlebot
-Allow: /src/
+Allow: /
 
 Sitemap: https://flat18.co.uk/sitemap.xml
