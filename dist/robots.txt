@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flat18.co.uk/sitemap.xml
