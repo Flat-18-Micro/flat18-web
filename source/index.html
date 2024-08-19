@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Aug 13 2024 03:33:33 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Aug 19 2024 00:23:45 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -235,7 +235,7 @@
     }
   }
   .ready-to-load-in.make-curtain-absolute {
-    background-color: var(--blue-1);
+    background-color: var(--bg-modern);
     position: relative;
   }
   .ready-to-load-in.make-curtain-absolute::before {
@@ -245,7 +245,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: var(--blue-0);
+    background: var(--bg-modern);
     z-index: -1;
     margin: auto;
     transform: scale(.85, .99);
@@ -281,7 +281,7 @@
     border-radius: 0;
     transform: translate(-50%, -50%);
     transition: 900ms cubic-bezier(0.58, -0.49, 0.46, 1.22);
-    background-color: var(--blue-1);
+    background-color: var(--blue-0);
   }
   .ready-to-load-in .body-contents-wrapper {
     opacity: 0;
@@ -307,15 +307,11 @@
   }
   .ready-to-load-in .homepage-loader .loader-image-backgdrop {
     opacity: 0;
-    mix-blend-mode: soft-light;
-    filter: saturate(5);
     transition-delay: 400ms;
     transition: 400ms ease;
   }
   .ready-to-load-in.make-curtain-absolute .homepage-loader .loader-image-backgdrop {
     opacity: 1;
-    mix-blend-mode: unset;
-    filter: saturate(1);
     min-width: unset;
     min-height: unset;
   }
@@ -395,15 +391,15 @@
           <a href="#faq" class="limited-availability-prompt w-inline-block">
             <div class="badge inline-badge">
               <div class="status good"></div>
-              <div>Limited Slots Available</div>
+              <div>Available</div>
               <div class="icon right in-badge w-embed">&#xF431;</div>
             </div>
           </a>
           <h1 class="hero-heading gradient-text">Development &amp; Design Solutions for Everyone</h1>
-          <h2 class="hero-h2">We make building your project simple and hassle-free <br>⚡️⚡️⚡️⚡️</h2>
+          <h2 class="hero-h2">We make the creative and coding process simple and hassle-free.<br>⚡️⚡️⚡️⚡️</h2>
           <aside link="#chat" class="btn hero">
             <div class="button-background"></div>
-            <div class="button-text">Let&#x27;s do this thing!</div>
+            <div class="button-text">Talk to us</div>
             <div class="icon right w-embed">&#xF135;</div>
           </aside>
           <div class="code w-embed w-script">
@@ -438,9 +434,64 @@ window.addEventListener("load", () => {
           </div>
         </div>
       </div>
+      <div class="content tools-wrapper">
+        <div class="tile-flex-animated-container">
+          <div class="w-layout-hflex provider-flex">
+            <a href="#" class="provider-tile w-inline-block"><img src="images/btcpay.png" loading="eager" alt="btcpay logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/infura.png" loading="eager" alt="infura logo
+" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/node.png" loading="eager" alt="node logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/stacks.png" loading="eager" alt="stacks logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/63120558b661e15cdf54ded9.png" loading="eager" alt="affinity logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/webflow.png" loading="eager" alt="webflow logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/neon.png" loading="eager" alt="neon logo
+" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/github.png" loading="eager" alt="github logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/walletconnect.png" loading="eager" alt="walletconnect logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/Vercel_logo_black.png" loading="eager" alt="vercel logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/vue.png" loading="eager" alt="vue logo" class="provider-tile-img"></a>
+            <a href="#" class="provider-tile w-inline-block"><img src="images/Cloudflare_Logo.png" loading="eager" alt="cloudflare logo" class="provider-tile-img"></a>
+          </div>
+          <div class="providers-overlay right"></div>
+          <div class="providers-overlay"></div>
+        </div>
+        <div class="html-embed-2 w-embed w-script">
+          <script>
+if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
+  let providerMainContainer = document.querySelector(`[class*="tile-flex-animated-container"]`)
+  for (const parent of document.querySelectorAll(`.provider-flex`)) {
+    for(let i=0; i<2; i++){
+      for (const tile of parent.querySelectorAll(`.provider-tile`)) {
+        let cloneClass = tile.getAttribute("class")
+        let newTile = document.createElement("a")
+        newTile.setAttribute("class", `${cloneClass} -ite-${i}`)
+        newTile.innerHTML = tile.innerHTML
+        parent.append(newTile)
+      }
+    }
+      parent.style.setProperty("--parent-max-width", `${providerMainContainer.offsetWidth}px`)
+      parent.style.setProperty("--parent-max-overflow", `${parent.offsetWidth}px`)
+  }
+}
+</script>
+          <style>
+[class*="provider-flex"]{
+  animation: loopProviderFlex 60s linear forwards infinite
+}
+@keyframes loopProviderFlex {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-75%);
+  }
+}
+</style>
+        </div>
+      </div>
       <div data-w-id="cf400a3b-6722-5e01-776a-32c523a2c6c9" style="opacity:0" class="w-layout-vflex content primere-btf-content">
         <div class="content sliding-work-showcase highlight-subtle-block">
-          <div class="badge subtle left">Projects we ♥️</div>
+          <div class="badge subtle left">Projects we Love</div>
           <div class="work-tile wide-work-tile">
             <div class="w-layout-hflex work-tile-text">
               <div class="w-layout-hflex flex-header-tile"><img src="images/wallet-scrutiny-logo.webp" loading="lazy" alt="walletscrutiny logo" class="work-tile-icon">
@@ -589,62 +640,7 @@ window.addEventListener("load", () => {
               <div class="icon btn-icon w-embed">&#xF128;</div>
             </a>
           </div>
-        </div><img src="images/2023-HERO-CANDIDATE.webp" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 33vw, 36vw" srcset="images/2023-HERO-CANDIDATE-p-500.webp 500w, images/2023-HERO-CANDIDATE.webp 800w" alt="" class="hero-img content-img">
-      </div>
-      <div class="content tools-wrapper">
-        <div class="tile-flex-animated-container">
-          <div class="w-layout-hflex provider-flex">
-            <a href="#" class="provider-tile w-inline-block"><img src="images/btcpay.png" loading="eager" alt="btcpay logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/infura.png" loading="eager" alt="infura logo
-" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/node.png" loading="eager" alt="node logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/stacks.png" loading="eager" alt="stacks logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/63120558b661e15cdf54ded9.png" loading="eager" alt="affinity logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/webflow.png" loading="eager" alt="webflow logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/neon.png" loading="eager" alt="neon logo
-" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/github.png" loading="eager" alt="github logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/walletconnect.png" loading="eager" alt="walletconnect logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/Vercel_logo_black.png" loading="eager" alt="vercel logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/vue.png" loading="eager" alt="vue logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/Cloudflare_Logo.png" loading="eager" alt="cloudflare logo" class="provider-tile-img"></a>
-          </div>
-          <div class="providers-overlay right"></div>
-          <div class="providers-overlay"></div>
-        </div>
-        <div class="html-embed-2 w-embed w-script">
-          <script>
-if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
-  let providerMainContainer = document.querySelector(`[class*="tile-flex-animated-container"]`)
-  for (const parent of document.querySelectorAll(`.provider-flex`)) {
-    for(let i=0; i<2; i++){
-      for (const tile of parent.querySelectorAll(`.provider-tile`)) {
-        let cloneClass = tile.getAttribute("class")
-        let newTile = document.createElement("a")
-        newTile.setAttribute("class", `${cloneClass} -ite-${i}`)
-        newTile.innerHTML = tile.innerHTML
-        parent.append(newTile)
-      }
-    }
-      parent.style.setProperty("--parent-max-width", `${providerMainContainer.offsetWidth}px`)
-      parent.style.setProperty("--parent-max-overflow", `${parent.offsetWidth}px`)
-  }
-}
-</script>
-          <style>
-[class*="provider-flex"]{
-  animation: loopProviderFlex 60s linear forwards infinite
-}
-@keyframes loopProviderFlex {
-  0% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(-75%);
-  }
-}
-</style>
-        </div>
+        </div><img src="images/2023-HERO-CANDIDATE.svg" loading="lazy" alt="" class="hero-img content-img">
       </div>
       <section id="pricing" class="content vert">
         <div class="w-layout-vflex text-org subscriptions">
@@ -677,7 +673,10 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
         </div>
         <div class="container">
           <div class="pricing-details-wrapper">
-            <div class="pricing-head dramatic"><img src="images/blur2.webp" loading="lazy" sizes="100vw" srcset="images/blur2-p-500.webp 500w, images/blur2-p-800.webp 800w, images/blur2.webp 1000w" alt="" class="image-6">
+            <div class="pricing-head dramatic">
+              <div id="w-node-d23227f8-aab5-0c14-c064-709c4c129f2f-3954058f" class="pricing-text"><img src="images/words2.svg" loading="lazy" alt="" class="image-8">
+                <div class="w-embed"></div>
+              </div>
               <div data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="currency-dropdown-menu w-nav">
                 <div class="menu-container w-container">
                   <nav role="navigation" class="currency-menu-wrapper w-nav-menu">
@@ -694,74 +693,79 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                   </div>
                 </div>
               </div>
-              <ul role="list" class="pricing-feature-list wide w-list-unstyled">
-                <li class="pricing-list-item monthly">
-                  <div class="icon small w-embed">&#xF1E2;</div>
-                  <div class="pricing-feature">Monthly billing</div>
-                </li>
-                <li class="pricing-list-item quarterly">
-                  <div class="icon small w-embed">&#xF64A;</div>
-                  <div class="pricing-feature">Quarterly billing</div>
-                </li>
-                <li class="pricing-list-item quarterly">
-                  <div class="icon small w-embed">&#xF247;</div>
-                  <div class="w-layout-hflex inline-text-blocks">
-                    <div class="pricing-feature">Save</div>
-                    <div class="pricing-feature price-exchange">£1,500</div>
-                    <div class="pricing-feature">v monthly</div>
-                  </div>
-                </li>
-                <li class="pricing-list-item monthly">
-                  <div class="icon small w-embed">&#xF117;</div>
-                  <div class="w-layout-hflex inline-text-blocks">
-                    <div class="pricing-feature">Pre-pay</div>
-                    <div class="pricing-feature price-exchange">£2,995</div>
-                    <div class="pricing-feature">every month</div>
-                  </div>
-                </li>
-                <li class="pricing-list-item quarterly">
-                  <div class="icon small w-embed">&#xF117;</div>
-                  <div class="w-layout-hflex inline-text-blocks">
-                    <div class="pricing-feature">Pre-pay</div>
-                    <div class="pricing-feature price-exchange">£7,485</div>
-                    <div class="pricing-feature">every 3 months</div>
-                  </div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF4C2;</div>
-                  <div class="pricing-feature">Bank and store up to half unused time</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF292;</div>
-                  <div class="pricing-feature">Queued Tasks delivered in as little as 48hrs</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF2C7;</div>
-                  <div class="pricing-feature">Unlimited Development Scopes</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF6C4;</div>
-                  <div class="pricing-feature">Application staging</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF544;</div>
-                  <div class="pricing-feature">Unlimited Revisions queue</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF4AF;</div>
-                  <div class="pricing-feature">AI &amp; Custom Graphics</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF44D;</div>
-                  <div class="pricing-feature">Complete Service Management</div>
-                </li>
-                <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF4BE;</div>
-                  <div class="pricing-feature">Support directly from your developer</div>
-                </li>
-              </ul>
-              <div class="rotunda-wrapper-container">
-                <div data-w-id="0893f420-23ab-2a19-d451-49a47a10e214" class="rotunda-wrapper"><img src="images/rotunda3.webp" loading="lazy" sizes="(max-width: 767px) 100vw, 91vw" srcset="images/rotunda3.webp 500w, images/rotunda3.webp 800w, images/rotunda3.webp 1000w" alt="" class="rotunda four"><img src="images/rotunda1.webp" loading="lazy" sizes="(max-width: 767px) 100vw, 56vw" srcset="images/rotunda1-p-500.webp 500w, images/rotunda1-p-800.webp 800w, images/rotunda1.webp 1000w" alt="" class="rotunda two"></div>
+              <div class="w-layout-vflex bricing-details-wrapper">
+                <div class="badge subtle left solid">What&#x27;s included</div>
+                <ul role="list" class="pricing-feature-list wide columns w-list-unstyled">
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF292;</div>
+                    <div class="pricing-feature">Queued Tasks delivered in as little as 48hrs</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF2C7;</div>
+                    <div class="pricing-feature">Unlimited Development Scopes</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF6C4;</div>
+                    <div class="pricing-feature">Application staging</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF544;</div>
+                    <div class="pricing-feature">Unlimited Revisions queue</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF4AF;</div>
+                    <div class="pricing-feature">AI &amp; Custom Graphics</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF44D;</div>
+                    <div class="pricing-feature">Complete Service Management</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF4BE;</div>
+                    <div class="pricing-feature">Support directly from your developer</div>
+                  </li>
+                  <li class="pricing-list-item things-are-different">
+                    <div class="icon small w-embed">&#xF4C2;</div>
+                    <div class="pricing-feature">Bank and store up to half unused time</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="w-layout-vflex bricing-details-wrapper dark">
+                <div class="badge subtle left green">Billing</div>
+                <ul role="list" class="pricing-feature-list wide w-list-unstyled">
+                  <li class="pricing-list-item monthly">
+                    <div class="icon small w-embed">&#xF1E2;</div>
+                    <div class="pricing-feature">Monthly billing</div>
+                  </li>
+                  <li class="pricing-list-item quarterly">
+                    <div class="icon small w-embed">&#xF64A;</div>
+                    <div class="pricing-feature">Quarterly billing</div>
+                  </li>
+                  <li class="pricing-list-item quarterly">
+                    <div class="icon small w-embed">&#xF247;</div>
+                    <div class="w-layout-hflex inline-text-blocks">
+                      <div class="pricing-feature">Save</div>
+                      <div class="pricing-feature price-exchange">£1,500</div>
+                      <div class="pricing-feature">v monthly</div>
+                    </div>
+                  </li>
+                  <li class="pricing-list-item monthly">
+                    <div class="icon small w-embed">&#xF117;</div>
+                    <div class="w-layout-hflex inline-text-blocks">
+                      <div class="pricing-feature">Pre-pay</div>
+                      <div class="pricing-feature price-exchange">£2,995</div>
+                      <div class="pricing-feature">every month</div>
+                    </div>
+                  </li>
+                  <li class="pricing-list-item quarterly">
+                    <div class="icon small w-embed">&#xF117;</div>
+                    <div class="w-layout-hflex inline-text-blocks">
+                      <div class="pricing-feature">Pre-pay</div>
+                      <div class="pricing-feature price-exchange">£7,485</div>
+                      <div class="pricing-feature">every 3 months</div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </div>
             <div class="w-layout-hflex btn-flex orientate-right">
@@ -1161,7 +1165,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 767px) 40.383331298828125px, (max-width: 991px) 5vw, 4vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1249,7 +1253,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="64.78125px" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 64.7833251953125px, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">demo</div>
@@ -1281,7 +1285,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">20%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="64.78125px" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 64.7833251953125px, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">alpha</div>
@@ -1344,7 +1348,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 40.383331298828125px, (max-width: 767px) 40.38334655761719px, (max-width: 991px) 5vw, 4vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">released</div>
@@ -1432,15 +1436,12 @@ to{opacity: 1; transform: translateY(0px);}
         </div>
       </div>
       <div data-w-id="8fe21e79-00fd-6d0b-c602-015a0ea161f0" style="opacity:0" class="content lets-build">
-        <div class="flex-for-span-syle-diff">
-          <div class="major-exit-text gradient-text">Let’s make something<br>incredible together.</div>
-          <div class="major-exit-text">⚡️⚡️⚡️ </div>
-          <aside link="#chat" class="btn before-footer-final-chat-cta">
-            <div class="button-background"></div>
-            <div class="button-text">Get in touch</div>
+        <div class="flex-for-span-syle-diff"><img src="images/lets-create.webp" loading="lazy" sizes="100vw" srcset="images/lets-create.webp 500w, images/lets-create.webp 800w, images/lets-create.webp 1080w, images/lets-create.webp 1600w, images/lets-create.webp 2000w, images/lets-create.webp 2600w, images/lets-create.webp 3200w, images/lets-create.webp 4145w" alt="" class="image-9">
+          <aside link="#chat" class="btn before-footer-final-chat-cta link">
+            <div class="button-text">Say Hello. We can&#x27;t wait to hear from you.</div>
             <div class="icon btn-icon w-embed">&#xF715;</div>
           </aside>
-        </div><img src="images/blur2.webp" loading="lazy" sizes="100vw" srcset="images/blur2-p-500.webp 500w, images/blur2-p-800.webp 800w, images/blur2.webp 1000w" alt="" class="blur centre-alternate-colour">
+        </div><img src="images/blur3.webp" loading="lazy" sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur centre-alternate-colour">
       </div>
       <section class="footer-dark">
         <div class="content">
