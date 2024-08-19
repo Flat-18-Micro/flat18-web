@@ -794,13 +794,13 @@ p {
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   background-color: var(--bg-modern-dark);
-  flex-flow: row;
-  flex: 0 auto;
+  flex-flow: column;
+  flex: 1 0 auto;
   justify-content: flex-start;
   align-items: flex-start;
   width: calc(50% - 40px);
   min-width: auto;
-  padding: 30px;
+  padding: 40px;
 }
 
 .work-tile.wide-work-tile {
@@ -865,9 +865,11 @@ p {
 }
 
 .work-tile-image.compact {
-  width: 75vw;
-  max-width: 280px;
+  width: 90%;
+  max-width: 450px;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .technologies-used {
@@ -2587,6 +2589,10 @@ p {
     opacity: 1;
     filter: blur(30px);
     mix-blend-mode: lighten;
+    background-image: url('../images/blur2.webp');
+    background-repeat: no-repeat;
+    background-size: 200% 200%;
+    display: none;
     transform: translate3d(0, 0, 97px);
   }
 
@@ -2755,6 +2761,7 @@ p {
     flex-flow: column;
     justify-content: flex-start;
     align-items: center;
+    padding: 20px;
   }
 
   .work-tile-text {
