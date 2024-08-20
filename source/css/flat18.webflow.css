@@ -423,10 +423,15 @@ p {
 
 .content.hero {
   z-index: 0;
+  background-image: none;
+  background-position: 0 0;
+  background-size: auto;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
   min-height: 600px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   display: flex;
   position: relative;
 }
@@ -560,18 +565,23 @@ p {
 }
 
 .hero-heading.gradient-text {
-  background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--primary) 27%, var(--secondary));
+  background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--azure-blue), var(--primary));
   mix-blend-mode: screen;
-  font-size: 71px;
+  font-size: 80px;
   font-weight: 800;
   line-height: 1.3em;
   transition: all .1s;
 }
 
 .hero-text-cta {
-  z-index: 99;
+  z-index: 2;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 }
 
@@ -610,7 +620,6 @@ p {
 
 .hero-h2 {
   color: var(--azure-blue);
-  mix-blend-mode: screen;
   max-width: 500px;
   margin-top: 0;
   margin-bottom: 20px;
@@ -2342,6 +2351,16 @@ p {
   max-width: none;
 }
 
+.overflowing-bg-image {
+  z-index: 1;
+  width: 100vw;
+  max-width: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 @media screen and (max-width: 991px) {
   .navbar-no-shadow {
     -webkit-backdrop-filter: blur(50px);
@@ -2457,7 +2476,7 @@ p {
   }
 
   .hero-heading.gradient-text {
-    font-size: 45px;
+    font-size: 50px;
     line-height: 1.4em;
   }
 
@@ -2701,7 +2720,7 @@ p {
   }
 
   .hero-heading.gradient-text {
-    font-size: 55px;
+    font-size: 45px;
     line-height: 1.4em;
   }
 
