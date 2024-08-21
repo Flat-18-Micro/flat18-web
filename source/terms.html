@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Aug 21 2024 11:16:31 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Wed Aug 21 2024 13:04:25 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66397cb0ba382bb7d3e2491f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -664,21 +664,55 @@ year.innerHTML = new Date().getFullYear()
     let webMLocal = localStorage && localStorage.getItem("webM") ? localStorage.getItem("webM") : data.webM
     window.$chatwoot.setUser(webMLocal, { name: `${window.geoCityCountry} - ${webMLocal}` });
   });
-  let eleCount = 0;
-  for(const ele of document.querySelectorAll(`[class*="animated-counter"]`)){
-    setTimeout(()=>{
-    	let numb = Number(ele.innerHTML)
-        let newNumb = 0
-        setInterval(()=>{
-        	if(newNumb<=numb){
-              ele.innerHTML = newNumb
-              newNumb++}
-        },1500/numb)
-    },200 * eleCount)
-    eleCount++
+  function observeParentOpacityChange(targetElement, callback) {
+    // Get the grandparent element (parent > parent > parent)
+    const grandparentElement = targetElement.parentElement?.parentElement?.parentElement;
+    if (!grandparentElement) {
+      console.warn('Grandparent element not found.');
+      return;
+    }
+    // Create a callback function to execute when the opacity of the grandparent changes to 1
+    function onOpacityChange(mutationsList, observer) {
+      for (let mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+          const currentOpacity = window.getComputedStyle(grandparentElement).opacity;
+          if (currentOpacity === '1') {
+            // Trigger the provided callback function
+            callback();
+            // Disconnect the observer
+            observer.disconnect();
+            console.log('Observer disconnected.');
+          }
+        }
+      }
+    }
+    // Create a MutationObserver instance and pass in the callback function
+    const observer = new MutationObserver(onOpacityChange);
+    // Start observing the grandparent element for attribute changes
+    observer.observe(grandparentElement, { attributes: true });
+  }
+  // Your original loop, modified to use the observer
+  for (const ele of document.querySelectorAll(`[class*="animated-counter"]`)) {
+    // Wrap your original setTimeout logic in a function
+    const startAnimation = () => {
+      let eleCount = 0;
+      setTimeout(() => {
+        let numb = Number(ele.innerHTML);
+        let newNumb = 0;
+        setInterval(() => {
+          if (newNumb <= numb) {
+            ele.innerHTML = newNumb;
+            newNumb++;
+          }
+        }, 1500 / numb);
+      }, 200 * eleCount);
+      eleCount++;
+    };
+    // Use the observer to trigger the animation when the grandparent's opacity becomes 1
+    observeParentOpacityChange(ele, startAnimation);
   }
   for (const chat of document.querySelectorAll(`[link*="chat"]`)) {
-    chat.addEventListener("click",()=>{
+    chat.addEventListener("click", () => {
       window.$chatwoot.toggle("open")
     })
   }

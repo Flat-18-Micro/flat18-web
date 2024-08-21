@@ -1,1 +1,3 @@
 /images/advert-[a-z][0-1].*
+dist
+node_modules

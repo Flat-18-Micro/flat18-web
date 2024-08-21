@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { minify } = require('html-minifier');
 
 // Directories
 const sourceDir = path.join(__dirname, 'source');
@@ -18,6 +19,19 @@ function renameAndUpdateReferences(filePath, oldName, newName) {
     const content = fs.readFileSync(filePath, 'utf-8');
     const updatedContent = content.replace(new RegExp(oldName, 'g'), newName);
     fs.writeFileSync(filePath, updatedContent);
+}
+
+// Function to optimise HTML content
+function optimiseHtml(content) {
+    return minify(content, {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        minifyJS: true,
+        minifyCSS: true,
+    });
 }
 
 // Function to copy files from source to dist directory, renaming if necessary
@@ -43,24 +57,27 @@ function copySourceToDist(src, dest) {
             // Recursively copy the directory
             copySourceToDist(fullSrcPath, fullDestPath);
         } else {
-            // Copy file to the destination
-            fs.copyFileSync(fullSrcPath, fullDestPath);
-            console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
+            // Read the file content
+            let content = fs.readFileSync(fullSrcPath, 'utf-8');
 
-            // If the file is an HTML file, update references within it
+            // If the file is an HTML file, update references and optimise content
             if (path.extname(fullDestPath) === '.html') {
-                renameAndUpdateReferences(fullDestPath, 'webflow', 'f18-built-component');
+                content = content.replace(/webflow/g, 'f18-built-component');
+                content = optimiseHtml(content);
             }
+
+            // Write the (possibly modified) content to the destination
+            fs.writeFileSync(fullDestPath, content);
+            console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
         }
     });
 }
 
 // Function to generate sitemap.xml
 function generateSitemap(directoryPath) {
-    const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk'; // Replace with your actual website URL
+    const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
     let urls = [];
 
-    // Recursively search for HTML files in the directory
     function findHtmlFiles(dir) {
         const files = fs.readdirSync(dir);
         files.forEach(file => {
@@ -77,21 +94,19 @@ function generateSitemap(directoryPath) {
 
     findHtmlFiles(directoryPath);
 
-    // Generate sitemap.xml content
     let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
     urls.forEach(url => {
         sitemapContent += `  <url>\n    <loc>${url}</loc>\n  </url>\n`;
     });
     sitemapContent += `</urlset>`;
 
-    // Write the sitemap.xml file to the dist directory
     fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapContent);
     console.log('sitemap.xml generated successfully in dist directory.');
 }
 
 // Function to generate robots.txt
 function generateRobotsTxt() {
-    const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: https://flat18.co.uk/sitemap.xml`; // Replace with your actual website URL
+    const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: https://flat18.co.uk/sitemap.xml`;
     fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsContent);
     console.log('robots.txt generated successfully in dist directory.');
 }
@@ -101,7 +116,7 @@ function build() {
     try {
         createDistDirectory();
         copySourceToDist(sourceDir, distDir);
-        generateSitemap(sourceDir);
+        generateSitemap(distDir);  // Ensure sitemap is generated for the dist directory
         generateRobotsTxt();
         console.log('Build completed successfully.');
     } catch (err) {
