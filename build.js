@@ -57,18 +57,20 @@ function copySourceToDist(src, dest) {
             // Recursively copy the directory
             copySourceToDist(fullSrcPath, fullDestPath);
         } else {
-            // Read the file content
-            let content = fs.readFileSync(fullSrcPath, 'utf-8');
-
-            // If the file is an HTML file, update references and optimise content
-            if (path.extname(fullDestPath) === '.html') {
+            // Copy non-HTML files directly
+            if (path.extname(fullSrcPath) !== '.html') {
+                fs.copyFileSync(fullSrcPath, fullDestPath);
+                console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
+            } else {
+                // Read the HTML file content
+                let content = fs.readFileSync(fullSrcPath, 'utf-8');
+                // Update references and optimise content
                 content = content.replace(/webflow/g, 'f18-built-component');
                 content = optimiseHtml(content);
+                // Write the optimised HTML content to the destination
+                fs.writeFileSync(fullDestPath, content);
+                console.log(`Copied and optimised HTML file: ${fullSrcPath} to ${fullDestPath}`);
             }
-
-            // Write the (possibly modified) content to the destination
-            fs.writeFileSync(fullDestPath, content);
-            console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
         }
     });
 }
