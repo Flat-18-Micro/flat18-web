@@ -7,11 +7,11 @@
   --cw-1: #819cdc;
   --secondary: #6fe3b9;
   --bg: #151515;
+  --bg-modern-dark: #0e1014;
   --azure-blue-bg: #44a3db26;
   --azure-blue: #44a3db;
   --blue-2-bg: #0d327f54;
   --primary: #1963fd;
-  --bg-modern-dark: #0e1014;
   --blue-3: #2950a2;
   --content-inner: 1000px;
   --text-content: 800px;
@@ -33,7 +33,6 @@
   --white: white;
   --blue-1: #071940;
   --black: black;
-  --secondary-bg: #6fe3b926;
   --cw-1-5: #3658a1;
   --cw-4: #dccdc0;
   --bg-modern-dark-2: #090a0d;
@@ -47,6 +46,7 @@
   --logo-curtain-left: 0vw;
   --logo-curtain-top: 0vh;
   --trigger-for-tiles-build-in-change: #ddd;
+  --secondary-bg: #6fe3b926;
   --orange-2: #c36f01;
   --gauze-1: #ffffff0d;
 }
@@ -287,6 +287,7 @@ p {
 }
 
 .btn.before-footer-final-chat-cta.link {
+  background-color: var(--bg-modern-dark);
   color: var(--secondary);
   font-size: 20px;
 }
@@ -627,7 +628,7 @@ p {
 
 .hero-h2 {
   color: var(--azure-blue);
-  max-width: 500px;
+  max-width: 6000px;
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 23px;
@@ -1291,8 +1292,7 @@ p {
 }
 
 .provider-tile-img {
-  opacity: .3;
-  mix-blend-mode: normal;
+  opacity: .5;
   width: auto;
   max-width: none;
   height: 30px;
@@ -1364,7 +1364,12 @@ p {
 .btn-flex {
   grid-column-gap: 27px;
   grid-row-gap: 27px;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
   margin-top: 20px;
+  display: flex;
+  position: relative;
 }
 
 .btn-flex.orientate-right {
@@ -1604,12 +1609,13 @@ p {
 .badge.inline-badge {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
-  background-color: var(--secondary-bg);
+  background-color: var(--bg-modern-dark);
   color: var(--secondary);
   text-transform: none;
   border-radius: 8px;
   justify-content: flex-start;
   align-items: center;
+  height: 100%;
   padding: 5px 14px;
   font-size: 15px;
   font-weight: 600;
@@ -1964,6 +1970,7 @@ p {
 
 .limited-availability-prompt {
   text-decoration: none;
+  position: relative;
 }
 
 .tabs {
@@ -2304,7 +2311,7 @@ p {
 .content-imagery-wrapper {
   z-index: 1;
   background-color: #090a0d;
-  background-image: none;
+  background-image: repeating-radial-gradient(circle farthest-corner at 0% 50%, var(--bg-modern-dark) 75%, var(--bg-modern-dark-2));
   border-radius: 5px;
   flex: 1 0 auto;
   max-width: 40vw;
@@ -2351,7 +2358,7 @@ p {
   opacity: .5;
   margin-top: auto;
   position: relative;
-  transform: rotate(-12deg);
+  transform: none;
 }
 
 .image-9 {
@@ -2374,6 +2381,7 @@ p {
 
 .overflowing-bg-image {
   z-index: 2;
+  opacity: .28;
   pointer-events: none;
   width: 100vw;
   max-width: none;
@@ -2406,6 +2414,7 @@ p {
   min-width: 100vw;
   height: auto;
   min-height: calc(100% + 160px);
+  display: block;
   position: absolute;
   top: -160px;
   left: 50%;
@@ -2434,7 +2443,8 @@ p {
 }
 
 .background-video-3 {
-  opacity: .24;
+  background-color: var(--bg-modern-dark-2);
+  opacity: .2;
   mix-blend-mode: screen;
   min-width: 100vw;
   min-height: 100%;
