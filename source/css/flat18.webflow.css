@@ -425,14 +425,14 @@ p {
   z-index: 0;
   background-image: none;
   background-size: auto;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: flex-start;
   align-items: center;
   min-height: 600px;
   margin-top: 60px;
   margin-bottom: 0;
   padding-bottom: 100px;
-  display: flex;
+  display: block;
   position: relative;
 }
 
@@ -581,7 +581,7 @@ p {
 }
 
 .hero-text-cta {
-  z-index: 2;
+  z-index: 3;
   grid-column-gap: 25px;
   grid-row-gap: 25px;
   text-align: center;
@@ -2373,7 +2373,7 @@ p {
 }
 
 .overflowing-bg-image {
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   width: 100vw;
   max-width: none;
@@ -2401,6 +2401,17 @@ p {
   overflow: hidden;
 }
 
+.content-video-wrapper.hero {
+  background-color: var(--bg-modern);
+  min-width: 100vw;
+  height: auto;
+  min-height: calc(100% + 160px);
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .background-video {
   aspect-ratio: 1;
   opacity: .33;
@@ -2415,6 +2426,17 @@ p {
 .background-video-2 {
   opacity: .05;
   min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background-video-3 {
+  opacity: .24;
+  mix-blend-mode: screen;
+  min-width: 100vw;
   min-height: 100%;
   position: absolute;
   top: 50%;
