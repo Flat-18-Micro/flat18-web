@@ -2302,14 +2302,15 @@ p {
 }
 
 .content-imagery-wrapper {
-  z-index: 0;
+  z-index: 1;
   background-color: #090a0d;
-  background-image: repeating-radial-gradient(circle farthest-corner at 100% 100%, var(--bg-modern-dark), var(--blue-1));
+  background-image: none;
   border-radius: 5px;
   flex: 1 0 auto;
   max-width: 40vw;
   height: calc(100% - 20px);
   display: flex;
+  position: relative;
   overflow: hidden;
 }
 
@@ -2346,8 +2347,10 @@ p {
 }
 
 .image-8 {
+  z-index: 3;
   opacity: .5;
   margin-top: auto;
+  position: relative;
   transform: rotate(-12deg);
 }
 
@@ -2401,6 +2404,16 @@ p {
 .background-video {
   aspect-ratio: 1;
   opacity: .33;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.background-video-2 {
+  opacity: .05;
   min-width: 100%;
   min-height: 100%;
   position: absolute;
