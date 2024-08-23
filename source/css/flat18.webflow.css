@@ -1364,8 +1364,6 @@ p {
 .text-org {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  flex: none;
-  min-width: 55%;
 }
 
 .text-org.subscriptions {
@@ -1378,6 +1376,10 @@ p {
   text-align: center;
   justify-content: flex-start;
   align-items: center;
+}
+
+.text-org.responsive {
+  min-width: 55%;
 }
 
 .text-block-reading {
@@ -2009,15 +2011,17 @@ p {
   -webkit-backdrop-filter: blur(80px);
   backdrop-filter: blur(80px);
   border-radius: 8px;
-  flex: 1 0 auto;
   grid-template-rows: auto;
   grid-template-columns: minmax(300px, .25fr) 1fr;
   grid-auto-columns: 1fr;
   justify-content: space-between;
-  align-self: stretch;
   place-items: start stretch;
   display: grid;
   overflow: hidden;
+}
+
+.tabs.responsive {
+  flex: 0 auto;
 }
 
 .tabs-menu {
@@ -2735,6 +2739,10 @@ p {
 
   .text-org {
     flex: 0 auto;
+    min-width: auto;
+  }
+
+  .text-org.responsive {
     min-width: auto;
   }
 
