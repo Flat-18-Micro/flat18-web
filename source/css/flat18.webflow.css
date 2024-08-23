@@ -7,9 +7,9 @@
   --cw-1: #8dcae4;
   --secondary: #f3df06;
   --bg: #151515;
+  --azure-blue: #44a3db;
   --bg-modern-dark: #0e1014;
   --azure-blue-bg: #44a3db26;
-  --azure-blue: #44a3db;
   --blue-2-bg: #0d517f54;
   --primary: #19fdb2;
   --content-inner: 1000px;
@@ -286,6 +286,12 @@ p {
   color: var(--cw-1);
 }
 
+.btn.link.inline {
+  color: var(--azure-blue);
+  padding: 0;
+  overflow: visible;
+}
+
 .btn.before-footer-final-chat-cta {
   margin-top: 20px;
   margin-left: auto;
@@ -480,8 +486,14 @@ p {
   padding: 40px 20px 20px;
 }
 
+.content.sliding-work-showcase.highlight-subtle-block.how-it-works {
+  background-color: var(--bg-modern);
+  box-shadow: 0 0 0 1px var(--blue-2);
+}
+
 .content.tools-wrapper {
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .content.spread {
@@ -546,7 +558,7 @@ p {
 }
 
 .content.primere-btf-content {
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .content.primere-btf-content.highlight-subtle-block {
@@ -830,6 +842,7 @@ p {
   width: 33%;
   min-width: auto;
   padding: 25px;
+  position: relative;
 }
 
 .work-ile-title {
@@ -842,13 +855,23 @@ p {
   font-size: 19px;
 }
 
+.work-ile-title.numbering-title {
+  font-size: 40px;
+}
+
 .work-tile-text {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   flex-flow: column;
+  width: 100%;
   height: 100%;
   font-size: 15px;
   line-height: 25px;
+  position: relative;
+}
+
+.work-tile-text.shrinkable {
+  height: auto;
 }
 
 .work-showcase-wrapper {
@@ -1341,6 +1364,8 @@ p {
 .text-org {
   grid-column-gap: 15px;
   grid-row-gap: 15px;
+  flex: none;
+  min-width: 55%;
 }
 
 .text-org.subscriptions {
@@ -2468,6 +2493,44 @@ p {
   transform: translate(-50%, -50%);
 }
 
+.animation-wrapper {
+  aspect-ratio: 3 / 2;
+  background-color: var(--bg-modern-dark);
+  border-radius: 8px;
+  flex: none;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works-video {
+  filter: grayscale();
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  transition: filter .2s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.subtlise {
+  opacity: .33;
+}
+
+.video-colourise {
+  background-color: var(--azure-blue);
+  opacity: .38;
+  mix-blend-mode: color;
+  width: 100%;
+  height: 100%;
+  transition: opacity .2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-no-shadow {
     -webkit-backdrop-filter: blur(50px);
@@ -2668,6 +2731,11 @@ p {
     width: 100vw;
     position: relative;
     overflow: hidden;
+  }
+
+  .text-org {
+    flex: 0 auto;
+    min-width: auto;
   }
 
   .pricing-wrapper {
