@@ -1,23 +1,21 @@
 :root {
   --bg-modern: #15181e;
-  --cw-2: #b5b8cc;
-  --blue-2: #0d327f;
+  --cw-2: #b0cadb;
+  --blue-2: #0d577f;
   --content: 1380px;
-  --blue-0: #040d20;
-  --cw-1: #819cdc;
-  --secondary: #6fe3b9;
+  --blue-0: #041320;
+  --cw-1: #8dcae4;
+  --secondary: #f3df06;
   --bg: #151515;
   --bg-modern-dark: #0e1014;
   --azure-blue-bg: #44a3db26;
   --azure-blue: #44a3db;
-  --blue-2-bg: #0d327f54;
-  --primary: #1963fd;
-  --blue-3: #2950a2;
+  --blue-2-bg: #0d517f54;
+  --primary: #19fdb2;
   --content-inner: 1000px;
   --text-content: 800px;
   --blue-1-5: #0b1429;
   --cw-6: #f4eadd;
-  --cw-0: #4d80ed;
   --rust: #d74a49;
   --pink: #9e59da;
   --yellow: #d7aa49;
@@ -31,13 +29,15 @@
   --process-blue: #1343d3;
   --accent: var(--secondary);
   --white: white;
-  --blue-1: #071940;
+  --blue-1: #072940;
   --black: black;
-  --cw-1-5: #3658a1;
+  --cw-0: #4ba9db;
+  --cw-1-5: #367ca1;
   --cw-4: #dccdc0;
   --bg-modern-dark-2: #090a0d;
   --cw-3: #cfc6c4;
   --cw-5: #e8d4bb;
+  --blue-3: #2969a2;
   --blue-4: #062057;
   --cobalt-2: #0029b1;
   --scroll-1-horiz: 0px;
@@ -49,6 +49,8 @@
   --secondary-bg: #6fe3b926;
   --orange-2: #c36f01;
   --gauze-1: #ffffff0d;
+  --color: white;
+  --primary-backup: #1963fd;
 }
 
 .w-layout-hflex {
@@ -442,7 +444,6 @@ p {
   grid-row-gap: 40px;
   border: 1px none var(--blue-2);
   background-color: var(--bg-modern-dark);
-  color: var(--blue-3);
   border-radius: 8px;
   flex-flow: row;
   justify-content: space-between;
@@ -717,7 +718,6 @@ p {
 .statistic-organiser {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  color: var(--cw-0);
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
@@ -841,7 +841,6 @@ p {
 .work-tile-text {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  color: var(--cw-1);
   flex-flow: column;
   height: 100%;
   font-size: 15px;
@@ -1610,7 +1609,7 @@ p {
   grid-column-gap: 12px;
   grid-row-gap: 12px;
   background-color: var(--bg-modern-dark);
-  color: var(--secondary);
+  color: var(--primary);
   text-transform: none;
   border-radius: 8px;
   justify-content: flex-start;
