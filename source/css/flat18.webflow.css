@@ -16,6 +16,7 @@
   --text-content: 800px;
   --blue-1-5: #0b1429;
   --cw-6: #f4eadd;
+  --dark-teal: #00a37d;
   --rust: #d74a49;
   --pink: #9e59da;
   --yellow: #d7aa49;
@@ -23,7 +24,6 @@
   --green: #2e884c;
   --cobalt: #1527ee;
   --purple: #5836df;
-  --dark-teal: #00a37d;
   --elephant-grey: #3e3d49;
   --orange: #bd6b00;
   --process-blue: #1343d3;
@@ -35,6 +35,7 @@
   --cw-1-5: #367ca1;
   --cw-4: #dccdc0;
   --bg-modern-dark-2: #090a0d;
+  --primary-backup: #1963fd;
   --cw-3: #cfc6c4;
   --cw-5: #e8d4bb;
   --blue-3: #2969a2;
@@ -50,7 +51,6 @@
   --orange-2: #c36f01;
   --gauze-1: #ffffff0d;
   --color: white;
-  --primary-backup: #1963fd;
 }
 
 .w-layout-hflex {
@@ -87,7 +87,7 @@ p {
 .body {
   background-color: var(--bg-modern);
   color: var(--cw-2);
-  font-family: Montserrat \- Custom, sans-serif;
+  font-family: Spacegrotesk, sans-serif;
 }
 
 .navbar-no-shadow {
@@ -138,6 +138,10 @@ p {
   display: flex;
 }
 
+.nav-menu-wrapper {
+  font-size: 17px;
+}
+
 .nav-menu {
   justify-content: space-between;
   align-items: center;
@@ -153,7 +157,6 @@ p {
   margin-left: 5px;
   margin-right: 5px;
   padding: 5px 10px;
-  font-size: 17px;
   line-height: 20px;
   text-decoration: none;
 }
@@ -257,7 +260,8 @@ p {
   justify-content: flex-start;
   align-items: center;
   padding: 15px 25px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
   text-decoration: none;
   transition: all .2s;
   display: flex;
@@ -574,11 +578,11 @@ p {
 }
 
 .hero-heading.gradient-text {
-  background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--azure-blue), var(--primary));
+  background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--dark-teal), var(--primary));
   mix-blend-mode: screen;
-  font-size: 80px;
-  font-weight: 800;
-  line-height: 1.3em;
+  font-size: 130px;
+  font-weight: 700;
+  line-height: 1.1em;
   transition: all .1s;
 }
 
@@ -1617,7 +1621,7 @@ p {
   height: 100%;
   padding: 5px 14px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.8em;
   text-decoration: none;
   display: flex;
@@ -2119,9 +2123,9 @@ p {
 }
 
 .switch-label {
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 800;
+  text-transform: none;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .code-embed {
@@ -2361,21 +2365,32 @@ p {
 }
 
 .image-9 {
-  width: 103vw;
+  min-width: 103vw;
   max-width: none;
-  transform: translate(142px);
+  font-size: 14vw;
+  font-weight: 700;
+  line-height: .2em;
+  transform: translate(60vw);
 }
 
 .image-9._1 {
-  transform: translate(300px);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--primary);
+  color: #0000;
+  width: max-content;
+  font-weight: 700;
 }
 
 .image-9._2 {
+  color: var(--bg-modern-dark-2);
   transform: translate(0);
 }
 
 .image-9._3 {
-  transform: translate(-300px);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--primary-backup);
+  color: #0000;
+  transform: translate(-60vw);
 }
 
 .overflowing-bg-image {
@@ -2574,7 +2589,7 @@ p {
   }
 
   .hero-heading.gradient-text {
-    font-size: 50px;
+    font-size: 60px;
     line-height: 1.4em;
   }
 
@@ -3358,6 +3373,34 @@ p {
   font-family: 'Oswald - Custom';
   src: url('../fonts/oswald-v53-latin-regular.woff2') format('woff2');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('../fonts/SpaceGrotesk-Regular.woff2') format('woff2'), url('../fonts/SpaceGrotesk-Regular.ttf') format('truetype'), url('../fonts/SpaceGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('../fonts/SpaceGrotesk-Bold.woff2') format('woff2'), url('../fonts/SpaceGrotesk-Bold.ttf') format('truetype'), url('../fonts/SpaceGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('../fonts/SpaceGrotesk-Light.woff2') format('woff2'), url('../fonts/SpaceGrotesk-Light.ttf') format('truetype'), url('../fonts/SpaceGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Spacegrotesk';
+  src: url('../fonts/SpaceGrotesk-Medium.woff2') format('woff2'), url('../fonts/SpaceGrotesk-Medium.ttf') format('truetype'), url('../fonts/SpaceGrotesk-Medium.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
