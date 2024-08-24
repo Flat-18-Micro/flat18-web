@@ -3120,10 +3120,23 @@ p {
     border-left-width: 0;
   }
 
+  .switch-wrapper {
+    max-width: calc(100% - 70px);
+  }
+
   .inline-text-blocks {
     flex-flow: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+
+  .currency-menu-wrapper {
+    max-width: 60vw;
+    right: -20px;
+  }
+
+  .currency-menu {
+    max-width: 60vw;
   }
 
   .rotunda-wrapper {
