@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Fri Aug 23 2024 18:21:23 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sat Aug 24 2024 11:47:02 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="66785c7c64f7d36f5c980f07" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -62,7 +62,8 @@
     .ready-to-load-in.make-curtain-absolute a:not([class*="nav"]),
     .ready-to-load-in.make-curtain-absolute p,
     .ready-to-load-in.make-curtain-absolute h2 {
-      animation: pop-in-elements 1400ms ease-in forwards 1;
+    opacity:0;
+      animation: pop-in-elements 1000ms 500ms ease-in forwards 1;
     }
     .ready-to-load-in.make-curtain-absolute a:not([class*="nav"]),
     .ready-to-load-in.make-curtain-absolute p,
@@ -225,10 +226,6 @@
       transform: scaleX(.85);
       opacity: 0;
     }
-    33% {
-      transform: scaleX(.85);
-      opacity: 0;
-    }
     100% {
       transform: scaleX(1);
       opacity: inherit;
@@ -338,12 +335,14 @@
 </style>
                 <script>
   document.body.classList.add("ready-to-load-in");
-  window.addEventListener("load", () => {
+  window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
     setTimeout(() => {
       document.body.classList.add("remove-curtain");
     }, 100)
     setTimeout(() => {
       document.body.classList.add("make-curtain-absolute");
+    }, 500)
     }, 500)
   });
 </script>
