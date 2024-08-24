@@ -429,7 +429,7 @@ p {
 .content {
   max-width: var(--content);
   width: 90vw;
-  margin: 100px auto;
+  margin: 100px auto 120px;
   display: flex;
   position: relative;
 }
@@ -2629,12 +2629,7 @@ p {
     display: flex;
   }
 
-  .content.stats {
-    flex-flow: column;
-    width: 90vw;
-  }
-
-  .content.sliding-work-showcase.highlight-subtle-block {
+  .content.stats, .content.sliding-work-showcase.highlight-subtle-block {
     flex-flow: column;
   }
 
@@ -2684,7 +2679,7 @@ p {
   }
 
   .gradient-text.ready {
-    font-size: 42px;
+    font-size: 50px;
   }
 
   .gradient-text.doc-heading {
@@ -2903,6 +2898,12 @@ p {
     line-height: 1.2em;
   }
 
+  .content {
+    width: 98vw;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
   .content.hero {
     flex-flow: column-reverse;
   }
@@ -2912,6 +2913,13 @@ p {
     grid-row-gap: 0px;
   }
 
+  .content.sliding-work-showcase.highlight-subtle-block.how-it-works {
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .content.spread {
     flex-flow: column-reverse;
     justify-content: flex-end;
@@ -2919,7 +2927,6 @@ p {
   }
 
   .hero-heading.gradient-text {
-    font-size: 45px;
     line-height: 1.4em;
   }
 
@@ -3029,8 +3036,17 @@ p {
     margin-bottom: 0;
   }
 
+  .btn-flex {
+    justify-content: center;
+    align-items: stretch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .btn-flex.orientate-right {
     flex-flow: row-reverse;
+    justify-content: center;
+    align-items: stretch;
     margin-left: auto;
     margin-right: auto;
   }
@@ -3119,6 +3135,14 @@ p {
     font-style: italic;
     font-weight: 400;
   }
+
+  .how-it-works-video {
+    filter: none;
+  }
+
+  .video-colourise {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -3203,7 +3227,7 @@ p {
   }
 
   .hero-heading.gradient-text {
-    font-size: 35px;
+    font-size: 45px;
   }
 
   .hero-text-cta {
@@ -3230,7 +3254,8 @@ p {
   }
 
   .gradient-text.ready {
-    font-size: 31px;
+    font-size: 40px;
+    line-height: 1.3em;
   }
 
   .hero-image-wrapper {
