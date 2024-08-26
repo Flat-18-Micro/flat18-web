@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Mon Aug 26 2024 00:45:12 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Aug 26 2024 01:15:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -491,7 +491,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
       </div>
       <div data-w-id="de05dcd5-17ab-68a4-a864-3e2f46416da3" class="w-layout-vflex content primere-btf-content">
         <div class="w-layout-vflex text-org how-it-works">
-          <h2 class="gradient-text how-it-works">The Flat 18 Way:</h2>
+          <h2 class="gradient-text yellow">The Flat 18 Way:</h2>
         </div>
         <div class="content sliding-work-showcase highlight-subtle-block how-it-works">
           <div class="work-tile wide-work-tile transparent">
@@ -543,7 +543,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
           </div>
         </div><img sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
       </div>
-      <div data-w-id="ae71350b-e303-c965-fc59-bf2e5e30b9db" class="content spread centre-vert reverse-orientation">
+      <div class="content spread centre-vert reverse-orientation">
         <div class="w-layout-vflex text-org responsive">
           <h2 class="gradient-text ready">Ready to dive in?</h2>
           <div class="text-block-reading">At Flat 18, we&#x27;re all about making development fun and easy.<br>Let&#x27;s chat about your ideas and discover if Flat 18 is right for you.<br></div>
@@ -562,9 +562,9 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
           </div>
         </div><img src="images/2023-HERO-CANDIDATE.svg" loading="lazy" alt="" class="hero-img content-img">
       </div>
-      <section id="pricing" data-w-id="ccc7714e-4111-33db-545c-124e3954058f" class="content vert">
+      <section id="pricing" class="content vert">
         <div class="w-layout-vflex text-org subscriptions">
-          <h2 class="gradient-text ready">Pricing. Simple.</h2>
+          <h2 class="gradient-text yellow">Pricing. Simple.</h2>
           <div class="w-layout-vflex pricing-controls-container large-screens">
             <div class="price-wrapper">
               <div class="pricing-price monthly">
@@ -723,7 +723,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
             </a>
             <a link="#chat" href="#" class="btn w-inline-block">
               <div class="button-background"></div>
-              <div class="button-text">Chat with us</div>
+              <div class="button-text">Let&#x27;s talk about pricing</div>
               <div class="icon btn-icon w-embed">&#xF715;</div>
             </a>
           </div>
@@ -786,7 +786,8 @@ animation: pulsateShadow 5s ease-in-out infinite;}
       }
     })
   }
-  document.querySelector('.billing-type').addEventListener("click", (e) => {
+  for(const billingSwitch of document.querySelectorAll('.billing-type')){
+    billingSwitch.addEventListener("click", (e) => {
     if (e.target.classList.contains('on')) {
       document.querySelectorAll(".monthly").forEach((ele) => { ele.style.display = "none" });
       document.querySelectorAll(".quarterly").forEach((ele) => { ele.style.display = "" });
@@ -795,6 +796,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
       document.querySelectorAll(".quarterly").forEach((ele) => { ele.style.display = "none" });
     }
   })
+}
   document.querySelectorAll(".monthly").forEach((ele) => { ele.style.display = "none" });
   document.querySelectorAll(".quarterly").forEach((ele) => { ele.style.display = "" });
 </script>
@@ -871,7 +873,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
           </div>
         </div>
       </section>
-      <div data-w-id="7b971ea9-4abf-8f54-4186-163d25dead5d" class="content spread centre-vert">
+      <div class="content spread centre-vert">
         <div id="faq" class="w-layout-vflex text-org">
           <h2 class="gradient-text ready">Commonly Asked Questions</h2>
           <div data-current="teams?" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
@@ -1386,140 +1388,6 @@ to{opacity: 1; transform: translateY(0px);}
 }
 </style>
         </div>
-      </div>
-      <div data-w-id="9559f2bb-366b-f047-caec-b364ef2bbf54" class="w-layout-vflex content primere-btf-content">
-        <div class="content sliding-work-showcase highlight-subtle-block">
-          <div class="badge subtle left">A Couple Projects we Love</div>
-          <div class="work-tile wide-work-tile">
-            <div class="w-layout-hflex work-tile-text">
-              <div class="w-layout-hflex flex-header-tile"><img src="images/wallet-scrutiny-logo.webp" loading="lazy" alt="walletscrutiny logo" class="work-tile-icon">
-                <h3 class="work-ile-title">WalletScrutiny</h3>
-              </div>
-              <div class="work-tile-text">WalletScrutiny helps everyday bitcoin users verify the legitimacy and security of their wallet by ensuring it is truly open-source.</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology js-key-colour"></div>
-                  <div class="technology html5-tech-used ws"></div>
-                  <div class="technology scss-key-colour ws"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">90%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key htmol5-colour-key"></div>
-                    <div class="technology-name">HTML5</div>
-                    <div class="technology-pc">5%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key scss-colour-key"></div>
-                    <div class="technology-name">SCSS</div>
-                    <div class="technology-pc">5%</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="work-tile wide-work-tile">
-            <div class="w-layout-hflex work-tile-text">
-              <div class="w-layout-hflex flex-header-tile"><img src="images/btcpayserver-logo.webp" loading="lazy" alt="btcpayserver logo
-" class="work-tile-icon">
-                <h3 class="work-ile-title">BTCPay Server</h3>
-              </div>
-              <div class="work-tile-text">BTCPay Server is a self-hosted, open-source cryptocurrency payment processor that prioritises security, privacy, censorship resistance, and cost-effectiveness.</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology html5-tech-used"></div>
-                  <div class="technology css-key-colour btc"></div>
-                  <div class="technology js-key-colour btc"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key htmol5-colour-key"></div>
-                    <div class="technology-name">HTML5</div>
-                    <div class="technology-pc">30%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key css-colour-key"></div>
-                    <div class="technology-name">CSS3</div>
-                    <div class="technology-pc">60%</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                    <div class="technology-pc">10%</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="work-tile wide-work-tile">
-            <div class="w-layout-hflex work-tile-text">
-              <div class="w-layout-hflex flex-header-tile"><img src="images/flat18-logo.webp" loading="lazy" alt="flat18 logo blue round" class="work-tile-icon">
-                <h3 class="work-ile-title">Everything Else</h3>
-              </div>
-              <div class="work-tile-text">Mastering a multitude of libraries, frameworks, and use cases, we’re your project’s perfect match.</div>
-              <div class="technology-wrapper">
-                <div class="technologies-used">
-                  <div class="technology html5-tech-used ee"></div>
-                  <div class="technology scss-key-colour ee"></div>
-                  <div class="technology js-key-colour ee"></div>
-                  <div class="technology vue-key-colour ee"></div>
-                  <div class="technology ns-key-colour ee"></div>
-                  <div class="technology php-key-colour ee"></div>
-                  <div class="technology node-key-colour ee"></div>
-                  <div class="technology sql-key-colour ee"></div>
-                  <div class="technology btc-key-colour ee"></div>
-                  <div class="technology webflow-key-colour ee"></div>
-                </div>
-                <ul role="list" class="work-list w-list-unstyled">
-                  <li class="list-item">
-                    <div class="technology-colour-key htmol5-colour-key"></div>
-                    <div class="technology-name">HTML5</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key scss-colour-key"></div>
-                    <div class="technology-name">SCSS</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key js-colour-key"></div>
-                    <div class="technology-name">JavaScript</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key vue-colour-key"></div>
-                    <div class="technology-name">Vue3</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key ns-colour-key"></div>
-                    <div class="technology-name">NativeScript</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key php-colour-key"></div>
-                    <div class="technology-name">PHP</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key node-key-colour"></div>
-                    <div class="technology-name">Node.js</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key sql-key-colour"></div>
-                    <div class="technology-name">SQL</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key btc-key-colour"></div>
-                    <div class="technology-name">Bitcoin Core</div>
-                  </li>
-                  <li class="list-item">
-                    <div class="technology-colour-key _wf-key-colour"></div>
-                    <div class="technology-name">Webflow</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur">
       </div>
       <div data-w-id="47b29c46-e8cb-b814-fbc2-c2408e094676" class="content lets-build">
         <div class="flex-for-span-syle-diff">

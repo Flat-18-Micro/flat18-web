@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Mon Aug 26 2024 00:45:12 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Aug 26 2024 01:15:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663a1aaff0e4426bba7f7258" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -393,9 +393,9 @@
         <div class="icon small w-embed">&#xF24C;</div>
       </aside>
     </div>
-    <section id="pricing" data-w-id="ccc7714e-4111-33db-545c-124e3954058f" class="content vert">
+    <section id="pricing" class="content vert">
       <div class="w-layout-vflex text-org subscriptions">
-        <h2 class="gradient-text ready">Pricing. Simple.</h2>
+        <h2 class="gradient-text yellow">Pricing. Simple.</h2>
         <div class="w-layout-vflex pricing-controls-container large-screens">
           <div class="price-wrapper">
             <div class="pricing-price monthly">
@@ -554,7 +554,7 @@
           </a>
           <a link="#chat" href="#" class="btn w-inline-block">
             <div class="button-background"></div>
-            <div class="button-text">Chat with us</div>
+            <div class="button-text">Let&#x27;s talk about pricing</div>
             <div class="icon btn-icon w-embed">&#xF715;</div>
           </a>
         </div>
@@ -617,7 +617,8 @@ animation: pulsateShadow 5s ease-in-out infinite;}
       }
     })
   }
-  document.querySelector('.billing-type').addEventListener("click", (e) => {
+  for(const billingSwitch of document.querySelectorAll('.billing-type')){
+    billingSwitch.addEventListener("click", (e) => {
     if (e.target.classList.contains('on')) {
       document.querySelectorAll(".monthly").forEach((ele) => { ele.style.display = "none" });
       document.querySelectorAll(".quarterly").forEach((ele) => { ele.style.display = "" });
@@ -626,6 +627,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
       document.querySelectorAll(".quarterly").forEach((ele) => { ele.style.display = "none" });
     }
   })
+}
   document.querySelectorAll(".monthly").forEach((ele) => { ele.style.display = "none" });
   document.querySelectorAll(".quarterly").forEach((ele) => { ele.style.display = "" });
 </script>

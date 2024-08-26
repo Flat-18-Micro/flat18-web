@@ -435,7 +435,7 @@ p {
   justify-content: flex-start;
   align-items: center;
   width: 90vw;
-  margin: 140px auto 0;
+  margin: 140px auto;
   display: flex;
   position: relative;
 }
@@ -527,8 +527,6 @@ p {
 
 .content.vert {
   max-width: var(--content);
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
   flex-flow: column;
 }
 
@@ -686,7 +684,7 @@ p {
   line-height: 1.4em;
 }
 
-.gradient-text.how-it-works {
+.gradient-text.yellow {
   background-image: linear-gradient(350deg, var(--secondary), var(--yellow));
 }
 
@@ -2163,7 +2161,7 @@ p {
 .switch-wrapper {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  flex-flow: wrap;
+  flex-flow: row;
   justify-content: flex-start;
   align-items: center;
   display: flex;
@@ -2173,7 +2171,7 @@ p {
   box-shadow: 0 0 0 2px var(--cw-0);
   cursor: pointer;
   border-radius: 35px;
-  width: 60px;
+  width: 42px;
   height: 35px;
   padding: 4px;
 }
@@ -2181,6 +2179,10 @@ p {
 .switch-body.billing-type {
   width: 42px;
   height: 25px;
+}
+
+.switch-body.billing-type.on {
+  flex: 1 0 auto;
 }
 
 .switch-indicator {
@@ -2774,7 +2776,7 @@ p {
     font-size: 40px;
   }
 
-  .gradient-text.how-it-works {
+  .gradient-text.yellow {
     margin-top: 0;
     font-size: 60px;
   }
@@ -3419,7 +3421,7 @@ p {
     line-height: 1.3em;
   }
 
-  .gradient-text.how-it-works {
+  .gradient-text.yellow {
     font-size: 40px;
   }
 
