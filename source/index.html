@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Mon Aug 26 2024 01:15:34 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Wed Aug 28 2024 00:19:54 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -351,13 +351,13 @@
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
               <ul role="list" class="nav-menu w-list-unstyled">
                 <li>
-                  <a href="about.html" class="nav-link">About us</a>
-                </li>
-                <li>
                   <a href="/#pricing" class="nav-link">Pricing</a>
                 </li>
                 <li>
                   <a href="https://accounts.flat18.co.uk/client/login" class="nav-link">Login</a>
+                </li>
+                <li>
+                  <a href="/#wordsExperimentsSliderContainerWrapper" class="nav-link">Work</a>
                 </li>
                 <li class="mobile-margin-top-10">
                   <div class="nav-button-wrapper">
@@ -387,9 +387,9 @@
     <div class="body-contents-wrapper">
       <div class="content hero"><img src="images/grid-shorter-persp-gradient-thin-higher-res.webp" loading="eager" data-w-id="62abff53-df73-7a49-353d-017594ea0926" sizes="100vw" alt="" srcset="images/grid-shorter-persp-gradient-thin-higher-res-p-500.webp 500w, images/grid-shorter-persp-gradient-thin-higher-res-p-800.webp 800w, images/grid-shorter-persp-gradient-thin-higher-res-p-1080.webp 1080w, images/grid-shorter-persp-gradient-thin-higher-res-p-1600.webp 1600w, images/grid-shorter-persp-gradient-thin-higher-res.webp 2409w" class="overflowing-bg-image">
         <div class="content-video-wrapper hero">
-          <div data-poster-url="videos/Untitled-poster-00001.jpg" data-video-urls="videos/Untitled-transcode.mp4,videos/Untitled-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video-3 w-background-video w-background-video-atom"><video id="8dbf2f7d-7aee-d7de-fdbe-7a6d9e86473a-video" autoplay="" loop="" style="background-image:url(&quot;videos/Untitled-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-              <source src="videos/Untitled-transcode.mp4" data-wf-ignore="true">
-              <source src="videos/Untitled-transcode.webm" data-wf-ignore="true">
+          <div data-poster-url="https://uploads-ssl.webflow.com/663245c7d597883474e88492%2F66c745bb21fd77aacdc416dc_Untitled-poster-00001.jpg" data-video-urls="https://uploads-ssl.webflow.com/663245c7d597883474e88492%2F66c745bb21fd77aacdc416dc_Untitled-transcode.mp4,https://uploads-ssl.webflow.com/663245c7d597883474e88492%2F66c745bb21fd77aacdc416dc_Untitled-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video-3 w-background-video w-background-video-atom"><video id="8dbf2f7d-7aee-d7de-fdbe-7a6d9e86473a-video" autoplay="" loop="" style="background-image:url(&quot;https://uploads-ssl.webflow.com/663245c7d597883474e88492%2F66c745bb21fd77aacdc416dc_Untitled-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+              <source src="https://uploads-ssl.webflow.com/663245c7d597883474e88492%2F66c745bb21fd77aacdc416dc_Untitled-transcode.mp4" data-wf-ignore="true">
+              <source src="https://uploads-ssl.webflow.com/663245c7d597883474e88492%2F66c745bb21fd77aacdc416dc_Untitled-transcode.webm" data-wf-ignore="true">
             </video></div>
         </div>
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
@@ -411,7 +411,7 @@
           </div>
           <div class="code w-embed w-script">
             <script>
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const heroHeading = document.querySelector(".hero-heading");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
@@ -474,6 +474,8 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
   }
 }
 </script>
+        </div>
+        <div class="html-embed-2 w-embed">
           <style>
 [class*="provider-flex"]{
   animation: loopProviderFlex 60s linear forwards infinite
@@ -512,7 +514,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
           <div class="work-tile wide-work-tile transparent">
             <div class="w-layout-hflex work-tile-text">
               <div class="w-layout-hflex flex-header-tile">
-                <h3 class="work-ile-title numbering-title">02 <span class="subtlise">Initialise</span></h3>
+                <h3 class="work-ile-title numbering-title">02 <span class="subtlise">Build</span></h3>
               </div>
               <div class="animation-wrapper"><img src="images/ezgif-3-9cd113bd16.gif" loading="eager" alt="Initialising project" class="how-it-works-video">
                 <div class="video-colourise"></div>
@@ -539,6 +541,18 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
             <style>
 .work-tile:hover .how-it-works-video{filter:unset;}
 .work-tile:hover .video-colourise{opacity:0;}
+.content.sliding-work-showcase.highlight-subtle-block.how-it-works::before{
+	content:'';
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  position: absolute;
+  top:2px;
+  left:2px;
+  background: var(--bg-modern);
+  border-radius: 6px;
+  z-index: 1;
+  opacity:.9;
+}
 </style>
           </div>
         </div><img sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
@@ -623,7 +637,6 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                   </div>
                 </div>
               </div>
-              <div class="w-embed"></div>
             </div>
             <div data-animation="over-right" data-collapse="all" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="currency-dropdown-menu w-nav">
               <div class="menu-container w-container">
@@ -645,35 +658,35 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
               <div class="badge subtle left solid">What&#x27;s included</div>
               <ul role="list" class="pricing-feature-list wide columns w-list-unstyled">
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF292;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Queued Tasks delivered in as little as 48hrs</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF2C7;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Unlimited Development Scopes</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF6C4;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Application staging</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF544;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Unlimited Revisions queue</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF4AF;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">AI &amp; Custom Graphics</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF44D;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Complete Service Management</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF4BE;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Support directly from your developer</div>
                 </li>
                 <li class="pricing-list-item things-are-different">
-                  <div class="icon small w-embed">&#xF4C2;</div>
+                  <div class="icon small w-embed">&#xF26E;</div>
                   <div class="pricing-feature">Bank and store up to half unused time</div>
                 </li>
               </ul>
@@ -736,10 +749,10 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
     transform: translateX(calc(100% - 2px));
   }
   .switch-body.on{
-  	box-shadow: 0 0 0 2px var(--secondary);
+  	box-shadow: 0 0 0 2px var(--primary);
   }
   .switch-body.on .switch-indicator{
-  	background: var(--secondary);
+  	background: var(--primary);
     transform: translateX(100%);
   }
   .rotunda{
@@ -876,9 +889,9 @@ animation: pulsateShadow 5s ease-in-out infinite;}
       <div class="content spread centre-vert">
         <div id="faq" class="w-layout-vflex text-org">
           <h2 class="gradient-text ready">Commonly Asked Questions</h2>
-          <div data-current="teams?" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
+          <div data-current="Why are slots limited?" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
             <div id="w-node-_7b971ea9-4abf-8f54-4186-163d25dead62-25dead5d" class="tabs-menu w-tab-menu">
-              <a data-w-tab="Why are slots limited?" class="tab w-inline-block w-tab-link">
+              <a data-w-tab="Why are slots limited?" class="tab w-inline-block w-tab-link w--current">
                 <div>What is Availability?</div>
                 <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
@@ -898,7 +911,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                 <div>How long will my project take to complete?</div>
                 <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
-              <a data-w-tab="teams?" class="tab w-inline-block w-tab-link w--current">
+              <a data-w-tab="teams?" class="tab w-inline-block w-tab-link">
                 <div>Do you work with teams?</div>
                 <div class="icon btn-icon w-embed">&#xF285;</div>
               </a>
@@ -908,7 +921,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               </a>
             </div>
             <div id="w-node-_7b971ea9-4abf-8f54-4186-163d25dead7f-25dead5d" class="tabs-content w-tab-content">
-              <div data-w-tab="Why are slots limited?" class="w-tab-pane">
+              <div data-w-tab="Why are slots limited?" class="w-tab-pane w--tab-active">
                 <div>
                   <div class="text-block-reading left-align">Development is a dynamic process, and things can take longer than expected.<br><br>We limit our availability to take on new projects so we can deliver revisions and progress updates for ongoing projects within 48 hours. <br><br>By limiting the number of active clients, we can prevent slow-downs and ensure everyone gets the attention they need.<br></div>
                 </div>
@@ -937,7 +950,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                   <div class="text-block-reading left-align">We can give you an estimate once we get the details of your project. <br><br>We dislike overspending just as much as you do, so we keep our estimates upfront and realistic to make sure you always feel in control of your budget. <br><br>Plus, you can pause anytime and save up to half your unused time for later.<br></div>
                 </div>
               </div>
-              <div data-w-tab="teams?" class="w-tab-pane w--tab-active">
+              <div data-w-tab="teams?" class="w-tab-pane">
                 <div>
                   <div class="text-block-reading left-align">We&#x27;re happy to join your team.<br><br>Just keep in mind that our availability and responsiveness might not always match up perfectly with your team’s schedule. <br><br>We’ll do our best to stay in sync and support your project.<br></div>
                 </div>
@@ -972,16 +985,41 @@ animation: pulsateShadow 5s ease-in-out infinite;}
 " class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
       </div>
       <div data-w-id="430ea16b-4232-c735-4857-66817cae92c7" class="content stats">
-        <div class="badge subtle left large-screens">Current Stats</div>
-        <div id="w-node-_430ea16b-4232-c735-4857-66817cae92ca-7cae92c7" class="content-video-wrapper stripey-bg">
-          <h3 class="bold-graphic-heading">Current<br>Stats</h3>
-        </div>
         <div class="w-layout-hflex stats-wrapper">
+          <div class="statistic-organiser no-border">
+            <h3 class="statistics-label">Always<br>Learning</h3>
+          </div>
           <div class="statistic-organiser">
-            <h3 class="animated-counter _2 gradient-text">30</h3>
+            <h3 class="animated-counter _2 gradient-text">10</h3>
             <div class="stat-description">
-              <h4 class="heading">Websites &amp; Apps</h4>
-              <div class="stat-text">Developed and deployed globally</div>
+              <h4 class="heading">Years</h4>
+              <div class="stat-text">Building apps, services and financial solutions using Bitcoin</div>
+            </div>
+          </div>
+          <div class="statistic-organiser">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img loading="lazy" src="images/logo-download-small-square-128x128.png" alt="" class="work-tile-icon">
+                <h3 class="work-ile-title">Zettahash DAO</h3>
+              </div>
+              <div class="work-tile-text">Not only is this an industry-first for bitcoin mining decentralisation, but the technology stack is entirely serverless running on the latest, robust technologies.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology webflow-key-colour zh"></div>
+                  <div class="technology vue-key-colour zh"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key webflow-key-colour"></div>
+                    <div class="technology-name">Webflow</div>
+                    <div class="technology-pc">50%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key vue-colour-key"></div>
+                    <div class="technology-name">Vue3</div>
+                    <div class="technology-pc">50%</div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="statistic-organiser">
@@ -992,19 +1030,223 @@ animation: pulsateShadow 5s ease-in-out infinite;}
             </div>
           </div>
           <div class="statistic-organiser">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img loading="lazy" src="images/btcpayserver-logo.webp" alt="btcpayserver logo
+" class="work-tile-icon">
+                <h3 class="work-ile-title">BTCPay Server</h3>
+              </div>
+              <div class="work-tile-text">BTCPay Server is a self-hosted, open-source cryptocurrency payment processor that prioritises security, privacy, censorship resistance, and cost-effectiveness.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used"></div>
+                  <div class="technology css-key-colour btc"></div>
+                  <div class="technology js-key-colour btc"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">30%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key css-colour-key"></div>
+                    <div class="technology-name">CSS3</div>
+                    <div class="technology-pc">60%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">10%</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="statistic-organiser no-border">
+            <h3 class="statistics-label">We&#x27;re Natural<br>Problem-solvers</h3>
+          </div>
+          <div class="statistic-organiser">
+            <h3 class="animated-counter _3 gradient-text">48</h3>
+            <div class="stat-description">
+              <h4 class="heading">Hours</h4>
+              <div class="stat-text">Average delivery time for tasks and revisions.</div>
+            </div>
+          </div>
+          <div class="statistic-organiser">
             <h3 class="animated-counter _3 gradient-text">80</h3>
             <div class="stat-description">
               <h4 class="heading">Thousand Commits</h4>
-              <div class="stat-text">Git wizardry at its finest</div>
+              <div class="stat-text">Encompassing years of contributions on GitHub and GitLab.</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-layout-hflex stats-wrapper">
+          <div class="statistic-organiser">
+            <h3 class="animated-counter _2 gradient-text">30</h3>
+            <div class="stat-description">
+              <h4 class="heading">Websites &amp; Apps</h4>
+              <div class="stat-text">Developed and deployed globally</div>
+            </div>
+          </div>
+          <div class="statistic-organiser no-border">
+            <h3 class="statistics-label">Current<br>Stats</h3>
+          </div>
+          <div class="statistic-organiser">
+            <h3 class="animated-counter _3 gradient-text">7</h3>
+            <div class="stat-description">
+              <h4 class="heading">Years</h4>
+              <div class="stat-text">Spent contributing to Free and Open Source projects and communities.</div>
+            </div>
+          </div>
+          <div class="statistic-organiser">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img loading="lazy" src="images/wallet-scrutiny-logo.webp" alt="walletscrutiny logo" class="work-tile-icon">
+                <h3 class="work-ile-title">WalletScrutiny</h3>
+              </div>
+              <div class="work-tile-text">WalletScrutiny helps everyday bitcoin users verify the legitimacy and security of their wallet by ensuring it is truly open-source.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology js-key-colour"></div>
+                  <div class="technology html5-tech-used ws"></div>
+                  <div class="technology scss-key-colour ws"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                    <div class="technology-pc">90%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                    <div class="technology-pc">5%</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                    <div class="technology-pc">5%</div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="statistic-organiser">
             <h3 class="animated-counter _2 gradient-text">20</h3>
             <div class="stat-description">
-              <h4 class="heading">Open Source</h4>
-              <div class="stat-text">Projects mastered</div>
+              <h4 class="heading">Open Source Projects</h4>
+              <div class="stat-text">Contributed to, mastered, supported, integrated.</div>
             </div>
           </div>
+          <div class="statistic-organiser no-border">
+            <h3 class="statistics-label">Eliminating the guesswork</h3>
+          </div>
+          <div class="statistic-organiser">
+            <h3 class="animated-counter _2 gradient-text">80</h3>
+            <div class="stat-description">
+              <h4 class="heading">Hours</h4>
+              <div class="stat-text">Average development hours dedicated to your project, per calendar month.</div>
+            </div>
+          </div>
+          <div class="statistic-organiser">
+            <div class="w-layout-hflex work-tile-text">
+              <div class="w-layout-hflex flex-header-tile"><img loading="lazy" src="images/flat18-logo.webp" alt="flat18 logo blue round" class="work-tile-icon">
+                <h3 class="work-ile-title">Development Ninjas</h3>
+              </div>
+              <div class="work-tile-text">Mastering a multitude of libraries, frameworks, and use cases, we’re your project’s perfect match.</div>
+              <div class="technology-wrapper">
+                <div class="technologies-used">
+                  <div class="technology html5-tech-used ee"></div>
+                  <div class="technology scss-key-colour ee"></div>
+                  <div class="technology js-key-colour ee"></div>
+                  <div class="technology vue-key-colour ee"></div>
+                  <div class="technology ns-key-colour ee"></div>
+                  <div class="technology php-key-colour ee"></div>
+                  <div class="technology node-key-colour ee"></div>
+                  <div class="technology sql-key-colour ee"></div>
+                  <div class="technology btc-key-colour ee"></div>
+                  <div class="technology webflow-key-colour ee"></div>
+                </div>
+                <ul role="list" class="work-list w-list-unstyled">
+                  <li class="list-item">
+                    <div class="technology-colour-key htmol5-colour-key"></div>
+                    <div class="technology-name">HTML5</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key scss-colour-key"></div>
+                    <div class="technology-name">SCSS</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key js-colour-key"></div>
+                    <div class="technology-name">JavaScript</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key vue-colour-key"></div>
+                    <div class="technology-name">Vue3</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key ns-colour-key"></div>
+                    <div class="technology-name">NativeScript</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key php-colour-key"></div>
+                    <div class="technology-name">PHP</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key node-key-colour"></div>
+                    <div class="technology-name">Node.js</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key sql-key-colour"></div>
+                    <div class="technology-name">SQL</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key btc-key-colour"></div>
+                    <div class="technology-name">Bitcoin Core</div>
+                  </li>
+                  <li class="list-item">
+                    <div class="technology-colour-key _wf-key-colour"></div>
+                    <div class="technology-name">Webflow</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="statistic-organiser no-border">
+            <h3 class="statistics-label">Development. Simplified.</h3>
+          </div>
+        </div>
+        <div class="code-embed-2 w-embed">
+          <style>
+.stats-wrapper{animation: scroll-stats-wrapper  120s linear infinite;}
+.stats-wrapper:nth-of-type(2){animation-direction: reverse;}
+@keyframes scroll-stats-wrapper {
+  0% {
+    transform: translateX(calc(-25% - 60px));
+  }
+  100% {
+    transform: translateX(calc(-75% - 60px));
+  }
+}
+</style>
+        </div>
+        <div class="code-embed-3 w-embed w-script">
+          <script>
+    // Select the stats wrapper
+    const statsWrappers = document.querySelectorAll('.stats-wrapper');
+for (const statsWrapper of statsWrappers){
+    // Get all elements with the class '.statistic-organiser' inside the stats wrapper
+    const statisticOrganisers = statsWrapper.querySelectorAll('.statistic-organiser');
+    // Number of times to duplicate the elements
+    const duplicationCount = 3;
+    // Loop to duplicate the elements
+    for (let i = 0; i < duplicationCount; i++) {
+        statisticOrganisers.forEach(function(organiser) {
+            const clone = organiser.cloneNode(true); // Clone the element including its children
+            statsWrapper.appendChild(clone); // Append the cloned element to the stats wrapper
+        });
+    }
+    }
+</script>
         </div>
       </div>
       <div id="wordsExperimentsSliderContainerWrapper" data-w-id="fb830a30-df0b-536a-186e-04dc8d6238d4" class="w-layout-vflex content">
@@ -1119,7 +1361,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 18vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1207,7 +1449,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 29vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">demo</div>
@@ -1239,7 +1481,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">20%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 29vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">alpha</div>
@@ -1302,7 +1544,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 18vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">released</div>
@@ -1415,10 +1657,6 @@ to{opacity: 1; transform: translateY(0px);}
                   <div class="icon small w-embed">&#xF73B;</div>
                   <div>hello@flat18.co.uk</div>
                 </a>
-                <a href="tel:+447480569779" class="footer-link w-inline-block">
-                  <div class="icon small w-embed">&#xF4E2;</div>
-                  <div>+44 7480 569779</div>
-                </a>
               </div>
               <div id="w-node-e28b2c83-3d20-f0ea-2b37-5ec141346f9e-41346f98" class="footer-block">
                 <div class="title-small">Resources</div>
@@ -1463,8 +1701,8 @@ year.innerHTML = new Date().getFullYear()
 </style>
         </div>
         <div class="w-layout-hflex cookie-notice">
-          <div class="w-layout-vflex">
-            <div>This website uses cookies</div>
+          <div class="w-layout-vflex flex-block-2">
+            <div>This website uses cookies<br>to improve your experience.</div>
             <a href="privacy.html" class="link cookie">Learn more in our Privacy Policy</a>
           </div>
           <div class="icon cookie w-embed">&#xF6EE;</div>
