@@ -993,6 +993,10 @@ p {
   width: 10%;
 }
 
+.technology.html5-tech-used._50 {
+  width: 50%;
+}
+
 .technology.css-key-colour {
   background-color: var(--pink);
   width: 60%;
@@ -1027,7 +1031,7 @@ p {
   width: 40%;
 }
 
-.technology.js-key-colour.f18-pay {
+.technology.js-key-colour.f18-pay, .technology.js-key-colour.bv {
   width: 50%;
 }
 
@@ -1143,7 +1147,7 @@ p {
   width: 100%;
 }
 
-.technology.webflow-key-colour.zh {
+.technology.webflow-key-colour.zh, .technology.webflow-key-colour._50 {
   width: 50%;
 }
 
