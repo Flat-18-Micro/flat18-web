@@ -26,6 +26,27 @@ function addLangAttribute(content, lang) {
     return content;
 }
 
+// Function to ensure unique title tags for each page
+function ensureUniqueTitle(content, filename) {
+    const pageTitle = filename.replace('.html', '').replace(/-/g, ' ');  // Simple title based on filename
+
+    if (!content.includes('<title>')) {
+        const titleTag = `<title>${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)} | Flat18</title>\n`;
+        return content.replace('</head>', `${titleTag}</head>`);
+    } else {
+        return content.replace(/<title>(.*?)<\/title>/, `<title>${pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)} | Flat18</title>`);
+    }
+}
+
+// Function to add canonical tag if not present
+function addCanonicalTag(content, url) {
+    if (!content.includes('<link rel="canonical"')) {
+        const canonicalTag = `<link rel="canonical" href="${url}" />\n`;
+        return content.replace('</head>', `${canonicalTag}</head>`);
+    }
+    return content;
+}
+
 // Function to optimise HTML content
 function optimiseHtml(content) {
     return minify(content, {
@@ -74,8 +95,10 @@ function copySourceToDist(src, dest) {
                 let canonicalUrl = fullDestPath.replace(distDir, '').replace('.html', '');
                 canonicalUrl = `${baseUrl}${canonicalUrl}`;
 
-                // Add canonical and lang attributes
+                // Add canonical and lang attributes, and ensure unique title tags
                 content = addLangAttribute(content, defaultLang);
+                content = addCanonicalTag(content, canonicalUrl);
+                content = ensureUniqueTitle(content, file);  // Ensure each page has a unique title
                 content = content.replace(/webflow/g, 'f18-built-component');
                 content = optimiseHtml(content);
 
@@ -120,9 +143,26 @@ function generateSitemap(directoryPath) {
 
 // Function to generate robots.txt
 function generateRobotsTxt() {
-    const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml`;
+    const robotsContent = `User-agent: *\nAllow: /\nDisallow: /*?\n\nSitemap: ${baseUrl}/sitemap.xml`;
     fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsContent);
     console.log('robots.txt generated successfully in dist directory.');
+}
+
+// Function to add 301 redirects (optional)
+function createRedirects() {
+    const redirects = [
+        { from: '/pricing.html', to: '/pricing' },
+        // Add more redirects as necessary
+    ];
+
+    let redirectRules = '';
+
+    redirects.forEach(rule => {
+        redirectRules += `Redirect 301 ${rule.from} ${rule.to}\n`;
+    });
+
+    fs.writeFileSync(path.join(distDir, '_redirects'), redirectRules);
+    console.log('301 redirects created successfully.');
 }
 
 // Main function to perform all tasks
@@ -132,6 +172,7 @@ function build() {
         copySourceToDist(sourceDir, distDir);
         generateSitemap(distDir);  // Ensure sitemap is generated for the dist directory
         generateRobotsTxt();
+        createRedirects();  // Create redirects
         console.log('Build completed successfully.');
     } catch (err) {
         console.error('Build failed:', err);
