@@ -7,6 +7,9 @@ const sourceDir = path.join(__dirname, 'source');
 const distDir = path.join(__dirname, 'dist');
 const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
 
+// Default language for the website
+const defaultLang = 'en';  // English as the default and only language
+
 // Function to create the dist directory if it doesn't exist
 function createDistDirectory() {
     if (!fs.existsSync(distDir)) {
@@ -15,11 +18,10 @@ function createDistDirectory() {
     }
 }
 
-// Function to add canonical tag if not present
-function addCanonicalTag(content, url) {
-    if (!content.includes('<link rel="canonical"')) {
-        const canonicalTag = `<link rel="canonical" href="${url}" />\n`;
-        return content.replace('</head>', `${canonicalTag}</head>`);
+// Function to add lang attribute if not present
+function addLangAttribute(content, lang) {
+    if (!content.includes(' lang=')) {
+        return content.replace('<html', `<html lang="${lang}"`);
     }
     return content;
 }
@@ -72,10 +74,8 @@ function copySourceToDist(src, dest) {
                 let canonicalUrl = fullDestPath.replace(distDir, '').replace('.html', '');
                 canonicalUrl = `${baseUrl}${canonicalUrl}`;
 
-                // Add canonical tag
-                content = addCanonicalTag(content, canonicalUrl);
-
-                // Update references and optimise content
+                // Add canonical and lang attributes
+                content = addLangAttribute(content, defaultLang);
                 content = content.replace(/webflow/g, 'f18-built-component');
                 content = optimiseHtml(content);
 
