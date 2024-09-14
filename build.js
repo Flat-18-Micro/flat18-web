@@ -5,6 +5,7 @@ const { minify } = require('html-minifier');
 // Directories
 const sourceDir = path.join(__dirname, 'source');
 const distDir = path.join(__dirname, 'dist');
+const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
 
 // Function to create the dist directory if it doesn't exist
 function createDistDirectory() {
@@ -14,11 +15,13 @@ function createDistDirectory() {
     }
 }
 
-// Function to rename files and update HTML references
-function renameAndUpdateReferences(filePath, oldName, newName) {
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const updatedContent = content.replace(new RegExp(oldName, 'g'), newName);
-    fs.writeFileSync(filePath, updatedContent);
+// Function to add canonical tag if not present
+function addCanonicalTag(content, url) {
+    if (!content.includes('<link rel="canonical"')) {
+        const canonicalTag = `<link rel="canonical" href="${url}" />\n`;
+        return content.replace('</head>', `${canonicalTag}</head>`);
+    }
+    return content;
 }
 
 // Function to optimise HTML content
@@ -64,9 +67,18 @@ function copySourceToDist(src, dest) {
             } else {
                 // Read the HTML file content
                 let content = fs.readFileSync(fullSrcPath, 'utf-8');
+                
+                // Build canonical URL (without .html extension)
+                let canonicalUrl = fullDestPath.replace(distDir, '').replace('.html', '');
+                canonicalUrl = `${baseUrl}${canonicalUrl}`;
+
+                // Add canonical tag
+                content = addCanonicalTag(content, canonicalUrl);
+
                 // Update references and optimise content
                 content = content.replace(/webflow/g, 'f18-built-component');
                 content = optimiseHtml(content);
+
                 // Write the optimised HTML content to the destination
                 fs.writeFileSync(fullDestPath, content);
                 console.log(`Copied and optimised HTML file: ${fullSrcPath} to ${fullDestPath}`);
@@ -77,7 +89,6 @@ function copySourceToDist(src, dest) {
 
 // Function to generate sitemap.xml
 function generateSitemap(directoryPath) {
-    const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
     let urls = [];
 
     function findHtmlFiles(dir) {
@@ -88,7 +99,8 @@ function generateSitemap(directoryPath) {
             if (stat.isDirectory()) {
                 findHtmlFiles(fullPath);
             } else if (path.extname(file) === '.html') {
-                let relativePath = path.relative(directoryPath, fullPath);
+                // Skip .html extension in URLs for sitemap
+                let relativePath = path.relative(directoryPath, fullPath).replace('.html', '');
                 urls.push(`${baseUrl}/${relativePath.replace(/\\/g, '/')}`);
             }
         });
@@ -108,7 +120,7 @@ function generateSitemap(directoryPath) {
 
 // Function to generate robots.txt
 function generateRobotsTxt() {
-    const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: https://flat18.co.uk/sitemap.xml`;
+    const robotsContent = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml`;
     fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsContent);
     console.log('robots.txt generated successfully in dist directory.');
 }
