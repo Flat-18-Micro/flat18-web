@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Sun Sep 15 2024 01:15:28 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sun Sep 15 2024 16:44:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -56,7 +56,7 @@
           <div class="navbar-wrapper">
             <a href="index.html" aria-current="page" class="navbar-brand w-nav-brand w--current">
               <div class="homepage-loader">
-                <div class="w-embed"><svg class="loader-image-backgdrop" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;aspect-ratio: 1;width: 105%;max-width: none;position: absolute;top: 0;right: 0;transform: translate(5%);" width="100%" height="100%" viewbox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+                <div class="w-embed"><svg class="loader-image-backgdrop" width="100%" height="100%" viewbox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
                     <path d="M9.943,27.199L9.943,10.167L6.087,12.823L1.74,6.068L11.259,0L20.808,0C24.561,0 27.608,3.047 27.608,6.8L27.608,20.4C27.608,24.153 24.561,27.199 20.808,27.199L9.943,27.199Z" style="fill:url(#_Linear1);"></path>
                     <defs>
                       <lineargradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(25.8678,0,0,25.8678,1.73995,10.5267)">
@@ -65,7 +65,7 @@
                       </lineargradient>
                     </defs>
                   </svg>
-                  <svg class="loader-image-backgdrop" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;aspect-ratio: 1;width: 105%;max-width: none;position: absolute;top: 0;right: 0;transform: translate(5%);" width="100%" height="100%" viewbox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
+                  <svg class="loader-image-backgdrop" width="100%" height="100%" viewbox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/">
                     <path d="M20.224,27.199C19.743,27.127 19.266,27.028 18.793,26.902C17.69,26.608 16.711,26.131 15.857,25.469C15.003,24.808 14.311,23.956 13.78,22.915C13.248,21.874 12.983,20.619 12.983,19.149C12.983,17.728 13.321,16.503 13.998,15.474C14.675,14.445 15.565,13.661 16.669,13.122L16.669,13.012C15.753,12.595 14.972,11.915 14.326,10.972C13.681,10.029 13.358,8.884 13.358,7.536C13.358,6.189 13.608,5.025 14.108,4.045C14.607,3.065 15.269,2.269 16.091,1.657C16.914,1.044 17.856,0.591 18.918,0.297C19.373,0.171 19.832,0.072 20.295,-0L20.4,-0C24.152,-0 27.199,3.047 27.199,6.8L27.199,20.4C27.199,24.152 24.152,27.199 20.4,27.199L20.224,27.199Z" style="fill:rgb(36,207,240);"></path>
                   </svg>
                 </div>
@@ -325,6 +325,14 @@
     opacity: 1;
     min-width: unset;
     min-height: unset;
+  }
+  .loader-image-backgdrop{
+  fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;aspect-ratio: 1;width: 105%;max-width: none;position: absolute;top: 0;right: 0;transform: translate(5%);
+  }
+  body:not(.make-curtain-absolute) .loader-image-backgdrop{
+  transform: translate(calc(5% + 20vh));
+  min-height: 100vh;
+  min-width: 105vh;
   }
   body:not(.make-curtain-absolute) .loader-image-backgdrop path {
   fill:none !important;
@@ -1380,7 +1388,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, (max-width: 991px) 40.383331298828125px, 4vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1422,7 +1430,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1539,7 +1547,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">demo</div>
@@ -1571,7 +1579,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">20%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 64.78334045410156px, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">alpha</div>
@@ -1634,7 +1642,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">released</div>

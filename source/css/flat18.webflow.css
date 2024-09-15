@@ -2281,6 +2281,10 @@ p {
   display: flex;
 }
 
+.price-exchange {
+  line-height: 1em;
+}
+
 .switch-label-wrapper.quarterly {
   color: var(--primary);
 }
@@ -3217,11 +3221,12 @@ p {
 
   .footer-wrapper {
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   .footer-content {
-    flex-flow: wrap;
+    flex-flow: column;
     grid-template-columns: 1fr 1fr;
     margin-top: 40px;
   }
