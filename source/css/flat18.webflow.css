@@ -30,9 +30,10 @@
   --elephant-grey: #3e3d49;
   --orange: #bd6b00;
   --process-blue: #1343d3;
-  --accent: var(--secondary);
   --white: white;
   --black: black;
+  --accent: var(--secondary);
+  --bg-gauze: #15181eb3;
   --cw-3: #cfc6c4;
   --cw-4: #dccdc0;
   --primary-backup: #1963fd;
@@ -1239,7 +1240,7 @@ p {
 }
 
 .footer-dark {
-  background-image: linear-gradient(to bottom, var(--blue-1-5), var(--blue-1-5));
+  background-image: linear-gradient(to bottom, var(--secondary), var(--secondary));
   color: var(--cw-1);
   padding: 50px 0 15px;
   position: relative;
@@ -1302,7 +1303,7 @@ p {
 }
 
 .footer-link:hover {
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .footer-social-block {
@@ -1339,6 +1340,8 @@ p {
 
 .body-wrapper {
   width: 100vw;
+  height: max-content;
+  overflow: hidden;
 }
 
 .body-wrapper.no-overflow {
@@ -1832,6 +1835,10 @@ p {
 }
 
 .paragraph {
+  background-color: var(--bg-gauze);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
   font-size: 17px;
   line-height: 1.8em;
 }
@@ -2005,6 +2012,10 @@ p {
   inset: 0%;
   overflow: hidden;
   transform: translate3d(0, 0, 51px);
+}
+
+.image-4 {
+  filter: brightness(400%) grayscale();
 }
 
 .work-tile-icon {
@@ -2677,6 +2688,19 @@ p {
 .flex-block-2 {
   grid-column-gap: 7px;
   grid-row-gap: 7px;
+}
+
+.h3 {
+  font-size: 1.3em;
+  line-height: 2em;
+}
+
+.image-10 {
+  z-index: -1;
+  width: auto;
+  max-width: none;
+  position: absolute;
+  right: -50%;
 }
 
 @media screen and (max-width: 991px) {
