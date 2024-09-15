@@ -90,20 +90,29 @@ function optimiseHtml(content) {
 }
 
 // Function to replace specific <link> tags with a <script> tag
+// Function to replace specific <link> tags with a <script> tag
+// Function to replace specific <link> tags with a <script> tag and remove webflow.js script
 function replaceLinksWithScript(content) {
-  const linkTagsRegex = /<link\s+href="css\/(normalize|webflow|flat18\.webflow)\.css"\s+rel="stylesheet"\s+type="text\/css">\s*/g;
-
-  // Remove the specific <link> tags
-  let newContent = content.replace(linkTagsRegex, '');
-
-  // Define the <script> tag to insert
-  const scriptTag = '<script src="js/bundle.js"></script>';
-
-  // Insert the <script> tag before the closing </body> tag
-  newContent = newContent.replace('</body>', `${scriptTag}\n</body>`);
-
-  return newContent;
-}
+    // Regex to match specific <link> tags for CSS files
+    const linkTagsRegex = /<link\s+href="css\/(normalize|webflow|flat18\.webflow)\.css"\s+rel="stylesheet"\s+type="text\/css">\s*/g;
+    
+    // Regex to remove any <script> tags pointing to webflow.js with or without type attribute
+    const webflowScriptRegex = /<script\s+src="(?:https:\/\/flat18\.co\.uk\/js\/webflow\.js|js\/webflow\.js)"(?:\s+type="text\/javascript")?\s*><\/script>/g;
+  
+    // Remove the specific <link> tags
+    let newContent = content.replace(linkTagsRegex, '');
+  
+    // Remove the webflow.js script tags
+    newContent = newContent.replace(webflowScriptRegex, '');
+  
+    // Define the <script> tag to insert for bundled JS
+    const scriptTag = '<script src="js/bundle.js"></script>';
+  
+    // Insert the <script> tag before the closing </body> tag
+    newContent = newContent.replace('</body>', `${scriptTag}\n</body>`);
+  
+    return newContent;
+  }
 
 // Function to copy files from source to dist directory, minifying CSS and JS, and renaming if necessary
 async function copySourceToDist(src, dest) {
