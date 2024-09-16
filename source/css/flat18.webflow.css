@@ -2442,9 +2442,9 @@ p {
 .content-imagery-wrapper {
   z-index: 1;
   background-color: var(--blue-1-5);
-  background-image: url('../images/grid-shorter-persp.webp');
-  background-position: 0 100%;
-  background-size: cover;
+  background-image: url('../images/grid-lines-solid.svg');
+  background-position: 0 30%;
+  background-size: auto 300%;
   border-radius: 5px;
   flex: 1 0 auto;
   max-width: 40vw;
