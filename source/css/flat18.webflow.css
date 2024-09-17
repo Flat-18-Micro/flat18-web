@@ -2610,6 +2610,11 @@ p {
   transform: translate(-50%, -50%);
 }
 
+.background-video-3.hero-background-video {
+  height: 500px;
+  overflow: hidden;
+}
+
 .animation-wrapper {
   aspect-ratio: 1;
   border-radius: 8px;
