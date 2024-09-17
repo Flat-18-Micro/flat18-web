@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 14:01:58 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 18:04:41 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -96,7 +96,7 @@
     <div class="body-contents-wrapper">
       <div class="content hero"><img src="images/grid-lines-solid.svg" loading="eager" data-w-id="62abff53-df73-7a49-353d-017594ea0926" alt="" class="overflowing-bg-image">
         <div class="content-video-wrapper hero">
-          <div class="background-video-3 hero-background-video w-embed"><video id="8dbf2f7d-7aee-d7de-fdbe-7a6d9e86473a-video" autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+          <div class="background-video-3 hero-background-video w-embed"><video id="8dbf2f7d-7aee-d7de-fdbe-7a6d9e86473a-video" preload="none" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
               <source src="videos/Untitled-transcode-transcode-4.mp4" data-wf-ignore="true">
             </video>
             <style>
@@ -139,6 +139,8 @@
           <div class="code w-embed w-script">
             <script>
 window.addEventListener("DOMContentLoaded", () => {
+document.querySelector(".hero-background-video > video").setAttribute("autoplay","")
+document.querySelector(".hero-background-video > video").removeAttribute("preload")
   const heroHeading = document.querySelector(".hero-heading");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
@@ -236,7 +238,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                     </clippath>
                     <g clip-path="url(#_clip1)">
                       <ellipse cx="746.929" cy="836.293" rx="697.525" ry="705.897" style="fill:url(#_Radial2);"></ellipse>
-                      <path d="M1195.86,203.122L1195.86,1536.85C1195.86,1611.18 1135.51,1671.53 1061.18,1671.53L432.674,1671.53C358.344,1671.53 297.998,1611.18 297.998,1536.85L297.998,203.122C297.998,128.792 358.344,68.446 432.674,68.446L1061.18,68.446C1135.51,68.446 1195.86,128.792 1195.86,203.122ZM1179.19,203.122C1179.19,137.991 1126.32,85.112 1061.18,85.112L432.674,85.112C367.542,85.112 314.664,137.991 314.664,203.122L314.664,1536.85C314.664,1601.98 367.542,1654.86 432.674,1654.86L1061.18,1654.86C1126.32,1654.86 1179.19,1601.98 1179.19,1536.85L1179.19,203.122Z" style="fill:url(#_Linear3);"></path>
+                      <path d="M1195.86,203.122L1195.86,1536.85C1195.86,1611.18 1135.51,1671.53 1061.18,1671.53L432.674,1671.53C358.344,1671.53 297.998,1611.18 297.998,1536.85L297.998,203.122C297.998,128.792 358.344,68.446 432.674,68.446L1061.18,68.446C1135.51,68.446 1195.86,128.792 1195.86,203.122ZM1179.19,203.122C1179.19,137.991 1126.32,85.112 1061.18,85.112L432.674,85.112C367.542,85.112 314.664,137.991 314.664,203.122L314.664,1536.85C314.664,1601.98 367.542,1654.86 432.674,1654.86L1061.18,1654.86C1126.32,1654.86 1179.19,1601.98 1179.19,1536.85L1179.19,203.122Z" style="fill:url(#_Linear-ui-bubbles-3);"></path>
                       <path d="M1187.53,203.122L1187.53,1536.85C1187.53,1606.58 1130.91,1663.19 1061.18,1663.19L432.674,1663.19C362.943,1663.19 306.331,1606.58 306.331,1536.85L306.331,203.122C306.331,133.391 362.943,76.779 432.674,76.779L1061.18,76.779C1130.91,76.779 1187.53,133.391 1187.53,203.122Z" style="fill:url(#_Radial4);"></path>
                       <path d="M854.718,158.744C854.718,174.389 842.016,187.092 826.37,187.092L667.487,187.092C651.841,187.092 639.139,174.389 639.139,158.744C639.139,143.098 651.841,130.395 667.487,130.395L826.37,130.395C842.016,130.395 854.718,143.098 854.718,158.744Z"></path>
                       <g id="initial-message-group">
@@ -245,7 +247,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                           <path d="M1356.82,489.377L1356.82,749.118C1356.82,767.687 1341.75,782.762 1323.18,782.762L665.087,782.762C646.519,782.762 631.443,767.687 631.443,749.118L631.443,489.377C631.443,470.808 646.519,455.732 665.087,455.732L1323.18,455.732C1341.75,455.732 1356.82,470.808 1356.82,489.377Z"></path>
                         </clippath>
                         <g clip-path="url(#_clip5)">
-                          <rect id="user-blur" x="1039.09" y="167.677" width="301.732" height="1602.47" style="fill:url(#_Linear6);"></rect>
+                          <rect id="user-blur" x="1039.09" y="167.677" width="301.732" height="1602.47" style="fill:url(#_Linear-ui-bubbles-6);"></rect>
                           <g transform="matrix(1.33333,0,0,1.33333,-7919.33,-334.035)">
                             <text x="6471.04px" y="668.546px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:45.833px;fill:white;">Hey<tspan x="6549.14px 6561.88px " y="668.546px 668.546px ">, </tspan>Flat 18</text>
                             <text x="6471.04px" y="726.879px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:45.833px;fill:white;">I&apos;ve got an amazing</text>
@@ -271,7 +273,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                           <path d="M949.435,1012.65L949.435,1188.28C949.435,1206.85 934.359,1221.93 915.79,1221.93L163.086,1221.93C144.518,1221.93 129.442,1206.85 129.442,1188.28L129.442,1012.65C129.442,994.084 144.518,979.009 163.086,979.009L915.79,979.009C934.359,979.009 949.435,994.084 949.435,1012.65Z"></path>
                         </clippath>
                         <g clip-path="url(#_clip8)">
-                          <rect id="f18-blur" x="140.714" y="221.455" width="307.003" height="1602.47" style="fill:url(#_Linear9);"></rect>
+                          <rect id="f18-blur" x="140.714" y="221.455" width="307.003" height="1602.47" style="fill:url(#_Linear-ui-bubbles-9);"></rect>
                           <g transform="matrix(1.33333,0,0,1.33333,-8425.66,189.149)">
                             <text x="6471.04px" y="668.546px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:45.833px;">Brilliant!</text>
                             <g transform="matrix(45.8333,0,0,45.8333,6963.86,726.879)">
@@ -298,7 +300,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                         </clippath>
                         <g clip-path="url(#_clip11)">
                           <g>
-                            <path d="M446.248,294.753L413.637,294.753L411.46,294.753L411.46,238.617L400.486,246.179L388.11,226.951L423.173,202.089L448.042,191.057L446.248,218.926L439.611,248.389L446.248,274.198L446.248,294.753Z" style="fill:url(#_Linear1phone-ui2);"></path>
+                            <path d="M446.248,294.753L413.637,294.753L411.46,294.753L411.46,238.617L400.486,246.179L388.11,226.951L423.173,202.089L448.042,191.057L446.248,218.926L439.611,248.389L446.248,274.198L446.248,294.753Z" style="fill:url(#_Linear-ui-bubbles-1phone-ui2);"></path>
                             <use xlink:href="#_Image13" x="415.747" y="203.291" width="53px" height="88px"></use>
                             <path d="M450.839,290.303C447.213,290.303 443.653,289.837 440.159,288.907C436.665,287.976 433.566,286.464 430.863,284.37C428.161,282.276 425.969,279.581 424.288,276.285C422.606,272.99 421.766,269.015 421.766,264.362C421.766,259.864 422.837,255.987 424.98,252.729C427.122,249.472 429.941,246.991 433.435,245.285L433.435,244.936C430.534,243.617 428.062,241.465 426.018,238.48C423.974,235.494 422.953,231.868 422.953,227.603C422.953,223.338 423.744,219.654 425.326,216.552C426.908,213.45 429.001,210.93 431.605,208.991C434.209,207.052 437.192,205.618 440.554,204.687C443.916,203.756 447.345,203.291 450.839,203.291C454.267,203.291 457.662,203.756 461.024,204.687C461.543,204.831 473.817,204.519 474.318,204.687L474.318,288.849C473.961,288.964 461.834,288.746 461.469,288.849C458.008,289.818 454.464,290.303 450.839,290.303Z" style="fill:rgb(36,207,240);"></path>
                           </g>
@@ -313,7 +315,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                         <stop offset="0" style="stop-color:rgb(36,240,199);stop-opacity:0.4"></stop>
                         <stop offset="1" style="stop-color:rgb(36,240,199);stop-opacity:0"></stop>
                       </radialgradient>
-                      <lineargradient id="_Linear3" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(8.36161e-14,-1365.55,1365.55,8.36161e-14,746.929,1434)">
+                      <lineargradient id="_Linear-ui-bubbles-3" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(8.36161e-14,-1365.55,1365.55,8.36161e-14,746.929,1434)">
                         <stop offset="0" style="stop-color:rgb(13,190,155);stop-opacity:1"></stop>
                         <stop offset="0.56" style="stop-color:rgb(45,203,172);stop-opacity:1"></stop>
                         <stop offset="1" style="stop-color:rgb(170,255,238);stop-opacity:1"></stop>
@@ -323,7 +325,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                         <stop offset="0.45" style="stop-color:rgb(5,12,17);stop-opacity:1"></stop>
                         <stop offset="1" style="stop-color:rgb(17,40,59);stop-opacity:1"></stop>
                       </radialgradient>
-                      <lineargradient id="_Linear6" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(207.306,3.24811,-3.24811,207.306,1109.17,588.128)">
+                      <lineargradient id="_Linear-ui-bubbles-6" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(207.306,3.24811,-3.24811,207.306,1109.17,588.128)">
                         <stop offset="0" style="stop-color:rgb(13,173,228);stop-opacity:0"></stop>
                         <stop offset="0.28" style="stop-color:rgb(4,208,191);stop-opacity:0.31"></stop>
                         <stop offset="0.5" style="stop-color:rgb(0,223,175);stop-opacity:0.45"></stop>
@@ -331,7 +333,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                         <stop offset="1" style="stop-color:rgb(13,173,228);stop-opacity:0"></stop>
                       </lineargradient>
                       <image id="_Image7" width="314px" height="328px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAToAAAFICAYAAADAqDKWAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAYBUlEQVR4nO3da3biSBKG4cCu2cbsove/gNlFb2MamB+uLAdB3FJgV03wPufo6IIQgm59FZkp8En+/Z+TfMjma3pTcz29q3k1/XC22efa4+vXXpOYZTHLAGrda+aarF/V+tWZLmpup7NZPqtt5+Y2e5yLec3rj+LNncQPl+hxO+kg3Jls0OnA84LO/sci8IC+6nqxIae3eQG31i9yH3hR0J3l9lq/yP31f3bONTv3dYxLFXSWFzA21KKpU9nZCi8KOW/qvnkAt44End1eBZ0Xchf5uM7Pav6P3IZadK2v5XPxHi4i8rYTdFnIdUMva+L+cB6vmq+EHLDnK66PR5uuuoKL8iNrWXrrWruii5qtax7140X9ee/O+pHm69E3DuDDM66TrBlrQ24trybrquR001VXdp3C5vRzfx24+txOu01XfXD9IruVXafvbrf5qs/LnicA37OukagZe3HmK+C8vjmvBbfm2flGgyVXkY/m4q7sBXeatVGgVUHnBZ49t2gdwKfs+oges9u9gImmrI9uTbqSy+64sOeT9iN+VUWXVXGnYNkLvCrp6aPDq3v0//eoYMn2zcKl6qvzpqqSOxLIN4Mju4MRVTPxkalq5lZBR+ABtW6llgVgVUWtx7ph1wm6rJ/OG/F9l0bQZQeN9stEx+veOnJ05JWwA2JVuHndQjvXVBZ2+gbfTt+cd+zqdd/XhqNN1x1VM9erzHaeQ9ABx3SDzrueOtdY1Iz9dSOvfIaeLWxs0NnrPGsi303fEXSR6kM7GlaEG1DrFgdRAZI9R/MCSYfcRW4DLut/j45rj/9bgs6eiJh127aOnneVjzeelazV4wDur5O1rrdXfXlRpeU9L7qW7XSRPDx13+C3Bp13g161X1Vm6oRfyzYQvePr/1h6O/DKouCx14m+fmzwZfva1/G2dYPu7DzXO3e7rgc5dNP417QTdLvV1+6kA84rk0Wtd/cD8GGnPy4Ku+x6i45lt1dhVzVbO1ljf0wgrOhsatoXPRps0X00Xshl/xIxGAEc1wm5aPvqS+sc19veDbtIJ0vuKrsjTVevotMnsBtw0a8U6GOu5W76E3RAbCfoshZUFn5eE1avZ2GnPdpKfKiPrqrovBsCs5CzvzN1ldsb/q6S/4pB1VcA4MOjIfcmt+G0rks7euq9XhZ4Hm97p5q7q+y6Qed1QO6G3UnuKziR+4DTIbfzcy0EHHAvCja73gk6HWjrWtSFiH6+V+Hp/LDrdv+VA2t5t1ts/cbdRUTedwcjbMkZveCb3L/4Sc11BRf1xR35iSbCDrh3JOyioNOBt65z3QS11Zxdt2Gn6X2vZrnqCnsP1g/10WVh590WYqs4Xc2dzXG9Zmr2HVcxyyIEHeDpBF1Uzb05y+uatNetzYY3dTy9rMPOns/aT7cYbTdWFnTrZ59ugq8KOttG9pqvVejZnzqOKrgs6OwHXgUd8Mqi6+BIs9X7/mk26evYvo4XdlHw6cCzmWCrNx109rGziLz9kL//uv78S2C2H86+uIif2lHA2amq4GzTt2qyek1Xuwy8ouwayFpAVXM1Czr9G5I66HRlJ+a4IreBaPdZ+61jrGNnTVWvsjt/VHR52NkT8ALwYh6/OPt4bNBFIdfpn7PLwCuqrgEv3NY8mjoht0LGhpINPz1Kqys87/yywLNhZ7fpwNsajBCJK7r1mPddNdu81MfSJ++FnNc/YI9J8xWoZc3WNc+CLpt0yHmBJ3JfNOkR3Oh8bcjpoLwZbJD7vyZ2M9+5vcQurze1TvpqttkP0h5Dt+k7gw826PSHoRF0wL1H+ueisFvN1eie2ZUv9lYRfQ62WRudm5cVbjPVO9cs6Lwmqj5RPbcBp9f1PmvZuxnYfpjeh+01Wb0mLPDqskrJrldBp+f6Txzoe9V0E9K73i1vVNYblNitLtffnLkJvO6oa1SVrbm9d646ZjayaoPNroszt8vAq+sEXafZmgWdN/qpv5FwNctL1Ix9cx7Lwm6tV39RzA06G256+8nZz2vKrvVssn1yUVM16o+LKjkCD7j3rD4620z0/hC9DjcvJ7xmbNZnd7TvsF3RLdEorH0DIvd9dHo/G3I67LIqrttcJeSAe52QW/OsmvM6/qNKTpxlPfd4o7D2vKPzS4OvE3RRX51+XOT2Hjp9st69cie5D7uqfJZkLsE6gLhKiuZZyOm+OV3ReZWcV9lV3orHq8rOa95uVXTrRfR6xLvNxN6jZ8MuCzcv7Oyytw4gr5DsvNs8tBWdF2xZTmTX7il43J5n1Bq86///DLq///o4qY8bh0Xuw03Udq8ZqwMsqsJs0K2wq6q4bgVH0AH3viLo7G0lUdDZwKsKGZG8CRuda9bX/9CX+r2ws7IbiI80Ve2yt15tB15ZdP3sNF29EddohDV6neh8FtuEjcIymrabrl64dcJOV24i/geZNU+zsPPWgVd09DqIri8vMGzY2a982T65xYZT9DriLNs+f+84VcD9mo7+8OZu6NnKrgpA702J3L9pux+AWhZyax6FXfQrITbkstfyJvsXwNbr6efaY9r9w9C7D7r7vjprN+y8yi4LOu8NEXTA83SKCS8wVtUWVXQicbETHTcLKf3F/+y9lNMjfzOiU8llz6n+VZFiu7cPgFqnoNCTvbnf3i5WBZ0Xmm4TU26zwfumxG5f3UnSPrp4FHa9wE7IWfrevCrgvMcsgg7o2w26dZ1Xk5jnR8fqTtHARlY1fmlF522Pnidy+9zoOVnwZQg9oLYbdlW4Ra/R/ZqW/fsy+vx0X11VMR4MurjPzguo3QovCsz1mKjtRypH4FUdKQweqejEea7XNK3Czv6d59UvqJux2aCHdx6HK7olquj0evcY0ckTcMC+ZwddFHbZc71bU8JfGFH726rO66uL3os3ST/o8spOvxDBBPx+VVeQ3c/rTqrCTtN/BKsTdN7tKauas9+W6jSTI0+p6CyvCeptJwyB71U196LbxdwKKXCS26anDTr7M+fRtyx0U1VPuhurOyAhcijoVmW35BWefnHCDfizdcNO001W+/eb7UCD/dWT6gc7bVXnna93Lnfbnl3RRaJKTz+uMQAB/B5V2K3gWmzfnG5+2v447w/X2P30yKu+SVnk9ubh6HYWvf5ARWfVFZ53YgD+P9lmpf6h3TVFP68e/ZUub1/7821ec7U7QPFtFd2u7A10R5MA5I52M9m/C2MHKaKgOxJ23iivPcdqsOLpgxH3FV5XXAlaVIbA19jpS7cBpKsvewNwNnnBqI9pw84LOfse7lRfmAXwOqKmoVdVZTcP27CKfrfOBpt9TnZz8tbI65/TdD1aCQJ4XP2ddk1XVrqa04MIXsVmQy5q5mYhmlWdYYb8OUEH4E+TBYutrC5qX93ktNVdNu9OXvCmhRJBByC7eyK6NazThPWaot3KLjuedx6ZLxiMADBN1hdm9+v03XUqOm+bPpfOwMmvPjoGIwDc+/uva6PffHeQ4pFJ5DbYsn66u8eo6AB02QDJvv751WG39WV/KjoAj4gqumh5N9Q6FV0ZdgQdgGepgqgbalklFwVpiqADEMv76bpVnLevF2b22Dt9dGnoEXQAch9hl3X+d5ez0OoEnz1GG0EH4KtU1VgWcFVFZ18nxagrgK5q1FXv163osj647LWzfe8ep6ID8AxZk9TbHj3HPrfq86vOR0QIOgDPUzUts4pOP15VdPTRAfg2nerqUAWW7LMdciIEHYDHdAOqe6xsYOIwgg7Ad+v00a3tu5We+xxGXQE8WyegumGXPTdbvkFFB+AZOt9e+G0IOgDP0qnifkv4EXQAvlLnPrqdYzHqCuCPtPtNB0ZdAYxS/WDAU5q6BB2AP8GX9t0RdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsB4BB2A8Qg6AOMRdADGI+gAjEfQARiPoAMwHkEHYDyCDsDvcArm1f6HEHQAvls35E5qErO8haAD8JVOztTd92kIOgBf5alh9Ygfv/sEAIzxXcFmK75r9QQqOgDP0B1UOHLM3f3unkfQAXi2Th9bNiDhPb8TeuHrEnQAHnFk4GDn1pLuqGt6DgQdgK8Ujbp686ePti4EHYCjjt7ku3sf3RE3z2PUFUBXdZ9bp1nZqejs8av1aNT1135UdACeIarOvP61oxXdbsD+QtAByP37P0cGG7wqTi8/WtFtIegAxD5D7kg/WjRi2r21JAu8rbAj6AA8S1WRdUdduxVde7CCoANwVNacjAYtvECrwtFuy17PRdAB6MoqM+/xZ0+HcXsJgHu9AQiv2Rlt/8rQy5q5IkJFB6DmhV7Vt/YdIdeu9KjoAHy6r+SiJuqadwLuLdjuPf4W7O+dS/nzTAtBByASNUX1Nrt/FmxvzrwKwSjsovPSrj8ngg54SXUfXFRF2W1VmGUhZ6u4Tujp1+9WdFf66ABYUchlTVQdVLZis0HWqeiy0LPnWfq+im7/ayQAvl50XUYh1+ljq8LOC74sEKOgu0oz+Gi6Aq/nSLPVq968sNoJuSr8qopuNV297Xp6YtAdr9io9IDv9UjQeQEUVXSPTFHTdp3PVc01r9/u+rsruu4HDuD5dput0UBCFGzvyTY7zwJOr+tzXKF2lWJg4njQ9UdtHtmHoAO+TifoouotC7Z38YOsCjkv4Lr9c2ubdZUvrOiqD/DR7QAe511fnWarF3BVsEUh924er/rqROrbSm7650R2Krr9Ci77EB/dDuBx0Yil7Q/r9r9FweZNWUWXDUhoUQVn159W0VUht7PeDTdCEHicreDWctY/51VzVbBlYVc1Yb2QyxwYdY0ruUfCK1rP3gzBBvTtFgzZvDOS6gXZj2C711ytAs++J7dyc9a/paKL/rXoPKd6DQCxncHAbG5HPrOA++Ese9uqwIuquoqt5BpBt1/JZWFG8AG/V2eE1c6roNPNTx1sNuTsNh14WUWnq8klHFlNlh+u6LqBZj+8bJ9om7debQfwaSfsqkEIr0/uh5mibV51V/XRadH9cxsV3fFKrgozr4OzOo59XYIOOK4TdPbatJVVFHJeqGVT1nz1Rl1Fbr/ypXnhdpEnVHSdcteuHw29KugIOaB2tJrzKrqomrNh9y/Jw21tj5qv0fXfquLUdOkEXaeSyz6kbtBl+1TnAuBWdW10++aO9M9lYdep5nSwatFIazntVnS7FZz9F6G7v3dsew52GcCn7NrodBfZa7bTP1dVdFXgvcl9ZixeFWfXvebrRW6C7tgvjnYnL+iyfcRZ1vNoG4BbO03WNc+arTtB12m+ZhVd1FTVy2G4yUbTdae8zcLLS+puEIpZzs4LwL2dsMuuXxtyOuyy5mtV0dn756Lr/e62kWC62CkLuqq81ftFoWX/NdgJvyjwOucE4FMn6Ox15l2vWUXnjbxmwZeFXNY3546qyn0ld7P+SB9dp4KLvjoShV8Wet7r2/MCXl11LXiFypo/UtFllZ237jVb9WstWRUXhVurout8UNWHEgVc9ljVrLWvvXPOwCs4EnI7xYtX0dmRV1vZRV8Hy0Jup6kahps0m676g6malfpD8cIsuvM5q/KqoCPsgHtHw867xrKCxYadF3TVd1y9wYfs/LfCTZpBV/V/VaGXfVHX+8CiN501Zb3zI/CAT9n1u+adoPMKl6yvLgo9+zyvmBGJq7mqqXr+OW1VdPpD6VZyWZB5nY/V99yygQr9wUiwDryyTtCtedZs9a7zKui8x/Rzveaqx4ZcK9zkQNBZu6Fn33T0r4LXXo/670RuPxwCD6h5Abfmu2FXVXbRNR/1yZ0k74vTIecF2zl6vNNHd7SSs288W8+asFXQUdkBfVnQrXm3ousUMp3uKe9a7Yyqns3khd1ZRC4/Dvw91keasFWJG6U+zVfgMV7r5xnN16xbygu6TnP1yMiqDb20oouCw34I2WNRW74zdfrssqAj8IBYdH3sBl3WX5dNWXNVpH/7iBdqUXV3FpGzDrosNLrt+Z3mbHRPTTT0XIWdPWdvHXhlWdB5XUKdqq5zzWddTzbkqgGHTsAd7qOrHrcfiBd61dCz14fXDTt9PsCri66DKuj0clXdVaGXdTut16lCrhtuZfgdGXXtfgg24J7RhM3+I+jzA15ZVZx467tB5xUz3mPRddqt5KrA++fnFPbPiWm6Zrwwqaaq+doJPoIO2FP9/78TdCJ+K827zrNw885JB11264gXbF9e0dnS0853gs+7gdA2ZbuDEvo8JFgHXll2fUQh17mms3Czr5n9lpwNuax605Pd7g5KPPOvgHWruarCq0ZxOh8oIQfE10FW1e2GXreCE7kPOnuPnA05L9Sy7eF9dY8GnUjvwzjaxLWBVx1LnxPw6rLrYLcJ2732NO9vPKx5Z/AhC7csBO/66qKgq97Ezpv19s9GVKttBB3QU10H0TUTdQt1W1FZwK151C+nw8prmnb76A5/1/VIoB2p7qqSuFMqE3RAP+iy68cLPM/15+M25ETuKzkbdLapGQVcVs2lIfiMpmulE0JeRZZVat7jhB0Qi66Ho9ePDja9fFKP632rL+h3Bx/+EZH//pw6ld5Dv17yFbx/CQA8x7q+bIDZSuwUbI+O6QWbfc3Or5B0Q67qo/uSwYh18tU+2bre1vnpZO/Dt9uq/0DAK9q9Lmylll1/4mzv/Px51mz1As+r5J5a0ekT9R7L3tiR6SK3pbHdnvXTXYWmK2BF10VWmXUG+TrNVS/kstHWrJ/uv5KHW3swInuz+k1kz/H2j97sm5mv4Lo4x8pCjn46oFYF1u7ztKzo0b8v12m22souquaqb008pY9Oh95uxaank9yGXHS86FcQ9FyCdQDPDbqo4Mmu9yzovIDL+uzCe+ekUdF1dd5UNJ3U8vnn+tk5tj3+qvzsCKyodQAfutfD0WrOXqdrvpMJO0GXVXxh87UbdLoT0hs4iN5c9gZX0HkhZ497UsfS99KJcC8d8AyPXC9ZFtiveXV/mcT7VkQVhl41dxWR6+5gRNakjAJOV25eBReF3Lt8NlVt3x19dMDzda+XrLm65p2Qq/rpsuDzlu0vnzzUdM2CzRtMsJWbF0peP5zuj+t+oZ+gA447EnTdas6G3dks27DKBhjCXylxjt2q6NbJZ+1z+0ZWMOn1NV9hFx0zC7qTWRbxwy47XwDP4fWh62Uv8KKg8+6n25mykLur6HRfmPd1DvtY1WzVIXQ2y/YD8gJuVYjRb16Jsy5qO4Dn85qtR4Iuar56QReFn1cZ2pBzKzov5Owb7Aw+7IaPDrqLfP4008mZe0HXfR0Aj8n652zg2cCp7sSwoeYt221VyF1E5Po/xvCgnni8ahgAAAAASUVORK5CYII=">
-                      <lineargradient id="_Linear9" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(-167.754,0,0,167.754,372.369,641.906)">
+                      <lineargradient id="_Linear-ui-bubbles-9" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(-167.754,0,0,167.754,372.369,641.906)">
                         <stop offset="0" style="stop-color:rgb(36,240,199);stop-opacity:0"></stop>
                         <stop offset="0.28" style="stop-color:rgb(19,217,191);stop-opacity:0.2"></stop>
                         <stop offset="0.5" style="stop-color:rgb(12,207,187);stop-opacity:0.29"></stop>
@@ -339,7 +341,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                         <stop offset="1" style="stop-color:rgb(36,240,199);stop-opacity:0"></stop>
                       </lineargradient>
                       <image id="_Image10" width="314px" height="243px" xlink:href="data:image/png;base64,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">
-                      <lineargradient id="_Linear1phone-ui2" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(73.6283,0,0,73.6283,388.11,239.642)">
+                      <lineargradient id="_Linear-ui-bubbles-1phone-ui2" x1="0" y1="0" x2="1" y2="0" gradientunits="userSpaceOnUse" gradienttransform="matrix(73.6283,0,0,73.6283,388.11,239.642)">
                         <stop offset="0" style="stop-color:rgb(32,171,244);stop-opacity:1"></stop>
                         <stop offset="1" style="stop-color:rgb(32,171,244);stop-opacity:0"></stop>
                       </lineargradient>
@@ -347,159 +349,159 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
                     </image></image></image></defs>
                   </svg>
                   <style>
-  :root {
-    --step-1-animation-timing: 10s;
-  }
-#initial-message-group,#response-group{
-	font-family: Arial, sans-serif;
-  font-weight: 400;
+:root {
+  --step-1-animation-timing: 10s;
 }
-  #initial-message-group {
+#initial-message-group,#response-group{
+font-family: Arial, sans-serif;
+font-weight: 400;
+}
+#initial-message-group {
+  opacity: 0;
+  transform: translate(-40px, 80px);
+  animation: initial-message-group var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+#user-blur {
+  transform: translate(40px, 0px);
+  animation: initial-message-group-blur var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+#initial-message-group>#read-status {
+  opacity: 0;
+  transform: translate(0px, 10px);
+  animation: initial-message-group-read-status var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+@keyframes initial-message-group {
+  0%,
+  5% {
     opacity: 0;
-    transform: translate(-40px, 80px);
-    animation: initial-message-group var(--step-1-animation-timing) ease-in-out forwards infinite;
+    transform: translate(-40px, 100px);
   }
-  #user-blur {
+  10%,
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes initial-message-group-blur {
+  0%,
+  5% {
     transform: translate(40px, 0px);
-    animation: initial-message-group-blur var(--step-1-animation-timing) ease-in-out forwards infinite;
   }
-  #initial-message-group>#read-status {
+  10%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes initial-message-group-read-status {
+  0%,
+  15% {
     opacity: 0;
     transform: translate(0px, 10px);
-    animation: initial-message-group-read-status var(--step-1-animation-timing) ease-in-out forwards infinite;
   }
-  @keyframes initial-message-group {
-    0%,
-    5% {
-      opacity: 0;
-      transform: translate(-40px, 100px);
-    }
-    10%,
-    100% {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
+  20%,
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
-  @keyframes initial-message-group-blur {
-    0%,
-    5% {
-      transform: translate(40px, 0px);
-    }
-    10%,
-    100% {
-      transform: translate(0px, 0px);
-    }
+}
+#typing-indicator {
+  opacity: 0;
+  transform: translate(0px, 10px);
+  animation: typing-indicator var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+#typing-indicator circle:nth-child(1) {
+  animation: typing 1.5s infinite ease-in-out;
+  animation-delay: 0s;
+}
+#typing-indicator circle:nth-child(2) {
+  animation: typing 1.5s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+#typing-indicator circle:nth-child(3) {
+  animation: typing 1.5s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+@keyframes typing {
+  0% {
+    opacity: 0.2;
   }
-  @keyframes initial-message-group-read-status {
-    0%,
-    15% {
-      opacity: 0;
-      transform: translate(0px, 10px);
-    }
-    20%,
-    100% {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
+  20% {
+    opacity: 1;
   }
-  #typing-indicator {
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes typing-indicator {
+  0%,
+  25% {
     opacity: 0;
     transform: translate(0px, 10px);
-    animation: typing-indicator var(--step-1-animation-timing) ease-in-out forwards infinite;
   }
-  #typing-indicator circle:nth-child(1) {
-    animation: typing 1.5s infinite ease-in-out;
-    animation-delay: 0s;
+  35%,
+  50% {
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
-  #typing-indicator circle:nth-child(2) {
-    animation: typing 1.5s infinite ease-in-out;
-    animation-delay: 0.2s;
-  }
-  #typing-indicator circle:nth-child(3) {
-    animation: typing 1.5s infinite ease-in-out;
-    animation-delay: 0.4s;
-  }
-  @keyframes typing {
-    0% {
-      opacity: 0.2;
-    }
-    20% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.2;
-    }
-  }
-  @keyframes typing-indicator {
-    0%,
-    25% {
-      opacity: 0;
-      transform: translate(0px, 10px);
-    }
-    35%,
-    50% {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
-    51%,
-    100% {
-      opacity: 0;
-      transform: translate(0px, 0px);
-    }
-  }
-  #response-group {
+  51%,
+  100% {
     opacity: 0;
-    transform: translate(40px, 100px);
-    animation: response-group var(--step-1-animation-timing) ease-in-out forwards infinite;
+    transform: translate(0px, 0px);
   }
-  #f18-blur {
-    transform: translate(-40px, 0px);
-    animation: response-group-blur var(--step-1-animation-timing) ease-in-out forwards infinite;
-  }
-  #response-group>#read-status1 {
+}
+#response-group {
+  opacity: 0;
+  transform: translate(40px, 100px);
+  animation: response-group var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+#f18-blur {
+  transform: translate(-40px, 0px);
+  animation: response-group-blur var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+#response-group>#read-status1 {
+  opacity: 0;
+  transform: translate(0px, 10px);
+  animation: response-group-read-status var(--step-1-animation-timing) ease-in-out forwards infinite;
+}
+@keyframes response-group {
+  0%,
+  50% {
     opacity: 0;
-    transform: translate(0px, 10px);
-    animation: response-group-read-status var(--step-1-animation-timing) ease-in-out forwards infinite;
+    transform: translate(40px, 40px);
   }
-  @keyframes response-group {
-    0%,
-    50% {
-      opacity: 0;
-      transform: translate(40px, 40px);
-    }
-    55%,
-    65% {
-      opacity: 1;
-      transform: translate(0px, -60px);
-    }
-    75%,
-    100% {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
+  55%,
+  65% {
+    opacity: 1;
+    transform: translate(0px, -60px);
   }
-  @keyframes response-group-blur {
-    0%,
-    50% {
-      transform: translate(-60px, 0px);
-    }
-    55%,
-    100% {
-      transform: translate(-10px, 0px);
-    }
+  75%,
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
-  @keyframes response-group-read-status {
-    0%,
-    65% {
-      opacity: 0;
-      transform: translate(0px, -40px);
-    }
-    75%,
-    100% {
-      opacity: 1;
-      transform: translate(0px, 0px);
-    }
+}
+@keyframes response-group-blur {
+  0%,
+  50% {
+    transform: translate(-60px, 0px);
   }
+  55%,
+  100% {
+    transform: translate(-10px, 0px);
+  }
+}
+@keyframes response-group-read-status {
+  0%,
+  65% {
+    opacity: 0;
+    transform: translate(0px, -40px);
+  }
+  75%,
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
 </style>
                 </div>
               </div>
@@ -515,7 +517,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
               <div class="w-layout-hflex flex-header-tile">
                 <h3 class="work-ile-title numbering-title">02 <span class="subtlise">Develop</span></h3>
               </div>
-              <div class="animation-wrapper">
+              <div class="animation-wrapper framed">
                 <div class="how-it-works-video step2-animation-contiainer w-embed"><svg width="100%" height="100%" viewbox="0 0 1494 1494" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.5;">
                     <rect id="Artboard10" x="0" y="0" width="1493.86" height="1493.86" style="fill:none;"></rect>
                     <g id="vector-frame">
@@ -686,7 +688,7 @@ if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
 }
 @keyframes f18-label-ui{
   0%, 25% {
-    transform: translate(20%, 0%);
+    transform: translate(20%, -1%);
   }
   45%,
   100% {
@@ -992,7 +994,7 @@ animation: build-in-bubble3 var(--step-3-animation-timing) ease forwards infinit
   background: var(--bg-modern);
   border-radius: 6px;
   z-index: 1;
-  opacity:.9;
+  opacity:.8;
 }
 </style>
           </div>
@@ -1802,7 +1804,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, (max-width: 991px) 40.383331298828125px, 4vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1844,7 +1846,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1961,7 +1963,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">demo</div>
@@ -1993,7 +1995,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">20%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 64.78334045410156px, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">alpha</div>
@@ -2056,7 +2058,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">released</div>
