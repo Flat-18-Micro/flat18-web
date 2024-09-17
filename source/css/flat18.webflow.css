@@ -2610,13 +2610,16 @@ p {
 }
 
 .animation-wrapper {
-  aspect-ratio: 3 / 2;
-  background-color: var(--bg-modern-dark);
+  aspect-ratio: 1;
   border-radius: 8px;
   flex: none;
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+.animation-wrapper.framed {
+  background-color: var(--bg-modern-dark);
 }
 
 .how-it-works-video {
@@ -2631,6 +2634,10 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.how-it-works-video.step1-animation-container {
+  aspect-ratio: 1;
 }
 
 .subtlise {
