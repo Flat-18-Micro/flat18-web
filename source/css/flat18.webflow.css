@@ -602,6 +602,7 @@ p {
 
 .hero-heading.gradient-text {
   background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--secondary), var(--yellow));
+  min-height: 2.2em;
   font-size: 140px;
   font-weight: 700;
   line-height: 1.1em;
