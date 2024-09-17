@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 18:04:41 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 18:52:24 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -115,6 +115,10 @@
   z-index: -100;
   display: inline-block;
   background-image:url("static/Untitled-transcode-poster-00001.webp");
+  transition: 1s ease;
+}
+.hero-background-video > video:not([autoplay=""]){
+	opacity:0;
 }
 </style>
           </div>
@@ -139,8 +143,10 @@
           <div class="code w-embed w-script">
             <script>
 window.addEventListener("DOMContentLoaded", () => {
+setTimeout(()=>{
 document.querySelector(".hero-background-video > video").setAttribute("autoplay","")
 document.querySelector(".hero-background-video > video").removeAttribute("preload")
+},500);
   const heroHeading = document.querySelector(".hero-heading");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
@@ -166,20 +172,20 @@ document.querySelector(".hero-background-video > video").removeAttribute("preloa
       <div class="content tools-wrapper">
         <div class="tile-flex-animated-container">
           <div class="w-layout-hflex provider-flex">
-            <a href="#" class="provider-tile w-inline-block"><img src="images/btcpay.avif" loading="eager" alt="btcpay logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/infura.avif" loading="eager" alt="infura logo
-" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/node.avif" loading="eager" alt="node logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/stacks.avif" loading="eager" alt="stacks logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/63120558b661e15cdf54ded9.avif" loading="eager" alt="affinity logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/webflow.avif" loading="eager" alt="webflow logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/neon.avif" loading="eager" alt="neon logo
-" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/github.avif" loading="eager" alt="github logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/walletconnect.avif" loading="eager" alt="walletconnect logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/Vercel_logo_black.avif" loading="eager" alt="vercel logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/vue.avif" loading="eager" alt="vue logo" class="provider-tile-img"></a>
-            <a href="#" class="provider-tile w-inline-block"><img src="images/Cloudflare_Logo.avif" loading="eager" alt="cloudflare logo" class="provider-tile-img"></a>
+            <div class="provider-tile"><img src="images/btcpay.avif" loading="eager" alt="btcpay logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/infura.avif" loading="eager" alt="infura logo
+" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/node.avif" loading="eager" alt="node logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/stacks.avif" loading="eager" alt="stacks logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/63120558b661e15cdf54ded9.avif" loading="eager" alt="affinity logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/webflow.avif" loading="eager" alt="webflow logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/neon.avif" loading="eager" alt="neon logo
+" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/github.avif" loading="eager" alt="github logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/walletconnect.avif" loading="eager" alt="walletconnect logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/Vercel_logo_black.avif" loading="eager" alt="vercel logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/vue.avif" loading="eager" alt="vue logo" class="provider-tile-img"></div>
+            <div class="provider-tile"><img src="images/Cloudflare_Logo.avif" loading="eager" alt="cloudflare logo" class="provider-tile-img"></div>
           </div>
           <div class="providers-overlay right"></div>
           <div class="providers-overlay"></div>
