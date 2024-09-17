@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const { minify } = require('html-minifier');
+const sharp = require('sharp');
+const { execSync } = require('child_process');
+const postcss = require('postcss');
+const purgecss = require('@fullhuman/postcss-purgecss');
+const cssnano = require('cssnano');
 
 // Directories
 const sourceDir = path.join(__dirname, 'source');
@@ -13,7 +18,7 @@ const defaultLang = 'en';  // English as the default and only language
 // Function to create the dist directory if it doesn't exist
 function createDistDirectory() {
     if (!fs.existsSync(distDir)) {
-        fs.mkdirSync(distDir);
+        fs.mkdirSync(distDir, { recursive: true });
         console.log('dist directory created successfully.');
     }
 }
@@ -47,7 +52,7 @@ function addCanonicalTag(content, url) {
     return content;
 }
 
-// Function to optimise HTML content
+// Function to optimize HTML content
 function optimiseHtml(content) {
     return minify(content, {
         removeComments: true,
@@ -57,6 +62,68 @@ function optimiseHtml(content) {
         removeEmptyAttributes: true,
         minifyJS: true,
         minifyCSS: true,
+    });
+}
+
+// Function to optimize CSS
+function optimizeCSS() {
+    const cssPath = path.join(sourceDir, 'css', 'styles.css');
+    const distCssPath = path.join(distDir, 'css', 'styles.min.css');
+
+    if (!fs.existsSync(cssPath)) {
+        console.warn('CSS file not found:', cssPath);
+        return;
+    }
+
+    const css = fs.readFileSync(cssPath, 'utf-8');
+
+    postcss([
+        purgecss({
+            content: [`${distDir}/**/*.html`],
+            defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+        }),
+        cssnano(),
+    ])
+        .process(css, { from: undefined })
+        .then(result => {
+            fs.writeFileSync(distCssPath, result.css);
+            console.log('CSS optimized successfully.');
+        })
+        .catch(err => {
+            console.error('CSS optimization failed:', err);
+        });
+}
+
+// Function to optimize images
+function optimizeImages(srcDir, destDir) {
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+    const files = fs.readdirSync(srcDir);
+
+    files.forEach(file => {
+        const fullSrcPath = path.join(srcDir, file);
+        const fullDestPath = path.join(destDir, file);
+        const ext = path.extname(file).toLowerCase();
+
+        if (fs.statSync(fullSrcPath).isDirectory()) {
+            if (!fs.existsSync(fullDestPath)) {
+                fs.mkdirSync(fullDestPath, { recursive: true });
+            }
+            optimizeImages(fullSrcPath, fullDestPath);
+        } else if (imageExtensions.includes(ext)) {
+            sharp(fullSrcPath)
+                .toFormat('webp', { quality: 80 })
+                .toFile(fullDestPath.replace(ext, '.webp'))
+                .then(() => {
+                    console.log(`Optimized image: ${file} to ${fullDestPath.replace(ext, '.webp')}`);
+                })
+                .catch(err => {
+                    console.error(`Image optimization failed for ${file}:`, err);
+                });
+        } else {
+            fs.copyFileSync(fullSrcPath, fullDestPath);
+            console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
+        }
     });
 }
 
@@ -78,22 +145,37 @@ function copySourceToDist(src, dest) {
         if (fs.statSync(fullSrcPath).isDirectory()) {
             // Create directory in the destination if it doesn't exist
             if (!fs.existsSync(fullDestPath)) {
-                fs.mkdirSync(fullDestPath);
+                fs.mkdirSync(fullDestPath, { recursive: true });
             }
             // Recursively copy the directory
             copySourceToDist(fullSrcPath, fullDestPath);
         } else {
             // Copy non-HTML files directly
-            if (path.extname(fullSrcPath) !== '.html') {
-                fs.copyFileSync(fullSrcPath, fullDestPath);
-                console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
+            const ext = path.extname(fullSrcPath).toLowerCase();
+            if (ext !== '.html') {
+                if (['.jpg', '.jpeg', '.png', '.gif'].includes(ext)) {
+                    // Optimize and copy images
+                    sharp(fullSrcPath)
+                        .toFormat('webp', { quality: 80 })
+                        .toFile(fullDestPath.replace(ext, '.webp'))
+                        .then(() => {
+                            console.log(`Optimized and copied image: ${file} to ${fullDestPath.replace(ext, '.webp')}`);
+                        })
+                        .catch(err => {
+                            console.error(`Image optimization failed for ${file}:`, err);
+                        });
+                } else {
+                    fs.copyFileSync(fullSrcPath, fullDestPath);
+                    console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
+                }
             } else {
                 // Read the HTML file content
                 let content = fs.readFileSync(fullSrcPath, 'utf-8');
-                
+
                 // Build canonical URL (without .html extension)
-                let canonicalUrl = fullDestPath.replace(distDir, '').replace('.html', '');
-                canonicalUrl = `${baseUrl}${canonicalUrl}`;
+                let relativePath = path.relative(sourceDir, fullSrcPath).replace('.html', '');
+                relativePath = relativePath.replace(/\\/g, '/'); // For Windows paths
+                let canonicalUrl = `${baseUrl}/${relativePath}`;
 
                 // Add canonical and lang attributes, and ensure unique title tags
                 content = addLangAttribute(content, defaultLang);
@@ -102,9 +184,9 @@ function copySourceToDist(src, dest) {
                 content = content.replace(/webflow/g, 'f18-built-component');
                 content = optimiseHtml(content);
 
-                // Write the optimised HTML content to the destination
+                // Write the optimized HTML content to the destination
                 fs.writeFileSync(fullDestPath, content);
-                console.log(`Copied and optimised HTML file: ${fullSrcPath} to ${fullDestPath}`);
+                console.log(`Copied and optimized HTML file: ${fullSrcPath} to ${fullDestPath}`);
             }
         }
     });
@@ -124,7 +206,8 @@ function generateSitemap(directoryPath) {
             } else if (path.extname(file) === '.html') {
                 // Skip .html extension in URLs for sitemap
                 let relativePath = path.relative(directoryPath, fullPath).replace('.html', '');
-                urls.push(`${baseUrl}/${relativePath.replace(/\\/g, '/')}`);
+                relativePath = relativePath.replace(/\\/g, '/'); // For Windows paths
+                urls.push(`${baseUrl}/${relativePath}`);
             }
         });
     }
@@ -161,8 +244,47 @@ function createRedirects() {
         redirectRules += `Redirect 301 ${rule.from} ${rule.to}\n`;
     });
 
+    // Add cache-control headers
+    redirectRules += `\n# Cache static assets for 1 year\n`;
+    redirectRules += `/css/*  /css/:splat  200! Cache-Control: public, max-age=31536000\n`;
+    redirectRules += `/js/*  /js/:splat  200! Cache-Control: public, max-age=31536000\n`;
+    redirectRules += `/images/*  /images/:splat  200! Cache-Control: public, max-age=31536000\n`;
+
     fs.writeFileSync(path.join(distDir, '_redirects'), redirectRules);
-    console.log('301 redirects created successfully.');
+    console.log('301 redirects and cache rules created successfully.');
+}
+
+// Function to copy service worker
+function copyServiceWorker() {
+    const src = path.join(sourceDir, 'service-worker.js');
+    const dest = path.join(distDir, 'service-worker.js');
+
+    if (fs.existsSync(src)) {
+        fs.copyFileSync(src, dest);
+        console.log('Service worker copied successfully.');
+    } else {
+        console.warn('Service worker file not found:', src);
+    }
+}
+
+// Function to bundle JavaScript using Webpack
+function bundleJavaScript() {
+    try {
+        execSync('npx webpack --config webpack.config.js', { stdio: 'inherit' });
+        console.log('JavaScript bundled successfully.');
+    } catch (err) {
+        console.error('JavaScript bundling failed:', err);
+    }
+}
+
+// Function to run Lighthouse CI
+function runLighthouseCI() {
+    try {
+        execSync('lhci autorun', { stdio: 'inherit' });
+        console.log('Lighthouse CI completed successfully.');
+    } catch (err) {
+        console.error('Lighthouse CI failed:', err);
+    }
 }
 
 // Main function to perform all tasks
@@ -170,9 +292,13 @@ function build() {
     try {
         createDistDirectory();
         copySourceToDist(sourceDir, distDir);
-        generateSitemap(distDir);  // Ensure sitemap is generated for the dist directory
+        bundleJavaScript();
+        optimizeCSS();
+        copyServiceWorker();
+        generateSitemap(distDir);
         generateRobotsTxt();
-        createRedirects();  // Create redirects
+        createRedirects();
+        runLighthouseCI();
         console.log('Build completed successfully.');
     } catch (err) {
         console.error('Build failed:', err);
