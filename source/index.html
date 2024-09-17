@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 18:52:24 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 23:52:11 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -97,7 +97,7 @@
       <div class="content hero"><img src="images/grid-lines-solid.svg" loading="eager" data-w-id="62abff53-df73-7a49-353d-017594ea0926" alt="" class="overflowing-bg-image">
         <div class="content-video-wrapper hero">
           <div class="background-video-3 hero-background-video w-embed"><video id="8dbf2f7d-7aee-d7de-fdbe-7a6d9e86473a-video" preload="none" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-              <source src="videos/Untitled-transcode-transcode-4.mp4" data-wf-ignore="true">
+              <source src="static/videos/Untitled-transcode-transcode-4.mp4" data-wf-ignore="true">
             </video>
             <style>
 .hero-background-video > video {
@@ -115,10 +115,12 @@
   z-index: -100;
   display: inline-block;
   background-image:url("static/Untitled-transcode-poster-00001.webp");
-  transition: 1s ease;
+  opacity:0;
+  animation: video-fade-in 2s .25s ease forwards 1;
 }
-.hero-background-video > video:not([autoplay=""]){
-	opacity:0;
+@keyframes video-fade-in{
+	from{opacity:0;}
+  to{opacity:1;}
 }
 </style>
           </div>
@@ -143,10 +145,9 @@
           <div class="code w-embed w-script">
             <script>
 window.addEventListener("DOMContentLoaded", () => {
-setTimeout(()=>{
-document.querySelector(".hero-background-video > video").setAttribute("autoplay","")
-document.querySelector(".hero-background-video > video").removeAttribute("preload")
-},500);
+  setTimeout(()=>{
+    document.querySelector(".hero-background-video > video").play()
+  },500);
   const heroHeading = document.querySelector(".hero-heading");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
