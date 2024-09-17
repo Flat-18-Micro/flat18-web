@@ -20,6 +20,7 @@
   --cw-6: #f4eadd;
   --cw-0: #4b6adb;
   --bg-modern-dark-2: #090a0d;
+  --white: white;
   --rust: #d74a49;
   --pink: #9e59da;
   --rose: #be1757;
@@ -30,7 +31,7 @@
   --elephant-grey: #3e3d49;
   --orange: #bd6b00;
   --process-blue: #1343d3;
-  --white: white;
+  --cobalt-2: #0029b1;
   --black: black;
   --accent: var(--secondary);
   --bg-gauze: #15181eb3;
@@ -40,7 +41,6 @@
   --cw-5: #e8d4bb;
   --blue-3: #2969a2;
   --blue-4: #062057;
-  --cobalt-2: #0029b1;
   --scroll-1-horiz: 0px;
   --logo-radius-curtain: 8px;
   --trigger-for-logo-position-change: #ddd;
@@ -891,6 +891,7 @@ p {
 
 .work-tile.wide-work-tile.transparent {
   z-index: 2;
+  color: var(--white);
   background-color: #0000;
 }
 
@@ -1241,7 +1242,7 @@ p {
 }
 
 .footer-dark {
-  background-image: linear-gradient(to bottom, var(--secondary), var(--secondary));
+  background-image: linear-gradient(to bottom, var(--cobalt-2), var(--cobalt-2));
   color: var(--cw-1);
   padding: 50px 0 15px;
   position: relative;
@@ -2612,6 +2613,7 @@ p {
 
 .background-video-3.hero-background-video {
   height: 500px;
+  position: absolute;
   overflow: hidden;
 }
 
@@ -2625,7 +2627,7 @@ p {
 }
 
 .animation-wrapper.framed {
-  background-color: var(--bg-modern-dark);
+  background-color: var(--bg-gauze);
 }
 
 .how-it-works-video {
