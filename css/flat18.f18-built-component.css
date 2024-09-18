@@ -17,7 +17,7 @@
   --content-inner: 1000px;
   --text-content: 800px;
   --blue-1-5: #0b1429;
-  --cw-6: #f4eadd;
+  --cw-6: #dde0f4;
   --cw-0: #4b6adb;
   --bg-modern-dark-2: #090a0d;
   --white: white;
@@ -35,10 +35,10 @@
   --black: black;
   --accent: var(--secondary);
   --bg-gauze: #15181eb3;
-  --cw-3: #cfc6c4;
-  --cw-4: #dccdc0;
+  --cw-3: #c4c9cf;
+  --cw-4: #c0ccdc;
+  --cw-5: #bbc9e8;
   --primary-backup: #1963fd;
-  --cw-5: #e8d4bb;
   --blue-3: #2969a2;
   --blue-4: #062057;
   --scroll-1-horiz: 0px;
@@ -592,12 +592,14 @@ p {
 }
 
 .hero-heading {
+  z-index: 1;
   color: var(--cw-6);
   margin-top: 0;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: 800;
   line-height: 1.2em;
+  position: relative;
 }
 
 .hero-heading.gradient-text {
@@ -607,6 +609,16 @@ p {
   font-weight: 700;
   line-height: 1.1em;
   transition: all .1s;
+}
+
+.hero-heading.gradient-text.animation-target {
+  z-index: 2;
+  position: absolute;
+}
+
+.hero-heading.gradient-text.invisible {
+  opacity: 0;
+  transition-property: none;
 }
 
 .hero-text-cta {
@@ -938,6 +950,7 @@ p {
 .work-list {
   grid-column-gap: 30px;
   grid-row-gap: 0px;
+  color: var(--cw-6);
   flex-flow: wrap;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
@@ -1170,6 +1183,10 @@ p {
   align-items: center;
   font-size: 12px;
   display: flex;
+}
+
+.technology-name {
+  color: var(--cw-2);
 }
 
 .technology-pc {
@@ -1669,7 +1686,7 @@ p {
 
 .badge {
   background-color: var(--secondary);
-  color: var(--cw-2);
+  color: var(--white);
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 24px;
@@ -1685,9 +1702,9 @@ p {
 
 .badge.subtle {
   background-color: var(--secondary);
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-size: 11px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 13px;
   line-height: 17px;
   top: -12px;
   left: 20px;
@@ -1984,7 +2001,6 @@ p {
 }
 
 .link.cookie {
-  opacity: .66;
   color: var(--cw-3);
   font-size: 11px;
 }
@@ -2128,7 +2144,7 @@ p {
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   box-shadow: none;
-  color: var(--cw-0);
+  color: var(--cw-2);
   text-align: left;
   background-color: #0000;
   justify-content: flex-start;
@@ -2140,7 +2156,7 @@ p {
 }
 
 .tab:hover {
-  color: var(--cw-1);
+  color: var(--white);
 }
 
 .tab.w--current {
@@ -2164,6 +2180,7 @@ p {
 }
 
 .tabs-content {
+  color: var(--cw-3);
   border-left: 1px solid #0000;
   border-radius: 1px;
   padding: 20px 40px;
@@ -2184,7 +2201,7 @@ p {
   grid-row-gap: 20px;
   background-color: var(--blue-2);
   box-shadow: 0 0 0 1px var(--secondary);
-  color: var(--cw-3);
+  color: var(--cw-5);
   border-radius: 4px;
   justify-content: flex-start;
   align-items: center;
