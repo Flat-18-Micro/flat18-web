@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { minify } = require('html-minifier');
+const { minify: terserMinify } = require('terser');
 
 // Directories
 const sourceDir = path.join(__dirname, 'source');
@@ -47,6 +48,69 @@ function addCanonicalTag(content, url) {
     return content;
 }
 
+// Function to defer script loading by adding defer attribute
+function optimizeScriptTags(content) {
+    return content.replace(/<script(?!.*\bdefer\b)(?!.*\basync\b)(.*?)>/g, '<script$1 defer>');
+}
+
+// Function to extract inline scripts and replace them with external files
+function extractInlineScripts(content, fileName) {
+    const inlineScriptPattern = /<script>([\s\S]*?)<\/script>/g;
+    let match;
+    let counter = 0;
+
+    while ((match = inlineScriptPattern.exec(content)) !== null) {
+        counter++;
+        const scriptContent = match[1];
+        const scriptFileName = `${fileName.replace('.html', '')}-inline-${counter}.js`;
+
+        fs.writeFileSync(path.join(distDir, scriptFileName), scriptContent);
+        const scriptTag = `<script src="${scriptFileName}" defer></script>`;
+        content = content.replace(match[0], scriptTag);
+    }
+
+    return content;
+}
+
+// Function to replace specific JS files with bundle.js
+function replaceScriptTag(content) {
+    // Replace webflow.js with bundle.js
+    return content.replace(/<script src="js\/webflow\.js"[^>]*><\/script>/g, '<script src="js/bundle.js" defer></script>');
+}
+
+// Function to replace remote jQuery with local jQuery
+// Function to replace remote jQuery with local jQuery
+function replaceJQuery(content) {
+  // Regex to match remote jQuery scripts with varying URLs and query parameters
+  const jQueryPattern = /<script src="https:\/\/[a-zA-Z0-9.-]+\/js\/jquery-\d+\.\d+\.\d+\.min\.[a-zA-Z0-9]+\.js\?site=[a-zA-Z0-9]+"[^>]*><\/script>/g;
+
+  // Replace the remote jQuery script with the local version served from the filesystem
+  return content.replace(jQueryPattern, '<script src="static/js/jquery-3.6.0.slim.min.js" defer></script>');
+}
+
+// Function to minify and concatenate JavaScript files (skip if file not found)
+async function minifyAndConcatenateJS(files, outputPath) {
+    let concatenatedJS = '';
+
+    // Check if files exist before processing
+    files.forEach(file => {
+        if (fs.existsSync(file)) {
+            const jsContent = fs.readFileSync(file, 'utf-8');
+            concatenatedJS += jsContent;
+        } else {
+            console.warn(`File not found: ${file}`);
+        }
+    });
+
+    if (concatenatedJS) {
+        const minifiedResult = await terserMinify(concatenatedJS);
+        fs.writeFileSync(outputPath, minifiedResult.code);
+        console.log(`Minified and concatenated JS to ${outputPath}`);
+    } else {
+        console.log('No JS files to minify and concatenate.');
+    }
+}
+
 // Function to optimise HTML content
 function optimiseHtml(content) {
     return minify(content, {
@@ -68,41 +132,31 @@ function copySourceToDist(src, dest) {
         let fullSrcPath = path.join(src, file);
         let fullDestPath = path.join(dest, file);
 
-        // Check if the file name contains "webflow"
-        if (file.includes('webflow')) {
-            const newFileName = file.replace(/webflow/g, 'f18-built-component');
-            fullDestPath = path.join(dest, newFileName);
-            console.log(`Renaming file: ${file} to ${newFileName}`);
-        }
-
         if (fs.statSync(fullSrcPath).isDirectory()) {
-            // Create directory in the destination if it doesn't exist
             if (!fs.existsSync(fullDestPath)) {
                 fs.mkdirSync(fullDestPath);
             }
-            // Recursively copy the directory
             copySourceToDist(fullSrcPath, fullDestPath);
         } else {
-            // Copy non-HTML files directly
             if (path.extname(fullSrcPath) !== '.html') {
                 fs.copyFileSync(fullSrcPath, fullDestPath);
-                console.log(`Copied file: ${fullSrcPath} to ${fullDestPath}`);
             } else {
-                // Read the HTML file content
                 let content = fs.readFileSync(fullSrcPath, 'utf-8');
-                
+
                 // Build canonical URL (without .html extension)
                 let canonicalUrl = fullDestPath.replace(distDir, '').replace('.html', '');
                 canonicalUrl = `${baseUrl}${canonicalUrl}`;
 
-                // Add canonical and lang attributes, and ensure unique title tags
+                // Add canonical, lang attributes, and ensure unique title tags
                 content = addLangAttribute(content, defaultLang);
                 content = addCanonicalTag(content, canonicalUrl);
-                content = ensureUniqueTitle(content, file);  // Ensure each page has a unique title
-                content = content.replace(/webflow/g, 'f18-built-component');
-                content = optimiseHtml(content);
+                content = ensureUniqueTitle(content, file);
+                content = optimizeScriptTags(content);  // Defer script loading
+                content = extractInlineScripts(content, file);  // Extract inline scripts
+                content = replaceScriptTag(content);  // Replace specific script with bundle.js
+                content = replaceJQuery(content);  // Replace remote jQuery with local jQuery
+                content = optimiseHtml(content);  // Minify HTML
 
-                // Write the optimised HTML content to the destination
                 fs.writeFileSync(fullDestPath, content);
                 console.log(`Copied and optimised HTML file: ${fullSrcPath} to ${fullDestPath}`);
             }
@@ -122,7 +176,6 @@ function generateSitemap(directoryPath) {
             if (stat.isDirectory()) {
                 findHtmlFiles(fullPath);
             } else if (path.extname(file) === '.html') {
-                // Skip .html extension in URLs for sitemap
                 let relativePath = path.relative(directoryPath, fullPath).replace('.html', '');
                 urls.push(`${baseUrl}/${relativePath.replace(/\\/g, '/')}`);
             }
@@ -148,31 +201,17 @@ function generateRobotsTxt() {
     console.log('robots.txt generated successfully in dist directory.');
 }
 
-// Function to add 301 redirects (optional)
-function createRedirects() {
-    const redirects = [
-        { from: '/pricing.html', to: '/pricing' },
-        // Add more redirects as necessary
-    ];
-
-    let redirectRules = '';
-
-    redirects.forEach(rule => {
-        redirectRules += `Redirect 301 ${rule.from} ${rule.to}\n`;
-    });
-
-    fs.writeFileSync(path.join(distDir, '_redirects'), redirectRules);
-    console.log('301 redirects created successfully.');
-}
-
 // Main function to perform all tasks
-function build() {
+async function build() {
     try {
         createDistDirectory();
         copySourceToDist(sourceDir, distDir);
+        await minifyAndConcatenateJS(
+            [path.join(sourceDir, 'js/webflow.js')],  // Add more JS files here if needed
+            path.join(distDir, 'js/bundle.js')
+        );
         generateSitemap(distDir);  // Ensure sitemap is generated for the dist directory
         generateRobotsTxt();
-        createRedirects();  // Create redirects
         console.log('Build completed successfully.');
     } catch (err) {
         console.error('Build failed:', err);
