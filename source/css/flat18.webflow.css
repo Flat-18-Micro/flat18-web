@@ -605,11 +605,14 @@ p {
 
 .hero-heading.gradient-text {
   background-image: radial-gradient(circle farthest-corner at 100% 0%, var(--secondary), var(--yellow));
+  max-width: calc(var(--content) * .85);
   min-height: 2.2em;
   font-size: 140px;
   font-weight: 700;
   line-height: 1.1em;
-  transition: all .1s;
+  transition-property: all;
+  transition-duration: .1s;
+  transition-timing-function: ease;
 }
 
 .hero-heading.gradient-text.animation-target {
@@ -1401,8 +1404,7 @@ p {
 
 .provider-tile-img {
   opacity: .5;
-  width: auto;
-  max-width: none;
+  width: 100%;
   height: 30px;
   transition: all .2s;
 }
@@ -2085,13 +2087,7 @@ p {
 
 .homepage-loader {
   z-index: 100;
-  background-color: var(--process-blue);
-  border: 1px solid #000;
-  border-radius: 25%;
-  width: 35px;
-  height: 35px;
   position: absolute;
-  overflow: hidden;
 }
 
 .loader-image-backgdrop {
@@ -2740,6 +2736,13 @@ p {
   right: -50%;
 }
 
+.hero-heading-wrapper {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
 .accept-cookies {
   max-width: 300px;
 }
@@ -2751,6 +2754,12 @@ p {
 
 .accept-cookies.small-only {
   display: none;
+}
+
+.image-11 {
+  border-radius: 25%;
+  width: 35px;
+  height: 35px;
 }
 
 @media screen and (max-width: 991px) {
@@ -3750,6 +3759,7 @@ p {
   }
 
   .accept-cookies.small-only {
+    font-size: 14px;
     display: block;
   }
 }
