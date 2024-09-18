@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 17 2024 23:52:11 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Wed Sep 18 2024 00:31:46 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -126,7 +126,10 @@
           </div>
         </div>
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
-          <h1 class="hero-heading gradient-text">Human-made Websites &amp; Apps</h1>
+          <div class="hero-heading-wrapper">
+            <h1 class="hero-heading gradient-text animation-target">Human-made Websites &amp; Apps</h1>
+            <h1 class="hero-heading gradient-text invisible">Human-made Websites &amp; Apps</h1>
+          </div>
           <h2 class="hero-h2">We build stunning websites and apps<br>for startups and solo-founders who value robust code and great design.<br></h2>
           <div class="btn-flex">
             <a href="#faq" class="limited-availability-prompt w-inline-block">
@@ -148,7 +151,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(()=>{
     document.querySelector(".hero-background-video > video").play()
   },500);
-  const heroHeading = document.querySelector(".hero-heading");
+  const heroHeading = document.querySelector(".hero-heading.animation-target");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
     const targetText = heroHeading.textContent;
@@ -1007,7 +1010,7 @@ animation: build-in-bubble3 var(--step-3-animation-timing) ease forwards infinit
           </div>
         </div><img sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
       </div>
-      <div class="content spread centre-vert reverse-orientation">
+      <div data-w-id="ae71350b-e303-c965-fc59-bf2e5e30b9db" class="content spread centre-vert reverse-orientation">
         <div class="w-layout-vflex text-org responsive">
           <h2 class="gradient-text ready">Ready to dive in?</h2>
           <div class="text-block-reading">At Flat 18, we&#x27;re all about making development fun and easy.<br>Let&#x27;s chat about your ideas and discover if Flat 18 is right for you.<br></div>
@@ -1026,7 +1029,7 @@ animation: build-in-bubble3 var(--step-3-animation-timing) ease forwards infinit
           </div>
         </div><img src="images/2023-HERO-CANDIDATE.svg" loading="lazy" alt="" class="hero-img content-img">
       </div>
-      <section id="pricing" class="content vert">
+      <section id="pricing" data-w-id="ccc7714e-4111-33db-545c-124e3954058f" class="content vert">
         <div class="w-layout-vflex text-org subscriptions">
           <h2 class="gradient-text yellow">Pricing. Simple.</h2>
           <div class="w-layout-vflex pricing-controls-container large-screens">
@@ -1336,7 +1339,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
           </div>
         </div>
       </section>
-      <div class="content spread centre-vert">
+      <div data-w-id="7b971ea9-4abf-8f54-4186-163d25dead5d" class="content spread centre-vert">
         <div id="faq" class="w-layout-vflex text-org">
           <h2 class="gradient-text ready">Commonly Asked Questions</h2>
           <div data-current="Why are slots limited?" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tabs w-tabs">
