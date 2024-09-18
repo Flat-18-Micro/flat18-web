@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Sep 18 2024 00:31:46 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Wed Sep 18 2024 11:51:06 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -128,7 +128,7 @@
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
           <div class="hero-heading-wrapper">
             <h1 class="hero-heading gradient-text animation-target">Human-made Websites &amp; Apps</h1>
-            <h1 class="hero-heading gradient-text invisible">Human-made Websites &amp; Apps</h1>
+            <div class="hero-heading gradient-text invisible">Human-made Websites &amp; Apps</div>
           </div>
           <h2 class="hero-h2">We build stunning websites and apps<br>for startups and solo-founders who value robust code and great design.<br></h2>
           <div class="btn-flex">
@@ -2225,21 +2225,24 @@ year.innerHTML = new Date().getFullYear()
 </style>
         </div>
         <div class="w-layout-hflex cookie-notice">
-          <div class="w-layout-vflex flex-block-2">
-            <div>This website uses cookies<br>to improve your experience.</div>
+          <div id="w-node-_6c147dfb-07db-e23e-9b2b-165178d9814e-41346f98" class="w-layout-vflex flex-block-2">
+            <div class="accept-cookies large-only">This website uses cookies to enhance your browsing experience. <br></div>
+            <div class="accept-cookies large-only">Click here to accept and dismiss this notice.</div>
+            <div class="accept-cookies small-only">We use cookies.<br>‍<br>Tap here to accept and close.</div>
             <a href="privacy.html" class="link cookie">Learn more in our Privacy Policy</a>
           </div>
-          <div class="icon cookie w-embed">&#xF6EE;</div>
-          <div class="icon cookie accept-cookies w-embed">&#xF659;</div>
+          <div id="w-node-_6ec3e2e3-cf69-9240-e231-fc58c0b85d27-41346f98" class="icon cookie accept-cookies w-embed">&#xF659;</div>
           <div class="code w-embed w-script">
             <script>
   const userAcknowledgedCookie = localStorage.getItem("userAcceptedCookies") ? localStorage.getItem("userAcceptedCookies") : 'false'
   localStorage.setItem("userAcceptedCookies", userAcknowledgedCookie)
   const bodyClassUserCookies = userAcknowledgedCookie !== 'false' ? 'cookies-accepted':'cookies-not-accepted'
   document.body.classList.add(bodyClassUserCookies)
-  document.querySelector(".accept-cookies").addEventListener("click", ()=>{
-    localStorage.setItem("userAcceptedCookies", 'true')
-    document.body.classList.add('cookies-accepted')
+  document.querySelectorAll(".accept-cookies").forEach((e)=>{
+    e.addEventListener("click", ()=>{
+      localStorage.setItem("userAcceptedCookies", 'true')
+      document.body.classList.add('cookies-accepted')
+    })
   })
 </script>
             <style>
