@@ -99,20 +99,20 @@ function replaceJQuery(content) {
 }
 
 // Function to minify and concatenate CSS files
-function minifyAndConcatenateCSS(files, outputPath) {
+async function minifyAndConcatenateCSS(files, outputPath) {
   let concatenatedCSS = '';
 
-  files.forEach(file => {
+  for (const file of files) {
     if (fs.existsSync(file)) {
-      const cssContent = fs.readFileSync(file, 'utf-8');
+      const cssContent = await fs.promises.readFile(file, 'utf-8');
       concatenatedCSS += cssContent;
     } else {
       console.warn(`File not found: ${file}`);
     }
-  });
+  }
 
   const output = new CleanCSS({}).minify(concatenatedCSS);
-  fs.writeFileSync(outputPath, output.styles);
+  await fs.promises.writeFile(outputPath, output.styles);
   console.log(`Minified and concatenated CSS to ${outputPath}`);
 }
 
@@ -128,6 +128,34 @@ async function purgeUnusedCSS(cssFilePath, htmlFiles) {
   console.log(`Removed unused CSS from ${cssFilePath}`);
 }
 
+// Function to lazy-load images by adding loading="lazy" to <img> tags
+function lazyLoadImages(content) {
+  return content.replace(/<img /g, '<img loading="lazy" ');
+}
+
+// Function to optimize font loading with font-display: swap
+function optimizeFonts(content) {
+  return content.replace(
+    /@font-face\s*{[^}]*}/g,
+    match => match.replace('font-display', 'font-display: swap')
+  );
+}
+
+// Function to generate and inline critical CSS (dynamically import `critical`)
+async function inlineCriticalCSS(htmlFilePath, outputHtmlPath) {
+  const critical = await import('critical');  // Dynamically load `critical`
+  await critical.generate({
+    base: 'dist/',  // Base directory
+    src: htmlFilePath,  // Input HTML file
+    target: {
+      html: outputHtmlPath,  // Output HTML file with inlined CSS
+    },
+    inline: true,  // Inline critical CSS
+    css: ['dist/css/bundle.css'],  // Path to your CSS bundle
+  });
+  console.log(`Inlined critical CSS for ${htmlFilePath}`);
+}
+
 // Function to load non-critical CSS asynchronously using media="print"
 function loadNonCriticalCSSAsync(content) {
   return content.replace(/<link rel="stylesheet" href="(.*?)\.css">/g, '<link rel="stylesheet" href="$1.css" media="print" onload="this.media=\'all\'">');
@@ -137,19 +165,18 @@ function loadNonCriticalCSSAsync(content) {
 async function minifyAndConcatenateJS(files, outputPath) {
   let concatenatedJS = '';
 
-  // Check if files exist before processing
-  files.forEach(file => {
+  for (const file of files) {
     if (fs.existsSync(file)) {
-      const jsContent = fs.readFileSync(file, 'utf-8');
+      const jsContent = await fs.promises.readFile(file, 'utf-8');
       concatenatedJS += jsContent;
     } else {
       console.warn(`File not found: ${file}`);
     }
-  });
+  }
 
   if (concatenatedJS) {
     const minifiedResult = await terserMinify(concatenatedJS);
-    fs.writeFileSync(outputPath, minifiedResult.code);
+    await fs.promises.writeFile(outputPath, minifiedResult.code);
     console.log(`Minified and concatenated JS to ${outputPath}`);
   } else {
     console.log('No JS files to minify and concatenate.');
@@ -169,31 +196,48 @@ function optimiseHtml(content) {
   });
 }
 
-// Function to copy files from source to dist directory, renaming if necessary
-function copySourceToDist(src, dest) {
-  const files = fs.readdirSync(src);
-
+// Function to find all HTML files in the dist directory
+function getAllHtmlFiles(dir) {
+  let htmlFiles = [];
+  const files = fs.readdirSync(dir);
   files.forEach(file => {
-    let fullSrcPath = path.join(src, file);
-    let fullDestPath = path.join(dest, file);
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
+    if (stat.isDirectory()) {
+      htmlFiles = htmlFiles.concat(getAllHtmlFiles(fullPath));
+    } else if (path.extname(file) === '.html') {
+      htmlFiles.push(fullPath);
+    }
+  });
+  return htmlFiles;
+}
 
-    if (fs.statSync(fullSrcPath).isDirectory()) {
+// Function to copy files from source to dist directory, renaming if necessary
+async function copySourceToDist(src, dest) {
+  const files = await fs.promises.readdir(src);
+
+  for (const file of files) {
+    const fullSrcPath = path.join(src, file);
+    const fullDestPath = path.join(dest, file);
+    const stat = await fs.promises.stat(fullSrcPath);
+
+    if (stat.isDirectory()) {
       if (!fs.existsSync(fullDestPath)) {
-        fs.mkdirSync(fullDestPath);
+        await fs.promises.mkdir(fullDestPath);
       }
-      copySourceToDist(fullSrcPath, fullDestPath);
+      await copySourceToDist(fullSrcPath, fullDestPath);
     } else {
       if (path.extname(fullSrcPath) !== '.html') {
-        fs.copyFileSync(fullSrcPath, fullDestPath);
+        await fs.promises.copyFile(fullSrcPath, fullDestPath);
       } else {
-        let content = fs.readFileSync(fullSrcPath, 'utf-8');
+        let content = await fs.promises.readFile(fullSrcPath, 'utf-8');
+
+        // Replace multiple CSS links with a single link to bundle.css
+        content = replaceCSSLinks(content);
 
         // Build canonical URL (without .html extension)
         let canonicalUrl = fullDestPath.replace(distDir, '').replace('.html', '');
         canonicalUrl = `${baseUrl}${canonicalUrl}`;
-
-        // Replace multiple CSS links with a single link to bundle.css
-        content = replaceCSSLinks(content);
 
         // Add canonical, lang attributes, and ensure unique title tags
         content = addLangAttribute(content, defaultLang);
@@ -204,13 +248,21 @@ function copySourceToDist(src, dest) {
         content = replaceScriptTag(content);  // Replace specific script with bundle.js
         content = replaceJQuery(content);  // Replace remote jQuery with local jQuery
         content = loadNonCriticalCSSAsync(content);  // Load non-critical CSS asynchronously
-        content = optimiseHtml(content);  // Minify HTML
 
-        fs.writeFileSync(fullDestPath, content);
+        // Lazy load images
+        content = lazyLoadImages(content);
+
+        // Optimize fonts for font-display: swap
+        content = optimizeFonts(content);
+
+        // Minify HTML
+        content = optimiseHtml(content);
+
+        await fs.promises.writeFile(fullDestPath, content);
         console.log(`Copied and optimised HTML file: ${fullSrcPath} to ${fullDestPath}`);
       }
     }
-  });
+  }
 }
 
 // Function to generate sitemap.xml
@@ -254,31 +306,36 @@ function generateRobotsTxt() {
 async function build() {
   try {
     createDistDirectory();
-    copySourceToDist(sourceDir, distDir);
+    
+    // Copy source to dist with HTML processing and optimizations
+    await copySourceToDist(sourceDir, distDir);
 
     // CSS Optimization
-    minifyAndConcatenateCSS(
+    await minifyAndConcatenateCSS(
       [
         path.join(sourceDir, 'css/normalize.css'),
         path.join(sourceDir, 'css/webflow.css'),
-        path.join(sourceDir, 'css/flat18.webflow.css')  // Add more CSS files here
+        path.join(sourceDir, 'css/flat18.webflow.css')
       ],
       path.join(distDir, 'css/bundle.css')
     );
 
-    // Remove unused CSS
-    await purgeUnusedCSS(path.join(distDir, 'css/bundle.css'), [
-      path.join(distDir, 'index.html'),
-      path.join(distDir, 'about.html')
-    ]);
+    // Inline critical CSS for above-the-fold content
+    await inlineCriticalCSS(path.join(distDir, 'index.html'), path.join(distDir, 'index.html'));
 
+    // Remove unused CSS based on all HTML files in dist directory
+    await purgeUnusedCSS(path.join(distDir, 'css/bundle.css'), getAllHtmlFiles(distDir));
+
+    // JS Optimization
     await minifyAndConcatenateJS(
       [path.join(sourceDir, 'js/webflow.js')],
       path.join(distDir, 'js/bundle.js')
     );
 
-    generateSitemap(distDir);  // Ensure sitemap is generated for the dist directory
+    // Generate Sitemap and Robots.txt
+    generateSitemap(distDir);
     generateRobotsTxt();
+
     console.log('Build completed successfully.');
   } catch (err) {
     console.error('Build failed:', err);
