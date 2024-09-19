@@ -242,7 +242,7 @@ async function copySourceToDist(src, dest) {
         // Add canonical, lang attributes, and ensure unique title tags
         content = addLangAttribute(content, defaultLang);
         content = addCanonicalTag(content, canonicalUrl);
-        content = ensureUniqueTitle(content, file);
+        // content = ensureUniqueTitle(content, file);
         content = optimizeScriptTags(content);  // Defer script loading
         content = extractInlineScripts(content, file);  // Extract inline scripts
         content = replaceScriptTag(content);  // Replace specific script with bundle.js
