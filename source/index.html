@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Sep 18 2024 15:03:23 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Thu Sep 19 2024 16:39:41 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -96,33 +96,59 @@
     <div class="body-contents-wrapper">
       <div class="content hero"><img src="images/grid-lines-solid.svg" loading="eager" data-w-id="62abff53-df73-7a49-353d-017594ea0926" alt="" class="overflowing-bg-image">
         <div class="content-video-wrapper hero">
-          <div class="background-video-3 hero-background-video w-embed"><video id="8dbf2f7d-7aee-d7de-fdbe-7a6d9e86473a-video" preload="none" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
-              <source src="static/videos/Untitled-transcode-transcode-4.mp4" data-wf-ignore="true">
-            </video>
-            <style>
-.hero-background-video > video {
-  background-size: cover;
-  background-position: 50% 50%;
-  position: absolute;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  right: -100%;
-  bottom: -100%;
-  top: -100%;
-  left: -100%;
-  object-fit: cover;
-  z-index: -100;
-  display: inline-block;
-  background-image:url("static/Untitled-transcode-poster-00001.webp");
-  opacity:0;
-  animation: video-fade-in 2s .25s ease forwards 1;
+          <div class="hero-animation-wrapper">
+            <div class="hero-background-video">
+              <div class="animation-segment top"></div>
+              <div class="animation-segment left"></div>
+              <div class="animation-segment right"></div>
+              <div class="animation-segment bottom"></div>
+              <div id="w-node-_6dc4ceeb-6a38-d0e4-cb8e-508959156b5c-404d75c2" class="w-embed">
+                <style>
+:root {
+--hero-speed1:120s;
 }
-@keyframes video-fade-in{
-	from{opacity:0;}
-  to{opacity:1;}
+.hero-background-video{
+transform-style: preserve-3d;
+}
+.hero-animation-wrapper{
+animation: rotate-bg var(--hero-speed1) linear infinite;
+}
+.animation-segment.left,.animation-segment.right {
+animation: warps var(--hero-speed1) -0.5s linear infinite;
+}
+.animation-segment.top {
+animation: warp-covers var(--hero-speed1) linear infinite;
+}
+.animation-segment.bottom {
+animation: warp-covers var(--hero-speed1) linear reverse infinite;
+}
+@keyframes warps {
+  0% {
+    background-position-x:0px;
+  }
+  100% {
+    background-position-x: -400px;
+  }
+}
+@keyframes warp-covers {
+  0% {
+    background-position-y:0;
+  }
+  100% {
+    background-position-y: 225px;
+  }
+}
+@keyframes rotate-bg {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
+              </div>
+            </div>
           </div>
         </div>
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
@@ -148,9 +174,6 @@
           <div class="code w-embed w-script">
             <script>
 window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(()=>{
-    document.querySelector(".hero-background-video > video").play()
-  },500);
   const heroHeading = document.querySelector(".hero-heading.animation-target");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
@@ -2325,38 +2348,6 @@ year.innerHTML = new Date().getFullYear()
     chat.addEventListener("click", () => {
       window.$chatwoot.toggle("open")
     })
-  }
-  for (const video of document.querySelectorAll('.content-video-wrapper video')) {
-    // script.js
-    let timeoutId;
-    let originallyAutoplaying = !video.paused; // Check if the video was autoplaying
-    document.addEventListener('scroll', function () {
-      // Get the video element
-      // If the video is not playing, play it
-      if (video.paused) {
-        video.play();
-      }
-      // Speed up the playback rate
-      video.playbackRate = 8.0; // Adjust this value for how fast you want it to speed up
-      // Clear the previous timeout to prevent it from resetting the speed too quickly
-      clearTimeout(timeoutId);
-      // Set a timeout to ease back to normal speed after scrolling stops
-      timeoutId = setTimeout(function () {
-        let easeInterval = setInterval(function () {
-          // Gradually reduce the playback rate to normal speed
-          if (video.playbackRate > 1.0) {
-            video.playbackRate -= 0.1; // Adjust this value for a smoother transition
-          } else {
-            video.playbackRate = 0.5; // Ensure it ends at the normal speed
-            clearInterval(easeInterval);
-            // If the video was not originally autoplaying, pause it after easing
-            if (!originallyAutoplaying) {
-              video.pause();
-            }
-          }
-        }, 10); // Adjust this value for how quickly it eases back
-      }, 150); // Adjust this value for how long before it starts easing back
-    });
   }
 </script>
 </body>

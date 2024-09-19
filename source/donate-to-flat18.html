@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Sep 18 2024 15:03:23 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Thu Sep 19 2024 16:39:41 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="667632faa8248fc1ad04da4c" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -285,38 +285,6 @@ year.innerHTML = new Date().getFullYear()
     chat.addEventListener("click", () => {
       window.$chatwoot.toggle("open")
     })
-  }
-  for (const video of document.querySelectorAll('.content-video-wrapper video')) {
-    // script.js
-    let timeoutId;
-    let originallyAutoplaying = !video.paused; // Check if the video was autoplaying
-    document.addEventListener('scroll', function () {
-      // Get the video element
-      // If the video is not playing, play it
-      if (video.paused) {
-        video.play();
-      }
-      // Speed up the playback rate
-      video.playbackRate = 8.0; // Adjust this value for how fast you want it to speed up
-      // Clear the previous timeout to prevent it from resetting the speed too quickly
-      clearTimeout(timeoutId);
-      // Set a timeout to ease back to normal speed after scrolling stops
-      timeoutId = setTimeout(function () {
-        let easeInterval = setInterval(function () {
-          // Gradually reduce the playback rate to normal speed
-          if (video.playbackRate > 1.0) {
-            video.playbackRate -= 0.1; // Adjust this value for a smoother transition
-          } else {
-            video.playbackRate = 0.5; // Ensure it ends at the normal speed
-            clearInterval(easeInterval);
-            // If the video was not originally autoplaying, pause it after easing
-            if (!originallyAutoplaying) {
-              video.pause();
-            }
-          }
-        }, 10); // Adjust this value for how quickly it eases back
-      }, 150); // Adjust this value for how long before it starts easing back
-    });
   }
 </script>
 </body>
