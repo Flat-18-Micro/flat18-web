@@ -461,6 +461,7 @@ p {
   padding-bottom: 100px;
   display: block;
   position: relative;
+  transform: scale(.9);
 }
 
 .content.stats {
@@ -2772,23 +2773,24 @@ p {
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
   place-items: center;
-  width: 300%;
+  width: 100%;
   min-width: 100vw;
-  height: 300%;
+  height: 100%;
   min-height: 500px;
   display: grid;
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow: visible;
   transform: translate(-50%, -50%)perspective(1px);
 }
 
 .animation-segment {
   z-index: 10;
   pointer-events: none;
-  background-image: url('../images/stars-small.avif');
+  background-image: url('../images/stars_1.avif');
   background-position: 0 0;
-  background-size: cover;
+  background-size: 400px;
   width: 200px;
   height: 200px;
   position: absolute;
