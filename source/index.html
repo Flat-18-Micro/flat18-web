@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Fri Sep 20 2024 12:01:40 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Fri Sep 20 2024 12:05:17 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -174,9 +174,6 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
           <div class="code w-embed w-script">
             <script>
 window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(()=>{
-    document.querySelector(".hero-background-video > video").play()
-  },500);
   const heroHeading = document.querySelector(".hero-heading.animation-target");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
