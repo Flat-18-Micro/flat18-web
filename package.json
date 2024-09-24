@@ -11,8 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
     "critical": "^7.2.0",
     "html-minifier": "^4.0.0",
+    "puppeteer-core": "^23.4.0",
     "purgecss": "^6.0.0",
     "terser": "^5.33.0"
   }
