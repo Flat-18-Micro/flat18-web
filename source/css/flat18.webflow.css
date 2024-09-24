@@ -1390,7 +1390,7 @@ p {
   grid-row-gap: 60px;
   justify-content: flex-start;
   align-items: center;
-  width: max-content;
+  display: block;
   position: relative;
 }
 
@@ -1433,6 +1433,7 @@ p {
 }
 
 .providers-overlay {
+  z-index: 2;
   background-image: linear-gradient(90deg, var(--bg-modern), transparent);
   width: 100px;
   height: 100%;
@@ -1441,6 +1442,7 @@ p {
 }
 
 .providers-overlay.right {
+  z-index: 2;
   background-image: linear-gradient(270deg, var(--bg-modern), transparent);
   box-shadow: none;
   inset: 0% 0% 0% auto;
@@ -2781,7 +2783,7 @@ p {
   top: 50%;
   left: 50%;
   overflow: visible;
-  transform: translate(-50%, -50%)perspective(.75cm);
+  transform: translate(-50%, -50%);
 }
 
 .animation-segment {
@@ -2820,11 +2822,23 @@ p {
 }
 
 .hero-animation-wrapper {
-  opacity: .12;
+  opacity: .08;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)perspective(.75cm);
+  transform: translate(-50%, -50%);
+}
+
+.provider-image-container {
+  z-index: 1;
+  background-image: url("https://cdn.prod.website-files.com/663245c7d597883474e88492/66f2d42cb0d3b3239e573c60_flat18%20-%20You've%20seen%20us%20here.webp");
+  background-position: 0%;
+  background-repeat: repeat-x;
+  background-size: contain;
+  width: 4304px;
+  height: 30px;
+  position: relative;
+  transform: translate(-25%);
 }
 
 @media screen and (max-width: 991px) {
