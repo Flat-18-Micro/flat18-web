@@ -270,7 +270,6 @@ async function copySourceToDist(src, dest) {
         // Check if we're in the Vercel environment
         if (process.env.VERCEL) {
           content = injectVercelAnalytics(content);
-          console.log(`Injected Vercel Analytics into ${filePath}`);
         }
 
         // Minify HTML
