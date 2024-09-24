@@ -7,7 +7,7 @@ const { PurgeCSS } = require('purgecss');
 
 // Directories
 const sourceDir = path.join(__dirname, 'source');
-const distDir = path.join(__dirname, 'public');
+const distDir = path.join(__dirname, 'dist');
 const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
 
 // Default language for the website
