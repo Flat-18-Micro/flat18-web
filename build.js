@@ -4,20 +4,6 @@ const { minify } = require('html-minifier');
 const { minify: terserMinify } = require('terser');
 const CleanCSS = require('clean-css');
 const { PurgeCSS } = require('purgecss');
- 
-const chromium = require('chrome-aws-lambda');
-const puppeteer = require('puppeteer-core');
-
-(async () => {
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    defaultViewport: chromium.defaultViewport,
-    executablePath: await chromium.executablePath,
-    headless: chromium.headless,
-  });
-  // Your Puppeteer code here
-  await browser.close();
-})();
 
 // Directories
 const sourceDir = path.join(__dirname, 'source');
