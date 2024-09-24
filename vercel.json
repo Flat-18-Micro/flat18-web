@@ -2,17 +2,13 @@
   "builds": [
     {
       "src": "build.js",
-      "use": "@vercel/node",
-      "config": {
-        "outputDirectory": "dist"
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/dist/$1"
+      "dest": "/$1"
     }
-  ],
-  "outputDirectory": "dist"
-} 
+  ]
+}
