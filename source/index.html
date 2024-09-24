@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Fri Sep 20 2024 12:05:17 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Tue Sep 24 2024 15:04:49 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -94,7 +94,7 @@
       </div>
     </div>
     <div class="body-contents-wrapper">
-      <div class="content hero"><img src="images/grid-lines-solid.svg" loading="eager" data-w-id="62abff53-df73-7a49-353d-017594ea0926" alt="" class="overflowing-bg-image">
+      <div class="content hero">
         <div class="content-video-wrapper hero">
           <div class="hero-animation-wrapper">
             <div class="hero-background-video">
@@ -174,6 +174,9 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
           <div class="code w-embed w-script">
             <script>
 window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(()=>{
+    document.querySelector(".hero-background-video > video").play()
+  },500);
   const heroHeading = document.querySelector(".hero-heading.animation-target");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
@@ -198,48 +201,13 @@ window.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="content tools-wrapper">
         <div class="tile-flex-animated-container">
-          <div class="w-layout-hflex provider-flex">
-            <div class="provider-tile"><img src="images/btcpay.avif" loading="eager" alt="btcpay logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/infura.avif" loading="eager" alt="infura logo
-" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/node.avif" loading="eager" alt="node logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/stacks.avif" loading="eager" alt="stacks logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/63120558b661e15cdf54ded9.avif" loading="eager" alt="affinity logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/webflow.avif" loading="eager" alt="webflow logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/neon.avif" loading="eager" alt="neon logo
-" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/github.avif" loading="eager" alt="github logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/walletconnect.avif" loading="eager" alt="walletconnect logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/Vercel_logo_black.avif" loading="eager" alt="vercel logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/vue.avif" loading="eager" alt="vue logo" class="provider-tile-img"></div>
-            <div class="provider-tile"><img src="images/Cloudflare_Logo.avif" loading="eager" alt="cloudflare logo" class="provider-tile-img"></div>
-          </div>
+          <div class="w-layout-hflex provider-image-container"></div>
           <div class="providers-overlay right"></div>
           <div class="providers-overlay"></div>
         </div>
-        <div class="html-embed-2 w-embed w-script">
-          <script>
-if (document.querySelector(`[class*="tile-flex-animated-container"]`)) {
-  let providerMainContainer = document.querySelector(`[class*="tile-flex-animated-container"]`)
-  for (const parent of document.querySelectorAll(`.provider-flex`)) {
-    for(let i=0; i<2; i++){
-      for (const tile of parent.querySelectorAll(`.provider-tile`)) {
-        let cloneClass = tile.getAttribute("class")
-        let newTile = document.createElement("a")
-        newTile.setAttribute("class", `${cloneClass} -ite-${i}`)
-        newTile.innerHTML = tile.innerHTML
-        parent.append(newTile)
-      }
-    }
-      parent.style.setProperty("--parent-max-width", `${providerMainContainer.offsetWidth}px`)
-      parent.style.setProperty("--parent-max-overflow", `${parent.offsetWidth}px`)
-  }
-}
-</script>
-        </div>
         <div class="html-embed-2 w-embed">
           <style>
-[class*="provider-flex"]{
+[class*="provider-image-container"]{
   animation: loopProviderFlex 60s linear forwards infinite
 }
 @keyframes loopProviderFlex {
@@ -1004,7 +972,7 @@ animation: build-in-bubble3 var(--step-3-animation-timing) ease forwards infinit
 }
 </style>
           </div>
-        </div><img sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
+        </div><img sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
       </div>
       <div data-w-id="ae71350b-e303-c965-fc59-bf2e5e30b9db" class="content spread centre-vert reverse-orientation">
         <div class="w-layout-vflex text-org responsive">
@@ -1431,7 +1399,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
 </style>
           </div>
         </div><img src="images/man-with-lightbumb.webp" loading="lazy" sizes="(max-width: 991px) 100vw, 36vw" srcset="images/man-with-lightbumb-p-500.webp 500w, images/man-with-lightbumb.webp 800w" alt="man with lightbulb
-" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
+" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
       </div>
       <div data-w-id="430ea16b-4232-c735-4857-66817cae92c7" class="content stats">
         <div class="w-layout-hflex stats-wrapper">
