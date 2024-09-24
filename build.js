@@ -141,6 +141,14 @@ function optimizeFonts(content) {
   );
 }
 
+// Function to inject Vercel Analytics into HTML
+function injectVercelAnalytics(content) {
+  const analyticsScript = `<script src="https://unpkg.com/@vercel/analytics"></script>\n`;
+
+  // Insert the analytics script just before the closing </head> tag
+  return content.replace('</head>', `${analyticsScript}</head>`);
+}
+
 // Function to generate and inline critical CSS (dynamically import `critical`)
 async function inlineCriticalCSS(htmlFilePath, outputHtmlPath) {
   if (!process.env.VERCEL) {
@@ -259,6 +267,12 @@ async function copySourceToDist(src, dest) {
         // Optimize fonts for font-display: swap
         content = optimizeFonts(content);
 
+        // Check if we're in the Vercel environment
+        if (process.env.VERCEL) {
+          content = injectVercelAnalytics(content);
+          console.log(`Injected Vercel Analytics into ${filePath}`);
+        }
+
         // Minify HTML
         content = optimiseHtml(content);
 
@@ -310,7 +324,7 @@ function generateRobotsTxt() {
 async function build() {
   try {
     createDistDirectory();
-    
+
     // Copy source to dist with HTML processing and optimizations
     await copySourceToDist(sourceDir, distDir);
 
