@@ -4,7 +4,7 @@ const { minify } = require('html-minifier');
 const { minify: terserMinify } = require('terser');
 const CleanCSS = require('clean-css');
 const { PurgeCSS } = require('purgecss');
-
+ 
 // Directories
 const sourceDir = path.join(__dirname, 'source');
 const distDir = path.join(__dirname, 'dist');
