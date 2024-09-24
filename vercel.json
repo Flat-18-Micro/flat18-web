@@ -10,6 +10,5 @@
       "src": "/(.*)",
       "dest": "/dist/$1"
     }
-  ],
-  "installCommand": "apt-get install -y libnss3"
+  ]
 }
