@@ -143,17 +143,21 @@ function optimizeFonts(content) {
 
 // Function to generate and inline critical CSS (dynamically import `critical`)
 async function inlineCriticalCSS(htmlFilePath, outputHtmlPath) {
-  const critical = await import('critical');  // Dynamically load `critical`
-  await critical.generate({
-    base: 'dist/',  // Base directory
-    src: htmlFilePath,  // Input HTML file
-    target: {
-      html: outputHtmlPath,  // Output HTML file with inlined CSS
-    },
-    inline: true,  // Inline critical CSS
-    css: ['dist/css/bundle.css'],  // Path to your CSS bundle
-  });
-  console.log(`Inlined critical CSS for ${htmlFilePath}`);
+  if (!process.env.VERCEL) {
+    const critical = await import('critical');  // Dynamically load `critical` if not in Vercel
+    await critical.generate({
+      base: 'dist/',  // Base directory
+      src: htmlFilePath,  // Input HTML file
+      target: {
+        html: outputHtmlPath,  // Output HTML file with inlined CSS
+      },
+      inline: true,  // Inline critical CSS
+      css: ['dist/css/bundle.css'],  // Path to your CSS bundle
+    });
+    console.log(`Inlined critical CSS for ${htmlFilePath}`);
+  } else {
+    console.log('Skipping critical CSS generation in Vercel environment.');
+  }
 }
 
 // Function to load non-critical CSS asynchronously using media="print"
