@@ -2783,7 +2783,6 @@ p {
   top: 50%;
   left: 50%;
   overflow: visible;
-  transform: translate(-50%, -50%)perspective(.75cm);
 }
 
 .animation-segment {
