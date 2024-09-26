@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Sep 25 2024 00:53:55 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Thu Sep 26 2024 15:35:40 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -59,26 +59,31 @@
               <div class="homepage-loader"><img src="images/flat18_256x256.avif" loading="lazy" alt="" class="image-11"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
             </a>
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
-              <ul role="list" class="nav-menu w-list-unstyled">
-                <li>
-                  <a href="/#pricing" class="nav-link">Pricing</a>
-                </li>
-                <li>
-                  <a href="https://accounts.flat18.co.uk/client/login" class="nav-link">Login</a>
-                </li>
-                <li>
-                  <a href="/#wordsExperimentsSliderContainerWrapper" class="nav-link">Work</a>
-                </li>
-                <li class="mobile-margin-top-10">
-                  <div class="nav-button-wrapper">
-                    <div link="#chat" class="btn">
-                      <div class="button-background"></div>
-                      <div class="button-text">Get started</div>
-                      <div class="icon right w-embed">&#xF135;</div>
+              <div class="div-block">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li>
+                    <a link="#chat" href="#" class="nav-link">Chat</a>
+                  </li>
+                  <li>
+                    <a href="/#pricing" class="nav-link">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="https://accounts.flat18.co.uk/client/login" class="nav-link">Login</a>
+                  </li>
+                  <li>
+                    <a href="/#wordsExperimentsSliderContainerWrapper" class="nav-link">Work</a>
+                  </li>
+                  <li class="mobile-margin-top-10">
+                    <div class="nav-button-wrapper">
+                      <div link="#chat" class="btn menu">
+                        <div class="button-background menu"></div>
+                        <div class="button-text menu">Get started</div>
+                        <div class="icon right w-embed">&#xF135;</div>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </nav>
             <div class="menu-button w-nav-button">
               <div class="icon right icon-menu w-embed">&#xF479;</div>
@@ -95,7 +100,7 @@
       </div>
     </div>
     <div class="body-contents-wrapper">
-      <div class="content hero"><img data-w-id="f25c1ea5-f8e3-c910-75fc-ccba9988c902" sizes="(max-width: 991px) 100vw, 90vw" alt="" src="images/flat18-website-assets_1.avif" loading="lazy" srcset="images/flat18-website-assets_1flat18-website-assets.avif 500w, images/flat18-website-assets_1.avif 2500w" class="overflowing-bg-image">
+      <div class="content hero">
         <div class="content-video-wrapper hero">
           <div class="hero-animation-wrapper">
             <div class="hero-background-video">
@@ -155,8 +160,8 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
         </div>
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
           <div class="hero-heading-wrapper">
-            <h1 class="hero-heading gradient-text animation-target">Human-made Websites &amp; Apps</h1>
-            <div class="hero-heading gradient-text invisible">Human-made Websites &amp; Apps</div>
+            <h1 class="hero-heading animation-target">Human-made Websites &amp; Apps</h1>
+            <div class="hero-heading invisible">Human-made Websites &amp; Apps</div>
           </div>
           <h2 class="hero-h2">We build stunning websites and apps<br>for startups and solo-founders who value robust code and great design.<br></h2>
           <div class="btn-flex">
@@ -175,26 +180,86 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
           </div>
           <div class="code w-embed w-script">
             <script>
+try{document.querySelector(".hero-heading.animation-target").style.color='transparent'}catch(e){}
 window.addEventListener("DOMContentLoaded", () => {
   const heroHeading = document.querySelector(".hero-heading.animation-target");
   if (heroHeading) {
   	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
-    const targetText = heroHeading.textContent;
-    let count = 0;
-    heroHeading.textContent = "";
-    const typeText = () => {
-      const interval = setInterval(() => {
-        heroHeading.append(targetText.charAt(count));
-        count++;
-        if (count >= targetText.length) {
-          clearInterval(interval);
-        }
-      }, 50);
-    };
-    setTimeout(typeText, 100);
+const targetText = heroHeading.textContent.trim(); // Trim any extra whitespace
+const words = targetText.split(" "); // Split the text into an array of words
+let wordIndex = 0;
+let charIndex = 0;
+heroHeading.innerHTML = "";
+heroHeading.setAttribute("aria-live", "polite");
+const typeWord = () => {
+  if (wordIndex < words.length) {
+    // Create a container for the current word
+    let wordContainer;
+    // If starting a new word, create a word container
+    if (charIndex === 0) {
+      wordContainer = document.createElement("span"); // You can replace <span> with any tag, like <div> or <p>
+      wordContainer.classList.add("word"); // Add a class for the word container
+      heroHeading.append(wordContainer);  // Append the word container to heroHeading
+    } else {
+      wordContainer = heroHeading.querySelectorAll(".word")[wordIndex]; // Find the existing word container
+    }
+    // Get the current word and character
+    const currentWord = words[wordIndex];
+    // If not all characters of the current word are typed, keep typing characters
+    if (charIndex < currentWord.length) {
+      let newCharacter = document.createElement("span");
+      newCharacter.classList.add("character"); // Add the character class to each character
+      newCharacter.innerHTML = currentWord.charAt(charIndex).replace(/ /g, '&nbsp;');
+      wordContainer.append(newCharacter);
+      charIndex++;
+      // Continue typing the next character in the current word
+      setTimeout(() => {
+        requestAnimationFrame(typeWord);
+      }, 50); // Delay between characters within the word
+    } else {
+      // After finishing the current word, move to the next word
+      charIndex = 0; // Reset character index for the next word
+      wordIndex++;
+      // Delay before starting to type the next word
+     // setTimeout(() => {
+        requestAnimationFrame(typeWord);
+      //}, 10); // Delay between words
+    }
+  }
+};
+// Start typing after a slight delay
+setTimeout(() => {
+  requestAnimationFrame(typeWord);
+}, 10);
   }
 });
 </script>
+            <style>
+.hero-heading .word{
+  color: var(--primary);
+	opacity: 0;
+  position: relative;
+	animation: characterSlideUp .5s ease forwards 1;
+    filter: unset !important;
+}
+.hero-heading .character{
+	opacity: 0;
+  position: relative;
+	animation: characterSlideUp .5s ease forwards 1;
+}
+@keyframes characterSlideUp {
+  from{
+    opacity: 0;
+    transform:translate(10px, 0em)scale(1.1);
+    filter: blur(100px);
+  }
+  to{
+    opacity: 1;
+    transform:translate(0px, 0em)scale(1);
+    filter: blur(0px);
+  }
+}
+</style>
           </div>
         </div>
       </div>
@@ -971,7 +1036,7 @@ animation: build-in-bubble3 var(--step-3-animation-timing) ease forwards infinit
 }
 </style>
           </div>
-        </div><img sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
+        </div><img sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
       </div>
       <div data-w-id="ae71350b-e303-c965-fc59-bf2e5e30b9db" class="content spread centre-vert reverse-orientation content-build-in-target">
         <div class="w-layout-vflex text-org responsive">
@@ -1398,7 +1463,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
 </style>
           </div>
         </div><img src="images/man-with-lightbumb.webp" loading="lazy" sizes="(max-width: 991px) 100vw, 36vw" srcset="images/man-with-lightbumb-p-500.webp 500w, images/man-with-lightbumb.webp 800w" alt="man with lightbulb
-" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
+" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
       </div>
       <div data-w-id="430ea16b-4232-c735-4857-66817cae92c7" class="content stats content-build-in-target">
         <div data-w-id="7de40a3e-a00f-c413-6bb4-c5c73de1930c" class="stats-wrapper-container">
@@ -1407,7 +1472,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               <h3 class="statistics-label">Always<br>Learning</h3>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _2 gradient-text">10</h3>
+              <h3 class="animated-counter _2">10</h3>
               <div class="stat-description">
                 <h4 class="heading">Years</h4>
                 <div class="stat-text">Building apps, services and financial solutions using Bitcoin</div>
@@ -1440,7 +1505,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               </div>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _3 gradient-text">200</h3>
+              <h3 class="animated-counter _3">200</h3>
               <div class="stat-description">
                 <h4 class="heading">Unique Designs</h4>
                 <div class="stat-text">Supplied to delighted customers</div>
@@ -1483,14 +1548,14 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               <h3 class="statistics-label">We&#x27;re Natural<br>Problem-solvers</h3>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _3 gradient-text">48</h3>
+              <h3 class="animated-counter _3">48</h3>
               <div class="stat-description">
                 <h4 class="heading">Hours</h4>
                 <div class="stat-text">Average delivery time for tasks and revisions.</div>
               </div>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _3 gradient-text">80</h3>
+              <h3 class="animated-counter _3">80</h3>
               <div class="stat-description">
                 <h4 class="heading">Thousand Commits</h4>
                 <div class="stat-text">Encompassing years of contributions on GitHub and GitLab.</div>
@@ -1501,7 +1566,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
         <div data-w-id="a05839e2-7015-18e8-722f-f81dd1b0c56c" class="stats-wrapper-container">
           <div class="w-layout-hflex stats-wrapper">
             <div class="statistic-organiser">
-              <h3 class="animated-counter _2 gradient-text">30</h3>
+              <h3 class="animated-counter _2">30</h3>
               <div class="stat-description">
                 <h4 class="heading">Websites &amp; Apps</h4>
                 <div class="stat-text">Developed and deployed globally</div>
@@ -1511,7 +1576,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               <h3 class="statistics-label">Current<br>Stats</h3>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _3 gradient-text">7</h3>
+              <h3 class="animated-counter _3">7</h3>
               <div class="stat-description">
                 <h4 class="heading">Years</h4>
                 <div class="stat-text">Spent contributing to Free and Open Source projects and communities.</div>
@@ -1550,7 +1615,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               </div>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _2 gradient-text">20</h3>
+              <h3 class="animated-counter _2">20</h3>
               <div class="stat-description">
                 <h4 class="heading">Open Source Projects</h4>
                 <div class="stat-text">Contributed to, mastered, supported, integrated.</div>
@@ -1560,7 +1625,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
               <h3 class="statistics-label">Eliminating the guesswork</h3>
             </div>
             <div class="statistic-organiser">
-              <h3 class="animated-counter _2 gradient-text">80</h3>
+              <h3 class="animated-counter _2">80</h3>
               <div class="stat-description">
                 <h4 class="heading">Hours</h4>
                 <div class="stat-text">Average development hours dedicated to your project, per calendar month.</div>
@@ -1781,7 +1846,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, (max-width: 991px) 40.383331298828125px, 4vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1823,7 +1888,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1940,7 +2005,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 8vw, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">demo</div>
@@ -1972,7 +2037,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">20%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="(max-width: 479px) 51vw, (max-width: 767px) 13vw, (max-width: 991px) 64.78334045410156px, 7vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">alpha</div>
@@ -2035,7 +2100,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="(max-width: 479px) 32vw, (max-width: 767px) 8vw, 40.383331298828125px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">released</div>
