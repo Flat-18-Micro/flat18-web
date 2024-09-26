@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Sep 25 2024 22:45:02 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Thu Sep 26 2024 15:35:40 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -59,26 +59,31 @@
               <div class="homepage-loader"><img src="images/flat18_256x256.avif" loading="lazy" alt="" class="image-11"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
             </a>
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
-              <ul role="list" class="nav-menu w-list-unstyled">
-                <li>
-                  <a href="/#pricing" class="nav-link">Pricing</a>
-                </li>
-                <li>
-                  <a href="https://accounts.flat18.co.uk/client/login" class="nav-link">Login</a>
-                </li>
-                <li>
-                  <a href="/#wordsExperimentsSliderContainerWrapper" class="nav-link">Work</a>
-                </li>
-                <li class="mobile-margin-top-10">
-                  <div class="nav-button-wrapper">
-                    <div link="#chat" class="btn menu">
-                      <div class="button-background menu"></div>
-                      <div class="button-text menu">Get started</div>
-                      <div class="icon right w-embed">&#xF135;</div>
+              <div class="div-block">
+                <ul role="list" class="nav-menu w-list-unstyled">
+                  <li>
+                    <a link="#chat" href="#" class="nav-link">Chat</a>
+                  </li>
+                  <li>
+                    <a href="/#pricing" class="nav-link">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="https://accounts.flat18.co.uk/client/login" class="nav-link">Login</a>
+                  </li>
+                  <li>
+                    <a href="/#wordsExperimentsSliderContainerWrapper" class="nav-link">Work</a>
+                  </li>
+                  <li class="mobile-margin-top-10">
+                    <div class="nav-button-wrapper">
+                      <div link="#chat" class="btn menu">
+                        <div class="button-background menu"></div>
+                        <div class="button-text menu">Get started</div>
+                        <div class="icon right w-embed">&#xF135;</div>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </nav>
             <div class="menu-button w-nav-button">
               <div class="icon right icon-menu w-embed">&#xF479;</div>
@@ -175,6 +180,7 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
           </div>
           <div class="code w-embed w-script">
             <script>
+try{document.querySelector(".hero-heading.animation-target").style.color='transparent'}catch(e){}
 window.addEventListener("DOMContentLoaded", () => {
   const heroHeading = document.querySelector(".hero-heading.animation-target");
   if (heroHeading) {
@@ -230,6 +236,7 @@ setTimeout(() => {
 </script>
             <style>
 .hero-heading .word{
+  color: var(--primary);
 	opacity: 0;
   position: relative;
 	animation: characterSlideUp .5s ease forwards 1;
@@ -243,12 +250,12 @@ setTimeout(() => {
 @keyframes characterSlideUp {
   from{
     opacity: 0;
-    transform:translate(10px, 0em);
+    transform:translate(10px, 0em)scale(1.1);
     filter: blur(100px);
   }
   to{
     opacity: 1;
-    transform:translate(0px, 0em);
+    transform:translate(0px, 0em)scale(1);
     filter: blur(0px);
   }
 }
@@ -1029,7 +1036,7 @@ animation: build-in-bubble3 var(--step-3-animation-timing) ease forwards infinit
 }
 </style>
           </div>
-        </div><img sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
+        </div><img sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" src="images/blur3.webp" loading="lazy" class="blur">
       </div>
       <div data-w-id="ae71350b-e303-c965-fc59-bf2e5e30b9db" class="content spread centre-vert reverse-orientation content-build-in-target">
         <div class="w-layout-vflex text-org responsive">
@@ -1456,7 +1463,7 @@ animation: pulsateShadow 5s ease-in-out infinite;}
 </style>
           </div>
         </div><img src="images/man-with-lightbumb.webp" loading="lazy" sizes="(max-width: 991px) 100vw, 36vw" srcset="images/man-with-lightbumb-p-500.webp 500w, images/man-with-lightbumb.webp 800w" alt="man with lightbulb
-" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="(max-width: 767px) 98vw, (max-width: 888px) 90vw, 800px" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
+" class="hero-img content-img no-outline"><img src="images/blur3.webp" loading="lazy" sizes="100vw" srcset="images/blur3-p-500.webp 500w, images/blur3.webp 800w" alt="" class="blur right">
       </div>
       <div data-w-id="430ea16b-4232-c735-4857-66817cae92c7" class="content stats content-build-in-target">
         <div data-w-id="7de40a3e-a00f-c413-6bb4-c5c73de1930c" class="stats-wrapper-container">
@@ -1839,7 +1846,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1881,7 +1888,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">PUBLIC BETA</div>
@@ -1998,7 +2005,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="64.78125px" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">demo</div>
@@ -2030,7 +2037,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">20%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="64.78125px" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/php-logo.png" loading="lazy" sizes="100vw" height="Auto" alt="php logo" srcset="images/php-logo-p-500.png 500w, images/php-logo-p-800.png 800w, images/php-logo-p-1080.png 1080w, images/php-logo-p-1600.png 1600w, images/php-logo-p-2000.png 2000w, images/php-logo.png 2560w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">alpha</div>
@@ -2093,7 +2100,7 @@ for (const statsWrapper of statsWrappers){
                     <div class="technology-pc">10%</div>
                   </li>
                 </ul>
-                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="40.390625px" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
+                <div class="framework-credit-wrapper"><img src="images/Vue.js_Logo_2.svg.png" loading="lazy" sizes="100vw" height="Auto" alt="vue logo" srcset="images/Vue.js_Logo_2.svg-p-500.png 500w, images/Vue.js_Logo_2.svg-p-800.png 800w, images/Vue.js_Logo_2.svg-p-1080.png 1080w, images/Vue.js_Logo_2.svg-p-1600.png 1600w, images/Vue.js_Logo_2.svg-p-2000.png 2000w, images/Vue.js_Logo_2.svg.png 2367w" class="framework-logo"></div>
               </div>
             </div>
             <div class="badge subtle">released</div>
