@@ -3,7 +3,6 @@
   --cw-2: #b0b3db;
   --blue-2: #0d1c7f;
   --content: 1380px;
-  --bg-gauze: #15181eb3;
   --cw-1: #8da0e4;
   --primary: #19fdb2;
   --bg: #151515;
@@ -17,10 +16,10 @@
   --white: white;
   --cobalt: #1527ee;
   --secondary-dark: #0c0e6f;
+  --cw-0: #4b6adb;
   --content-inner: 1000px;
   --text-content: 800px;
   --blue-1-5: #0b1429;
-  --cw-0: #4b6adb;
   --bg-modern-dark-2: #090a0d;
   --cw-6: #dde0f4;
   --rust: #d74a49;
@@ -37,9 +36,11 @@
   --blue-1: #071640;
   --black: black;
   --accent: var(--secondary);
+  --bg-gauze: #15181eb3;
   --cw-4: #c0ccdc;
   --cw-5: #bbc9e8;
   --primary-backup: #1963fd;
+  --bg-gauze-heavy: #15181ef5;
   --blue-3: #2969a2;
   --blue-4: #062057;
   --scroll-1-horiz: 0px;
@@ -2146,6 +2147,11 @@ p {
   margin-left: 45px;
 }
 
+.body-contents-wrapper {
+  z-index: 1;
+  position: relative;
+}
+
 .limited-availability-prompt {
   text-decoration: none;
   position: relative;
@@ -2792,6 +2798,8 @@ p {
 
 .accept-cookies.large-only {
   max-width: 400px;
+  font-size: 14px;
+  line-height: 20px;
   display: block;
 }
 
@@ -2894,26 +2902,16 @@ p {
     width: 90vw;
   }
 
-  .nav-menu-wrapper {
-    background-color: #0000;
-    width: auto;
-    position: absolute;
-  }
-
   .nav-menu {
     z-index: 99;
     grid-column-gap: 28px;
     grid-row-gap: 28px;
-    background-color: var(--bg-gauze);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
     border-radius: 8px;
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
     width: max-content;
     margin-left: auto;
-    margin-right: 10px;
     padding: 40px 20px;
     display: flex;
     overflow: hidden;
@@ -2955,7 +2953,7 @@ p {
   }
 
   .icon.right.icon-menu:hover {
-    color: var(--secondary);
+    color: var(--cw-0);
   }
 
   .icon.right.icon-close {
@@ -3241,6 +3239,13 @@ p {
   .bold-graphic-heading {
     font-size: 60px;
   }
+
+  .div-block {
+    background-color: var(--bg-gauze-heavy);
+    background-image: linear-gradient(90deg, var(--bg-gauze) 34%, var(--bg-modern-dark));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -3256,7 +3261,7 @@ p {
   .nav-menu {
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
     padding-bottom: 40px;
     padding-left: 20px;
   }
@@ -3579,6 +3584,10 @@ p {
   .accept-cookies.large-only {
     max-width: 300px;
   }
+
+  .div-block {
+    background-color: var(--bg-modern);
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -3882,6 +3891,10 @@ p {
   .accept-cookies.small-only {
     font-size: 14px;
     display: block;
+  }
+
+  .div-block {
+    background-color: var(--bg-gauze);
   }
 }
 
