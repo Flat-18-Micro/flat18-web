@@ -412,6 +412,10 @@ p {
   font-size: 2rem;
 }
 
+.icon.small.x-small {
+  font-size: 1rem;
+}
+
 .icon.btn-icon {
   margin-left: 5px;
   font-size: 1.5rem;
