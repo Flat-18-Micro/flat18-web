@@ -87,6 +87,43 @@ function addAltAttribute(content) {
   return content;
 }
 
+function generateBusinessStructuredData(pageTitle, pageUrl, pageDescription) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Flat 18",
+    "url": "https://flat18.co.uk",
+    "logo": "https://flat18.co.uk/static/logo.png",
+    "sameAs": [
+      "https://twitter.com/f18_dev"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@flat18.co.uk",
+      "contactType": "Customer Service",
+      "areaServed": "GB",
+      "availableLanguage": ["English"]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "name": pageTitle,
+      "url": pageUrl,
+      "description": pageDescription
+    }
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(structuredData, null, 2)}</script>`;
+}
+
+// Function to extract meta description from HTML content
+function extractMetaDescription(content) {
+  const metaTagMatch = content.match(/<meta\s+name=["']description["']\s+content=["'](.*?)["']\s*\/?>/i);
+  if (metaTagMatch && metaTagMatch[1]) {
+    return metaTagMatch[1];  // Return the extracted description
+  }
+  return "Default description for Flat18.";  // Fallback description if none is found
+}
+
 // Function to defer script loading by adding defer attribute
 function optimizeScriptTags(content) {
   return content.replace(/<script(?!.*\bdefer\b)(?!.*\basync\b)(.*?)>/g, '<script$1 defer>');
@@ -269,6 +306,9 @@ async function copySourceToDist(src, dest) {
       } else {
         let content = await fs.promises.readFile(fullSrcPath, 'utf-8');
 
+        // Extract meta description from the content
+        const pageDescription = extractMetaDescription(content);
+
         // Replace multiple CSS links with a single link to bundle.css
         content = replaceCSSLinks(content);
 
@@ -278,9 +318,9 @@ async function copySourceToDist(src, dest) {
 
         // Add canonical, lang attributes, and ensure unique title tags
         content = addLangAttribute(content, defaultLang);
-        content = addHreflangTags(content, canonicalUrl);  // Add hreflang tags here
-        content = addAltAttribute(content);  // Add alt attributes if missing
         content = addCanonicalTag(content, canonicalUrl);
+        content = addHreflangTags(content, canonicalUrl);  // Add hreflang tags
+        content = addAltAttribute(content);  // Add alt attributes if missing
         // content = ensureUniqueTitle(content, file);
         content = optimizeScriptTags(content);  // Defer script loading
         content = extractInlineScripts(content, file);  // Extract inline scripts
@@ -293,6 +333,11 @@ async function copySourceToDist(src, dest) {
 
         // Optimize fonts for font-display: swap
         content = optimizeFonts(content);
+
+        // Add structured data with dynamic description metadata
+        const pageTitle = file.replace('.html', '').replace(/-/g, ' ').toUpperCase();
+        const structuredData = generateBusinessStructuredData(pageTitle, canonicalUrl, pageDescription);
+        content = content.replace('</head>', `${structuredData}\n</head>`);  // Inject JSON-LD structured data
 
         // Minify HTML
         content = optimiseHtml(content);
