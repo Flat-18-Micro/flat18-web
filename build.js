@@ -43,11 +43,85 @@ function ensureUniqueTitle(content, filename) {
 
 // Function to add canonical tag if not present
 function addCanonicalTag(content, url) {
+  // Ensure the canonical URL doesn't have trailing slashes or include unnecessary subpaths
+  const canonicalUrl = new URL(url, baseUrl).href.replace(/\/$/, '');  // Remove trailing slashes
   if (!content.includes('<link rel="canonical"')) {
-    const canonicalTag = `<link rel="canonical" href="${url}" />\n`;
+    const canonicalTag = `<link rel="canonical" href="${canonicalUrl}" />\n`;
     return content.replace('</head>', `${canonicalTag}</head>`);
   }
   return content;
+}
+
+// Function to add hreflang tags for multi-language support
+function addHreflangTags(content, url) {
+  const hreflangTags = `
+    <link rel="alternate" href="${url}" hreflang="en" />
+    <link rel="alternate" href="${url}" hreflang="x-default" />
+  `;
+
+  if (!content.includes('hreflang="')) {
+    return content.replace('</head>', `${hreflangTags}\n</head>`);
+  }
+  return content;
+}
+
+// Function to add alt attribute to <img> tags if not present
+function addAltAttribute(content) {
+  // Regular expression to find <img> tags without alt attributes
+  const imgTagWithoutAlt = /<img\s+((?!alt=)[^>]+)>/g;
+
+  // Replace <img> tags without alt attributes
+  content = content.replace(imgTagWithoutAlt, (match) => {
+    // Try to infer alt text from the image filename if possible
+    const srcMatch = match.match(/src="([^"]+)"/);
+    let altText = 'Image';
+    
+    if (srcMatch && srcMatch[1]) {
+      const imageFileName = path.basename(srcMatch[1], path.extname(srcMatch[1]));
+      altText = imageFileName.replace(/-/g, ' ').replace(/_/g, ' '); // Use the file name as alt text, formatted nicely
+    }
+
+    return match.replace('>', ` alt="${altText}">`);
+  });
+
+  return content;
+}
+
+function generateBusinessStructuredData(pageTitle, pageUrl, pageDescription) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Flat 18",
+    "url": "https://flat18.co.uk",
+    "logo": "https://flat18.co.uk/static/logo.png",
+    "sameAs": [
+      "https://twitter.com/f18_dev"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@flat18.co.uk",
+      "contactType": "Customer Service",
+      "areaServed": "GB",
+      "availableLanguage": ["English"]
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "name": pageTitle,
+      "url": pageUrl,
+      "description": pageDescription
+    }
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(structuredData, null, 2)}</script>`;
+}
+
+// Function to extract meta description from HTML content
+function extractMetaDescription(content) {
+  const metaTagMatch = content.match(/<meta\s+name=["']description["']\s+content=["'](.*?)["']\s*\/?>/i);
+  if (metaTagMatch && metaTagMatch[1]) {
+    return metaTagMatch[1];  // Return the extracted description
+  }
+  return "Default description for Flat18.";  // Fallback description if none is found
 }
 
 // Function to defer script loading by adding defer attribute
@@ -244,6 +318,9 @@ async function copySourceToDist(src, dest) {
       } else {
         let content = await fs.promises.readFile(fullSrcPath, 'utf-8');
 
+        // Extract meta description from the content
+        const pageDescription = extractMetaDescription(content);
+
         // Replace multiple CSS links with a single link to bundle.css
         content = replaceCSSLinks(content);
 
@@ -254,6 +331,8 @@ async function copySourceToDist(src, dest) {
         // Add canonical, lang attributes, and ensure unique title tags
         content = addLangAttribute(content, defaultLang);
         content = addCanonicalTag(content, canonicalUrl);
+        content = addHreflangTags(content, canonicalUrl);  // Add hreflang tags
+        content = addAltAttribute(content);  // Add alt attributes if missing
         // content = ensureUniqueTitle(content, file);
         content = optimizeScriptTags(content);  // Defer script loading
         content = extractInlineScripts(content, file);  // Extract inline scripts
@@ -271,6 +350,10 @@ async function copySourceToDist(src, dest) {
         if (process.env.VERCEL) {
           content = injectVercelAnalytics(content);
         }
+        // Add structured data with dynamic description metadata
+        const pageTitle = file.replace('.html', '').replace(/-/g, ' ').toUpperCase();
+        const structuredData = generateBusinessStructuredData(pageTitle, canonicalUrl, pageDescription);
+        content = content.replace('</head>', `${structuredData}\n</head>`);  // Inject JSON-LD structured data
 
         // Minify HTML
         content = optimiseHtml(content);
