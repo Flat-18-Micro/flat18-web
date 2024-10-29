@@ -1332,6 +1332,7 @@ p {
 .footer-content {
   grid-column-gap: 70px;
   grid-row-gap: 40px;
+  text-align: left;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
   grid-auto-columns: 1fr;
@@ -1341,7 +1342,7 @@ p {
 .footer-block {
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-start;
   display: flex;
 }
 
@@ -2974,6 +2975,7 @@ p {
     justify-content: flex-end;
     align-items: flex-start;
     min-height: auto;
+    margin-bottom: 60px;
     display: flex;
   }
 
@@ -3084,13 +3086,14 @@ p {
     position: relative;
   }
 
-  .footer-content {
-    grid-column-gap: 60px;
+  .footer-wrapper {
+    grid-column-gap: 45px;
+    grid-row-gap: 45px;
+    flex-flow: wrap;
   }
 
-  .footer-block {
-    justify-content: flex-start;
-    align-items: flex-end;
+  .footer-content {
+    grid-column-gap: 60px;
   }
 
   .body-wrapper {
@@ -3647,7 +3650,7 @@ p {
 
   .content.hero {
     margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   .content.stats {
