@@ -392,6 +392,11 @@ p {
   font-size: 1rem;
 }
 
+.icon.right.small.full-opa {
+  opacity: 1;
+  font-size: 1.1rem;
+}
+
 .icon.right.in-badge {
   opacity: .33;
   font-size: inherit;
@@ -2919,7 +2924,6 @@ p {
     margin-left: auto;
     padding: 40px 20px;
     display: flex;
-    overflow: hidden;
   }
 
   .nav-link {
@@ -3266,7 +3270,6 @@ p {
   }
 
   .nav-menu {
-    flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
     padding-bottom: 40px;
@@ -3609,7 +3612,6 @@ p {
   }
 
   .nav-menu {
-    flex-direction: column;
     width: 100vw;
   }
 
