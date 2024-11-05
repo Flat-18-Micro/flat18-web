@@ -286,6 +286,10 @@ function getAllHtmlFiles(dir) {
   return htmlFiles;
 }
 
+function addAckeeOpts(content) {
+  return content.replace(/data-ackee-server/g, `data-ackee-opts='{ "detailed": true }' data-ackee-server`);
+}
+
 // Function to copy files from source to dist directory, renaming if necessary
 async function copySourceToDist(src, dest) {
   const files = await fs.promises.readdir(src);
@@ -341,6 +345,8 @@ async function copySourceToDist(src, dest) {
 
         // Minify HTML
         content = optimiseHtml(content);
+        
+        content = addAckeeOpts(content);
 
         await fs.promises.writeFile(fullDestPath, content);
         console.log(`Copied and optimised HTML file: ${fullSrcPath} to ${fullDestPath}`);
