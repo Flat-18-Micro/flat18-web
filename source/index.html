@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Nov 05 2024 12:07:44 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Sat Nov 09 2024 00:14:49 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -64,7 +64,8 @@ twq('config','oopi3');
         <div class="container-regular">
           <div class="navbar-wrapper">
             <a href="index.html" aria-current="page" class="navbar-brand w-nav-brand w--current">
-              <div class="homepage-loader"><img src="images/flat18_256x256.avif" loading="lazy" alt="" class="image-11"></div><img src="images/f17-log-wodks.svg" loading="lazy" width="Auto" height="30" alt="flat18 logo" class="words-laft-eitheeen">
+              <div class="homepage-loader"><img src="images/flat18_256x256.avif" loading="lazy" alt="" class="image-11"></div>
+              <div class="words-laft-eitheeen">Flat 18</div>
             </a>
             <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
               <div class="div-block">
@@ -177,11 +178,6 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
           </div>
         </div>
         <div id="w-node-_8df47551-d3a1-31bc-10bd-8c3b404d75c3-404d75c2" class="w-layout-vflex hero-text-cta">
-          <div class="hero-heading-wrapper">
-            <h1 class="hero-heading animation-target">Human-made Websites &amp; Apps</h1>
-            <div class="hero-heading invisible">Human-made Websites &amp; Apps</div>
-          </div>
-          <h2 class="hero-h2">Tailored, robust solutions for ambitious startups.<br></h2>
           <div class="btn-flex">
             <a href="#faq" class="limited-availability-prompt w-inline-block">
               <div class="badge inline-badge">
@@ -190,94 +186,104 @@ animation: warp-covers var(--hero-speed1) linear reverse infinite;
                 <div class="icon right in-badge w-embed">&#xF431;</div>
               </div>
             </a>
+          </div>
+          <div class="hero-heading-wrapper">
+            <h1 class="hero-heading animation-target">Human-made Websites &amp; Apps</h1>
+            <div class="hero-heading invisible">Human-made Websites &amp; Apps</div>
+          </div>
+          <h2 class="hero-h2">Tailored, robust solutions for ambitious startups.<br></h2>
+          <div class="btn-flex">
             <aside link="#chat" class="btn hero">
               <div class="button-background"></div>
-              <div class="button-text">Say Hello</div>
+              <div class="button-text">Start Your Project</div>
               <div class="icon right small full-opa w-embed">&#xF6B9;</div>
             </aside>
           </div>
           <div class="code w-embed w-script">
             <script>
-try{document.querySelector(".hero-heading.animation-target").style.color='transparent'}catch(e){}
-window.addEventListener("DOMContentLoaded", () => {
-  const heroHeading = document.querySelector(".hero-heading.animation-target");
-  if (heroHeading) {
-  	heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
-const targetText = heroHeading.textContent.trim(); // Trim any extra whitespace
-const words = targetText.split(" "); // Split the text into an array of words
-let wordIndex = 0;
-let charIndex = 0;
-heroHeading.innerHTML = "";
-heroHeading.setAttribute("aria-live", "polite");
-const typeWord = () => {
-  if (wordIndex < words.length) {
-    // Create a container for the current word
-    let wordContainer;
-    // If starting a new word, create a word container
-    if (charIndex === 0) {
-      wordContainer = document.createElement("span"); // You can replace <span> with any tag, like <div> or <p>
-      wordContainer.classList.add("word"); // Add a class for the word container
-      heroHeading.append(wordContainer);  // Append the word container to heroHeading
-    } else {
-      wordContainer = heroHeading.querySelectorAll(".word")[wordIndex]; // Find the existing word container
-    }
-    // Get the current word and character
-    const currentWord = words[wordIndex];
-    // If not all characters of the current word are typed, keep typing characters
-    if (charIndex < currentWord.length) {
-      let newCharacter = document.createElement("span");
-      newCharacter.classList.add("character"); // Add the character class to each character
-      newCharacter.innerHTML = currentWord.charAt(charIndex).replace(/ /g, '&nbsp;');
-      wordContainer.append(newCharacter);
-      charIndex++;
-      // Continue typing the next character in the current word
-      setTimeout(() => {
-        requestAnimationFrame(typeWord);
-      }, 50); // Delay between characters within the word
-    } else {
-      // After finishing the current word, move to the next word
-      charIndex = 0; // Reset character index for the next word
-      wordIndex++;
-      // Delay before starting to type the next word
-     // setTimeout(() => {
-        requestAnimationFrame(typeWord);
-      //}, 10); // Delay between words
-    }
-  }
-};
-// Start typing after a slight delay
-setTimeout(() => {
-  requestAnimationFrame(typeWord);
-}, 10);
-  }
-});
-</script>
+    try { document.querySelector(".hero-heading.animation-target").style.color = 'transparent' } catch (e) { }
+    requestAnimationFrame(() => {
+      const heroHeading = document.querySelector(".hero-heading.animation-target");
+      if (heroHeading) {
+        heroHeading.style['min-height'] = heroHeading.getBoundingClientRect().height + 'px'
+        const targetText = heroHeading.textContent.trim(); // Trim any extra whitespace
+        const words = targetText.split(" "); // Split the text into an array of words
+        let wordIndex = 0;
+        let charIndex = 0;
+        let fullCharIndex = 0;
+        heroHeading.innerHTML = "";
+        heroHeading.setAttribute("aria-live", "polite");
+        const typeWord = () => {
+          if (wordIndex < words.length) {
+            // Create a container for the current word
+            let wordContainer;
+            // If starting a new word, create a word container
+            if (charIndex === 0) {
+              wordContainer = document.createElement("span"); // You can replace <span> with any tag, like <div> or <p>
+              wordContainer.classList.add("word"); // Add a class for the word container
+              heroHeading.append(wordContainer);  // Append the word container to heroHeading
+            } else {
+              wordContainer = heroHeading.querySelectorAll(".word")[wordIndex]; // Find the existing word container
+            }
+            // Get the current word and character
+            const currentWord = words[wordIndex];
+            // If not all characters of the current word are typed, keep typing characters
+            if (charIndex < currentWord.length) {
+              let newCharacter = document.createElement("span");
+             // newCharacter.style.color = gradColours[Math.ceil(fullCharIndex / 3)];
+              newCharacter.classList.add("character"); // Add the character class to each character
+              newCharacter.innerHTML = currentWord.charAt(charIndex).replace(/ /g, '&nbsp;');
+              wordContainer.append(newCharacter);
+              charIndex++;
+              // Continue typing the next character in the current word
+              setTimeout(() => {
+                requestAnimationFrame(typeWord);
+              }, 50); // Delay between characters within the word
+            } else {
+              // After finishing the current word, move to the next word
+              charIndex = 0; // Reset character index for the next word
+              wordIndex++;
+              // Delay before starting to type the next word
+              // setTimeout(() => {
+              requestAnimationFrame(typeWord);
+              //}, 10); // Delay between words
+            }
+            fullCharIndex++
+          }
+        };
+        // Start typing after a slight delay
+        setTimeout(() => {
+          requestAnimationFrame(typeWord);
+        }, 10);
+      }
+    });
+  </script>
             <style>
-.hero-heading .word{
-  color: var(--primary);
-	opacity: 0;
-  position: relative;
-	animation: characterSlideUp .5s ease forwards 1;
-    filter: unset !important;
-}
-.hero-heading .character{
-	opacity: 0;
-  position: relative;
-	animation: characterSlideUp .5s ease forwards 1;
-}
-@keyframes characterSlideUp {
-  from{
-    opacity: 0;
-    transform:translate(10px, 0em)scale(1.1);
-    filter: blur(100px);
-  }
-  to{
-    opacity: 1;
-    transform:translate(0px, 0em)scale(1);
-    filter: blur(0px);
-  }
-}
-</style>
+    .hero-heading .word {
+      color: var(--primary);
+      opacity: 0;
+      position: relative;
+      animation: characterSlideUp .5s ease forwards 1;
+      filter: unset !important;
+    }
+    .hero-heading .character {
+      opacity: 0;
+      position: relative;
+      animation: characterSlideUp .5s ease forwards 1;
+    }
+    @keyframes characterSlideUp {
+      from {
+        opacity: 0;
+        transform: translate(10px, 0em)scale(1.1);
+        filter: blur(100px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(0px, 0em)scale(1);
+        filter: blur(0px);
+      }
+    }
+  </style>
           </div>
         </div>
       </div>
