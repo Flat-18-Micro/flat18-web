@@ -284,9 +284,10 @@ p {
 }
 
 .btn.hero {
-  padding: 17px 28px;
-  font-size: 24px;
-  font-weight: 500;
+  text-transform: none;
+  padding: 15px 25px;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 25px;
 }
 
