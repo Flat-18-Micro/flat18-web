@@ -10,6 +10,9 @@ const sourceDir = path.join(__dirname, 'source');
 const distDir = path.join(__dirname, 'dist');
 const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
 
+const isCloudflare = process.env.CLOUDFLARE_PAGES === 'true'; // Detect Cloudflare environment
+const isVercel = process.env.VERCEL === 'true'; // Detect Cloudflare environment
+
 // Default language for the website
 const defaultLang = 'en';  // English as the default and only language
 
@@ -217,6 +220,16 @@ function optimizeFonts(content) {
 
 // Function to generate and inline critical CSS (dynamically import `critical`)
 async function inlineCriticalCSS(htmlFilePath, outputHtmlPath) {
+
+  if (isCloudflare) {
+    console.log('Skipping critical CSS generation on Cloudflare Pages...');
+    return;
+  }
+  if (isVercel) {
+    console.log('Skipping critical CSS generation on Cloudflare Pages...');
+    return;
+  }
+
   const critical = await import('critical');  // Dynamically load `critical`
   await critical.generate({
     base: 'dist/',  // Base directory
