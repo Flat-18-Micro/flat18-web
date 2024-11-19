@@ -10,6 +10,9 @@ const sourceDir = path.join(__dirname, 'source');
 const distDir = path.join(__dirname, 'dist');
 const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
 
+const isCloudflare = process.env.CLOUDFLARE_PAGES === 'true'; // Detect Cloudflare environment
+const isVercel = process.env.VERCEL === 'true'; // Detect Cloudflare environment
+
 // Default language for the website
 const defaultLang = 'en';  // English as the default and only language
 
@@ -215,31 +218,29 @@ function optimizeFonts(content) {
   );
 }
 
-// Function to inject Vercel Analytics into HTML
-function injectVercelAnalytics(content) {
-  const analyticsScript = `<script src="https://unpkg.com/@vercel/analytics"></script>\n`;
-
-  // Insert the analytics script just before the closing </head> tag
-  return content.replace('</head>', `${analyticsScript}</head>`);
-}
-
 // Function to generate and inline critical CSS (dynamically import `critical`)
 async function inlineCriticalCSS(htmlFilePath, outputHtmlPath) {
-  if (!process.env.VERCEL) {
-    const critical = await import('critical');  // Dynamically load `critical` if not in Vercel
-    await critical.generate({
-      base: 'dist/',  // Base directory
-      src: htmlFilePath,  // Input HTML file
-      target: {
-        html: outputHtmlPath,  // Output HTML file with inlined CSS
-      },
-      inline: true,  // Inline critical CSS
-      css: ['dist/css/bundle.css'],  // Path to your CSS bundle
-    });
-    console.log(`Inlined critical CSS for ${htmlFilePath}`);
-  } else {
-    console.log('Skipping critical CSS generation in Vercel environment.');
+
+  if (isCloudflare) {
+    console.log('Skipping critical CSS generation on Cloudflare Pages...');
+    return;
   }
+  if (isVercel) {
+    console.log('Skipping critical CSS generation on Cloudflare Pages...');
+    return;
+  }
+
+  const critical = await import('critical');  // Dynamically load `critical`
+  await critical.generate({
+    base: 'dist/',  // Base directory
+    src: htmlFilePath,  // Input HTML file
+    target: {
+      html: outputHtmlPath,  // Output HTML file with inlined CSS
+    },
+    inline: true,  // Inline critical CSS
+    css: ['dist/css/bundle.css'],  // Path to your CSS bundle
+  });
+  console.log(`Inlined critical CSS for ${htmlFilePath}`);
 }
 
 // Function to load non-critical CSS asynchronously using media="print"
@@ -350,10 +351,6 @@ async function copySourceToDist(src, dest) {
         // Optimize fonts for font-display: swap
         content = optimizeFonts(content);
 
-        // Check if we're in the Vercel environment
-        if (process.env.VERCEL) {
-          content = injectVercelAnalytics(content);
-        }
         // Add structured data with dynamic description metadata
         const pageTitle = file.replace('.html', '').replace(/-/g, ' ').toUpperCase();
         const structuredData = generateBusinessStructuredData(pageTitle, canonicalUrl, pageDescription);
@@ -412,7 +409,7 @@ function generateRobotsTxt() {
 async function build() {
   try {
     createDistDirectory();
-
+    
     // Copy source to dist with HTML processing and optimizations
     await copySourceToDist(sourceDir, distDir);
 
