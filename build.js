@@ -11,7 +11,7 @@ const distDir = path.join(__dirname, 'dist');
 const baseUrl = process.env.BASE_URL || 'https://flat18.co.uk';
 
 const isCloudflare = process.env.CLOUDFLARE_PAGES === 'true'; // Detect Cloudflare environment
-const isVercel = process.env.VERCEL === 'true'; // Detect Cloudflare environment
+const isVercel = process.env.VERCEL === '1'; // Detect Cloudflare environment
 
 // Default language for the website
 const defaultLang = 'en';  // English as the default and only language

@@ -418,6 +418,7 @@ p {
 
 .icon.small.trigger {
   opacity: 1;
+  flex: 0 auto;
   font-size: 2rem;
 }
 
@@ -1857,11 +1858,11 @@ p {
   grid-template-rows: auto auto;
   grid-template-columns: 2fr 3fr;
   grid-auto-columns: 1fr;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: stretch;
   margin-top: 20px;
-  padding: 40px 40px 20px;
-  display: grid;
+  padding: 40px;
+  display: flex;
   position: relative;
   overflow: visible;
 }
@@ -2371,7 +2372,9 @@ p {
 }
 
 .price-exchange {
+  flex-flow: wrap;
   line-height: 1em;
+  display: inline-flex;
 }
 
 .switch-label-wrapper.quarterly {
@@ -2392,7 +2395,7 @@ p {
 .currency-dropdown-menu {
   background-color: #0000;
   flex-flow: row-reverse;
-  width: 300px;
+  width: calc(100% - 80px);
   margin-left: auto;
   display: flex;
   position: absolute;
@@ -2404,8 +2407,10 @@ p {
 }
 
 .menu-container {
+  flex-flow: wrap;
   margin-left: auto;
   margin-right: 0;
+  display: flex;
 }
 
 .currency-link {
@@ -2434,13 +2439,15 @@ p {
   align-items: flex-start;
   max-width: 300px;
   display: flex;
+  position: relative;
 }
 
 .trigger-currency-dropdown-menu {
-  margin-left: auto;
+  flex-flow: row;
+  margin-top: -15px;
+  padding: 10px 0 20px 20px;
+  display: flex;
   position: relative;
-  top: -95px;
-  right: -40px;
 }
 
 .trigger-currency-dropdown-menu.w--open {
@@ -2535,9 +2542,11 @@ p {
   background-position: 0 30%;
   background-size: auto 300%;
   border-radius: 5px;
-  flex: 1 0 auto;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-self: stretch;
+  width: calc(50% - 40px);
   max-width: 40vw;
-  height: calc(100% - 20px);
   display: flex;
   position: relative;
   overflow: hidden;
@@ -2560,7 +2569,6 @@ p {
 .bricing-details-wrapper {
   box-shadow: 0 0 0 1px var(--primary);
   border-radius: 8px;
-  flex: none;
   padding-top: 15px;
   padding-left: 20px;
   padding-right: 20px;
@@ -2572,7 +2580,7 @@ p {
   box-shadow: none;
   border-radius: 8px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .image-8 {
@@ -2913,6 +2921,19 @@ p {
   transform: translate(-25%);
 }
 
+.text-block-5 {
+  flex: 0 auto;
+  font-size: 16px;
+}
+
+.flex-block-3 {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 50%;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-no-shadow {
     -webkit-backdrop-filter: blur(50px);
@@ -3142,9 +3163,9 @@ p {
   }
 
   .text-org.responsive {
-    text-align: center;
+    text-align: left;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     min-width: auto;
   }
 
@@ -3152,6 +3173,10 @@ p {
     text-align: center;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  .btn-flex {
+    margin-top: 20px;
   }
 
   .btn-flex.orientate-right {
@@ -3192,7 +3217,10 @@ p {
   }
 
   .pricing-head.dramatic {
+    background-image: none;
+    flex-flow: column;
     grid-template-columns: 2fr;
+    padding: 0;
     position: relative;
   }
 
@@ -3219,18 +3247,22 @@ p {
     transform: translate3d(0, 0, 97px);
   }
 
-  .price-display {
-    font-size: 60px;
+  .switch-wrapper {
+    flex-flow: wrap;
+  }
+
+  .switch-body.billing-type.on {
+    flex: 0 auto;
+  }
+
+  .switch-label-wrapper.monthly {
+    width: 100%;
   }
 
   .flex-block {
     flex-flow: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-
-  .currency-dropdown-menu {
-    max-width: 20vw;
   }
 
   .menu-container {
@@ -3243,8 +3275,8 @@ p {
     margin-bottom: 10px;
   }
 
-  .currency-menu-wrapper, .currency-menu {
-    max-width: 20vw;
+  .currency-menu-wrapper {
+    max-width: 40vw;
   }
 
   .rotunda-wrapper {
@@ -3253,7 +3285,11 @@ p {
   }
 
   .content-imagery-wrapper {
-    display: none;
+    background-color: #0000;
+    border-radius: 8px;
+    flex: 1 0 auto;
+    width: auto;
+    max-width: none;
   }
 
   .overflowing-bg-image {
@@ -3268,12 +3304,8 @@ p {
 
   .pricing-controls-container.large-screens {
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-  }
-
-  .pricing-controls-container.small-screens {
-    display: none;
   }
 
   .bold-graphic-heading {
@@ -3285,6 +3317,13 @@ p {
     background-image: linear-gradient(90deg, var(--bg-gauze) 34%, var(--bg-modern-dark));
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
+  }
+
+  .flex-block-3 {
+    background-color: var(--secondary);
+    border-radius: 8px;
+    width: 100%;
+    padding: 40px;
   }
 }
 
@@ -3487,8 +3526,12 @@ p {
     margin-bottom: 0;
   }
 
+  .text-org.responsive {
+    width: 80vw;
+  }
+
   .text-block-reading {
-    text-align: center;
+    text-align: left;
   }
 
   .btn-flex {
@@ -3535,8 +3578,8 @@ p {
   }
 
   .pricing-head.dramatic {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .pricing-list-item.things-are-different {
@@ -3580,7 +3623,7 @@ p {
   }
 
   .price-display {
-    font-size: 50px;
+    font-size: 60px;
   }
 
   .inline-text-blocks {
@@ -3589,13 +3632,23 @@ p {
     align-items: flex-start;
   }
 
-  .currency-menu-wrapper {
-    max-width: 60vw;
-    right: -20px;
+  .currency-dropdown-menu {
+    flex-flow: row-reverse;
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+    right: 0;
   }
 
-  .currency-menu {
-    max-width: 60vw;
+  .menu-container {
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 0;
+  }
+
+  .currency-menu-wrapper {
+    max-width: 80vw;
+    right: 0;
   }
 
   .rotunda-wrapper {
@@ -3616,6 +3669,14 @@ p {
     display: none;
   }
 
+  .pricing-controls-container.large-screens {
+    max-width: 90vw;
+  }
+
+  .pricing-controls-container.small-screens {
+    padding: 20px;
+  }
+
   .statistics-label {
     font-size: 30px;
   }
@@ -3626,6 +3687,10 @@ p {
 
   .div-block {
     background-color: var(--bg-modern);
+  }
+
+  .flex-block-3 {
+    padding: 25px 20px 20px;
   }
 }
 
@@ -3829,7 +3894,7 @@ p {
   }
 
   .text-org.subscriptions {
-    margin-bottom: -33px;
+    margin-bottom: 12px;
   }
 
   .btn-flex {
