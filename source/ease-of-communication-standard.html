@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Thu Dec 12 2024 00:00:36 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Thu Dec 12 2024 00:19:18 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="6676fb8a781277b70418636b" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -316,7 +316,7 @@ year.innerHTML = new Date().getFullYear()
     //   avatar_url: "/src/img/avi.svg",
     //   //phone_number: "<phone-number-of-the-user>",
     // });
-    let webMLocal = 'webM is disabled'//localStorage && localStorage.getItem("webM") ? localStorage.getItem("webM") : data.webM
+    let webMLocal = localStorage && localStorage.getItem("webM") ? localStorage.getItem("webM") : data.webM
     window.$chatwoot.setUser(webMLocal, { name: `${window.geoCityCountry} - ${webMLocal}` });
   });
   function observeParentOpacityChange(targetElement, callback) {
