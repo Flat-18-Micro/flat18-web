@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Wed Dec 11 2024 23:50:37 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Thu Dec 12 2024 00:00:36 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="663245c7d597883474e8849f" data-wf-site="663245c7d597883474e88492">
 <head>
   <meta charset="utf-8">
@@ -36,15 +36,15 @@
       if(location.href.indexOf("808")<0)
       location.href = location.href.replace("http://", "https://")
     }
-//    const q = localStorage && localStorage.getItem("webM")? `&webM=${localStorage.getItem("webM")}` : ""
- //   fetch('https://api.flat18.co.uk/metrics/webm/index.php?geo=1' + q)
-//      .then(response => response.json())
-//      .then(data => {
-//        window.webM = data.webM
-//        window.geoCityCountry = data.geo
- //       let persist = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
-//        localStorage.setItem("webM", persist)
-//      });
+    const q = localStorage && localStorage.getItem("webM")? `&webM=${localStorage.getItem("webM")}` : ""
+    fetch('https://api.flat18.co.uk/metrics/webm/index.php?geo=1' + q)
+      .then(response => response.json())
+      .then(data => {
+        window.webM = data.webM
+        window.geoCityCountry = data.geo
+        let persist = localStorage && localStorage.getItem("webM")? localStorage.getItem("webM") : data.webM
+        localStorage.setItem("webM", persist)
+      });
   </script>
   <script defer="" src="https://eu.umami.is/script.js" data-website-id="54c1aa36-ac18-426d-ba14-3d5827cfa465"></script>
   <script async="" src="https://master--melodic-taffy-1a4c18.netlify.app/tracker.js" data-ackee-server="https://master--melodic-taffy-1a4c18.netlify.app" data-ackee-domain-id="b28e2698-bf04-4e23-9075-a5f7110affe0"></script>
