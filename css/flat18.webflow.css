@@ -2939,6 +2939,12 @@ p {
   font-weight: 600;
 }
 
+.text-span-3 {
+  opacity: .4;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-no-shadow {
     -webkit-backdrop-filter: blur(50px);
